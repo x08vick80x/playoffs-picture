@@ -1,0 +1,267 @@
+---
+interface Team {
+    seed: string;
+    team: string;
+    record: string;
+    status: string;
+}
+
+interface Props {
+    afc: Team[];
+    nfc: Team[];
+}
+
+const { afc, nfc } = Astro.props;
+
+import { getTeamId } from "../utils/team-mapping.js";
+---
+
+<div class="standings-container">
+    <h2 class="section-title">Standings</h2>
+    <div class="conference-toggle">
+        <button id="btn-afc" class="toggle-btn active">
+            <svg class="conf-logo" width="30" height="30"
+                ><use href="/sprites.svg#afc"></use></svg
+            >
+            AFC
+        </button>
+        <button id="btn-nfc" class="toggle-btn">
+            <svg class="conf-logo" width="30" height="30"
+                ><use href="/sprites.svg#nfc"></use></svg
+            >
+            NFC
+        </button>
+    </div>
+
+    <div id="table-afc" class="standings-table active">
+        <div class="table-header">
+            <span class="col-seed">#</span>
+            <span class="col-team">Team</span>
+            <span class="col-record">Rec</span>
+        </div>
+        {
+            afc.map((team, index) => (
+                <div
+                    class={`table-row ${index < 7 ? "playoff-spot" : ""} ${index === 0 ? "top-seed" : ""}`}
+                >
+                    <span class="col-seed">{team.seed}</span>
+                    <span class="col-team">
+                        <svg class="team-logo" width="24" height="24">
+                            <use
+                                href={`/sprites.svg#${getTeamId(team.team)}`}
+                            />
+                        </svg>
+                        <span class="team-name">{team.team}</span>
+                    </span>
+                    <span class="col-record">{team.record}</span>
+                </div>
+            ))
+        }
+    </div>
+
+    <div id="table-nfc" class="standings-table">
+        <div class="table-header nfc-header">
+            <span class="col-seed">#</span>
+            <span class="col-team">Team</span>
+            <span class="col-record">Rec</span>
+        </div>
+        {
+            nfc.map((team, index) => (
+                <div
+                    class={`table-row ${index < 7 ? "playoff-spot" : ""} ${index === 0 ? "top-seed" : ""}`}
+                >
+                    <span class="col-seed">{team.seed}</span>
+                    <span class="col-team">
+                        <svg class="team-logo" width="24" height="24">
+                            <use
+                                href={`/sprites.svg#${getTeamId(team.team)}`}
+                            />
+                        </svg>
+                        <span class="team-name">{team.team}</span>
+                    </span>
+                    <span class="col-record">{team.record}</span>
+                </div>
+            ))
+        }
+    </div>
+</div>
+
+<style lang="scss">
+    .standings-container {
+        padding: 1rem;
+        max-width: 800px;
+        margin: 0 auto;
+        min-height: 60vh;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #fff;
+    }
+
+    .conference-toggle {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        background: var(--bg-card);
+        padding: 0.5rem;
+        border-radius: 50px;
+        margin-bottom: 2rem;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid #333;
+
+        .toggle-btn {
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.75rem 2rem;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &.active {
+                background: var(--nfl-red);
+                color: white;
+                box-shadow: 0 4px 15px rgba(213, 10, 10, 0.4);
+            }
+
+            .conf-logo {
+                fill: currentColor;
+            }
+        }
+    }
+
+    .standings-table {
+        display: none;
+        background: var(--bg-card);
+        border-radius: 12px;
+        overflow: hidden;
+        animation: fadeIn 0.4s ease;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    .table-header {
+        display: grid;
+        grid-template-columns: 40px 1fr 60px; // Default mobile
+        background: #252525;
+        padding: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        color: var(--text-secondary);
+        border-bottom: 1px solid #333;
+    }
+
+    .table-row {
+        display: grid;
+        grid-template-columns: 40px 1fr 60px;
+        padding: 1rem;
+        align-items: center;
+        border-bottom: 1px solid #2a2a2a;
+        transition: background 0.2s;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .col-seed {
+            font-weight: bold;
+            color: var(--text-secondary);
+        }
+
+        &.playoff-spot {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid #4ade80;
+        }
+
+        &.top-seed {
+            background: rgba(255, 215, 0, 0.1);
+            border-left-color: gold;
+        }
+
+        .col-team {
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .team-logo {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .col-record {
+            font-family: monospace;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    // Responsive adjustments
+    @media (min-width: 600px) {
+        .table-header,
+        .table-row {
+            grid-template-columns: 60px 1fr 80px;
+        }
+
+        .col-team .team-logo {
+            width: 32px;
+            height: 32px;
+        }
+    }
+</style>
+
+<script>
+    const btnAfc = document.getElementById("btn-afc");
+    const btnNfc = document.getElementById("btn-nfc");
+    const tableAfc = document.getElementById("table-afc");
+    const tableNfc = document.getElementById("table-nfc");
+
+    if (btnAfc && btnNfc && tableAfc && tableNfc) {
+        btnAfc.addEventListener("click", () => {
+            btnAfc.classList.add("active");
+            btnNfc.classList.remove("active");
+            tableAfc.classList.add("active");
+            tableNfc.classList.remove("active");
+            if (navigator.vibrate) navigator.vibrate(10); // Haptic feedback
+        });
+
+        btnNfc.addEventListener("click", () => {
+            btnNfc.classList.add("active");
+            btnAfc.classList.remove("active");
+            tableNfc.classList.add("active");
+            tableAfc.classList.remove("active");
+            if (navigator.vibrate) navigator.vibrate(10);
+        });
+    }
+</script>

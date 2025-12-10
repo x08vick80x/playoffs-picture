@@ -1,0 +1,21 @@
+{
+  "name": "playoffs-picture",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "predev": "node start-sprite.js",
+    "dev": "astro dev",
+    "prebuild": "node start-sprite.js",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.16.4",
+    "axios": "^1.13.2",
+    "cheerio": "^1.1.2",
+    "puppeteer": "^24.32.1",
+    "sass": "^1.95.0",
+    "vite-plugin-pwa": "^1.2.0"
+  }
+}

@@ -1,0 +1,182 @@
+---
+import { getTeamId } from "../utils/team-mapping.js";
+---
+
+<dialog id="schedule-modal" class="modal">
+    <div class="modal-content">
+        <header class="modal-header">
+            <h2 id="modal-team-name">Team Name</h2>
+            <button id="close-modal" class="close-btn">&times;</button>
+        </header>
+
+        <div class="schedule-list" id="schedule-list">
+            <!-- Populated via JS -->
+        </div>
+    </div>
+</dialog>
+
+<script>
+    import { getTeamId } from "../utils/team-mapping.js";
+
+    const modal = document.getElementById(
+        "schedule-modal",
+    ) as HTMLDialogElement;
+    const closeBtn = document.getElementById("close-modal");
+    const title = document.getElementById("modal-team-name");
+    const list = document.getElementById("schedule-list");
+
+    window.addEventListener("open-schedule-modal", (e: any) => {
+        const { teamName, schedule } = e.detail;
+
+        if (title) title.innerText = `Remaining Schedule: ${teamName}`;
+
+        if (list) {
+            list.innerHTML = schedule
+                .map(
+                    (game: any) => `
+                <div class="game-item">
+                    <div class="week-badge">${game.week}</div>
+                    <div class="matchup-info">
+                        <span class="location">${game.location === "vs" ? "vs" : "@"}</span>
+                        <div class="opponent clearfix">
+                            <span class="opp-name">${game.opponent}</span>
+                            <span class="opp-record">(${game.opponentRecord || "??"})</span>
+                        </div>
+                    </div>
+                </div>
+            `,
+                )
+                .join("");
+        }
+
+        modal?.showModal();
+    });
+
+    closeBtn?.addEventListener("click", () => {
+        modal?.close();
+    });
+
+    modal?.addEventListener("click", (e) => {
+        if (e.target === modal) modal.close();
+    });
+</script>
+
+<style lang="scss">
+    .modal {
+        background: rgba(0, 0, 0, 0.8);
+        border: none;
+        border-radius: 16px;
+        padding: 0;
+        color: #fff;
+        max-width: 90vw;
+        width: 400px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+        /* Center the modal */
+        position: fixed;
+        inset: 0;
+        margin: auto;
+        max-height: 90vh; /* Prevent overflow if schedule is long */
+        overflow-y: auto;
+
+        &::backdrop {
+            background: rgba(0, 0, 0, 0.7);
+        }
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+        background: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 16px;
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #333;
+
+        h2 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #fff;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    .schedule-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    /* Target dynamically interpolated HTML */
+    :global(.game-item) {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0.75rem;
+        border-radius: 8px;
+    }
+
+    :global(.week-badge) {
+        font-size: 0.75rem;
+        background: #333;
+        color: #aaa;
+        padding: 2px 6px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-weight: bold;
+        min-width: 50px;
+        text-align: center;
+    }
+
+    :global(.matchup-info) {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex: 1;
+    }
+
+    :global(.location) {
+        font-weight: bold;
+        color: var(--nfl-red);
+        width: 20px;
+        text-align: center;
+    }
+
+    :global(.opponent) {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    :global(.opp-name) {
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    :global(.opp-record) {
+        font-size: 0.85rem;
+        color: #888;
+        font-family: monospace;
+    }
+</style>

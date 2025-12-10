@@ -1,0 +1,121 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Standings from "../components/Standings.astro";
+import Matchups from "../components/Matchups.astro";
+import BubbleEliminated from "../components/BubbleEliminated.astro";
+import Footer from "../components/Footer.astro";
+import ScheduleModal from "../components/ScheduleModal.astro";
+import PowerRankings from "../components/PowerRankings.astro";
+import fs from "node:fs";
+import path from "node:path";
+
+// Load data using Node fs
+const standingsPath = path.resolve("./src/data/standings.json");
+const standings = JSON.parse(fs.readFileSync(standingsPath, "utf-8"));
+
+const playoffPicturePath = path.resolve("./src/data/playoff-picture.json");
+const playoffPicture = JSON.parse(fs.readFileSync(playoffPicturePath, "utf-8"));
+
+// Use today's date or a specific timestamp from data if available
+const lastUpdated = new Date().toLocaleString("fr-FR", {
+	timeZone: "America/New_York",
+	day: "numeric",
+	month: "long",
+	hour: "2-digit",
+	minute: "2-digit",
+});
+---
+
+<Layout title="NFL Playoff Picture 2025">
+	<Header />
+	<main>
+		<div class="content-wrapper">
+			<h1 class="main-title">
+				<span class="highlight">NFL</span> PLAYOFF PICTURE <span
+					class="year">2025</span
+				>
+			</h1>
+			<p class="last-updated">Dernière mise à jour : {lastUpdated}</p>
+
+			<section id="matchups">
+				<Matchups
+					afc={standings.AFC}
+					nfc={standings.NFC}
+					seeds={playoffPicture.seeds}
+				/>
+			</section>
+
+			<BubbleEliminated
+				bubble={playoffPicture.bubble}
+				eliminated={playoffPicture.eliminated}
+			/>
+
+			<section id="power-rankings">
+				<PowerRankings rankings={playoffPicture.powerRankings} />
+			</section>
+
+			<section id="standings">
+				<Standings afc={standings.AFC} nfc={standings.NFC} />
+			</section>
+		</div>
+	</main>
+	<ScheduleModal />
+	<Footer />
+</Layout>
+
+<style lang="scss">
+	html {
+		scroll-behavior: smooth;
+		scroll-padding-top: 100px; /* Offset for sticky header */
+	}
+
+	main {
+		min-height: 80vh;
+		padding-top: 2rem;
+	}
+
+	.content-wrapper {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.main-title {
+		text-align: center;
+		font-size: 2.5rem;
+		font-weight: 900;
+		line-height: 1.1;
+		margin-bottom: 0.5rem;
+		letter-spacing: -1px;
+		text-transform: uppercase;
+		background: linear-gradient(180deg, #fff 0%, #aaa 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+
+		.highlight {
+			font-weight: 900;
+			font-style: italic;
+		}
+
+		.year {
+			font-weight: 300;
+			color: var(--nfl-red);
+			-webkit-text-fill-color: var(--nfl-red);
+		}
+	}
+
+	.last-updated {
+		text-align: center;
+		color: var(--text-secondary);
+		font-size: 0.9rem;
+		margin-bottom: 2rem;
+		font-family: monospace;
+	}
+
+	@media (min-width: 768px) {
+		.main-title {
+			font-size: 4rem;
+		}
+	}
+</style>

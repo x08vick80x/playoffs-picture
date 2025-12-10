@@ -1,0 +1,470 @@
+Launching browser...
+Navigating to https://www.nfl.com/standings/playoff-picture...
+PAGE LOG: A preload for 'https://www.nfl.com/compiledassets/css/base.css?_t=87e91fa39991dbda1c46f4501bf54b27' is found, but is not used because the request credentials mode does not match. Consider taking a look at crossorigin attribute.
+PAGE LOG: A preload for 'https://www.nfl.com/compiledassets/theming/5f330197ad251d8e6747ab2d34f39a11' is found, but is not used because the request credentials mode does not match. Consider taking a look at crossorigin attribute.
+PAGE LOG: [alloy] setDebug command resolved. Result: JSHandle@object
+PAGE LOG: [alloy] configure command resolved. Result: JSHandle@object
+PAGE LOG: [alloy] Executing getIdentity command. Options: JSHandle@object
+PAGE LOG: [alloy] [Identity] Delaying request while waiting for legacy opt-in to let Visitor retrieve ECID from server.
+PAGE LOG: [alloy] [Identity] Received legacy opt-in approval to let Visitor retrieve ECID from server.
+PAGE LOG: [alloy] [Identity] Delaying request while using Visitor to retrieve ECID from server.
+PAGE LOG: 🚀 Rule "Global ECID (Rule) Element Set - CORE RULE" fired.
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Article View Event - CORE RULE" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "Article View Event - CORE RULE" was not met.
+PAGE LOG: 🚀 Failed to execute data element module core/src/lib/dataElements/customCode.js for data element identityProvider (Local Storage). Cannot read properties of null (reading 'rawData')
+TypeError: Cannot read properties of null (reading 'rawData')
+    at Object.source (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:2:5168)
+    at e.exports (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:14:4798)
+    at https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:19181
+    at https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:19894
+    at l (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:21279)
+    at n (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:21378)
+    at i (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:21673)
+    at r (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:21535)
+    at i (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:21733)
+    at r (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:21535)
+PAGE LOG: 🚀 Failed to execute data element module core/src/lib/dataElements/customCode.js for data element identityProvider (Local Storage). Cannot read properties of null (reading 'rawData')
+TypeError: Cannot read properties of null (reading 'rawData')
+    at Object.source (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:2:5168)
+    at e.exports (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:14:4798)
+    at https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:19181
+    at https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:19894
+    at l (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:21279)
+    at n (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:21378)
+    at i (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:21673)
+    at r (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:21535)
+    at i (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:21733)
+    at r (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:16:21535)
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The identifier at Email_LC_SHA256[0] was removed from the identity map because its ID is not a populated string. Its ID value is: 
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The Email_LC_SHA256 namespace was removed from the identity map because it contains no identifiers.
+PAGE LOG: [alloy] Executing sendEvent command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Page View Event - CORE RULE" fired.
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Page View Event - CORE RULE" was not met.
+PAGE LOG: 🚀 [Custom Script] 📬 onBeforeEventSend:  [🔌 plugins]:  Initializing plugin Cookie Combining Utility
+PAGE LOG: 🚀 [Custom Script] 📬 onBeforeEventSend:  [🔌 plugins]:  Initializing plugin Percent Page Viewed
+PAGE LOG: 🚀 [Custom Script] 📬 onBeforeEventSend:  [🔌 plugins]:  Initializing plugin Content Depth
+PAGE LOG: 🚀 [Custom Script] 📬 onBeforeEventSend:  [🔌 plugins]:  Initializing plugin Fields to Strings
+PAGE LOG: 🚀 [Custom Script] 📬 onBeforeEventSend:  [🔌 plugins]:  Initializing plugin Fields to Floats
+PAGE LOG: 🚀 [Custom Script] 📬 onBeforeEventSend:  Final Content:  JSHandle@object
+PAGE LOG: [alloy] [Identity] Delaying request while retrieving ECID from server.
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Page View Event - NFL+ Section - TEMPORARY" was not met.
+PAGE LOG: [GPT] Div ID passed to googletag.display() does not match any defined slots: oop.
+https://goo.gle/gpt-message#26
+PAGE LOG: [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175
+PAGE LOG: 🚀 [Experience Cloud ID Service] Obtained Marketing Cloud Visitor Id: 49470079859937584230408192908042481225
+PAGE LOG: [alloy] [Identity] Resuming previously delayed request that was waiting for ECID from Visitor.
+PAGE LOG: [alloy] Request 1850c586-234b-40fc-8f65-2d230d23e999: Sending request. JSHandle@object
+PAGE LOG: [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175
+PAGE LOG: [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175
+PAGE LOG: Check OneTrust Permissions
+PAGE LOG: 🚀 [Core] Rules using the direct call event type with identifier "thirdParty" have been triggered.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Comscore - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Conviva - Global Tag " was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Canada/Reddit/Meta - NFL ID Sign In Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Canada/Reddit/Meta - NFL ID Favorite Team Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Horizon/Ads/PJ/Genius/TTD - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - NFL Plus - Horizon/Floodlight/Socials - Product Select Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - LG FedEx A&G POY - FedEx Page " was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - OneSignal - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Redfast - Global Tag (ID.NFL.COM and Plus)" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Meta/DC - Tickets Network Page" was not met.
+PAGE LOG: [alloy] Request 1850c586-234b-40fc-8f65-2d230d23e999: Received response with status code 200 and response body: JSHandle@object
+PAGE LOG: [alloy] Setting cookie JSHandle@object
+PAGE LOG: [alloy] Setting cookie JSHandle@object
+PAGE LOG: [alloy] [Identity] Resuming previously delayed request.
+PAGE LOG: [alloy] Request eb664148-db8d-42f7-b11e-a74b3527086b: Sending request. JSHandle@object
+PAGE LOG: [alloy] getIdentity command resolved. Result: JSHandle@object
+PAGE LOG: [alloy] Request eb664148-db8d-42f7-b11e-a74b3527086b: Received response with status code 200 and response body: JSHandle@object
+PAGE LOG: [alloy] [Personalization] Started rendering propositions for page-wide scope.
+PAGE LOG: [alloy] [Personalization] Prehiding style removed to show containers.
+PAGE LOG: [alloy] sendEvent command resolved. Result: JSHandle@object
+PAGE LOG: %cSnack Media display: inline-block; color: #fff; background: red; padding: 1px 4px; border-radius: 3px; Snack Loader Start
+PAGE LOG: no ga
+PAGE LOG: %cSnack Media display: inline-block; color: #fff; background: green; padding: 1px 4px; border-radius: 3px; Snack Loader End Reached
+PAGE LOG: JSHandle@error JSHandle@error
+PAGE LOG: a: 0.0009765625 ms
+PAGE LOG: 🚀 [Custom Script] 📬 onBeforeEventSend:  [🔊 listeners]:  initial scroll depth recorded
+PAGE LOG: 🚀 Rule "1T - OneTrust Privacy (Web SDK Consent Change) - Global Rule" fired.
+Page loaded. Checking for content...
+Page Title: 2025 NFL Playoff Picture | NFL Playoffs | NFL.com
+PAGE LOG: [alloy] [Personalization] Failed to execute action {"id":"172477-23","schema":"https://ns.adobe.com/personalization/dom-action","meta":{"offer.name":"Default Content","experience.id":"5","activity.name":"NDC - Desktop - NFL Shop - Ongoing","profile.rand100_Persist":"75","activity.id":"172477","experience.name":"NFL Shop First - V2","option.name":"Offer 23","profile.mobileMessageStage":"0"},"data":{"type":"setHtml","format":"application/vnd.adobe.target.dom-action","content":"<li class=\"group/secondary\"><a rel=\"noopener noreferrer\" class=\"flex items-start rounded-xs self-center mt-4 misc-1 font-bold text-ls-600 dark:text-ds-600 md:mt-0\" data-analytics=\"{&quot;linkModule&quot;:&quot;Main Navigation&quot;,&quot;linkName&quot;:&quot;Shop&quot;,&quot;linkPosition&quot;:&quot;4:4&quot;}\" href=\"https://www.nflshop.com/?_s=bm-nflcom-globalnav-shop-test2-2025\" target=\"_blank\" data-headlessui-state=\"\"><span class=\"flex flex-col justify-center items-start relative\">\n            <div class=\"lg:absolute left-0 right-0 -bottom-1.5 h-0.5 bg-ls-600 dark:bg-white scale-x-0 origin-left transition-all duration-200 ease-out group-hover/secondary:scale-x-100 group-active/secondary:scale-x-100\"></div><span>NFL Shop</span>\n        </span><span class=\"flex ml-1 pt-0.5\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" pointer-events=\"none\" role=\"presentation\" class=\"fill-ls-600 dark:fill-ds-600\">\n                <title id=\"accessibility-title\">Arrow Upright</title>\n                <path fill-rule=\"evenodd\" d=\"M5.643 18.644c.275.275.6.274.875 0L17.066 8.096l-.048 7.126c-.011.393.19.628.606.629h.412c.382 0 .607-.225.618-.618l.011-9.26c.011-.406-.214-.618-.617-.618H8.775c-.404 0-.617.213-.617.617v.412c0 .403.224.628.617.617l7.148-.048L5.375 17.5c-.274.274-.275.6 0 .875z\" clip-rule=\"evenodd\"></path>\n            </svg></span></a></li>\n<li class=\"group/secondary\"><a rel=\"noopener noreferrer\" class=\"flex items-start rounded-xs self-center mt-4 misc-1 font-bold text-ls-600 dark:text-ds-600 md:mt-0\" data-analytics=\"{&quot;linkModule&quot;:&quot;Main Navigation&quot;,&quot;linkName&quot;:&quot;Tickets&quot;,&quot;linkPosition&quot;:&quot;1:4&quot;}\" href=\"https://www.ticketmaster.com/nfl?wt.mc_id=NFL_LEAGUE_TICKETS_LINK&amp;utm_source=NFL.com&amp;utm_medium=client&amp;utm_campaign=NFL_LEAGUE&amp;utm_content=TICKETS_LINK\" target=\"_blank\" data-headlessui-state=\"\" id=\"cdq_element_13\"><span class=\"flex flex-col justify-center items-start relative\" id=\"cdq_element_12\">\n            <div class=\"lg:absolute left-0 right-0 -bottom-1.5 h-0.5 bg-ls-600 dark:bg-white scale-x-0 origin-left transition-all duration-200 ease-out group-hover/secondary:scale-x-100 group-active/secondary:scale-x-100\"></div><span id=\"cdq_element_11\">Tickets</span>\n        </span><span class=\"flex ml-1 pt-0.5\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" pointer-events=\"none\" role=\"presentation\" class=\"fill-ls-600 dark:fill-ds-600\">\n                <title id=\"accessibility-title\">Arrow Upright</title>\n                <path fill-rule=\"evenodd\" d=\"M5.643 18.644c.275.275.6.274.875 0L17.066 8.096l-.048 7.126c-.011.393.19.628.606.629h.412c.382 0 .607-.225.618-.618l.011-9.26c.011-.406-.214-.618-.617-.618H8.775c-.404 0-.617.213-.617.617v.412c0 .403.224.628.617.617l7.148-.048L5.375 17.5c-.274.274-.275.6 0 .875z\" clip-rule=\"evenodd\"></path>\n            </svg></span></a></li>\n<li class=\"group/secondary\"><a rel=\"noopener noreferrer\" class=\"flex items-start rounded-xs self-center mt-4 misc-1 font-bold text-ls-600 dark:text-ds-600 md:mt-0\" data-analytics=\"{&quot;linkModule&quot;:&quot;Main Navigation&quot;,&quot;linkName&quot;:&quot;Fantasy&quot;,&quot;linkPosition&quot;:&quot;2:4&quot;}\" href=\"https://fantasy.nfl.com/\" target=\"_blank\" data-headlessui-state=\"\"><span class=\"flex flex-col justify-center items-start relative\">\n            <div class=\"lg:absolute left-0 right-0 -bottom-1.5 h-0.5 bg-ls-600 dark:bg-white scale-x-0 origin-left transition-all duration-200 ease-out group-hover/secondary:scale-x-100 group-active/secondary:scale-x-100\"></div><span>Fantasy</span>\n        </span><span class=\"flex ml-1 pt-0.5\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" pointer-events=\"none\" role=\"presentation\" class=\"fill-ls-600 dark:fill-ds-600\">\n                <title id=\"accessibility-title\">Arrow Upright</title>\n                <path fill-rule=\"evenodd\" d=\"M5.643 18.644c.275.275.6.274.875 0L17.066 8.096l-.048 7.126c-.011.393.19.628.606.629h.412c.382 0 .607-.225.618-.618l.011-9.26c.011-.406-.214-.618-.617-.618H8.775c-.404 0-.617.213-.617.617v.412c0 .403.224.628.617.617l7.148-.048L5.375 17.5c-.274.274-.275.6 0 .875z\" clip-rule=\"evenodd\"></path>\n            </svg></span></a></li>\n<li class=\"group/secondary\"><a rel=\"noopener noreferrer\" class=\"flex items-start rounded-xs self-center mt-4 misc-1 font-bold text-ls-600 dark:text-ds-600 md:mt-0\" data-analytics=\"{&quot;linkModule&quot;:&quot;Main Navigation&quot;,&quot;linkName&quot;:&quot;VIP Experiences&quot;,&quot;linkPosition&quot;:&quot;3:4&quot;}\" href=\"https://onlocationexp.com/nfl?utm_source=nfl.com&amp;utm_medium=referral&amp;utm_campaign=nfl-main_menu_nav\" target=\"_blank\" data-headlessui-state=\"\"><span class=\"flex flex-col justify-center items-start relative\">\n            <div class=\"lg:absolute left-0 right-0 -bottom-1.5 h-0.5 bg-ls-600 dark:bg-white scale-x-0 origin-left transition-all duration-200 ease-out group-hover/secondary:scale-x-100 group-active/secondary:scale-x-100\"></div><span>VIP Experiences</span>\n        </span><span class=\"flex ml-1 pt-0.5\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" pointer-events=\"none\" role=\"presentation\" class=\"fill-ls-600 dark:fill-ds-600\">\n                <title id=\"accessibility-title\">Arrow Upright</title>\n                <path fill-rule=\"evenodd\" d=\"M5.643 18.644c.275.275.6.274.875 0L17.066 8.096l-.048 7.126c-.011.393.19.628.606.629h.412c.382 0 .607-.225.618-.618l.011-9.26c.011-.406-.214-.618-.617-.618H8.775c-.404 0-.617.213-.617.617v.412c0 .403.224.628.617.617l7.148-.048L5.375 17.5c-.274.274-.275.6 0 .875z\" clip-rule=\"evenodd\"></path>\n            </svg></span></a></li>\n","selector":"HTML > BODY > DIV.bg-\\(--bg-color\\):eq(0) > HEADER.bg-ls-level-2:eq(0) > NAV.bg-ls-level-2:eq(0) > DIV.container:eq(0) > DIV.hidden:eq(0) > UL.flex:eq(0)","prehidingSelector":"HTML > BODY > DIV.bg-\\(--bg-color\\):eq(0) > HEADER.bg-ls-level-2:eq(0) > NAV.bg-ls-level-2:eq(0) > DIV.container:eq(0) > DIV.hidden:eq(0) > UL.flex:eq(0)"}}. Could not find: HTML > BODY > DIV.bg-\(--bg-color\):eq(0) > HEADER.bg-ls-level-2:eq(0) > NAV.bg-ls-level-2:eq(0) > DIV.container:eq(0) > DIV.hidden:eq(0) > UL.flex:eq(0) Error: Could not find: HTML > BODY > DIV.bg-\(--bg-color\):eq(0) > HEADER.bg-ls-level-2:eq(0) > NAV.bg-ls-level-2:eq(0) > DIV.container:eq(0) > DIV.hidden:eq(0) > UL.flex:eq(0)
+    at Ye (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:10:11061)
+    at https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:10:11290
+PAGE LOG: [alloy] [Personalization] Failed to execute action {"id":"172476-18","schema":"https://ns.adobe.com/personalization/dom-action","meta":{"offer.name":"Default Content","experience.id":"2","activity.name":"NDC - Mobile Web - Shop Cart Icon - Ongoing","profile.rand100_Persist":"75","activity.id":"172476","experience.name":"NFL Shop Text w/ Icon","option.name":"Offer 18","profile.mobileMessageStage":"0"},"data":{"type":"setHtml","format":"application/vnd.adobe.target.dom-action","content":"    <a rel=\"noopener noreferrer\" class=\"flex justify-center items-start self-center border-none border-0 rounded-xs display-5 lg:display-6 text-black dark:text-white lg:gap-0.5\" data-analytics=\"{&quot;linkModule&quot;:&quot;Main Navigation&quot;,&quot;linkName&quot;:&quot;SHOP&quot;,&quot;linkPosition&quot;:&quot;2:2&quot;}\" href=\"https://www.nflshop.com/?_s=bm-nflcom-nav-hotbutton-shop-test2-2025\" target=\"_blank\" data-headlessui-state=\"\">\n        <span class=\"relative flex flex-row items-center\">\n\n            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" pointer-events=\"none\" role=\"presentation\" class=\"fill-ls-600 dark:fill-ds-600 mr-1\">\n                <title id=\"shopping-cart-title\">Shopping Cart</title>\n                <path d=\"M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-8.8-5h10.95c.78 0 1.4-.55 1.55-1.32L21.49 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.2-2z\"></path>\n            </svg>\n\n            NFL SHOP\n\n            <div class=\"absolute left-0 right-0 bottom-0 h-0.5 top-8 bg-black dark:bg-white rounded-tl-[1px] rounded-tr-[1px] opacity-0 translate-y-1 scale-x-95 transition-all duration-50 ease-out group-hover/secondary:opacity-100 group-hover/secondary:translate-y-0 group-hover/secondary:scale-x-100\"></div>\n        </span>\n    </a>","selector":"HTML > BODY > DIV.bg-\\(--bg-color\\):eq(0) > HEADER.bg-ls-level-2:eq(0) > NAV.bg-ls-level-2:eq(0) > DIV.container:eq(0) > DIV.flex:eq(0) > UL.flex:eq(0) > LI.group\\/secondary:eq(1)","prehidingSelector":"HTML > BODY > DIV.bg-\\(--bg-color\\):eq(0) > HEADER.bg-ls-level-2:eq(0) > NAV.bg-ls-level-2:eq(0) > DIV.container:eq(0) > DIV.flex:eq(0) > UL.flex:eq(0) > LI.group\\/secondary:eq(1)"}}. Could not find: HTML > BODY > DIV.bg-\(--bg-color\):eq(0) > HEADER.bg-ls-level-2:eq(0) > NAV.bg-ls-level-2:eq(0) > DIV.container:eq(0) > DIV.flex:eq(0) > UL.flex:eq(0) > LI.group\/secondary:eq(1) Error: Could not find: HTML > BODY > DIV.bg-\(--bg-color\):eq(0) > HEADER.bg-ls-level-2:eq(0) > NAV.bg-ls-level-2:eq(0) > DIV.container:eq(0) > DIV.flex:eq(0) > UL.flex:eq(0) > LI.group\/secondary:eq(1)
+    at Ye (https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:10:11061)
+    at https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js:10:11290
+PAGE LOG: [alloy] [Personalization] Scopes: {"__view__":[{"id":"AT:eyJhY3Rpdml0eUlkIjoiMTcyNDc3IiwiZXhwZXJpZW5jZUlkIjoiMSJ9","scope":"__view__","scopeDetails":{"decisionProvider":"TGT","activity":{"id":"172477"},"experience":{"id":"1"},"strategies":[{"step":"entry","trafficType":"0"},{"step":"display","trafficType":"0"}],"characteristics":{"eventToken":"N2kkSjU5lTPPFpbNieYBibHIOKMJSfhZpJ/Iaj88vWvZ9ODJEg5+xiJvnW45OpL4IrLeyTdp42xDruy0QglDPA=="},"correlationID":"172477:5:0"},"items":[null]},{"id":"AT:eyJhY3Rpdml0eUlkIjoiMTcyNDc2IiwiZXhwZXJpZW5jZUlkIjoiMSJ9","scope":"__view__","scopeDetails":{"decisionProvider":"TGT","activity":{"id":"172476"},"experience":{"id":"1"},"strategies":[{"step":"entry","trafficType":"0"},{"step":"display","trafficType":"0"}],"characteristics":{"eventToken":"Fl83ZLr799BRRYutzDLs+rHIOKMJSfhZpJ/Iaj88vWtN9kAh11k9cxbw98O/2OcXSXXKaW7F23I4ChL29BeLZA=="},"correlationID":"172476:2:0"},"items":[null]}]} successfully executed.
+PAGE LOG: 🚀 [Custom Script] 📬 onBeforeEventSend:  [🔌 plugins]:  Initializing plugin Cookie Combining Utility
+PAGE LOG: 🚀 [Custom Script] 📬 onBeforeEventSend:  [🔌 plugins]:  Initializing plugin Percent Page Viewed
+PAGE LOG: 🚀 [Custom Script] 📬 onBeforeEventSend:  [🔌 plugins]:  Initializing plugin Content Depth
+PAGE LOG: 🚀 [Custom Script] 📬 onBeforeEventSend:  [🔌 plugins]:  Initializing plugin Fields to Strings
+PAGE LOG: 🚀 [Custom Script] 📬 onBeforeEventSend:  [🔌 plugins]:  Initializing plugin Fields to Floats
+PAGE LOG: 🚀 [Custom Script] 📬 onBeforeEventSend:  Final Content:  JSHandle@object
+PAGE LOG: [alloy] Request 2fafc335-7c08-4db1-a4dc-0e65a4c813b0: Sending request. JSHandle@object
+PAGE LOG: [alloy] Request 2fafc335-7c08-4db1-a4dc-0e65a4c813b0: Received response with status code 200 and response body: JSHandle@object
+Scrolling down...
+PAGE LOG: The resource https://www.nfl.com/compiledassets/assets/fonts/NFL/Saira/Saira--Medium.woff was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/assets/fonts/NFL/Saira/Saira--Light.woff was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/css/base.css?_t=87e91fa39991dbda1c46f4501bf54b27 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/theming/5f330197ad251d8e6747ab2d34f39a11 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/assets/fonts/NFL/Saira/Saira--Thin.woff was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/assets/fonts/NFL/Saira/Saira--ExtraLight.woff was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/assets/fonts/NFL/Saira/Saira--Bold.woff was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/assets/fonts/NFL/Saira/Saira--ExtraBold.woff was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/assets/fonts/NFL/Saira/Saira--Medium.woff was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/assets/fonts/NFL/Saira/Saira--Light.woff was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/css/base.css?_t=87e91fa39991dbda1c46f4501bf54b27 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/theming/5f330197ad251d8e6747ab2d34f39a11 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/assets/fonts/NFL/Saira/Saira--Thin.woff was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/assets/fonts/NFL/Saira/Saira--ExtraLight.woff was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/assets/fonts/NFL/Saira/Saira--Bold.woff was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+PAGE LOG: The resource https://www.nfl.com/compiledassets/assets/fonts/NFL/Saira/Saira--ExtraBold.woff was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+WARNING: "On The Bubble" not found in text. Dumping partial text:
+Skip to main content
+WATCH EVERY GAME WITH GAME PASS
+GAME PASS
+SUN 7:00PM
+Atlanta Falcons
+ATL
+4 wins, 9 losses, 0 ties
+4-9
+Tampa Bay Buccaneers
+TB
+7 wins, 6 losses, 0 ties
+7-6
+FRI 2:15AM
+Cleveland Browns
+CLE
+3 wins, 10 losses, 0 ties
+3-10
+Chicago Bears
+CHI
+9 wins, 4 losses, 0 ties
+9-4
+SUN 7:00PM
+Baltimore Ravens
+BAL
+6 wins, 7 losses, 0 ties
+6-7
+Cincinnati Bengals
+CIN
+4 wins, 9 losses, 0 ties
+4-9
+SUN 7:00PM
+Arizona Cardinals
+ARI
+3 wins, 10 losses, 0 ties
+3-10
+Houston Texans
+HOU
+8 wins, 5 losses, 
+Navigating to https://www.nfl.com/schedules/2025/by-week/reg-15...
+Landed on: https://www.nfl.com/schedules/2025/by-week/reg-15
+PAGE LOG: 🚀 [Experience Cloud ID Service] Created instance using orgId: "F75C3025512D2C1D0A490D44@AdobeOrg"
+PAGE LOG: 🚀 [Experience Cloud ID Service] Set variables: {"trackingServerSecure":"sedge.nfl.com","marketingCloudServerSecure":"sedge.nfl.com","overwriteCrossDomainMCIDAndAID":true,"whitelistParentDomain":"NFL.com","whitelistIframeDomains":"NFL.com, id.nfl.com","doesOptInApply":true,"isOptInStorageEnabled":true,"optInStorageExpiry":946080000,"previousPermissions":{"aa":false,"target":false,"aam":false,"ecid":false,"mediaaa":false},"preOptInApprovals":{"aa":true,"aam":true,"ecid":true,"target":true,"mediaaa":true}}
+PAGE LOG: 🚀 [Experience Cloud ID Service] Obtained Marketing Cloud Visitor Id: 
+PAGE LOG: [alloy] Instance initialized.
+PAGE LOG: [alloy] Executing configure command. Options: JSHandle@object
+PAGE LOG: [alloy] Instance configured. Computed configuration: JSHandle@object
+PAGE LOG: [alloy] User consent preferences not found. Default consent of out will be used.
+PAGE LOG: Check OneTrust Permissions
+PAGE LOG: 🚀 [Core] "thirdParty" does not match any direct call identifiers.
+PAGE LOG: [alloy] configure command resolved. Result: JSHandle@object
+PAGE LOG: [alloy] Executing getIdentity command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Global ECID (Rule) Element Set - CORE RULE" fired.
+PAGE LOG: [alloy] The getIdentity command could not fully complete. [Identity] An error occurred while executing the getIdentity command.
+Caused by: No consent preferences have been set.
+PAGE LOG: [alloy] getIdentity command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Article View Event - CORE RULE" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "Article View Event - CORE RULE" was not met.
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The identifier at Email_LC_SHA256[0] was removed from the identity map because its ID is not a populated string. Its ID value is: 
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The Email_LC_SHA256 namespace was removed from the identity map because it contains no identifiers.
+PAGE LOG: [alloy] Executing sendEvent command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Page View Event - CORE RULE" fired.
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Page View Event - CORE RULE" was not met.
+PAGE LOG: [alloy] The sendEvent command could not fully complete. [DataCollector] An error occurred while executing the sendEvent command.
+Caused by: No consent preferences have been set.
+PAGE LOG: [alloy] sendEvent command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Page View Event - NFL+ Section - TEMPORARY" was not met.
+PAGE LOG: 🚀 [Core] Rules using the direct call event type with identifier "virtual_pv" have been triggered with additional detail: JSHandle@object
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Virtual Page View Direct Call Rule - CORE RULE" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - NFL Plus - Horizon/Floodlight/Socials - Learn More Page" was not met.
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The identifier at Email_LC_SHA256[0] was removed from the identity map because its ID is not a populated string. Its ID value is: 
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The Email_LC_SHA256 namespace was removed from the identity map because it contains no identifiers.
+PAGE LOG: [alloy] Executing sendEvent command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Virtual Page View Direct Call Rule - CORE RULE" fired.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Redfast - Global Tag (ID.NFL.COM and Plus)" was not met.
+PAGE LOG: [alloy] The sendEvent command could not fully complete. [DataCollector] An error occurred while executing the sendEvent command.
+Caused by: No consent preferences have been set.
+PAGE LOG: [alloy] sendEvent command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Horizon/Ads/PJ/Genius/TTD - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - NFL Plus - Horizon/Floodlight/Socials - Product Select Page" was not met.
+PAGE LOG: Error fetching CountdownBannerContainerData JSHandle@error
+Found 16 matchups in REG15.
+Navigating to https://www.nfl.com/schedules/2025/by-week/reg-16...
+PAGE LOG: Error fetching CountdownBannerContainerData JSHandle@error
+Landed on: https://www.nfl.com/schedules/2025/by-week/reg-16
+PAGE LOG: 🚀 [Experience Cloud ID Service] Created instance using orgId: "F75C3025512D2C1D0A490D44@AdobeOrg"
+PAGE LOG: 🚀 [Experience Cloud ID Service] Set variables: {"trackingServerSecure":"sedge.nfl.com","marketingCloudServerSecure":"sedge.nfl.com","overwriteCrossDomainMCIDAndAID":true,"whitelistParentDomain":"NFL.com","whitelistIframeDomains":"NFL.com, id.nfl.com","doesOptInApply":true,"isOptInStorageEnabled":true,"optInStorageExpiry":946080000,"previousPermissions":{"aa":false,"target":false,"aam":false,"ecid":false,"mediaaa":false},"preOptInApprovals":{"aa":true,"aam":true,"ecid":true,"target":true,"mediaaa":true}}
+PAGE LOG: 🚀 [Experience Cloud ID Service] Obtained Marketing Cloud Visitor Id: 
+PAGE LOG: [alloy] Instance initialized.
+PAGE LOG: [alloy] Executing configure command. Options: JSHandle@object
+PAGE LOG: [alloy] Instance configured. Computed configuration: JSHandle@object
+PAGE LOG: [alloy] User consent preferences not found. Default consent of out will be used.
+PAGE LOG: [alloy] configure command resolved. Result: JSHandle@object
+PAGE LOG: Error fetching CountdownBannerContainerData JSHandle@error
+PAGE LOG: 🚀 [Core] Rules using the direct call event type with identifier "virtual_pv" have been triggered with additional detail: JSHandle@object
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Virtual Page View Direct Call Rule - CORE RULE" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - NFL Plus - Horizon/Floodlight/Socials - Learn More Page" was not met.
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The identifier at Email_LC_SHA256[0] was removed from the identity map because its ID is not a populated string. Its ID value is: 
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The Email_LC_SHA256 namespace was removed from the identity map because it contains no identifiers.
+PAGE LOG: [alloy] Executing sendEvent command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Virtual Page View Direct Call Rule - CORE RULE" fired.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Redfast - Global Tag (ID.NFL.COM and Plus)" was not met.
+PAGE LOG: [alloy] The sendEvent command could not fully complete. [DataCollector] An error occurred while executing the sendEvent command.
+Caused by: No consent preferences have been set.
+PAGE LOG: [alloy] sendEvent command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Horizon/Ads/PJ/Genius/TTD - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - NFL Plus - Horizon/Floodlight/Socials - Product Select Page" was not met.
+PAGE LOG: Error fetching CountdownBannerContainerData JSHandle@error
+PAGE LOG: [alloy] Executing getIdentity command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Global ECID (Rule) Element Set - CORE RULE" fired.
+PAGE LOG: [alloy] The getIdentity command could not fully complete. [Identity] An error occurred while executing the getIdentity command.
+Caused by: No consent preferences have been set.
+PAGE LOG: [alloy] getIdentity command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Article View Event - CORE RULE" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "Article View Event - CORE RULE" was not met.
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The identifier at Email_LC_SHA256[0] was removed from the identity map because its ID is not a populated string. Its ID value is: 
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The Email_LC_SHA256 namespace was removed from the identity map because it contains no identifiers.
+PAGE LOG: [alloy] Executing sendEvent command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Page View Event - CORE RULE" fired.
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Page View Event - CORE RULE" was not met.
+PAGE LOG: [alloy] The sendEvent command could not fully complete. [DataCollector] An error occurred while executing the sendEvent command.
+Caused by: No consent preferences have been set.
+PAGE LOG: [alloy] sendEvent command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Page View Event - NFL+ Section - TEMPORARY" was not met.
+PAGE LOG: 🚀 Rule "1T - OneTrust Privacy (Web SDK Consent Change) - Global Rule" fired.
+PAGE LOG: Check OneTrust Permissions
+PAGE LOG: 🚀 [Core] Rules using the direct call event type with identifier "thirdParty" have been triggered.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Comscore - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Conviva - Global Tag " was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Canada/Reddit/Meta - NFL ID Sign In Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Canada/Reddit/Meta - NFL ID Favorite Team Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Horizon/Ads/PJ/Genius/TTD - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - NFL Plus - Horizon/Floodlight/Socials - Product Select Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - LG FedEx A&G POY - FedEx Page " was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - OneSignal - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Redfast - Global Tag (ID.NFL.COM and Plus)" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Meta/DC - Tickets Network Page" was not met.
+Found 16 matchups in REG16.
+Navigating to https://www.nfl.com/schedules/2025/by-week/reg-17...
+Landed on: https://www.nfl.com/schedules/2025/by-week/reg-17
+PAGE LOG: 🚀 [Experience Cloud ID Service] Created instance using orgId: "F75C3025512D2C1D0A490D44@AdobeOrg"
+PAGE LOG: 🚀 [Experience Cloud ID Service] Set variables: {"trackingServerSecure":"sedge.nfl.com","marketingCloudServerSecure":"sedge.nfl.com","overwriteCrossDomainMCIDAndAID":true,"whitelistParentDomain":"NFL.com","whitelistIframeDomains":"NFL.com, id.nfl.com","doesOptInApply":true,"isOptInStorageEnabled":true,"optInStorageExpiry":946080000,"previousPermissions":{"aa":false,"target":false,"aam":false,"ecid":false,"mediaaa":false},"preOptInApprovals":{"aa":true,"aam":true,"ecid":true,"target":true,"mediaaa":true}}
+PAGE LOG: 🚀 [Experience Cloud ID Service] Obtained Marketing Cloud Visitor Id: 
+PAGE LOG: [alloy] Instance initialized.
+PAGE LOG: [alloy] Executing configure command. Options: JSHandle@object
+PAGE LOG: [alloy] Instance configured. Computed configuration: JSHandle@object
+PAGE LOG: [alloy] User consent preferences not found. Default consent of out will be used.
+PAGE LOG: [alloy] configure command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 [Core] Rules using the direct call event type with identifier "virtual_pv" have been triggered with additional detail: JSHandle@object
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Virtual Page View Direct Call Rule - CORE RULE" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - NFL Plus - Horizon/Floodlight/Socials - Learn More Page" was not met.
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The identifier at Email_LC_SHA256[0] was removed from the identity map because its ID is not a populated string. Its ID value is: 
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The Email_LC_SHA256 namespace was removed from the identity map because it contains no identifiers.
+PAGE LOG: [alloy] Executing sendEvent command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Virtual Page View Direct Call Rule - CORE RULE" fired.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Redfast - Global Tag (ID.NFL.COM and Plus)" was not met.
+PAGE LOG: [alloy] The sendEvent command could not fully complete. [DataCollector] An error occurred while executing the sendEvent command.
+Caused by: No consent preferences have been set.
+PAGE LOG: [alloy] sendEvent command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Horizon/Ads/PJ/Genius/TTD - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - NFL Plus - Horizon/Floodlight/Socials - Product Select Page" was not met.
+PAGE LOG: Error fetching CountdownBannerContainerData JSHandle@error
+PAGE LOG: Error fetching CountdownBannerContainerData JSHandle@error
+PAGE LOG: [alloy] Executing getIdentity command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Global ECID (Rule) Element Set - CORE RULE" fired.
+PAGE LOG: [alloy] The getIdentity command could not fully complete. [Identity] An error occurred while executing the getIdentity command.
+Caused by: No consent preferences have been set.
+PAGE LOG: [alloy] getIdentity command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Article View Event - CORE RULE" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "Article View Event - CORE RULE" was not met.
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The identifier at Email_LC_SHA256[0] was removed from the identity map because its ID is not a populated string. Its ID value is: 
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The Email_LC_SHA256 namespace was removed from the identity map because it contains no identifiers.
+PAGE LOG: [alloy] Executing sendEvent command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Page View Event - CORE RULE" fired.
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Page View Event - CORE RULE" was not met.
+PAGE LOG: [alloy] The sendEvent command could not fully complete. [DataCollector] An error occurred while executing the sendEvent command.
+Caused by: No consent preferences have been set.
+PAGE LOG: [alloy] sendEvent command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Page View Event - NFL+ Section - TEMPORARY" was not met.
+PAGE LOG: Check OneTrust Permissions
+PAGE LOG: 🚀 [Core] Rules using the direct call event type with identifier "thirdParty" have been triggered.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Comscore - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Conviva - Global Tag " was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Canada/Reddit/Meta - NFL ID Sign In Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Canada/Reddit/Meta - NFL ID Favorite Team Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Horizon/Ads/PJ/Genius/TTD - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - NFL Plus - Horizon/Floodlight/Socials - Product Select Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - LG FedEx A&G POY - FedEx Page " was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - OneSignal - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Redfast - Global Tag (ID.NFL.COM and Plus)" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Meta/DC - Tickets Network Page" was not met.
+PAGE LOG: 🚀 Rule "1T - OneTrust Privacy (Web SDK Consent Change) - Global Rule" fired.
+Found 16 matchups in REG17.
+Navigating to https://www.nfl.com/schedules/2025/by-week/reg-18...
+Landed on: https://www.nfl.com/schedules/2025/by-week/reg-18
+PAGE LOG: 🚀 [Experience Cloud ID Service] Created instance using orgId: "F75C3025512D2C1D0A490D44@AdobeOrg"
+PAGE LOG: 🚀 [Experience Cloud ID Service] Set variables: {"trackingServerSecure":"sedge.nfl.com","marketingCloudServerSecure":"sedge.nfl.com","overwriteCrossDomainMCIDAndAID":true,"whitelistParentDomain":"NFL.com","whitelistIframeDomains":"NFL.com, id.nfl.com","doesOptInApply":true,"isOptInStorageEnabled":true,"optInStorageExpiry":946080000,"previousPermissions":{"aa":false,"target":false,"aam":false,"ecid":false,"mediaaa":false},"preOptInApprovals":{"aa":true,"aam":true,"ecid":true,"target":true,"mediaaa":true}}
+PAGE LOG: 🚀 [Experience Cloud ID Service] Obtained Marketing Cloud Visitor Id: 
+PAGE LOG: [alloy] Instance initialized.
+PAGE LOG: [alloy] Executing configure command. Options: JSHandle@object
+PAGE LOG: [alloy] Instance configured. Computed configuration: JSHandle@object
+PAGE LOG: [alloy] User consent preferences not found. Default consent of out will be used.
+PAGE LOG: [alloy] configure command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 [Core] Rules using the direct call event type with identifier "virtual_pv" have been triggered with additional detail: JSHandle@object
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Virtual Page View Direct Call Rule - CORE RULE" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - NFL Plus - Horizon/Floodlight/Socials - Learn More Page" was not met.
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The identifier at Email_LC_SHA256[0] was removed from the identity map because its ID is not a populated string. Its ID value is: 
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The Email_LC_SHA256 namespace was removed from the identity map because it contains no identifiers.
+PAGE LOG: [alloy] Executing sendEvent command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Virtual Page View Direct Call Rule - CORE RULE" fired.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Redfast - Global Tag (ID.NFL.COM and Plus)" was not met.
+PAGE LOG: [alloy] The sendEvent command could not fully complete. [DataCollector] An error occurred while executing the sendEvent command.
+Caused by: No consent preferences have been set.
+PAGE LOG: [alloy] sendEvent command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Horizon/Ads/PJ/Genius/TTD - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - NFL Plus - Horizon/Floodlight/Socials - Product Select Page" was not met.
+PAGE LOG: Error fetching CountdownBannerContainerData JSHandle@error
+PAGE LOG: [alloy] Executing getIdentity command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Global ECID (Rule) Element Set - CORE RULE" fired.
+PAGE LOG: [alloy] The getIdentity command could not fully complete. [Identity] An error occurred while executing the getIdentity command.
+Caused by: No consent preferences have been set.
+PAGE LOG: [alloy] getIdentity command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Article View Event - CORE RULE" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "Article View Event - CORE RULE" was not met.
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The identifier at Email_LC_SHA256[0] was removed from the identity map because its ID is not a populated string. Its ID value is: 
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The Email_LC_SHA256 namespace was removed from the identity map because it contains no identifiers.
+PAGE LOG: [alloy] Executing sendEvent command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Page View Event - CORE RULE" fired.
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Page View Event - CORE RULE" was not met.
+PAGE LOG: [alloy] The sendEvent command could not fully complete. [DataCollector] An error occurred while executing the sendEvent command.
+Caused by: No consent preferences have been set.
+PAGE LOG: [alloy] sendEvent command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Page View Event - NFL+ Section - TEMPORARY" was not met.
+PAGE LOG: 🚀 Rule "1T - OneTrust Privacy (Web SDK Consent Change) - Global Rule" fired.
+PAGE LOG: Check OneTrust Permissions
+PAGE LOG: 🚀 [Core] Rules using the direct call event type with identifier "thirdParty" have been triggered.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Comscore - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Conviva - Global Tag " was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Canada/Reddit/Meta - NFL ID Sign In Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Canada/Reddit/Meta - NFL ID Favorite Team Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Horizon/Ads/PJ/Genius/TTD - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - NFL Plus - Horizon/Floodlight/Socials - Product Select Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - LG FedEx A&G POY - FedEx Page " was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - OneSignal - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Redfast - Global Tag (ID.NFL.COM and Plus)" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Meta/DC - Tickets Network Page" was not met.
+PAGE LOG: Error fetching CountdownBannerContainerData JSHandle@error
+Found 16 matchups in REG18.
+Navigating to Power Rankings: https://www.nfl.com/news/nfl-power-rankings-week-15-2025-nfl-season...
+PAGE LOG: A preload for 'https://www.nfl.com/compiledassets/css/base.css?_t=87e91fa39991dbda1c46f4501bf54b27' is found, but is not used because the request credentials mode does not match. Consider taking a look at crossorigin attribute.
+PAGE LOG: A preload for 'https://www.nfl.com/compiledassets/theming/5f330197ad251d8e6747ab2d34f39a11' is found, but is not used because the request credentials mode does not match. Consider taking a look at crossorigin attribute.
+PAGE LOG: 🚀 [Experience Cloud ID Service] Created instance using orgId: "F75C3025512D2C1D0A490D44@AdobeOrg"
+PAGE LOG: 🚀 [Experience Cloud ID Service] Set variables: {"trackingServerSecure":"sedge.nfl.com","marketingCloudServerSecure":"sedge.nfl.com","overwriteCrossDomainMCIDAndAID":true,"whitelistParentDomain":"NFL.com","whitelistIframeDomains":"NFL.com, id.nfl.com","doesOptInApply":true,"isOptInStorageEnabled":true,"optInStorageExpiry":946080000,"previousPermissions":{"aa":false,"target":false,"aam":false,"ecid":false,"mediaaa":false},"preOptInApprovals":{"aa":true,"aam":true,"ecid":true,"target":true,"mediaaa":true}}
+PAGE LOG: 🚀 [Experience Cloud ID Service] Obtained Marketing Cloud Visitor Id: 
+PAGE LOG: [alloy] Instance initialized.
+PAGE LOG: [alloy] Executing configure command. Options: JSHandle@object
+PAGE LOG: [alloy] Instance configured. Computed configuration: JSHandle@object
+PAGE LOG: [alloy] User consent preferences not found. Default consent of out will be used.
+PAGE LOG: [alloy] [Personalization] Prehiding style removed to show containers.
+PAGE LOG: [alloy] configure command resolved. Result: JSHandle@object
+PAGE LOG: [alloy] Executing getIdentity command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Global ECID (Rule) Element Set - CORE RULE" fired.
+PAGE LOG: [alloy] The getIdentity command could not fully complete. [Identity] An error occurred while executing the getIdentity command.
+Caused by: No consent preferences have been set.
+PAGE LOG: [alloy] getIdentity command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Article View Event - CORE RULE" was not met.
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The identifier at Email_LC_SHA256[0] was removed from the identity map because its ID is not a populated string. Its ID value is: 
+PAGE LOG: 🚀 [Adobe Experience Platform Web SDK] The Email_LC_SHA256 namespace was removed from the identity map because it contains no identifiers.
+PAGE LOG: [alloy] Executing sendEvent command. Options: JSHandle@object
+PAGE LOG: 🚀 Rule "Article View Event - CORE RULE" fired.
+PAGE LOG: [alloy] The sendEvent command could not fully complete. [DataCollector] An error occurred while executing the sendEvent command.
+Caused by: No consent preferences have been set.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "Page View Event - CORE RULE" was not met.
+PAGE LOG: [alloy] sendEvent command resolved. Result: JSHandle@object
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Page View Event - CORE RULE" was not met.
+PAGE LOG: 🚀 Condition "Query String Parameter" for rule "Webview Page View Event - NFL+ Section - TEMPORARY" was not met.
+PAGE LOG: [GPT] Div ID passed to googletag.display() does not match any defined slots: oop.
+https://goo.gle/gpt-message#26
+PAGE LOG: [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175
+PAGE LOG: Check OneTrust Permissions
+PAGE LOG: 🚀 [Core] Rules using the direct call event type with identifier "thirdParty" have been triggered.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Comscore - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Conviva - Global Tag " was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Canada/Reddit/Meta - NFL ID Sign In Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Canada/Reddit/Meta - NFL ID Favorite Team Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Horizon/Ads/PJ/Genius/TTD - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - NFL Plus - Horizon/Floodlight/Socials - Product Select Page" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - LG FedEx A&G POY - FedEx Page " was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - OneSignal - Global Tag" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Redfast - Global Tag (ID.NFL.COM and Plus)" was not met.
+PAGE LOG: 🚀 Condition "Value Comparison" for rule "3P - Meta/DC - Tickets Network Page" was not met.
+PAGE LOG: 🚀 Rule "1T - OneTrust Privacy (Web SDK Consent Change) - Global Rule" fired.
+PAGE LOG: 🚀 container.buildInfo.environment is deprecated.Please use `container.environment.stage` instead
+PAGE LOG: 🚀 container.buildInfo.environment is deprecated.Please use `container.environment.stage` instead
+PAGE LOG: 🚀 container.buildInfo.environment is deprecated.Please use `container.environment.stage` instead
+PAGE LOG: Error fetching CountdownBannerContainerData JSHandle@error
+PAGE LOG: Error fetching CountdownBannerContainerData JSHandle@error
+PAGE LOG: Error fetching CountdownBannerContainerData JSHandle@error
+PAGE LOG: all scripts loaded
+PAGE LOG: Floating mode: Active player delegate should be set at this point
+PAGE LOG: DEBUG RANK 1 LINES: ["Rank","1","Los Angeles Rams","10-3","A week after their first loss since early October, the Rams racked up season highs in points (45) and yards from scrimmage (530) in a road beatdown of the Cardinals. Arizona played tough early but collapsed under the onslaught of Los Angeles' persistent and balanced attack. Right now, the Kyren Williams-Blake Corum backfield combo looks like a real winner. The Rams nearly ran for as many yards (249) as they threw for (281) on Sunday, and their only negative plays on offense came on a few annoying penalties. Other than that, they were dominant, rewarding my faith in them -- keeping them in the No. 1 spot -- after the Week 13 defeat at Carolina. Tough games lie ahead against the Lions and Seahawks, the latter of which likely will decide the NFC West and could seal the top seed for the Rams."]
+PAGE LOG: !!!! DEBUG RANKING !!!! ["Rank","1","Los Angeles Rams","10-3","A week after their first loss since early October, the Rams racked up season highs in points (45) and yards from scrimmage (530) in a road beatdown of the Cardinals. Arizona played tough early but collapsed under the onslaught of Los Angeles' persistent and balanced attack. Right now, the Kyren Williams-Blake Corum backfield combo looks like a real winner. The Rams nearly ran for as many yards (249) as they threw for (281) on Sunday, and their only negative plays on offense came on a few annoying penalties. Other than that, they were dominant, rewarding my faith in them -- keeping them in the No. 1 spot -- after the Week 13 defeat at Carolina. Tough games lie ahead against the Lions and Seahawks, the latter of which likely will decide the NFC West and could seal the top seed for the Rams."]
+PAGE LOG: DEBUG RANK 1 LINES: ["Rank","1","Los Angeles Rams","10-3"]
+PAGE LOG: !!!! DEBUG RANKING !!!! ["Rank","1","Los Angeles Rams","10-3"]
+PAGE LOG: WARNING: Empty blurb for Rank 1 (Los Angeles Rams). Lines dump: ["Rank","1","Los Angeles Rams","10-3"]
+PAGE LOG: DEBUG RANK 1 LINES: ["Rank","1"]
+PAGE LOG: WARNING: Empty blurb for Rank 2 (Seattle Seahawks). Lines dump: ["Rank","2","Seattle Seahawks","10-3"]
+PAGE LOG: WARNING: Empty blurb for Rank 3 (Denver Broncos). Lines dump: ["Rank","3","Denver Broncos","11-2"]
+PAGE LOG: WARNING: Empty blurb for Rank 4 (New England Patriots). Lines dump: ["Rank","4","New England Patriots","11-2"]
+PAGE LOG: WARNING: Empty blurb for Rank 5 (Green Bay Packers). Lines dump: ["Rank","5","Green Bay Packers","9-3-1"]
+PAGE LOG: WARNING: Empty blurb for Rank 6 (Buffalo Bills). Lines dump: ["Rank","6","3","Buffalo Bills","9-4"]
+PAGE LOG: WARNING: Empty blurb for Rank 7 (Chicago Bears). Lines dump: ["Rank","7","1","Chicago Bears","9-4"]
+PAGE LOG: WARNING: Empty blurb for Rank 8 (San Francisco 49ers). Lines dump: ["Rank","8","San Francisco 49ers","9-4"]
+PAGE LOG: WARNING: Empty blurb for Rank 9 (Jacksonville Jaguars). Lines dump: ["Rank","9","3","Jacksonville Jaguars","9-4"]
+PAGE LOG: WARNING: Empty blurb for Rank 10 (Detroit Lions). Lines dump: ["Rank","10","1","Detroit Lions","8-5"]
+PAGE LOG: WARNING: Empty blurb for Rank 11 (Houston Texans). Lines dump: ["Rank","11","2","Houston Texans","8-5"]
+PAGE LOG: WARNING: Empty blurb for Rank 12 (Los Angeles Chargers). Lines dump: ["Rank","12","3","Los Angeles Chargers","9-4"]
+PAGE LOG: WARNING: Empty blurb for Rank 13 (Philadelphia Eagles). Lines dump: ["Rank","13","3","Philadelphia Eagles","8-5"]
+PAGE LOG: WARNING: Empty blurb for Rank 14 (Pittsburgh Steelers). Lines dump: ["Rank","14","6","Pittsburgh Steelers","7-6"]
+PAGE LOG: WARNING: Empty blurb for Rank 15 (Indianapolis Colts). Lines dump: ["Rank","15","8","Indianapolis Colts","8-5"]
+PAGE LOG: WARNING: Empty blurb for Rank 16 (Baltimore Ravens). Lines dump: ["Rank","16","2","Baltimore Ravens","6-7"]
+PAGE LOG: WARNING: Empty blurb for Rank 17 (Tampa Bay Buccaneers). Lines dump: ["Rank","17","Tampa Bay Buccaneers","7-6"]
+PAGE LOG: WARNING: Empty blurb for Rank 18 (Carolina Panthers). Lines dump: ["Rank","18","Carolina Panthers","7-6"]
+PAGE LOG: WARNING: Empty blurb for Rank 19 (Dallas Cowboys). Lines dump: ["Rank","19","3","Dallas Cowboys","6-6-1"]
+PAGE LOG: WARNING: Empty blurb for Rank 20 (Kansas City Chiefs). Lines dump: ["Rank","20","1","Kansas City Chiefs","6-7"]
+PAGE LOG: WARNING: Empty blurb for Rank 21 (Miami Dolphins). Lines dump: ["Rank","21","Miami Dolphins","6-7"]
+PAGE LOG: WARNING: Empty blurb for Rank 22 (Minnesota Vikings). Lines dump: ["Rank","22","3","Minnesota Vikings","5-8"]
+PAGE LOG: WARNING: Empty blurb for Rank 23 (Cincinnati Bengals). Lines dump: ["Rank","23","1","Cincinnati Bengals","4-9"]
+PAGE LOG: WARNING: Empty blurb for Rank 24 (Atlanta Falcons). Lines dump: ["Rank","24","Atlanta Falcons","4-9"]
+PAGE LOG: WARNING: Empty blurb for Rank 25 (New Orleans Saints). Lines dump: ["Rank","25","5","New Orleans Saints","3-10"]
+PAGE LOG: WARNING: Empty blurb for Rank 26 (Washington Commanders). Lines dump: ["Rank","26","3","Washington Commanders","3-10"]
+PAGE LOG: WARNING: Empty blurb for Rank 27 (Arizona Cardinals). Lines dump: ["Rank","27","1","Arizona Cardinals","3-10"]
+PAGE LOG: WARNING: Empty blurb for Rank 28 (New York Jets). Lines dump: ["Rank","28","1","New York Jets","3-10"]
+PAGE LOG: WARNING: Empty blurb for Rank 29 (Cleveland Browns). Lines dump: ["Rank","29","1","Cleveland Browns","3-10"]
+PAGE LOG: WARNING: Empty blurb for Rank 30 (New York Giants). Lines dump: ["Rank","30","1","New York Giants","2-11"]
+PAGE LOG: WARNING: Empty blurb for Rank 31 (Tennessee Titans). Lines dump: ["Rank","31","Tennessee Titans","2-11"]
+PAGE LOG: WARNING: Empty blurb for Rank 32 (Las Vegas Raiders). Lines dump: ["Rank","32","Las Vegas Raiders","2-11"]
+Found 33 unique power rankings.
+DEBUG FINAL OBJECT [0]: {
+  "rank": 1,
+  "team": "Rams",
+  "trend": "0",
+  "blurb": "A week after their first loss since early October, the Rams racked up season highs in points (45) and yards from scrimmage (530) in a road beatdown of the Cardinals. Arizona played tough early but collapsed under the onslaught of Los Angeles' persistent and balanced attack. Right now, the Kyren Williams-Blake Corum backfield combo looks like a real winner. The Rams nearly ran for as many yards (249) as they threw for (281) on Sunday, and their only negative plays on offense came on a few annoying penalties. Other than that, they were dominant, rewarding my faith in them -- keeping them in the No. 1 spot -- after the Week 13 defeat at Carolina. Tough games lie ahead against the Lions and Seahawks, the latter of which likely will decide the NFC West and could seal the top seed for the Rams."
+}
+Successfully wrote to /Users/victor.lebkowski/REPOS/playoffs-picture/src/data/playoff-picture.json

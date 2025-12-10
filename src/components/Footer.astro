@@ -1,0 +1,33 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+    <p>
+        &copy; {year} Playoffs Picture PWA. Not affiliated with the NFL.
+        Team names and logos are trademarks of their respective owners.
+    </p>
+    <p class="legal">
+        This is a personal project for educational and convenience purposes only.
+    </p>
+</footer>
+
+<style lang="scss">
+    .footer {
+        background-color: #0b0b0b;
+        color: var(--text-secondary);
+        padding: 2rem 1rem;
+        text-align: center;
+        font-size: 0.9rem;
+        margin-top: auto;
+
+        p {
+            margin-bottom: 0.5rem;
+        }
+
+        .legal {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+    }
+</style>

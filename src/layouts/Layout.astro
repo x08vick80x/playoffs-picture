@@ -1,0 +1,62 @@
+---
+import { pwaInfo } from "virtual:pwa-info";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+        <link rel="apple-touch-icon" href="/logo.svg" />
+        <meta name="theme-color" content="#013369" />
+        <meta name="generator" content={Astro.generator} />
+
+        <!-- Primary Meta Tags -->
+        <title>{title}</title>
+        <meta name="title" content={title} />
+        <meta
+            name="description"
+            content="Updated NFL Playoff Picture 2025. Current standings, seeds, and matchups for AFC and NFC. Fast, offline-ready."
+        />
+        <meta
+            name="keywords"
+            content="NFL, Playoffs, Standings, 2025, AFC, NFC, Bracket, Football"
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={Astro.url} />
+        <meta property="og:title" content={title} />
+        <meta
+            property="og:description"
+            content="Updated NFL Playoff Picture 2025. Current standings, seeds, and matchups for AFC and NFC. Fast, offline-ready."
+        />
+        <meta property="og:image" content="/logo.svg" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={Astro.url} />
+        <meta property="twitter:title" content={title} />
+        <meta
+            property="twitter:description"
+            content="Updated NFL Playoff Picture 2025. Current standings, seeds, and matchups for AFC and NFC. Fast, offline-ready."
+        />
+        <meta property="twitter:image" content="/logo.svg" />
+
+        <script src="/src/pwa.ts"></script>
+        {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+        <style is:global>
+            @import "../styles/global.scss";
+        </style>
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
