@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap');
+/* Google Fonts import removed as Outfit is replaced by Arial, and Montserrat is local */
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-webfont.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
     --nfl-blue: #013369;
@@ -10,7 +18,8 @@
     --text-secondary: #AAAAAA;
     --accent: #D50A0A;
 
-    --font-main: 'Outfit', sans-serif;
+    --font-main: Arial, sans-serif;
+    --font-body: 'Montserrat', Arial, sans-serif;
 }
 
 * {
