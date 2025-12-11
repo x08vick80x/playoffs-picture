@@ -35,6 +35,11 @@ body {
     overflow-x: hidden;
 }
 
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
 a {
     text-decoration: none;
     color: inherit;

@@ -74,14 +74,16 @@ const getTrendColor = (trend: string | undefined) => {
                                     </svg>
                                 </div>
                             </div>
-                            <div class="rank-content" hidden>
-                                {item.blurb ? (
-                                    <p>{item.blurb}</p>
-                                ) : (
-                                    <p class="no-content">
-                                        Analyst comment unavailable.
-                                    </p>
-                                )}
+                            <div class="rank-content-wrapper">
+                                <div class="rank-content">
+                                    {item.blurb ? (
+                                        <p>{item.blurb}</p>
+                                    ) : (
+                                        <p class="no-content">
+                                            Analyst comment unavailable.
+                                        </p>
+                                    )}
+                                </div>
                             </div>
                         </article>
                     );
@@ -97,17 +99,10 @@ const getTrendColor = (trend: string | undefined) => {
     // Toggle logic for the entire card
     document.querySelectorAll(".toggle-trigger").forEach((item) => {
         item.addEventListener("click", (e) => {
-            const content = item.querySelector(".rank-content");
-            const icon = item.querySelector(".chevron");
-            const isHidden = content?.hasAttribute("hidden");
+            const contentWrapper = item.querySelector(".rank-content-wrapper");
 
-            if (isHidden) {
-                content?.removeAttribute("hidden");
-                item.classList.add("expanded");
-            } else {
-                content?.setAttribute("hidden", "");
-                item.classList.remove("expanded");
-            }
+            // Toggle expanded class on parent
+            item.classList.toggle("expanded");
         });
     });
 </script>
@@ -147,6 +142,7 @@ const getTrendColor = (trend: string | undefined) => {
         overflow: hidden;
         transition: all 0.2s;
         cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
 
         &:hover {
             border-color: #666;
@@ -226,19 +222,42 @@ const getTrendColor = (trend: string | undefined) => {
         }
     }
 
-    .rank-content {
-        padding: 1rem 1.5rem;
-        border-top: 1px solid #333;
-        background: rgba(0, 0, 0, 0.2);
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #ddd;
-        font-family: var(--font-body);
-        font-weight: 400;
+    .rank-content-wrapper {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease-out;
+        border-top: 1px solid transparent; // Hidden initially
+    }
 
-        p {
-            margin: 0;
+    .ranking-item.expanded {
+        border-color: var(--nfl-blue);
+
+        .chevron {
+            transform: rotate(180deg);
         }
+
+        .rank-content-wrapper {
+            grid-template-rows: 1fr;
+            border-top: 1px solid #333; // Show border when expanded
+        }
+    }
+
+    .rank-content {
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.2);
+
+        // Inner padding wrapper
+        p,
+        .no-content {
+            padding: 1rem 1.5rem;
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #ddd;
+            font-family: var(--font-body);
+            font-weight: 400;
+        }
+
         .no-content {
             color: #666;
             font-style: italic;

@@ -53,12 +53,24 @@ import { getTeamId } from "../utils/team-mapping.js";
     });
 
     closeBtn?.addEventListener("click", () => {
-        modal?.close();
+        closeModal();
     });
 
     modal?.addEventListener("click", (e) => {
-        if (e.target === modal) modal.close();
+        if (e.target === modal) closeModal();
     });
+
+    function closeModal() {
+        modal?.classList.add("closing");
+        modal?.addEventListener(
+            "animationend",
+            () => {
+                modal?.classList.remove("closing");
+                modal?.close();
+            },
+            { once: true },
+        );
+    }
 </script>
 
 <style lang="scss">
@@ -81,7 +93,46 @@ import { getTeamId } from "../utils/team-mapping.js";
         overflow-y: auto;
 
         &::backdrop {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.3s ease;
+        }
+
+        &[open] {
+            animation: slideUp 0.3s ease forwards;
+
+            &::backdrop {
+                background: rgba(0, 0, 0, 0.7);
+            }
+        }
+
+        &.closing {
+            animation: slideDown 0.2s ease forwards;
+            &::backdrop {
+                background: rgba(0, 0, 0, 0);
+                transition: background 0.2s ease;
+            }
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(20px);
         }
     }
 

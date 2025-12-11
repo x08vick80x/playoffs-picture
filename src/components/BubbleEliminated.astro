@@ -55,9 +55,9 @@ const { bubble, eliminated } = Astro.props;
         <h2 class="section-title">On The Bubble</h2>
         <div class="grid-container">
             {
-                ["AFC", "NFC"].map((conf) => (
+                (["AFC", "NFC"] as const).map((conf) => (
                     <div class="conference-col">
-                        <h3 class="conf-title">
+                        <h3 class={`conf-title ${conf}`}>
                             <svg class="conf-logo" width="24" height="24">
                                 <use
                                     href={`/sprites.svg#${conf.toLowerCase()}`}
@@ -131,9 +131,9 @@ const { bubble, eliminated } = Astro.props;
         <h2 class="section-title title-eliminated">Eliminated</h2>
         <div class="grid-container">
             {
-                ["AFC", "NFC"].map((conf) => (
+                (["AFC", "NFC"] as const).map((conf) => (
                     <div class="conference-col">
-                        <h3 class="conf-title">
+                        <h3 class={`conf-title ${conf}`}>
                             <svg class="conf-logo" width="24" height="24">
                                 <use
                                     href={`/sprites.svg#${conf.toLowerCase()}`}
@@ -240,6 +240,10 @@ const { bubble, eliminated } = Astro.props;
         .conf-logo {
             fill: currentColor;
         }
+
+        &.NFC {
+            border-bottom-color: var(--nfl-blue);
+        }
     }
 
     .team-list {
@@ -265,6 +269,7 @@ const { bubble, eliminated } = Astro.props;
         }
         &.team-card-trigger {
             cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .team-info {

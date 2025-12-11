@@ -18,14 +18,15 @@ import { getTeamId } from "../utils/team-mapping.js";
 
 <div class="standings-container">
     <h2 class="section-title">Standings</h2>
-    <div class="conference-toggle">
-        <button id="btn-afc" class="toggle-btn active">
+    <div class="conference-toggle" id="conf-toggle" data-active="afc">
+        <div class="toggle-glider"></div>
+        <button id="btn-afc" class="toggle-btn active" data-conf="afc">
             <svg class="conf-logo" width="30" height="30"
                 ><use href="/sprites.svg#afc"></use></svg
             >
             AFC
         </button>
-        <button id="btn-nfc" class="toggle-btn">
+        <button id="btn-nfc" class="toggle-btn" data-conf="nfc">
             <svg class="conf-logo" width="30" height="30"
                 ><use href="/sprites.svg#nfc"></use></svg
             >
@@ -105,33 +106,51 @@ import { getTeamId } from "../utils/team-mapping.js";
 
     .conference-toggle {
         display: flex;
+        position: relative;
         justify-content: center;
-        gap: 1rem;
         background: var(--bg-card);
-        padding: 0.5rem;
+        padding: 4px;
         border-radius: 50px;
         margin-bottom: 2rem;
-        width: fit-content;
+        width: 300px; // Fixed width for easier calc
         margin-left: auto;
         margin-right: auto;
         border: 1px solid #333;
 
+        .toggle-glider {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: calc(50% - 4px);
+            height: calc(100% - 8px);
+            background: var(--nfl-red);
+            border-radius: 40px;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            z-index: 1;
+        }
+
+        &[data-active="nfc"] .toggle-glider {
+            transform: translateX(100%);
+        }
+
         .toggle-btn {
+            position: relative;
             background: transparent;
             color: var(--text-secondary);
-            padding: 0.75rem 2rem;
+            padding: 0.75rem 0;
             border-radius: 40px;
             font-weight: bold;
             font-size: 1.1rem;
-            transition: all 0.3s ease;
+            transition: color 0.3s;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
+            flex: 1;
+            z-index: 2;
 
             &.active {
-                background: var(--nfl-red);
-                color: white;
-                box-shadow: 0 4px 15px rgba(213, 10, 10, 0.4);
+                color: white; // Only text color changes
             }
 
             .conf-logo {
@@ -242,25 +261,40 @@ import { getTeamId } from "../utils/team-mapping.js";
 </style>
 
 <script>
+    const container = document.getElementById("conf-toggle");
     const btnAfc = document.getElementById("btn-afc");
     const btnNfc = document.getElementById("btn-nfc");
     const tableAfc = document.getElementById("table-afc");
     const tableNfc = document.getElementById("table-nfc");
 
-    if (btnAfc && btnNfc && tableAfc && tableNfc) {
-        btnAfc.addEventListener("click", () => {
+    function setActive(conf: string) {
+        if (!container || !btnAfc || !btnNfc || !tableAfc || !tableNfc) return;
+
+        // Update container state for glider transition
+        container.setAttribute("data-active", conf);
+
+        // Update buttons text color
+        if (conf === "afc") {
             btnAfc.classList.add("active");
             btnNfc.classList.remove("active");
             tableAfc.classList.add("active");
             tableNfc.classList.remove("active");
-            if (navigator.vibrate) navigator.vibrate(10); // Haptic feedback
-        });
-
-        btnNfc.addEventListener("click", () => {
+        } else {
             btnNfc.classList.add("active");
             btnAfc.classList.remove("active");
             tableNfc.classList.add("active");
             tableAfc.classList.remove("active");
+        }
+    }
+
+    if (btnAfc && btnNfc) {
+        btnAfc.addEventListener("click", () => {
+            setActive("afc");
+            if (navigator.vibrate) navigator.vibrate(10);
+        });
+
+        btnNfc.addEventListener("click", () => {
+            setActive("nfc");
             if (navigator.vibrate) navigator.vibrate(10);
         });
     }

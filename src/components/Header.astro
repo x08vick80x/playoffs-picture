@@ -28,9 +28,13 @@
         background-color: var(--nfl-blue);
         color: white;
         position: sticky;
-        top: 0;
+        top: -3.8rem;
         z-index: 100;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+        @media (min-width: 768px) {
+            top: 0;
+        }
     }
 
     .header-inner {
@@ -80,6 +84,7 @@
 
     .main-nav {
         width: 100%;
+        padding-top: 1rem;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         /* Hide scrollbar */
@@ -92,6 +97,7 @@
             width: auto;
             margin-left: auto;
             overflow: visible;
+            padding-top: 0;
         }
 
         ul {
