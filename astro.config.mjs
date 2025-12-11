@@ -13,7 +13,7 @@ export default defineConfig({
           short_name: 'Playoffs',
           description: 'NFL Playoff Picture 2025 Standings',
           theme_color: '#013369',
-          background_color: '#ffffff',
+          background_color: '#013369',
           display: 'standalone',
           icons: [
             {
