@@ -270,11 +270,16 @@ const { bubble, eliminated } = Astro.props;
         .team-info {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 1rem;
             font-weight: bold;
 
+            .team-logo {
+                width: 40px;
+                height: 40px;
+            }
+
             .team-name {
-                font-size: 1rem;
+                font-size: 1.4rem;
             }
 
             .team-logo.grayscale {
@@ -291,17 +296,18 @@ const { bubble, eliminated } = Astro.props;
         }
 
         .team-prob {
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: bold;
             padding: 2px 0; // Removed background padding
             border-radius: 4px;
             display: flex;
+            align-items: center;
             gap: 5px;
 
             .prob-label {
                 color: #888; // Light gray
                 text-transform: uppercase;
-                font-size: 0.7rem;
+                font-size: 0.8rem;
                 letter-spacing: 0.5px;
             }
 
@@ -339,12 +345,12 @@ const { bubble, eliminated } = Astro.props;
         }
 
         .next-opp {
-            font-size: 0.7rem;
+            font-size: 0.9rem;
             color: #888;
         }
 
         .team-record {
-            font-family: monospace;
+            font-size: 1rem;
             color: var(--text-secondary);
         }
 
