@@ -18,7 +18,7 @@ const playoffPicturePath = path.resolve("./src/data/playoff-picture.json");
 const playoffPicture = JSON.parse(fs.readFileSync(playoffPicturePath, "utf-8"));
 
 // Use today's date or a specific timestamp from data if available
-const lastUpdated = new Date().toLocaleString("fr-FR", {
+const lastUpdated = new Date().toLocaleString("en-US", {
 	timeZone: "America/New_York",
 	day: "numeric",
 	month: "long",
@@ -36,7 +36,7 @@ const lastUpdated = new Date().toLocaleString("fr-FR", {
 					class="year">2025</span
 				>
 			</h1>
-			<p class="last-updated">Dernière mise à jour : {lastUpdated}</p>
+			<p class="last-updated">Last update : {lastUpdated}</p>
 
 			<section id="matchups">
 				<Matchups
