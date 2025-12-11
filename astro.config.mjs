@@ -10,7 +10,7 @@ export default defineConfig({
         registerType: 'autoUpdate',
         manifest: {
           name: 'NFL Playoff Picture 2025',
-          short_name: 'Playoffs',
+          short_name: 'NFL Playoffs',
           description: 'NFL Playoff Picture 2025 Standings',
           theme_color: '#013369',
           background_color: '#013369',
