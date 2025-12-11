@@ -1,7 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import { VitePWA } from 'vite-plugin-pwa';
-import { generate } from 'critical';
+import Critters from 'critters';
+import { readFile, writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,18 +12,26 @@ export default defineConfig({
       name: 'critical-css',
       hooks: {
         'astro:build:done': async ({ dir }) => {
-            await generate({
-                base: './dist/',
-                src: 'index.html',
-                target: 'index.html',
-                inline: true,
-                extract: true,
-                dimensions: [
-                    { width: 375, height: 600 },
-                    { width: 1300, height: 900 }
-                ]
+            const critters = new Critters({
+                path: './dist/',
+                publicPath: './dist/',
+                inlineFonts: true,
+                preload: 'media', // Uses media="print" + onload pattern
+                compress: true,
             });
-            console.log('✅ Critical CSS generated (Astro Integration)');
+
+            const filePath = join(dir.pathname, 'index.html').replace(/^\//, ''); // Handle leading slash issue in some environments if needed, or just use fileURLToPath. Actually dir is a URL.
+            // Better to use file system paths directly if we know it's ./dist/ relative to root.
+            // Let's assume standard ./dist/index.html execution context.
+
+            try {
+                const html = await readFile('./dist/index.html', 'utf-8');
+                const inlined = await critters.process(html);
+                await writeFile('./dist/index.html', inlined);
+                console.log('✅ Critical CSS generated with Critters');
+            } catch (e) {
+                console.error('Failed to generate critical CSS:', e);
+            }
         }
       }
     }
