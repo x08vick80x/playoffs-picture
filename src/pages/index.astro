@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Standings from "../components/Standings.astro";
 import Matchups from "../components/Matchups.astro";
 import BubbleEliminated from "../components/BubbleEliminated.astro";
+import MyTeams from "../components/MyTeams.astro";
 import Footer from "../components/Footer.astro";
 import ScheduleModal from "../components/ScheduleModal.astro";
 import PowerRankings from "../components/PowerRankings.astro";
@@ -63,17 +64,27 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 				</p>
 			</div>
 
+			<MyTeams standings={standings} playoffPicture={playoffPicture} />
+
 			<script>
 				const installContainer =
 					document.getElementById("install-container");
 				const installBtn = document.getElementById("install-pwa");
+				const myTeamsRoot = document.getElementById("my-teams-root");
 
 				// Check if app is already installed/running in standalone mode
 				const isStandalone = window.matchMedia(
 					"(display-mode: standalone)",
 				).matches;
 
-				if (!isStandalone) {
+				if (isStandalone) {
+					// Standalone: Hide install, Show My Teams
+					if (installContainer) installContainer.hidden = true;
+					if (myTeamsRoot) myTeamsRoot.hidden = false;
+				} else {
+					// Browser Mode: Hide My Teams default (will show install if available logic runs)
+					if (myTeamsRoot) myTeamsRoot.hidden = true;
+
 					// Check if event already fired before this script ran
 					if (window.deferredPrompt) {
 						installContainer?.removeAttribute("hidden");
@@ -82,13 +93,17 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 					// Listen for event
 					window.addEventListener("pwa-install-available", () => {
 						installContainer?.removeAttribute("hidden");
+						// Hide MyTeams if install available (reinforces logic)
+						if (myTeamsRoot) myTeamsRoot.hidden = true;
 					});
 				}
 
-				// Listen for successful install to hide button immediately
+				// Listen for successful install to switch views
 				window.addEventListener("appinstalled", () => {
 					installContainer?.setAttribute("hidden", "");
 					window.deferredPrompt = null;
+					console.log("App Installed - Switching to My Teams view");
+					if (myTeamsRoot) myTeamsRoot.hidden = false;
 				});
 
 				installBtn?.addEventListener("click", async () => {
@@ -105,9 +120,7 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 
 					// We've used the prompt, and can't use it again, throw it away
 					window.deferredPrompt = null;
-
-					// Hide button
-					installContainer?.setAttribute("hidden", "");
+					// UI update handled by appinstalled listener
 				});
 			</script>
 
