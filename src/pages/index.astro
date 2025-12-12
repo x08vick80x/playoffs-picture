@@ -38,25 +38,34 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 			</h1>
 			<p class="last-updated">Last update : {lastUpdated}</p>
 
-			<button id="install-pwa" class="install-btn" hidden>
-				<svg
-					width="20"
-					height="20"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				>
-					<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-					<polyline points="7 10 12 15 17 10"></polyline>
-					<line x1="12" y1="15" x2="12" y2="3"></line>
-				</svg>
-				Install App
-			</button>
+			<div id="install-container" class="install-container" hidden>
+				<button id="install-pwa" class="install-btn">
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+						></path>
+						<polyline points="7 10 12 15 17 10"></polyline>
+						<line x1="12" y1="15" x2="12" y2="3"></line>
+					</svg>
+					Install App
+				</button>
+				<p class="install-text">
+					super lightweight PWA App that can load offline with your
+					preference saved, until next app datas update
+				</p>
+			</div>
 
 			<script>
+				const installContainer =
+					document.getElementById("install-container");
 				const installBtn = document.getElementById("install-pwa");
 
 				// Check if app is already installed/running in standalone mode
@@ -67,18 +76,18 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 				if (!isStandalone) {
 					// Check if event already fired before this script ran
 					if (window.deferredPrompt) {
-						installBtn?.removeAttribute("hidden");
+						installContainer?.removeAttribute("hidden");
 					}
 
 					// Listen for event
 					window.addEventListener("pwa-install-available", () => {
-						installBtn?.removeAttribute("hidden");
+						installContainer?.removeAttribute("hidden");
 					});
 				}
 
 				// Listen for successful install to hide button immediately
 				window.addEventListener("appinstalled", () => {
-					installBtn?.setAttribute("hidden", "");
+					installContainer?.setAttribute("hidden", "");
 					window.deferredPrompt = null;
 				});
 
@@ -98,7 +107,7 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 					window.deferredPrompt = null;
 
 					// Hide button
-					installBtn.setAttribute("hidden", "");
+					installContainer?.setAttribute("hidden", "");
 				});
 			</script>
 
@@ -177,11 +186,31 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 		font-family: var(--font-body);
 	}
 
+	.install-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: -1rem auto 0;
+		text-align: center;
+
+		&[hidden] {
+			display: none;
+		}
+	}
+
+	.install-text {
+		font-size: 0.8rem;
+		color: var(--text-secondary);
+		margin-top: 0.5rem;
+		max-width: 300px;
+		line-height: 1.4;
+	}
+
 	.install-btn {
 		display: flex;
 		align-items: center;
 		gap: 8px;
-		margin: -1rem auto 2rem; // Pull up closer to last updated
+		margin: 0; // Margin handled by container
 		background-color: var(--nfl-blue);
 		color: white;
 		border: none;
@@ -193,10 +222,6 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 			transform 0.2s,
 			background-color 0.2s;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-
-		&[hidden] {
-			display: none;
-		}
 
 		&:hover {
 			transform: translateY(-2px);

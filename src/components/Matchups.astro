@@ -497,8 +497,12 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
 
 <style lang="scss">
     .matchups-container {
-        margin-top: 3rem;
+        margin-top: 1rem;
         padding: 1rem;
+
+        @media (min-width: 768px) {
+            margin-top: 3rem;
+        }
     }
 
     .section-title {
