@@ -25,6 +25,16 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
+### Update Data manually
+
+To fetch the latest NFL standings and playoff picture data:
+
+```bash
+npm run update-data
+```
+
+This command runs the scraper and updates the `src/data/playoff-picture.json` file.
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:

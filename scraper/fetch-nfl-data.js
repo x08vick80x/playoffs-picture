@@ -282,10 +282,53 @@ async function scrape() {
              });
         };
 
+        // 2b. Sorting Helper
+        const parseProbability = (probStr) => {
+            if (!probStr) return -1;
+            if (probStr.includes('<1')) return 0.5; // Treat <1% as 0.5%
+            if (probStr.includes('>99')) return 99.5;
+            const num = parseInt(probStr.replace(/\D/g, ''), 10);
+            return isNaN(num) ? -1 : num;
+        };
+
+        const parseRecord = (recStr) => {
+             // 9-4-0 -> win percentage
+             if (!recStr) return 0;
+             const parts = recStr.split('-').map(n => parseInt(n, 10));
+             const w = parts[0] || 0;
+             const l = parts[1] || 1; // avoid div by zero if 0-0
+             const t = parts[2] || 0;
+             const total = w + l + t;
+             if (total === 0) return 0;
+             return (w + 0.5 * t) / total;
+        };
+
+        const sortTeams = (teams) => {
+            return teams.sort((a, b) => {
+                // 1. Sort by Probability Descending
+                const pA = parseProbability(a.probability);
+                const pB = parseProbability(b.probability);
+
+                if (pA !== pB) return pB - pA;
+
+                // 2. Sort by Record (Win %) Descending
+                const rA = parseRecord(a.record);
+                const rB = parseRecord(b.record);
+
+                return rB - rA;
+            });
+        };
+
         ['AFC', 'NFC'].forEach(conf => {
             finalResult.bubble[conf] = unique(finalResult.bubble[conf]);
             finalResult.eliminated[conf] = unique(finalResult.eliminated[conf]);
             finalResult.seeds[conf] = unique(finalResult.seeds[conf]);
+
+            // Apply sorting
+            finalResult.bubble[conf] = sortTeams(finalResult.bubble[conf]);
+            // finalResult.eliminated[conf] = sortTeams(finalResult.eliminated[conf]); // Eliminated usually sorted by draft order (reverse record), but let's keep win% for now or just trust scraping order?
+            // Eliminated teams are better sorted by "best record" at top, closest to not being eliminated.
+            finalResult.eliminated[conf] = sortTeams(finalResult.eliminated[conf]);
         });
 
         // 3. Scrape Schedule for Weeks 15-18
