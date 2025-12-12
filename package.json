@@ -12,6 +12,7 @@
     "update-data": "node scraper/fetch-standings.js && node scraper/fetch-nfl-data.js"
   },
   "dependencies": {
+    "@vite-pwa/astro": "^1.2.0",
     "astro": "^5.16.4",
     "axios": "^1.13.2",
     "cheerio": "^1.1.2",

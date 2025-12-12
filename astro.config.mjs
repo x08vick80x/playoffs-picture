@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import { VitePWA } from 'vite-plugin-pwa';
+import AstroPWA from '@vite-pwa/astro';
 import Critters from 'critters';
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -20,10 +20,6 @@ export default defineConfig({
                 compress: true,
             });
 
-            const filePath = join(dir.pathname, 'index.html').replace(/^\//, ''); // Handle leading slash issue in some environments if needed, or just use fileURLToPath. Actually dir is a URL.
-            // Better to use file system paths directly if we know it's ./dist/ relative to root.
-            // Let's assume standard ./dist/index.html execution context.
-
             try {
                 const html = await readFile('./dist/index.html', 'utf-8');
                 const inlined = await critters.process(html);
@@ -34,11 +30,8 @@ export default defineConfig({
             }
         }
       }
-    }
-  ],
-  vite: {
-    plugins: [
-      VitePWA({
+    },
+    AstroPWA({
         registerType: 'autoUpdate',
         manifest: {
           name: 'NFL Playoff Picture 2025',
@@ -64,13 +57,12 @@ export default defineConfig({
           ]
         },
         workbox: {
-          globPatterns: ['**/*.{js,css,html,ico,png,svg,json}'],
+          globPatterns: ['**/*.{js,css,html,ico,png,svg,json,woff,woff2}'],
           navigateFallback: '/index.html',
           clientsClaim: true,
           skipWaiting: true,
           cleanupOutdatedCaches: true
         }
-      })
-    ]
-  }
+    })
+  ]
 });
