@@ -38,6 +38,70 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 			</h1>
 			<p class="last-updated">Last update : {lastUpdated}</p>
 
+			<button id="install-pwa" class="install-btn" hidden>
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+					<polyline points="7 10 12 15 17 10"></polyline>
+					<line x1="12" y1="15" x2="12" y2="3"></line>
+				</svg>
+				Install App
+			</button>
+
+			<script>
+				const installBtn = document.getElementById("install-pwa");
+
+				// Check if app is already installed/running in standalone mode
+				const isStandalone = window.matchMedia(
+					"(display-mode: standalone)",
+				).matches;
+
+				if (!isStandalone) {
+					// Check if event already fired before this script ran
+					if (window.deferredPrompt) {
+						installBtn?.removeAttribute("hidden");
+					}
+
+					// Listen for event
+					window.addEventListener("pwa-install-available", () => {
+						installBtn?.removeAttribute("hidden");
+					});
+				}
+
+				// Listen for successful install to hide button immediately
+				window.addEventListener("appinstalled", () => {
+					installBtn?.setAttribute("hidden", "");
+					window.deferredPrompt = null;
+				});
+
+				installBtn?.addEventListener("click", async () => {
+					if (!window.deferredPrompt) return;
+
+					// Show the install prompt
+					window.deferredPrompt.prompt();
+
+					// Wait for the user to respond to the prompt
+					const { outcome } = await window.deferredPrompt.userChoice;
+					console.log(
+						`User response to the install prompt: ${outcome}`,
+					);
+
+					// We've used the prompt, and can't use it again, throw it away
+					window.deferredPrompt = null;
+
+					// Hide button
+					installBtn.setAttribute("hidden", "");
+				});
+			</script>
+
 			<section id="matchups">
 				<Matchups
 					afc={standings.AFC}
@@ -111,6 +175,41 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 		font-size: 0.9rem;
 		margin-bottom: 2rem;
 		font-family: var(--font-body);
+	}
+
+	.install-btn {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		margin: -1rem auto 2rem; // Pull up closer to last updated
+		background-color: var(--nfl-blue);
+		color: white;
+		border: none;
+		padding: 0.6rem 1.2rem;
+		border-radius: 25px;
+		font-weight: 600;
+		cursor: pointer;
+		transition:
+			transform 0.2s,
+			background-color 0.2s;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+		&[hidden] {
+			display: none;
+		}
+
+		&:hover {
+			transform: translateY(-2px);
+			background-color: #004da1;
+		}
+
+		&:active {
+			transform: translateY(0);
+		}
+
+		svg {
+			stroke: currentColor;
+		}
 	}
 
 	@media (min-width: 768px) {

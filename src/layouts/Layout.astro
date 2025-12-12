@@ -59,5 +59,23 @@ const { title } = Astro.props;
     <body>
         <slot />
         <script src="/src/pwa.ts" async></script>
+        <script is:inline>
+            // PWA Install Prompt
+            window.deferredPrompt = null;
+            window.addEventListener("beforeinstallprompt", (e) => {
+                // Prevent the mini-infobar from appearing on mobile
+                e.preventDefault();
+                // Stash the event so it can be triggered later.
+                window.deferredPrompt = e;
+                // Dispatch a custom event to notify components that install is available
+                window.dispatchEvent(new Event("pwa-install-available"));
+                console.log("PWA Install available");
+            });
+
+            window.addEventListener("appinstalled", () => {
+                window.deferredPrompt = null;
+                console.log("PWA was installed");
+            });
+        </script>
     </body>
 </html>
