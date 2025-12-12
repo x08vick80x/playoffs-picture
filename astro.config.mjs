@@ -47,6 +47,7 @@ export default defineConfig({
           theme_color: '#013369',
           background_color: '#013369',
           display: 'standalone',
+          start_url: '/',
           icons: [
             {
               src: '/logo.svg',
@@ -62,7 +63,10 @@ export default defineConfig({
         },
         workbox: {
           globPatterns: ['**/*.{js,css,html,ico,png,svg,json}'],
-          navigateFallback: null
+          navigateFallback: '/index.html',
+          clientsClaim: true,
+          skipWaiting: true,
+          cleanupOutdatedCaches: true
         }
       })
     ]
