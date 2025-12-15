@@ -334,7 +334,7 @@ const teamsData = {
             renderSelector();
             const modal = document.getElementById("mt-selector-modal");
             if (modal) {
-                modal.hidden = false;
+                modal.classList.add("is-open");
                 document.body.style.overflow = "hidden";
             }
         } catch (e) {
@@ -343,11 +343,9 @@ const teamsData = {
     };
 
     function closeModal() {
-        // ... (rest of close logic handled by global listener or this var?)
-        // Logic already exists. I am just replacing this block to ensure diff match.
         const modal = document.getElementById("mt-selector-modal");
         if (modal) {
-            modal.hidden = true;
+            modal.classList.remove("is-open");
             document.body.style.overflow = "";
         }
     }
@@ -586,12 +584,12 @@ const teamsData = {
         height: 100vh;
         background: rgba(0, 0, 0, 0.8);
         z-index: 1000;
-        display: flex;
+        display: none; /* Default hidden */
         justify-content: center;
-        align-items: flex-end; // Bottom sheet on mobile? Or center?
+        align-items: flex-end;
 
-        &[hidden] {
-            display: none !important;
+        &.is-open {
+            display: flex;
         }
 
         @media (min-width: 600px) {
