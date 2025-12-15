@@ -448,82 +448,54 @@ async function scrape() {
 
         const rankings = await page.evaluate(() => {
             const results = [];
-            // Find all divs that might be ranking containers
-            const divs = Array.from(document.querySelectorAll('div'));
+            const items = Array.from(document.querySelectorAll('.nfl-o-ranked-item'));
 
-            divs.forEach(div => {
-                const text = div.innerText.trim();
-                // Check if text starts with "Rank" followed by a number
-                if (!text.match(/^Rank\n\d+/)) return;
+            items.forEach(item => {
+                try {
+                    // Extract Rank
+                    const rankEl = item.querySelector('.nfl-o-ranked-item__label--second');
+                    if (!rankEl) return;
+                    const rank = parseInt(rankEl.innerText.trim(), 10);
+                    if (isNaN(rank)) return;
 
-                // Avoid huge containers (like the article body itself which contains everything)
-                // We want the specific card/item div.
-                // But blurb can be long. Let's look for specific line structure.
+                    // Extract Team
+                    const titleEl = item.querySelector('.nfl-o-ranked-item__title');
+                    const team = titleEl ? titleEl.innerText.trim() : "Unknown";
 
-                const lines = text.split('\n').map(l => l.trim()).filter(l => l);
+                    // Extract Trend
+                    let trend = "0";
+                    const trendUp = item.querySelector('.nfl-o-ranked-item__trend--up');
+                    const trendDown = item.querySelector('.nfl-o-ranked-item__trend--down');
+                    const trendShift = item.querySelector('.nfl-o-ranked-item__trend-shift');
 
-                // Find the "Rank" line
-                let rankIndex = -1;
-                // Look in first 5 lines
-                for (let i = 0; i < Math.min(lines.length - 1, 5); i++) {
-                    if (lines[i] === 'Rank' && lines[i+1].match(/^\d+$/)) {
-                        rankIndex = i;
-                        break;
+                    if (trendShift) {
+                        const val = trendShift.innerText.trim();
+                        if (trendUp) trend = "+" + val;
+                        else if (trendDown) trend = "-" + val;
+                        else trend = val; // Should not happen if shift exists usually
                     }
+
+                    // Extract Blurb (Next Sibling)
+                    let blurb = "";
+                    let nextParams = item.nextElementSibling;
+                    // Sometimes there might be a spacer or something, but usually it's the text body
+                    // We look for .nfl-c-body-part--text
+                    while (nextParams) {
+                        if (nextParams.classList.contains('nfl-c-body-part--text')) {
+                            blurb = nextParams.innerText.trim();
+                            break;
+                        }
+                        // Stop if we hit another ranked item or a new section
+                        if (nextParams.classList.contains('nfl-o-ranked-item') || nextParams.tagName === 'H2') {
+                            break;
+                        }
+                        nextParams = nextParams.nextElementSibling;
+                    }
+
+                    results.push({ rank, team, trend, blurb });
+                } catch (err) {
+                    // Silent fail for one item
                 }
-
-                if (rankIndex === -1) return;
-
-                // Debug specific rank to see why it fails
-                if (lines[rankIndex+1] === '6') {
-                     // console.log('DEBUG RANK 6 CANDIDATE:', JSON.stringify(lines));
-                }
-
-                const rank = parseInt(lines[rankIndex+1], 10);
-                if (isNaN(rank)) return;
-
-                // Check safety - we need at least Rank, Number, Team (3 lines)
-                if (lines.length < rankIndex + 3) return;
-
-                // Heuristic for Trend
-                // Relative to rankIndex:
-                // rankIndex: "Rank"
-                // rankIndex + 1: "6"
-                // rankIndex + 2: <Trend> OR <Team>
-
-                let trend = "0";
-                let teamNameIndex = rankIndex + 2;
-
-                // If line at teamNameIndex is numeric, it is trend
-                if (lines[teamNameIndex] && lines[teamNameIndex].match(/^[-+]?\d+$/)) {
-                    trend = lines[teamNameIndex];
-                    teamNameIndex++;
-                }
-
-                if (lines.length <= teamNameIndex) return;
-
-                const teamName = lines[teamNameIndex];
-
-                // Next line match record
-                const recordLineIndex = teamNameIndex + 1;
-                let blurbStartIndex = recordLineIndex;
-
-                if (lines[recordLineIndex] && lines[recordLineIndex].match(/^(\d+-\d+(-\d+)?)$/)) {
-                    blurbStartIndex = recordLineIndex + 1;
-                }
-
-                // Content is everything after record
-                const blurb = lines.slice(blurbStartIndex).join('\n\n');
-
-                // Log if empty blurb to understand what went wrong
-                if (!blurb) {
-                     // console.warn(`WARNING: Empty blurb for Rank ${rank} (${teamName}).`);
-                }
-
-                // Also, limit huge text to avoid parent containers
-                if (text.length > 5000) return;
-
-                results.push({ rank, team: teamName, trend, blurb });
             });
 
             return results;
@@ -535,12 +507,9 @@ async function scrape() {
         const uniqueRankings = [];
         const seenRanks = new Set();
 
-        // Sort by blurb length descending to prefer entries with more content?
-        // Actually, if we have duplicate calls, we want the one with content.
-        rankings.sort((a,b) => (b.blurb || "").length - (a.blurb || "").length);
-
+        // With DOM method, duplicate calls shouldn't happen, but good to be safe
         rankings.forEach(r => {
-            if (!seenRanks.has(r.rank)) {
+             if (!seenRanks.has(r.rank)) {
                 uniqueRankings.push(r);
                 seenRanks.add(r.rank);
             }
