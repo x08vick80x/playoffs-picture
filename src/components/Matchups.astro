@@ -36,7 +36,11 @@ interface Props {
 
 const { afc, nfc, seeds } = Astro.props;
 
-import { getTeamId, getTeamAbbreviation } from "../utils/team-mapping.js";
+import {
+    getTeamId,
+    getTeamAbbreviation,
+    getTeamColor,
+} from "../utils/team-mapping.js";
 
 function getMatchups(teams: Team[]) {
     // Top 7 make playoffs
@@ -102,7 +106,10 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
             </h3>
 
             <!-- AFC Bye -->
-            <div class="matchup-card bye-card">
+            <div
+                class="matchup-card bye-card"
+                style={`background: ${getTeamColor(afcMatchups.bye?.team)}; border: none;`}
+            >
                 <span class="label">First Round Bye</span>
                 <div
                     class="team team-card-trigger"
@@ -119,16 +126,22 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
                                 href={`/sprites.svg#${getTeamId(afcMatchups.bye?.team)}`}
                             ></use></svg
                         >
-                        <span class="name">
-                            <span class="name-full"
-                                >{afcMatchups.bye?.team}</span
+                        <div class="name-col">
+                            <span class="name">
+                                <span class="name-full"
+                                    >{afcMatchups.bye?.team}</span
+                                >
+                                <span class="name-abbr"
+                                    >{
+                                        getTeamAbbreviation(
+                                            afcMatchups.bye?.team,
+                                        )
+                                    }</span
+                                >
+                            </span>
+                            <span class="record">{afcMatchups.bye?.record}</span
                             >
-                            <span class="name-abbr"
-                                >{
-                                    getTeamAbbreviation(afcMatchups.bye?.team)
-                                }</span
-                            >
-                        </span>
+                        </div>
                     </div>
                     {
                         getScrapedTeam(afcMatchups.bye?.team, "AFC") && (
@@ -152,12 +165,22 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
                                                     "AFC",
                                                 )?.nextOpponent?.location
                                             }{" "}
-                                            {
-                                                getScrapedTeam(
-                                                    afcMatchups.bye?.team,
-                                                    "AFC",
-                                                )?.nextOpponent?.opponent
-                                            }
+                                            <span class="desktop-opp">
+                                                {
+                                                    getScrapedTeam(
+                                                        afcMatchups.bye?.team,
+                                                        "AFC",
+                                                    )?.nextOpponent?.opponent
+                                                }
+                                            </span>
+                                            <span class="mobile-opp">
+                                                {getTeamAbbreviation(
+                                                    getScrapedTeam(
+                                                        afcMatchups.bye?.team,
+                                                        "AFC",
+                                                    )?.nextOpponent?.opponent,
+                                                )}
+                                            </span>
                                         </span>
                                         <div class="schedule-btn">+</div>
                                     </div>
@@ -186,14 +209,21 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
                                         href={`/sprites.svg#${getTeamId(match.away?.team)}`}
                                     />
                                 </svg>
-                                <span class="name">
-                                    <span class="name-full">
-                                        {match.away?.team}
+                                <div class="name-col">
+                                    <span class="name">
+                                        <span class="name-full">
+                                            {match.away?.team}
+                                        </span>
+                                        <span class="name-abbr">
+                                            {getTeamAbbreviation(
+                                                match.away?.team,
+                                            )}
+                                        </span>
                                     </span>
-                                    <span class="name-abbr">
-                                        {getTeamAbbreviation(match.away?.team)}
+                                    <span class="record">
+                                        {match.away?.record}
                                     </span>
-                                </span>
+                                </div>
                             </div>
                             {getScrapedTeam(match.away?.team, "AFC") && (
                                 <div class="team-stats">
@@ -216,12 +246,24 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
                                                         "AFC",
                                                     )?.nextOpponent?.location
                                                 }{" "}
-                                                {
-                                                    getScrapedTeam(
-                                                        match.away?.team,
-                                                        "AFC",
-                                                    )?.nextOpponent?.opponent
-                                                }
+                                                <span class="desktop-opp">
+                                                    {
+                                                        getScrapedTeam(
+                                                            match.away?.team,
+                                                            "AFC",
+                                                        )?.nextOpponent
+                                                            ?.opponent
+                                                    }
+                                                </span>
+                                                <span class="mobile-opp">
+                                                    {getTeamAbbreviation(
+                                                        getScrapedTeam(
+                                                            match.away?.team,
+                                                            "AFC",
+                                                        )?.nextOpponent
+                                                            ?.opponent,
+                                                    )}
+                                                </span>
                                             </span>
                                             <div class="schedule-btn">+</div>
                                         </div>
@@ -245,14 +287,21 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
                                         href={`/sprites.svg#${getTeamId(match.home?.team)}`}
                                     />
                                 </svg>
-                                <span class="name">
-                                    <span class="name-full">
-                                        {match.home?.team}
+                                <div class="name-col">
+                                    <span class="name">
+                                        <span class="name-full">
+                                            {match.home?.team}
+                                        </span>
+                                        <span class="name-abbr">
+                                            {getTeamAbbreviation(
+                                                match.home?.team,
+                                            )}
+                                        </span>
                                     </span>
-                                    <span class="name-abbr">
-                                        {getTeamAbbreviation(match.home?.team)}
+                                    <span class="record">
+                                        {match.home?.record}
                                     </span>
-                                </span>
+                                </div>
                             </div>
                             {getScrapedTeam(match.home?.team, "AFC") && (
                                 <div class="team-stats">
@@ -275,12 +324,24 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
                                                         "AFC",
                                                     )?.nextOpponent?.location
                                                 }{" "}
-                                                {
-                                                    getScrapedTeam(
-                                                        match.home?.team,
-                                                        "AFC",
-                                                    )?.nextOpponent?.opponent
-                                                }
+                                                <span class="desktop-opp">
+                                                    {
+                                                        getScrapedTeam(
+                                                            match.home?.team,
+                                                            "AFC",
+                                                        )?.nextOpponent
+                                                            ?.opponent
+                                                    }
+                                                </span>
+                                                <span class="mobile-opp">
+                                                    {getTeamAbbreviation(
+                                                        getScrapedTeam(
+                                                            match.home?.team,
+                                                            "AFC",
+                                                        )?.nextOpponent
+                                                            ?.opponent,
+                                                    )}
+                                                </span>
                                             </span>
                                             <div class="schedule-btn">+</div>
                                         </div>
@@ -302,7 +363,10 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
             </h3>
 
             <!-- NFC Bye -->
-            <div class="matchup-card bye-card">
+            <div
+                class="matchup-card bye-card"
+                style={`background: ${getTeamColor(nfcMatchups.bye?.team)}; border: none;`}
+            >
                 <span class="label">First Round Bye</span>
                 <div
                     class="team team-card-trigger"
@@ -319,16 +383,22 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
                                 href={`/sprites.svg#${getTeamId(nfcMatchups.bye?.team)}`}
                             ></use></svg
                         >
-                        <span class="name">
-                            <span class="name-full"
-                                >{nfcMatchups.bye?.team}</span
+                        <div class="name-col">
+                            <span class="name">
+                                <span class="name-full"
+                                    >{nfcMatchups.bye?.team}</span
+                                >
+                                <span class="name-abbr"
+                                    >{
+                                        getTeamAbbreviation(
+                                            nfcMatchups.bye?.team,
+                                        )
+                                    }</span
+                                >
+                            </span>
+                            <span class="record">{nfcMatchups.bye?.record}</span
                             >
-                            <span class="name-abbr"
-                                >{
-                                    getTeamAbbreviation(nfcMatchups.bye?.team)
-                                }</span
-                            >
-                        </span>
+                        </div>
                     </div>
                     {
                         getScrapedTeam(nfcMatchups.bye?.team, "NFC") && (
@@ -352,12 +422,22 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
                                                     "NFC",
                                                 )?.nextOpponent?.location
                                             }{" "}
-                                            {
-                                                getScrapedTeam(
-                                                    nfcMatchups.bye?.team,
-                                                    "NFC",
-                                                )?.nextOpponent?.opponent
-                                            }
+                                            <span class="desktop-opp">
+                                                {
+                                                    getScrapedTeam(
+                                                        nfcMatchups.bye?.team,
+                                                        "NFC",
+                                                    )?.nextOpponent?.opponent
+                                                }
+                                            </span>
+                                            <span class="mobile-opp">
+                                                {getTeamAbbreviation(
+                                                    getScrapedTeam(
+                                                        nfcMatchups.bye?.team,
+                                                        "NFC",
+                                                    )?.nextOpponent?.opponent,
+                                                )}
+                                            </span>
                                         </span>
                                         <div class="schedule-btn">+</div>
                                     </div>
@@ -386,14 +466,21 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
                                         href={`/sprites.svg#${getTeamId(match.away?.team)}`}
                                     />
                                 </svg>
-                                <span class="name">
-                                    <span class="name-full">
-                                        {match.away?.team}
+                                <div class="name-col">
+                                    <span class="name">
+                                        <span class="name-full">
+                                            {match.away?.team}
+                                        </span>
+                                        <span class="name-abbr">
+                                            {getTeamAbbreviation(
+                                                match.away?.team,
+                                            )}
+                                        </span>
                                     </span>
-                                    <span class="name-abbr">
-                                        {getTeamAbbreviation(match.away?.team)}
+                                    <span class="record">
+                                        {match.away?.record}
                                     </span>
-                                </span>
+                                </div>
                             </div>
                             {getScrapedTeam(match.away?.team, "NFC") && (
                                 <div class="team-stats">
@@ -416,12 +503,24 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
                                                         "NFC",
                                                     )?.nextOpponent?.location
                                                 }{" "}
-                                                {
-                                                    getScrapedTeam(
-                                                        match.away?.team,
-                                                        "NFC",
-                                                    )?.nextOpponent?.opponent
-                                                }
+                                                <span class="desktop-opp">
+                                                    {
+                                                        getScrapedTeam(
+                                                            match.away?.team,
+                                                            "NFC",
+                                                        )?.nextOpponent
+                                                            ?.opponent
+                                                    }
+                                                </span>
+                                                <span class="mobile-opp">
+                                                    {getTeamAbbreviation(
+                                                        getScrapedTeam(
+                                                            match.away?.team,
+                                                            "NFC",
+                                                        )?.nextOpponent
+                                                            ?.opponent,
+                                                    )}
+                                                </span>
                                             </span>
                                             <div class="schedule-btn">+</div>
                                         </div>
@@ -445,14 +544,21 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
                                         href={`/sprites.svg#${getTeamId(match.home?.team)}`}
                                     />
                                 </svg>
-                                <span class="name">
-                                    <span class="name-full">
-                                        {match.home?.team}
+                                <div class="name-col">
+                                    <span class="name">
+                                        <span class="name-full">
+                                            {match.home?.team}
+                                        </span>
+                                        <span class="name-abbr">
+                                            {getTeamAbbreviation(
+                                                match.home?.team,
+                                            )}
+                                        </span>
                                     </span>
-                                    <span class="name-abbr">
-                                        {getTeamAbbreviation(match.home?.team)}
+                                    <span class="record">
+                                        {match.home?.record}
                                     </span>
-                                </span>
+                                </div>
                             </div>
                             {getScrapedTeam(match.home?.team, "NFC") && (
                                 <div class="team-stats">
@@ -475,12 +581,24 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
                                                         "NFC",
                                                     )?.nextOpponent?.location
                                                 }{" "}
-                                                {
-                                                    getScrapedTeam(
-                                                        match.home?.team,
-                                                        "NFC",
-                                                    )?.nextOpponent?.opponent
-                                                }
+                                                <span class="desktop-opp">
+                                                    {
+                                                        getScrapedTeam(
+                                                            match.home?.team,
+                                                            "NFC",
+                                                        )?.nextOpponent
+                                                            ?.opponent
+                                                    }
+                                                </span>
+                                                <span class="mobile-opp">
+                                                    {getTeamAbbreviation(
+                                                        getScrapedTeam(
+                                                            match.home?.team,
+                                                            "NFC",
+                                                        )?.nextOpponent
+                                                            ?.opponent,
+                                                    )}
+                                                </span>
                                             </span>
                                             <div class="schedule-btn">+</div>
                                         </div>
@@ -529,7 +647,6 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
         text-align: center;
         font-size: 1.5rem;
         margin-bottom: 1rem;
-        color: var(--nfl-red);
         background: rgba(255, 255, 255, 0.05);
         padding: 0.5rem;
         border-radius: 8px;
@@ -544,11 +661,9 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
     }
 
     .afc .conf-title {
-        color: var(--nfl-red);
         border-bottom: 2px solid var(--nfl-red);
     }
     .nfc .conf-title {
-        color: var(--nfl-blue);
         border-bottom: 2px solid var(--nfl-blue);
     }
 
@@ -586,7 +701,7 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
                 font-size: 0.8rem;
                 text-transform: uppercase;
                 letter-spacing: 1px;
-                color: #aaa;
+                color: var(--text-gray-lighter);
             }
 
             .team {
@@ -596,6 +711,7 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
             .team {
                 .seed {
                     font-size: 1.4rem;
+                    color: var(--text-gray-light);
                 }
 
                 .team-logo {
@@ -611,10 +727,12 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
 
                 .prob {
                     font-size: 1rem;
+                    color: var(--text-gray-lighter);
                 }
 
                 .next-opp {
                     font-size: 0.9rem;
+                    color: var(--text-gray-lighter);
                 }
             }
         }
@@ -647,9 +765,12 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
 
             .seed {
                 font-size: 1.2rem;
-                color: #888;
-                padding: 1px 6px;
+                color: var(--text-secondary);
                 font-style: italic;
+
+                @media (min-width: 480px) {
+                    padding: 0 6px;
+                }
             }
 
             .team-logo {
@@ -672,28 +793,41 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
                     // display: contents; // Remove contents, keep it flex
                 }
 
-                .name {
-                    line-height: 1.2;
+                .name-col {
                     display: flex;
-                    align-items: center;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    line-height: 1.1;
 
-                    .name-full {
-                        display: block;
-                        @media (max-width: 480px) {
-                            display: none;
-                        }
-                    }
+                    .name {
+                        display: flex;
+                        align-items: center;
 
-                    .name-abbr {
-                        display: none;
-                        @media (max-width: 480px) {
+                        .name-full {
                             display: block;
+                            @media (max-width: 480px) {
+                                display: none;
+                            }
+                        }
+
+                        .name-abbr {
+                            display: none;
+                            @media (max-width: 480px) {
+                                display: block;
+                            }
+                        }
+
+                        @media (max-width: 480px) {
+                            font-size: 1.2rem;
+                            white-space: nowrap; // Keep name on one line if possible
                         }
                     }
 
-                    @media (max-width: 480px) {
-                        font-size: 1.2rem;
-                        white-space: nowrap; // Keep name on one line if possible
+                    .record {
+                        font-size: 0.8rem;
+                        color: var(--text-gray-lighter);
+                        font-weight: normal;
+                        margin-top: 2px;
                     }
                 }
             }
@@ -738,11 +872,15 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
         }
 
         .versus {
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             font-weight: 300;
-            color: #d3d3d3;
+            color: var(--text-secondary);
             margin: 0;
             opacity: 0.5;
+
+            @media (min-width: 480px) {
+                font-size: 1.6rem;
+            }
         }
 
         .team-stats {
@@ -782,8 +920,22 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
         .next-opp {
             font-family: var(--font-body);
             font-size: 0.7rem;
-            color: #c6c6c6;
+            color: var(--text-secondary);
             font-style: italic;
+        }
+    }
+
+    .desktop-opp {
+        display: none;
+        @media (min-width: 480px) {
+            display: inline;
+        }
+    }
+
+    .mobile-opp {
+        display: inline;
+        @media (min-width: 480px) {
+            display: none;
         }
     }
 </style>

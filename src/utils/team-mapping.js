@@ -140,7 +140,41 @@ export function getTeamAbbreviation(teamName) {
         'New Orleans': 'NO',
         'Washington': 'WSH',
         'N.Y. Giants': 'NYG',
-        'New York Giants': 'NYG'
+        'New York Giants': 'NYG',
+
+        // Nicknames
+        'Bills': 'BUF',
+        'Dolphins': 'MIA',
+        'Patriots': 'NE',
+        'Jets': 'NYJ',
+        'Ravens': 'BLT',
+        'Bengals': 'CIN',
+        'Browns': 'CLV',
+        'Steelers': 'PIT',
+        'Texans': 'HOU',
+        'Colts': 'IND',
+        'Jaguars': 'JAX',
+        'Titans': 'TEN',
+        'Broncos': 'DEN',
+        'Chiefs': 'KC',
+        'Raiders': 'LV',
+        'Chargers': 'LAC',
+        'Cowboys': 'DAL',
+        'Giants': 'NYG',
+        'Eagles': 'PHI',
+        'Commanders': 'WSH',
+        'Packers': 'GB',
+        'Lions': 'DET',
+        'Vikings': 'MIN',
+        'Bears': 'CHI',
+        'Falcons': 'ATL',
+        'Panthers': 'CAR',
+        'Saints': 'NO',
+        'Buccaneers': 'TB',
+        'Cardinals': 'ARZ',
+        'Rams': 'LAR',
+        '49ers': 'SF',
+        'Seahawks': 'SEA'
     };
 
     if (abbrMap[normalized]) return abbrMap[normalized];
@@ -149,4 +183,91 @@ export function getTeamAbbreviation(teamName) {
     // or if it ends with a known city name... but better to just return first 3 chars
     // to avoid breaking layout.
     return normalized.substring(0, 3).toUpperCase();
+}
+
+export function getTeamColor(teamName) {
+    if (!teamName) return '#222'; // Default dark gray
+    const normalized = teamName.trim();
+
+    // Map provided by user
+    const colors = {
+        'Denver': '#fc4c02',
+        'Broncos': '#fc4c02',
+        'New England': '#022241',
+        'Patriots': '#022241',
+        'Jacksonville': '#1a7483',
+        'Jaguars': '#1a7483',
+        'Pittsburgh': '#ffb317',
+        'Steelers': '#ffb317',
+        'L.A. Chargers': '#0a7ab4',
+        'Los Angeles Chargers': '#0a7ab4',
+        'Chargers': '#0a7ab4',
+        'Buffalo': '#003589',
+        'Bills': '#003589',
+        'Houston': '#051117',
+        'Texans': '#051117',
+        'Indianapolis': '#012d5c',
+        'Colts': '#012d5c',
+        'Baltimore': '#251465',
+        'Ravens': '#251465',
+        'Kansas City': '#d60d3a',
+        'Chiefs': '#d60d3a',
+        'Miami': '#008f98',
+        'Dolphins': '#008f98',
+        'Cincinnati': '#ff4e0f',
+        'Bengals': '#ff4e0f',
+        'N.Y. Jets': '#11563f',
+        'New York Jets': '#11563f',
+        'Jets': '#11563f',
+        'Cleveland': '#fe3c01',
+        'Browns': '#fe3c01',
+        'Las Vegas': '#0a0a0a',
+        'Raiders': '#0a0a0a',
+        'Tennessee': '#4e92e4',
+        'Titans': '#4e92e4',
+        'L.A. Rams': '#003594',
+        'Los Angeles Rams': '#003594',
+        'Rams': '#003594',
+        'Green Bay': '#1f3b31',
+        'Packers': '#1f3b31',
+        'Philadelphia': '#0f3d37',
+        'Eagles': '#0f3d37',
+        'Tampa Bay': '#a01937',
+        'Buccaneers': '#a01937',
+        'Seattle': '#022343',
+        'Seahawks': '#022343',
+        'San Francisco': '#ac0002',
+        '49ers': '#ac0002',
+        'Chicago': '#eb4607',
+        'Bears': '#eb4607',
+        'Detroit': '#0077b7',
+        'Lions': '#0077b7',
+        'Carolina': '#1a7fb8',
+        'Panthers': '#1a7fb8',
+        'Dallas': '#02243f',
+        'Cowboys': '#02243f',
+        'Minnesota': '#472681',
+        'Vikings': '#472681',
+        'Atlanta': '#8f1129',
+        'Falcons': '#8f1129',
+        'Arizona': '#99243f',
+        'Cardinals': '#99243f',
+        'New Orleans': '#cfbf8b',
+        'Saints': '#cfbf8b',
+        'Washington': '#650b09',
+        'Commanders': '#650b09',
+        'N.Y. Giants': '#77303e',
+        'New York Giants': '#77303e',
+        'Giants': '#77303e'
+    };
+
+    if (colors[normalized]) return colors[normalized];
+
+    // Try finding by last word (nickname) if full name not found
+    const parts = normalized.split(/\s+/);
+    const lastWord = parts[parts.length - 1];
+    if (colors[lastWord]) return colors[lastWord];
+
+    // Fallback?
+    return '#222';
 }

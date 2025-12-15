@@ -1,5 +1,5 @@
 ---
-import { getTeamId } from "../utils/team-mapping.js";
+import { getTeamId, getTeamAbbreviation } from "../utils/team-mapping.js";
 
 interface Team {
     name: string;
@@ -85,7 +85,12 @@ const { bubble, eliminated } = Astro.props;
                                             />
                                         </svg>
                                         <span class="team-name">
-                                            {team.name}
+                                            <span class="desktop-name">
+                                                {team.name}
+                                            </span>
+                                            <span class="mobile-name">
+                                                {getTeamAbbreviation(team.name)}
+                                            </span>
                                         </span>
                                     </div>
                                     <div class="team-stats">
@@ -185,29 +190,14 @@ const { bubble, eliminated } = Astro.props;
 
     .section-group {
         margin-bottom: 3rem;
-
-        &.eliminated-group {
-            opacity: 0.85;
-        }
     }
 
     .section-title {
         text-align: center;
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        margin-bottom: 2rem;
         text-transform: uppercase;
         letter-spacing: 2px;
-        background: linear-gradient(90deg, #fff, #aaa);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: 800;
-
-        &.title-eliminated {
-            opacity: 0.8;
-            background: linear-gradient(90deg, #aaa, #777);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
     }
 
     .grid-container {
@@ -235,7 +225,7 @@ const { bubble, eliminated } = Astro.props;
         margin-bottom: 1rem;
         padding-bottom: 0.5rem;
         border-bottom: 2px solid var(--nfl-red);
-        color: #aaa;
+        color: var(--text-gray-lighter);
 
         .conf-logo {
             fill: currentColor;
@@ -310,7 +300,7 @@ const { bubble, eliminated } = Astro.props;
             gap: 5px;
 
             .prob-label {
-                color: #888; // Light gray
+                color: var(--text-secondary); // Light gray
                 text-transform: uppercase;
                 font-size: 0.8rem;
                 letter-spacing: 0.5px;
@@ -351,7 +341,7 @@ const { bubble, eliminated } = Astro.props;
 
         .next-opp {
             font-size: 0.9rem;
-            color: #888;
+            color: var(--text-secondary);
         }
 
         .team-record {
@@ -370,5 +360,19 @@ const { bubble, eliminated } = Astro.props;
         color: #666;
         font-style: italic;
         font-size: 0.9rem;
+    }
+
+    .desktop-name {
+        display: none;
+        @media (min-width: 480px) {
+            display: inline;
+        }
+    }
+
+    .mobile-name {
+        display: inline;
+        @media (min-width: 480px) {
+            display: none;
+        }
     }
 </style>
