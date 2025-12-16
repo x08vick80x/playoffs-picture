@@ -351,13 +351,22 @@ async function scrape() {
 
             const weekMatches = await page.evaluate((currentWeek) => {
                 const matches = [];
+                const seenConfig = new Set(); // Track unique games e.g. "teamA-teamB"
+
                 const links = Array.from(document.querySelectorAll('a[href*="/games/"]'));
                 links.forEach(a => {
                     const href = a.getAttribute('href');
                     // href format: /games/away-at-home-2025-reg-15
                     const match = href.match(/\/games\/([a-z0-9-]+)-at-([a-z0-9-]+)-\d{4}/);
                     if (match) {
-                        matches.push({ away: match[1], home: match[2], week: currentWeek });
+                        const away = match[1];
+                        const home = match[2];
+                        const key = `${away}-at-${home}`;
+
+                        if (!seenConfig.has(key)) {
+                            seenConfig.add(key);
+                            matches.push({ away, home, week: currentWeek });
+                        }
                     }
                 });
                 return matches;
