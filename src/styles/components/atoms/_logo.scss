@@ -1,0 +1,23 @@
+@use '../../variables' as *;
+
+.team-logo {
+    display: inline-block;
+    flex-shrink: 0;
+    width: $logo-s;
+    height: $logo-s;
+
+    &--grayscale {
+        filter: grayscale(1);
+        opacity: 0.7;
+    }
+
+    &--xs {
+        width: $logo-xs;
+        height: $logo-xs;
+    }
+
+    &--md {
+        width: $logo-md;
+        height: $logo-md;
+    }
+}

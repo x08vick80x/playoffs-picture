@@ -1,0 +1,156 @@
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+.standings-container {
+    padding: $spacing-sm;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 60vh;
+}
+
+.conference-toggle {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    background: $bg-card;
+    padding: 4px;
+    border-radius: 50px;
+    margin-bottom: $spacing-md;
+    width: 300px; // Fixed width for easier calc
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #333;
+
+    .toggle-glider {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: calc(50% - 4px);
+        height: calc(100% - 8px);
+        background: $nfl-red;
+        border-radius: 40px;
+        transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        z-index: 1;
+    }
+
+    &[data-active="nfc"] .toggle-glider {
+        transform: translateX(100%);
+    }
+
+    .toggle-btn {
+        position: relative;
+        background: transparent;
+        color: $text-secondary;
+        padding: 1.2rem 0;
+        border-radius: 40px;
+        font-weight: bold;
+        font-size: 1.76rem;
+        transition: color 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex: 1;
+        z-index: 2;
+
+        &.active {
+            color: white; // Only text color changes
+        }
+
+        .conf-logo {
+            fill: currentColor;
+        }
+    }
+}
+
+.standings-table {
+    display: none;
+    background: $bg-card;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    animation: fadeIn 0.4s ease;
+
+    &.active {
+        display: block;
+    }
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 40px 1fr 60px; // Default mobile
+    background: #252525;
+    padding: $spacing-sm;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.28rem;
+    letter-spacing: 1px;
+    color: $text-secondary;
+    border-bottom: 1px solid #333;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 40px 1fr 60px;
+    padding: $spacing-sm;
+    align-items: center;
+    border-bottom: 1px solid #2a2a2a;
+    transition: background 0.2s;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    .col-seed {
+        font-weight: bold;
+        color: $text-secondary;
+    }
+
+    &.playoff-spot {
+        background: rgba(255, 255, 255, 0.05);
+        border-left: 3px solid #4ade80;
+    }
+
+    &.top-seed {
+        background: rgba(255, 215, 0, 0.1);
+        border-left-color: gold;
+    }
+
+    .col-team {
+        font-weight: bold;
+        font-size: 1.76rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .col-record {
+        font-family: monospace;
+        font-size: 1.6rem;
+        opacity: 0.9;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Responsive adjustments
+@include tablet {
+
+    .table-header,
+    .table-row {
+        grid-template-columns: 60px 1fr 80px;
+    }
+}

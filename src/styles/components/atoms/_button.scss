@@ -1,0 +1,49 @@
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    background-color: $nfl-blue;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform $duration-fast, background-color $duration-fast;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-family: inherit;
+    text-decoration: none;
+    justify-content: center;
+
+    &:hover {
+        transform: translateY(-2px);
+        background-color: #004da1;
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    svg {
+        stroke: currentColor;
+    }
+
+    &--secondary {
+        background-color: #333;
+        color: #fff;
+
+        &:hover {
+            background-color: #444;
+        }
+    }
+
+    &--icon-only {
+        padding: 0.6rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+    }
+}

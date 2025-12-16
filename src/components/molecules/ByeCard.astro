@@ -1,0 +1,69 @@
+---
+import TeamRow from "./TeamRow.astro";
+import Badge from "../atoms/Badge.astro";
+import { getTeamColor } from "../../utils/team-mapping.js";
+
+interface Props {
+    team: {
+        team: string; // Name
+        record?: string;
+        seed?: string;
+    };
+    stats?: {
+        probability?: string;
+        nextOpponent?: {
+            location: string;
+            opponent: string;
+        };
+        remainingSchedule?: any[];
+    };
+}
+
+const { team, stats } = Astro.props;
+
+const getSched = (data: any) => JSON.stringify(data?.remainingSchedule || []);
+const teamColor = getTeamColor(team.team);
+---
+
+<div class="bye-card" style={`background: ${teamColor};`}>
+    <Badge label="First Round Bye" className="bye-card__label" />
+
+    <div
+        class="bye-card__content team-card-trigger"
+        data-team={team.team}
+        data-schedule={getSched(stats)}
+    >
+        <div class="bye-card__identity">
+            {
+                team.seed && (
+                    <Badge
+                        label={team.seed}
+                        type="seed"
+                        className="bye-card__seed"
+                    />
+                )
+            }
+            <TeamRow
+                team={team.team}
+                record={team.record}
+                size="md"
+                showRecord={true}
+            />
+        </div>
+
+        {
+            stats && (
+                <div class="bye-card__stats">
+                    <span class="bye-card__prob">{stats.probability}</span>
+                    {stats.nextOpponent && (
+                        <div class="bye-card__next">
+                            nxt {stats.nextOpponent.location}{" "}
+                            {stats.nextOpponent.opponent}
+                            <div class="bye-card__btn">+</div>
+                        </div>
+                    )}
+                </div>
+            )
+        }
+    </div>
+</div>

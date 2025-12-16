@@ -1,0 +1,31 @@
+@use '../../variables' as *;
+
+.conf-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+    padding: $spacing-xs;
+    margin-bottom: $spacing-sm;
+    border-bottom: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: $radius-md;
+
+    &__text {
+        font-size: 2.88rem;
+        font-weight: bold;
+        color: $text-primary;
+    }
+
+    &__logo {
+        fill: currentColor;
+    }
+
+    &--afc {
+        border-bottom-color: $nfl-red;
+    }
+
+    &--nfc {
+        border-bottom-color: $nfl-blue;
+    }
+}

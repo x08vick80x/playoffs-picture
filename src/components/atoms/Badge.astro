@@ -1,0 +1,13 @@
+---
+interface Props {
+    label: string | number;
+    type?: "default" | "seed" | "prob" | "outline";
+    className?: string;
+}
+
+const { label, type = "default", className = "" } = Astro.props;
+---
+
+<span class:list={["badge", `badge--${type}`, className]}>
+    {type === "seed" && "#"}{label}
+</span>

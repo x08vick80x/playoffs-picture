@@ -8,7 +8,11 @@ import MyTeams from "../components/MyTeams.astro";
 import Footer from "../components/Footer.astro";
 import ScheduleModal from "../components/ScheduleModal.astro";
 import PowerRankings from "../components/PowerRankings.astro";
+import PageTitle from "../components/atoms/PageTitle.astro";
+import LastUpdated from "../components/atoms/LastUpdated.astro";
+import Button from "../components/atoms/Button.astro";
 import fs from "node:fs";
+
 import path from "node:path";
 
 // Load data using Node fs
@@ -32,15 +36,11 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 	<Header />
 	<main>
 		<div class="content-wrapper">
-			<h1 class="main-title">
-				<span class="highlight">NFL</span> PLAYOFF PICTURE <span
-					class="year">2025</span
-				>
-			</h1>
-			<p class="last-updated">Last update : {lastUpdated}</p>
+			<PageTitle />
+			<LastUpdated date={lastUpdated} />
 
 			<div id="install-container" class="install-container" hidden>
-				<button id="install-pwa" class="install-btn">
+				<Button id="install-pwa">
 					<svg
 						width="20"
 						height="20"
@@ -57,7 +57,7 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 						<line x1="12" y1="15" x2="12" y2="3"></line>
 					</svg>
 					Install App
-				</button>
+				</Button>
 				<p class="install-text">
 					super lightweight PWA App that can load offline with your
 					preference saved, until next app datas update
@@ -166,39 +166,6 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 		margin: 0 auto;
 	}
 
-	.main-title {
-		text-align: center;
-		font-size: 2.5rem;
-		font-weight: 900;
-		line-height: 1.1;
-		margin-bottom: 0.5rem;
-		letter-spacing: -1px;
-		text-transform: uppercase;
-		background: linear-gradient(180deg, #fff 0%, #aaa 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
-
-		.highlight {
-			font-weight: 900;
-			font-style: italic;
-		}
-
-		.year {
-			font-weight: 300;
-			color: var(--nfl-red);
-			-webkit-text-fill-color: var(--nfl-red);
-		}
-	}
-
-	.last-updated {
-		text-align: center;
-		color: var(--text-secondary);
-		font-size: 0.9rem;
-		margin-bottom: 2rem;
-		font-family: var(--font-body);
-	}
-
 	.install-container {
 		display: flex;
 		flex-direction: column;
@@ -217,42 +184,5 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 		margin-top: 0.5rem;
 		max-width: 300px;
 		line-height: 1.4;
-	}
-
-	.install-btn {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		margin: 0; // Margin handled by container
-		background-color: var(--nfl-blue);
-		color: white;
-		border: none;
-		padding: 0.6rem 1.2rem;
-		border-radius: 25px;
-		font-weight: 600;
-		cursor: pointer;
-		transition:
-			transform 0.2s,
-			background-color 0.2s;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-
-		&:hover {
-			transform: translateY(-2px);
-			background-color: #004da1;
-		}
-
-		&:active {
-			transform: translateY(0);
-		}
-
-		svg {
-			stroke: currentColor;
-		}
-	}
-
-	@media (min-width: 768px) {
-		.main-title {
-			font-size: 4rem;
-		}
 	}
 </style>

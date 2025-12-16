@@ -1,0 +1,36 @@
+@use '../../variables' as *;
+
+.page-title {
+    text-align: center;
+    font-size: 4.3rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, #fff 0%, #aaa 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+
+    &__highlight {
+        font-weight: 900;
+        font-style: italic;
+    }
+
+    &__year {
+        font-weight: 300;
+        color: $nfl-red;
+        -webkit-text-fill-color: $nfl-red;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 4rem; // Note: Original CSS had 4rem on desktop, which is smaller than 4.3rem mobile? Keeping faithful to extraction.
+        // Wait, logically desktop should be bigger or same.
+        // Original mobile: 4.3rem. Original desktop: 4rem.
+        // User explicitly changed mobile to 4.3rem in previous turn.
+        // I should probably keep desktop specific if originally present, or maybe user made mobile bigger on purpose.
+        // I will keep faithful to what was in index.astro.
+    }
+}

@@ -1,5 +1,7 @@
 ---
-import { getTeamId, getTeamAbbreviation } from "../utils/team-mapping.js";
+import SectionTitle from "./atoms/SectionTitle.astro";
+import ConferenceHeader from "./atoms/ConferenceHeader.astro";
+import BubbleCard from "./molecules/BubbleCard.astro";
 
 interface Team {
     name: string;
@@ -51,74 +53,19 @@ const { bubble, eliminated } = Astro.props;
 </script>
 
 <div class="bubble-eliminated-container">
-    <section id="bubble" class="section-group bubble-group">
-        <h2 class="section-title">On The Bubble</h2>
+    <!-- Bubble Section -->
+    <section id="bubble" class="section-group">
+        <SectionTitle title="On The Bubble" />
+
         <div class="grid-container">
             {
                 (["AFC", "NFC"] as const).map((conf) => (
                     <div class="conference-col">
-                        <h3 class={`conf-title ${conf}`}>
-                            <svg class="conf-logo" width="24" height="24">
-                                <use
-                                    href={`/sprites.svg#${conf.toLowerCase()}`}
-                                />
-                            </svg>
-                            {conf}
-                        </h3>
+                        <ConferenceHeader conf={conf} />
+
                         <div class="team-list">
                             {bubble[conf].map((team) => (
-                                <div
-                                    class="team-item team-card-trigger"
-                                    data-team={team.name}
-                                    data-schedule={JSON.stringify(
-                                        team.remainingSchedule || [],
-                                    )}
-                                >
-                                    <div class="team-info">
-                                        <svg
-                                            class="team-logo"
-                                            width="24"
-                                            height="24"
-                                        >
-                                            <use
-                                                href={`/sprites.svg#${getTeamId(team.name)}`}
-                                            />
-                                        </svg>
-                                        <span class="team-name">
-                                            <span class="desktop-name">
-                                                {team.name}
-                                            </span>
-                                            <span class="mobile-name">
-                                                {getTeamAbbreviation(team.name)}
-                                            </span>
-                                        </span>
-                                    </div>
-                                    <div class="team-stats">
-                                        <span class="team-record">
-                                            {team.record}
-                                        </span>
-                                        <span class="team-prob">
-                                            <span class="prob-label">
-                                                playoff prob
-                                            </span>
-                                            <span class="prob-value">
-                                                {team.probability}
-                                            </span>
-                                        </span>
-                                        {team.nextOpponent && (
-                                            <div class="next-opp-container">
-                                                <span class="next-opp">
-                                                    nxt{" "}
-                                                    {team.nextOpponent.location}{" "}
-                                                    {team.nextOpponent.opponent}
-                                                </span>
-                                                <div class="schedule-btn">
-                                                    +
-                                                </div>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
+                                <BubbleCard team={team} />
                             ))}
                             {bubble[conf].length === 0 && (
                                 <div class="empty-state">
@@ -132,41 +79,19 @@ const { bubble, eliminated } = Astro.props;
         </div>
     </section>
 
-    <section id="eliminated" class="section-group eliminated-group">
-        <h2 class="section-title title-eliminated">Eliminated</h2>
+    <!-- Eliminated Section -->
+    <section id="eliminated" class="section-group">
+        <SectionTitle title="Eliminated" />
+
         <div class="grid-container">
             {
                 (["AFC", "NFC"] as const).map((conf) => (
                     <div class="conference-col">
-                        <h3 class={`conf-title ${conf}`}>
-                            <svg class="conf-logo" width="24" height="24">
-                                <use
-                                    href={`/sprites.svg#${conf.toLowerCase()}`}
-                                />
-                            </svg>
-                            {conf}
-                        </h3>
+                        <ConferenceHeader conf={conf} />
+
                         <div class="team-list">
                             {eliminated[conf].map((team) => (
-                                <div class="team-item eliminated-item">
-                                    <div class="team-info">
-                                        <svg
-                                            class="team-logo grayscale"
-                                            width="24"
-                                            height="24"
-                                        >
-                                            <use
-                                                href={`/sprites.svg#${getTeamId(team.name)}`}
-                                            />
-                                        </svg>
-                                        <span class="team-name">
-                                            {team.name}
-                                        </span>
-                                    </div>
-                                    <span class="team-record">
-                                        {team.record}
-                                    </span>
-                                </div>
+                                <BubbleCard team={team} isEliminated={true} />
                             ))}
                             {eliminated[conf].length === 0 && (
                                 <div class="empty-state">
@@ -180,199 +105,3 @@ const { bubble, eliminated } = Astro.props;
         </div>
     </section>
 </div>
-
-<style lang="scss">
-    .bubble-eliminated-container {
-        max-width: 1000px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-    }
-
-    .section-group {
-        margin-bottom: 3rem;
-    }
-
-    .section-title {
-        text-align: center;
-        font-size: 2rem;
-        margin-bottom: 2rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-
-    .grid-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-
-        @media (min-width: 768px) {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-    .conference-col {
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: 8px;
-        padding: 1rem;
-    }
-
-    .conf-title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid var(--nfl-red);
-        color: var(--text-gray-lighter);
-
-        .conf-logo {
-            fill: currentColor;
-        }
-
-        &.NFC {
-            border-bottom-color: var(--nfl-blue);
-        }
-    }
-
-    .team-list {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .team-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.75rem;
-        background: rgba(255, 255, 255, 0.03);
-        border-radius: 6px;
-        transition:
-            transform 0.2s,
-            background 0.2s;
-
-        &:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateX(5px);
-        }
-        &.team-card-trigger {
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .team-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-weight: bold;
-
-            .team-logo {
-                width: 40px;
-                height: 40px;
-            }
-
-            .team-name {
-                font-size: 1.4rem;
-            }
-
-            .team-logo.grayscale {
-                filter: grayscale(1);
-                opacity: 0.7;
-            }
-        }
-
-        .team-stats {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 5px;
-        }
-
-        .team-prob {
-            font-size: 1rem;
-            font-weight: bold;
-            padding: 2px 0; // Removed background padding
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-
-            .prob-label {
-                color: var(--text-secondary); // Light gray
-                text-transform: uppercase;
-                font-size: 0.8rem;
-                letter-spacing: 0.5px;
-            }
-
-            .prob-value {
-                color: var(--nfl-red);
-            }
-        }
-
-        .next-opp-container {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            margin-top: 0;
-            justify-content: flex-end;
-        }
-
-        .schedule-btn {
-            background: #333;
-            border: 1px solid #555;
-            color: #ccc;
-            border-radius: 4px;
-            width: 16px;
-            height: 16px;
-            font-size: 12px;
-            line-height: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-
-            &:hover {
-                background: #555;
-                color: #fff;
-            }
-        }
-
-        .next-opp {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .team-record {
-            font-size: 1rem;
-            color: var(--text-secondary);
-        }
-
-        &.eliminated-item {
-            opacity: 0.7;
-        }
-    }
-
-    .empty-state {
-        text-align: center;
-        padding: 1rem;
-        color: #666;
-        font-style: italic;
-        font-size: 0.9rem;
-    }
-
-    .desktop-name {
-        display: none;
-        @media (min-width: 480px) {
-            display: inline;
-        }
-    }
-
-    .mobile-name {
-        display: inline;
-        @media (min-width: 480px) {
-            display: none;
-        }
-    }
-</style>

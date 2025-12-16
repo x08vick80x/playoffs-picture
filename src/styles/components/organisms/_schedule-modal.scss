@@ -1,0 +1,165 @@
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+.modal {
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+    border-radius: 16px;
+    padding: 0;
+    color: #fff;
+    max-width: 90vw;
+    width: 400px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+    /* Center the modal */
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    max-height: 90vh;
+    /* Prevent overflow if schedule is long */
+    overflow-y: auto;
+
+    &::backdrop {
+        background: rgba(0, 0, 0, 0);
+        transition: background 0.3s ease;
+    }
+
+    &[open] {
+        animation: slideUp 0.3s ease forwards;
+
+        &::backdrop {
+            background: rgba(0, 0, 0, 0.7);
+        }
+    }
+
+    &--closing,
+    &[open].modal--closing {
+        animation: slideDown 0.2s ease forwards;
+
+        &::backdrop {
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.2s ease;
+        }
+    }
+
+    &__content {
+        padding: 1.5rem;
+        background: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 16px;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #333;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 1.7rem;
+        color: #fff;
+    }
+
+    &__close-btn {
+        background: none;
+        border: none;
+        color: $text-secondary;
+        font-size: 2rem;
+        cursor: pointer;
+        line-height: 1;
+        padding: 0;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+// Keyframes
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+/* Dynamic Classes from JS */
+.game-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem;
+    border-radius: 8px;
+
+    &__week {
+        font-size: 1.3rem;
+        background: #333;
+        color: $text-secondary;
+        padding: 2px 6px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-weight: bold;
+        min-width: 50px;
+        text-align: center;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        flex: 1;
+    }
+
+    &__location {
+        font-weight: bold;
+        color: $nfl-red;
+        width: 20px;
+        text-align: center;
+    }
+
+    &__opponent {
+        display: flex;
+        align-items: baseline;
+        gap: 1.2rem;
+    }
+
+    &__opp-name {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    &__opp-record {
+        font-size: 1.2rem;
+        color: $text-secondary;
+        font-family: $font-body;
+    }
+}

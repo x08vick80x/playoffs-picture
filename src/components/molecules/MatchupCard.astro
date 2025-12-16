@@ -1,0 +1,158 @@
+---
+import TeamRow from "./TeamRow.astro";
+import Badge from "../atoms/Badge.astro";
+import { getTeamColor } from "../../utils/team-mapping.js";
+
+interface TeamData {
+    team: string; // Name
+    seed?: string;
+    record?: string;
+}
+
+interface ScrapedData {
+    probability?: string;
+    nextOpponent?: {
+        opponent: string;
+        location: string;
+    };
+    remainingSchedule?: any[];
+}
+
+interface Props {
+    // Matchup Props
+    home?: TeamData;
+    away?: TeamData;
+    homeStats?: ScrapedData;
+    awayStats?: ScrapedData;
+
+    // Bye Props
+    team?: TeamData;
+    stats?: ScrapedData;
+
+    variant?: "default" | "bye";
+}
+
+const {
+    home, away, homeStats, awayStats,
+    team, stats,
+    variant = team ? "bye" : "default"
+} = Astro.props;
+
+// Helper to stringify schedule for data attribute
+const getSched = (data?: ScrapedData) =>
+    JSON.stringify(data?.remainingSchedule || []);
+
+const byeTeamColor = variant === "bye" && team ? getTeamColor(team.team) : undefined;
+---
+
+{variant === "bye" && team ? (
+    <div class="matchup-card matchup-card--bye" style={`background: ${byeTeamColor};`}>
+        <span class="matchup-card__label">First Round Bye</span>
+
+        <div
+            class="matchup-card__content team-card-trigger"
+            data-team={team.team}
+            data-schedule={getSched(stats)}
+        >
+            <div class="matchup-card__identity">
+                {team.seed && (
+                    <Badge label={team.seed} type="seed" className="matchup-card__seed" />
+                )}
+                <TeamRow
+                    team={team.team}
+                    record={team.record}
+                    size="md"
+                    showRecord={true}
+                />
+            </div>
+
+            {stats && (
+                <div class="matchup-card__stats">
+                    <span class="matchup-card__prob">{stats.probability}</span>
+                    {stats.nextOpponent && (
+                        <>
+                            <span class="matchup-card__sep">/</span>
+                            <div class="matchup-card__next">
+                                nxt {stats.nextOpponent.location}{" "}
+                                {stats.nextOpponent.opponent}
+                            </div>
+                        </>
+                    )}
+                    <div class="matchup-card__btn">+</div>
+                </div>
+            )}
+        </div>
+    </div>
+) : (
+    <div class="matchup-card">
+        <!-- Away Team -->
+        <div
+            class="matchup-card__team team-card-trigger"
+            data-team={away?.team}
+            data-schedule={getSched(awayStats)}
+        >
+            <div class="matchup-card__identity">
+                <TeamRow
+                    team={away?.team || ''}
+                    seed={away?.seed}
+                    record={away?.record}
+                    size="sm"
+                />
+            </div>
+
+            {awayStats && (
+                <div class="matchup-card__stats">
+                    <div class="matchup-card__prob">
+                        {awayStats.probability}
+                    </div>
+                    {awayStats.nextOpponent && (
+                        <>
+                            <span class="matchup-card__sep">/</span>
+                            <div class="matchup-card__next">
+                                nxt {awayStats.nextOpponent.location}{" "}
+                                {awayStats.nextOpponent.opponent}
+                            </div>
+                            <div class="matchup-card__btn">+</div>
+                        </>
+                    )}
+                </div>
+            )}
+        </div>
+
+        <div class="matchup-card__vs">@</div>
+
+        <!-- Home Team -->
+        <div
+            class="matchup-card__team team-card-trigger"
+            data-team={home?.team}
+            data-schedule={getSched(homeStats)}
+        >
+            <div class="matchup-card__identity">
+                <TeamRow
+                    team={home?.team || ''}
+                    seed={home?.seed}
+                    record={home?.record}
+                    size="sm"
+                />
+            </div>
+
+            {homeStats && (
+                <div class="matchup-card__stats">
+                    <div class="matchup-card__prob">
+                        {homeStats.probability}
+                    </div>
+                    {homeStats.nextOpponent && (
+                        <>
+                            <span class="matchup-card__sep">/</span>
+                            <div class="matchup-card__next">
+                                nxt {homeStats.nextOpponent.location}{" "}
+                                {homeStats.nextOpponent.opponent}
+                            </div>
+                            <div class="matchup-card__btn">+</div>
+                        </>
+                    )}
+                </div>
+            )}
+        </div>
+    </div>
+)}

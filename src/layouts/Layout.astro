@@ -53,12 +53,12 @@ const { title } = Astro.props;
         {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
 
         <style is:global>
-            @import "../styles/global.scss";
+            @import "../styles/main.scss";
         </style>
     </head>
     <body>
         <slot />
-        <script src="/src/pwa.ts" async></script>
+        <script src="../pwa.ts"></script>
         <script is:inline>
             // PWA Install Prompt
             window.deferredPrompt = null;

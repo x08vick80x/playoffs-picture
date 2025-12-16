@@ -1,0 +1,36 @@
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+.bubble-eliminated-container {
+    max-width: 1000px;
+    margin: $spacing-md auto;
+    padding: 0 $spacing-sm;
+}
+
+.section-group {
+    margin-bottom: $spacing-lg;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.team-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+}
+
+.empty-state {
+    text-align: center;
+    padding: $spacing-sm;
+    color: #666;
+    font-style: italic;
+    font-size: 1.44rem;
+}

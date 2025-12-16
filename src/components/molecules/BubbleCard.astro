@@ -1,0 +1,55 @@
+---
+import TeamRow from "./TeamRow.astro";
+import Badge from "../atoms/Badge.astro";
+import type { Team } from "../../types"; // We might need to extract types eventually
+
+interface Props {
+    team: {
+        name: string;
+        record: string;
+        probability?: string;
+        nextOpponent?: {
+            location: string;
+            opponent: string;
+        };
+        remainingSchedule?: any[];
+    };
+    isEliminated?: boolean;
+}
+
+const { team, isEliminated = false } = Astro.props;
+
+const getSched = (data: any) => JSON.stringify(data?.remainingSchedule || []);
+---
+
+<div
+    class:list={[
+        "bubble-card",
+        { "bubble-card--eliminated": isEliminated },
+        "team-card-trigger",
+    ]}
+    data-team={team.name}
+    data-schedule={getSched(team)}
+>
+    <div class="bubble-card__identity">
+        <TeamRow team={team.name} record={team.record} size="sm" />
+    </div>
+
+    {
+        !isEliminated && (
+            <div class="bubble-card__stats">
+                <div class="bubble-card__prob">
+                    <span class="bubble-card__label">playoff prob</span>
+                    <span class="bubble-card__value">{team.probability}</span>
+                </div>
+                {team.nextOpponent && (
+                    <div class="bubble-card__next">
+                        nxt {team.nextOpponent.location}{" "}
+                        {team.nextOpponent.opponent}
+                        <button class="bubble-card__btn">+</button>
+                    </div>
+                )}
+            </div>
+        )
+    }
+</div>

@@ -1,0 +1,11 @@
+@use '../../variables' as *;
+
+.section-title {
+    text-align: center;
+    font-size: 3.8rem;
+    margin-bottom: $spacing-md;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: $text-primary;
+}

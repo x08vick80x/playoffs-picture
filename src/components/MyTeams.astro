@@ -1,17 +1,18 @@
 ---
 import { getTeamId, getTeamAbbreviation } from "../utils/team-mapping.js";
+import Button from "./atoms/Button.astro";
 
 const { standings, playoffPicture } = Astro.props;
 
 // Build Master Map for Client
 // We need to handle mapping from "City" (Standings) to "ID" and "Abbr"
-const masterTeamMap = {};
+const masterTeamMap: Record<string, any> = {};
 
 // Helper to normalized name
-const normalize = (name) => name.trim();
+const normalize = (name: string) => name.trim();
 
 ["AFC", "NFC"].forEach((conf) => {
-    standings[conf].forEach((team) => {
+    standings[conf].forEach((team: any) => {
         const name = normalize(team.team);
         masterTeamMap[name] = {
             id: getTeamId(name),
@@ -30,11 +31,11 @@ const teamsData = {
 ---
 
 <div id="my-teams-root" class="my-teams-container" hidden>
-    <div id="mt-intro" class="mt-intro">
-        <h2>My Teams</h2>
+    <div id="mt-intro" class="intro">
+        <h2 class="intro__title">My Teams</h2>
         <button
             id="btn-edit-teams"
-            class="icon-btn"
+            class="intro__action"
             aria-label="Edit Favorites"
             onclick="window.openModal()"
         >
@@ -48,7 +49,8 @@ const teamsData = {
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 style="pointer-events: none;"
-                ><path d="M11 4H4a2 0 0 0-2 2v14a2 0 0 0 2 2h14a2 0 0 0 2-2v-7"
+                ><path
+                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
                 ></path><path
                     d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
                 ></path></svg
@@ -56,27 +58,34 @@ const teamsData = {
         </button>
     </div>
 
-    <div id="mt-dashboard" class="mt-dashboard grid-container">
+    <div id="mt-dashboard" class="dashboard-grid">
         <!-- Cards will be injected here -->
         <p class="empty-msg">No teams selected.</p>
     </div>
 
     <!-- Modal Overlay -->
-    <div id="mt-selector-modal" class="modal-overlay" hidden>
-        <div class="mt-content">
-            <div class="mt-header">
-                <h3>Select Favorites</h3>
-                <button id="btn-close-modal" class="close-btn">&times;</button>
+    <div id="mt-selector-modal" class="selector-modal" hidden>
+        <div class="selector-modal__content">
+            <div class="selector-modal__header">
+                <h3 class="selector-modal__title">Select Favorites</h3>
+                <button id="btn-close-modal" class="selector-modal__close-btn"
+                    >&times;</button
+                >
             </div>
 
-            <div class="mt-body">
-                <div class="team-grid" id="team-checklist">
+            <div class="selector-modal__body">
+                <div class="selector-modal__grid" id="team-checklist">
                     <!-- Cards injected here -->
                 </div>
             </div>
 
-            <div class="mt-footer">
-                <button id="btn-save-teams" class="save-btn">Save</button>
+            <div class="selector-modal__footer">
+                <Button
+                    id="btn-save-teams"
+                    className="selector-modal__save-btn"
+                >
+                    Save
+                </Button>
             </div>
         </div>
     </div>
@@ -185,18 +194,18 @@ const teamsData = {
             const isSelected = editSet.has(teamRaw);
 
             const card = document.createElement("div");
-            card.className = `select-card ${isSelected ? "selected" : ""}`;
+            card.className = `select-card ${isSelected ? "select-card--selected" : ""}`;
             card.onclick = () => toggleSelection(teamRaw, card);
 
             card.innerHTML = `
-                <div class="card-content">
-                    <svg class="team-logo" width="40" height="40">
+                <div class="select-card__content">
+                    <svg class="select-card__logo" width="40" height="40">
                         <use href="/sprites.svg#${meta.id}" />
                     </svg>
-                    <span class="team-abbr">${meta.abbr}</span>
+                    <span class="select-card__abbr">${meta.abbr}</span>
                 </div>
                 <!-- Checkmark Icon (visible only when selected) -->
-                ${isSelected ? '<div class="check-badge">✓</div>' : ""}
+                ${isSelected ? '<div class="select-card__check">✓</div>' : ""}
             `;
             checklist.appendChild(card);
         });
@@ -205,16 +214,16 @@ const teamsData = {
     function toggleSelection(teamRaw, cardEl) {
         if (editSet.has(teamRaw)) {
             editSet.delete(teamRaw);
-            cardEl.classList.remove("selected");
-            const check = cardEl.querySelector(".check-badge");
+            cardEl.classList.remove("select-card--selected");
+            const check = cardEl.querySelector(".select-card__check");
             if (check) check.remove();
         } else {
             editSet.add(teamRaw);
-            cardEl.classList.add("selected");
-            if (!cardEl.querySelector(".check-badge")) {
+            cardEl.classList.add("select-card--selected");
+            if (!cardEl.querySelector(".select-card__check")) {
                 cardEl.insertAdjacentHTML(
                     "beforeend",
-                    '<div class="check-badge">✓</div>',
+                    '<div class="select-card__check">✓</div>',
                 );
             }
         }
@@ -244,35 +253,35 @@ const teamsData = {
                 card.dataset.schedule = scheduleJson;
             }
 
-            let probColorClass = "";
+            let probModifier = "";
             let probDisplayText = stats.probability;
 
             if (stats.isInProjected) {
-                probColorClass = "text-green";
+                probModifier = "team-item__prob-value--green";
             } else if (stats.isBubble) {
-                probColorClass = "text-red";
+                probModifier = "team-item__prob-value--red";
             } else if (
                 stats.isEliminated ||
                 stats.probability === "0%" ||
                 stats.probability === "0.0%"
             ) {
-                probColorClass = "text-red"; // User requested Red for eliminated
+                probModifier = "team-item__prob-value--red"; // User requested Red for eliminated
                 probDisplayText = "ELIMINATED";
             }
 
             let nextOppHtml = "";
             if (stats.nextOpp) {
                 nextOppHtml = `
-                    <div class="next-opp-container">
-                        <span class="next-opp">nxt ${stats.nextOpp.location} ${stats.nextOpp.opponent}</span>
+                    <div class="team-item__next-opp-container">
+                        <span class="team-item__next-opp">nxt ${stats.nextOpp.location} ${stats.nextOpp.opponent}</span>
                     </div>
                 `;
             } else if (stats.isInProjected) {
-                nextOppHtml = `<span class="next-opp">-</span>`;
+                nextOppHtml = `<span class="team-item__next-opp">-</span>`;
             }
 
             const seedHtml = stats.seed
-                ? `<span class="seed-badge">#${stats.seed}</span>`
+                ? `<span class="team-item__seed-badge">#${stats.seed}</span>`
                 : "";
 
             // Power Ranking HTML
@@ -290,33 +299,33 @@ const teamsData = {
                 if (trendSymbol === "0") trendSymbol = "-";
 
                 powerHtml = `
-                    <div class="power-rank-row">
-                        <span class="power-label">PWR :</span>
-                        <span class="power-val">#${stats.powerRank}</span>
-                        <span class="power-trend ${trendClass}">${trendSymbol}</span>
+                    <div class="team-item__power-row">
+                        <span class="power-label">PWR:</span>
+                        <span class="team-item__power-val">#${stats.powerRank}</span>
+                        <span class="team-item__power-trend ${trendClass}">${trendSymbol}</span>
                     </div>
                 `;
             }
 
             card.innerHTML = `
-                <div class="team-info">
-                    <svg class="team-logo" width="32" height="32">
+                <div class="team-item__info">
+                    <svg class="team-logo team-logo--md" width="55" height="55">
                         <use href="/sprites.svg#${stats.id}" />
                     </svg>
-                    <div class="team-ident">
-                        <span class="team-abbr">${stats.abbr}</span>
+                    <div class="team-item__ident">
+                        <span class="team-item__abbr">${stats.abbr}</span>
                         ${powerHtml}
                     </div>
                 </div>
 
-                <div class="team-stats">
-                     <span class="team-record">${seedHtml} ${stats.record}</span>
+                <div class="team-item__stats">
+                     <span class="team-item__record">${seedHtml} ${stats.record}</span>
                      ${
                          probDisplayText !== "N/A"
                              ? `
-                        <div class="team-prob">
-                            ${probDisplayText === "ELIMINATED" ? "" : '<span class="prob-label">PROB</span>'}
-                            <span class="prob-value ${probColorClass}">${probDisplayText}</span>
+                        <div class="team-item__prob">
+                            ${probDisplayText === "ELIMINATED" ? "" : '<span class="team-item__prob-label">PROB</span>'}
+                            <span class="team-item__prob-value ${probModifier}">${probDisplayText}</span>
                         </div>
                      `
                              : ""
@@ -371,368 +380,3 @@ const teamsData = {
         root.hidden = false;
     });
 </script>
-
-<style is:global lang="scss">
-    .my-teams-container {
-        margin: 1rem auto;
-        padding: 0 1rem;
-        max-width: 1000px;
-    }
-
-    .mt-intro {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding-bottom: 0.5rem;
-
-        h2 {
-            font-size: 1.2rem;
-            color: #aaa;
-            text-transform: uppercase;
-            font-weight: 800;
-            margin: 0;
-        }
-
-        .icon-btn {
-            background: none;
-            border: none;
-            color: #aaa;
-            cursor: pointer;
-            &:hover {
-                color: white;
-            }
-        }
-    }
-
-    .grid-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-        @media (min-width: 768px) {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-    .empty-start-btn {
-        width: 100%;
-        padding: 2rem;
-        background: rgba(255, 255, 255, 0.05);
-        border: 2px dashed rgba(255, 255, 255, 0.2);
-        color: #aaa;
-        font-size: 1.2rem;
-        border-radius: 8px;
-        cursor: pointer;
-        &:hover {
-            border-color: var(--nfl-blue);
-            color: white;
-        }
-    }
-
-    /* --- Team Card Styles (Identical to Bubble style) --- */
-    .team-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.75rem;
-        background: rgba(255, 255, 255, 0.03);
-        border-radius: 6px;
-        transition:
-            transform 0.2s,
-            background 0.2s;
-        cursor: pointer; // Make entire card clickable
-
-        &:hover {
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .team-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-
-            .team-logo {
-                width: 36px;
-                height: 36px;
-            }
-
-            .team-ident {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: 2px;
-            }
-
-            .team-abbr {
-                font-size: 1.4rem;
-                font-weight: 900;
-                color: white;
-                line-height: 1;
-            }
-
-            .power-rank-row {
-                display: flex;
-                align-items: center;
-                gap: 4px;
-                font-size: 0.7rem;
-                color: var(--text-secondary);
-                font-family: monospace;
-                white-space: nowrap;
-                letter-spacing: 0.5px;
-            }
-
-            .power-val {
-                color: white;
-                font-weight: bold;
-            }
-
-            .power-trend {
-                font-weight: bold;
-            }
-        }
-
-        .team-stats {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 4px;
-        }
-
-        .team-record {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-family: monospace;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .seed-badge {
-            background: var(--nfl-blue);
-            color: white;
-            font-size: 0.7rem;
-            padding: 1px 4px;
-            border-radius: 3px;
-        }
-
-        .team-prob {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.9rem;
-            font-weight: bold;
-
-            .prob-label {
-                color: #666;
-                font-size: 0.7rem;
-            }
-            .prob-value {
-                color: white;
-            }
-            .text-green {
-                color: var(--nfl-green);
-            }
-            .text-red {
-                color: var(--nfl-red);
-            }
-            .text-gray {
-                color: #666;
-            }
-        }
-
-        .next-opp-container {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 2px;
-
-            .next-opp {
-                font-size: 0.8rem;
-                color: var(--text-secondary);
-            }
-
-            .schedule-btn {
-                background: #333;
-                border: 1px solid #555;
-                color: #ccc;
-                border-radius: 4px;
-                width: 18px;
-                height: 18px;
-                font-size: 14px;
-                line-height: 1;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 0;
-                cursor: pointer;
-
-                &:hover {
-                    background: #555;
-                    color: white;
-                }
-            }
-        }
-    }
-
-    /* --- Modal Styles --- */
-    .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.8);
-        z-index: 1000;
-        display: none; /* Default hidden */
-        justify-content: center;
-        align-items: flex-end;
-
-        &.is-open {
-            display: flex;
-        }
-
-        @media (min-width: 600px) {
-            align-items: center;
-        }
-    }
-
-    .mt-content {
-        background: var(--bg-card);
-        width: 100%;
-        max-width: 600px;
-        height: 85vh; // Almost full height
-        border-radius: 20px 20px 0 0; // Rounded top
-        display: flex;
-        flex-direction: column;
-        border: 1px solid #333;
-
-        @media (min-width: 600px) {
-            height: 80vh;
-            border-radius: 12px;
-        }
-    }
-
-    .mt-header {
-        padding: 1.5rem;
-        border-bottom: 1px solid #333;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        h3 {
-            margin: 0;
-            color: white;
-            font-size: 1.2rem;
-        }
-        .close-btn {
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: #aaa;
-            cursor: pointer;
-        }
-    }
-
-    .mt-body {
-        flex: 1;
-        overflow-y: auto;
-        padding: 1rem;
-    }
-
-    .team-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-    }
-
-    .select-card {
-        background: #1a1a1a;
-        border: 2px solid transparent;
-        border-radius: 12px;
-        padding: 1rem 0.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        cursor: pointer;
-        position: relative;
-        transition: all 0.2s;
-
-        &:hover {
-            background: #222;
-        }
-
-        .card-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .team-logo {
-            width: 48px;
-            height: 48px;
-        }
-        .team-abbr {
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-        }
-
-        &.selected {
-            border-color: var(--nfl-green);
-            background: transparent; // No background
-
-            .team-abbr {
-                color: white;
-            }
-        }
-
-        .check-badge {
-            position: absolute;
-            top: 4px;
-            right: 4px;
-            width: 20px;
-            height: 20px;
-            background: var(--nfl-green);
-            color: black;
-            border-radius: 50%;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-    }
-
-    .mt-footer {
-        padding: 1.5rem;
-        border-top: 1px solid #333;
-        background: var(--bg-card); // Sticky-ish
-    }
-
-    .save-btn {
-        width: 100%;
-        background: var(--nfl-red);
-        color: white;
-        border: none;
-        padding: 1rem;
-        border-radius: 50px; // Pill shape
-        font-size: 1.2rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        cursor: pointer;
-        transition: background 0.3s;
-
-        &:hover {
-            background: #cc0000;
-        }
-    }
-
-    .empty-msg {
-        text-align: center;
-        color: #666;
-        font-style: italic;
-    }
-</style>

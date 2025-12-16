@@ -1,0 +1,42 @@
+---
+import Logo from "../atoms/Logo.astro";
+import Badge from "../atoms/Badge.astro";
+import { getTeamAbbreviation } from "../../utils/team-mapping.js";
+
+interface Props {
+    team: string; // Team Name
+    record?: string;
+    seed?: string;
+    rank?: number | string;
+    size?: "sm" | "md"; // Context size
+    showRecord?: boolean;
+}
+
+const {
+    team,
+    record,
+    seed,
+    rank,
+    size = "md",
+    showRecord = true,
+} = Astro.props;
+---
+
+<div class:list={["team-row", `team-row--${size}`]}>
+    {seed && <Badge label={seed} type="seed" className="team-row__seed" />}
+    {rank && <span class="team-row__rank">{rank}</span>}
+
+    <Logo
+        team={team}
+        size={size === "sm" ? "sm" : "md"}
+        className="team-row__logo"
+    />
+
+    <div class="team-row__info">
+        <span class="team-row__name">
+            <span class="team-row__name-full">{team}</span>
+            <span class="team-row__name-abbr">{getTeamAbbreviation(team)}</span>
+        </span>
+        {showRecord && record && <span class="team-row__record">{record}</span>}
+    </div>
+</div>

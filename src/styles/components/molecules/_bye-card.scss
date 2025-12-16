@@ -1,0 +1,84 @@
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+.bye-card {
+    border-radius: $radius-lg;
+    padding: $spacing-sm;
+    margin-bottom: $spacing-sm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-xs;
+    border: none;
+
+    &__label {
+        font-size: 1.28rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: $text-gray-lighter;
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $spacing-sm;
+        cursor: pointer;
+        padding: $spacing-xs;
+        border-radius: $radius-sm;
+        width: 100%;
+        transition: background $duration-fast;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    &__identity {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: $spacing-sm;
+    }
+
+    &__seed {
+        font-size: 2.24rem;
+        color: $text-gray-light;
+    }
+
+    &__stats {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+    }
+
+    &__prob {
+        font-size: 1.6rem;
+        color: $text-gray-lighter;
+        font-weight: bold;
+    }
+
+    &__next {
+        font-size: 1.44rem;
+        color: $text-gray-lighter;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &__btn {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        border-radius: 4px;
+        width: 16px;
+        height: 16px;
+        font-size: 12px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

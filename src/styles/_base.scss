@@ -1,0 +1,50 @@
+/* Global Reset and Base Styles */
+@use 'variables' as *;
+
+:root {
+    --nfl-blue: #{$nfl-blue};
+    --nfl-red: #{$nfl-red};
+    --nfl-green: #{$nfl-green};
+    --text-primary: #{$text-primary};
+    --text-secondary: #{$text-secondary};
+    --bg-card: #{$bg-card};
+    --font-body: #{$font-body};
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+    background-color: $bg-dark;
+    color: $text-primary;
+    font-family: $font-body;
+    font-size: 1.6rem; // 16px default
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+/* Font Face removed in favor of Google Fonts in Layout */
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    background: none;
+}

@@ -1,0 +1,33 @@
+---
+interface Props {
+    id?: string;
+    type?: "button" | "submit" | "reset";
+    variant?: "primary" | "secondary";
+    className?: string;
+    href?: string;
+    onClick?: string;
+    ariaLabel?: string;
+}
+
+const {
+    id,
+    type = "button",
+    variant = "primary",
+    className = "",
+    href,
+    onClick,
+    ariaLabel,
+} = Astro.props;
+
+const Element = href ? "a" : "button";
+---
+
+<Element
+    id={id}
+    class:list={["btn", `btn--${variant}`, className]}
+    {...href ? { href } : { type }}
+    {...onClick ? { onclick: onClick } : {}}
+    {...ariaLabel ? { "aria-label": ariaLabel } : {}}
+>
+    <slot />
+</Element>

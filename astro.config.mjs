@@ -62,6 +62,10 @@ export default defineConfig({
           clientsClaim: true,
           skipWaiting: true,
           cleanupOutdatedCaches: true
+        },
+        devOptions: {
+          enabled: true,
+          suppressWarnings: true,
         }
     })
   ]

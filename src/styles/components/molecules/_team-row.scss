@@ -1,0 +1,68 @@
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+.team-row {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+
+    @media (min-width: $tablet) {
+        gap: $spacing-sm;
+    }
+
+    &__seed {
+        margin-right: -4px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+    }
+
+    &__name {
+        font-weight: bold;
+        font-size: 2.24rem;
+
+        &-full {
+            display: block;
+
+            @include mobile {
+                display: none;
+            }
+        }
+
+        &-abbr {
+            display: none;
+
+            @include mobile {
+                display: block;
+            }
+        }
+
+        @include mobile {
+            font-size: 2.08rem;
+            white-space: nowrap;
+        }
+    }
+
+    &__record {
+        font-size: 1.2rem;
+        color: $text-secondary;
+        font-weight: normal;
+
+        @media (min-width: $tablet) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &--sm {
+        .team-row__name {
+            font-size: 1.92rem;
+        }
+
+        .team-row__record {
+            font-size: 1.28rem;
+        }
+    }
+}

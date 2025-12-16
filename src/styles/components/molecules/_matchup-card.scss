@@ -1,0 +1,156 @@
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+.matchup-card {
+    background: $bg-card;
+    border: 1px solid #333;
+    border-radius: $radius-lg;
+    padding: 2rem .5rem; // Default to old compact padding
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-xs; // Default to old compact gap
+    margin-bottom: $spacing-sm;
+
+    @include desktop {
+        padding: $spacing-sm; // Slightly larger on desktop but still compact-ish
+        gap: $spacing-sm;
+    }
+
+    &__team {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2px; // Default compact
+        gap: 2px; // Default compact
+        cursor: pointer;
+        border-radius: $radius-sm;
+        transition: background $duration-fast;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+    }
+
+    &__vs {
+        font-size: 1.6rem; // Default compact
+        color: $text-secondary;
+        opacity: 0.5;
+    }
+
+    &__stats {
+        display: flex;
+        flex-direction: row; // Changed to row
+        align-items: center;
+        gap: 6px;
+        transform: scale(0.9); // Default compact
+    }
+
+    &__prob {
+        font-size: 1.28rem; // Default compact
+        color: $nfl-green;
+        font-weight: bold;
+    }
+
+    &__sep {
+        color: $text-gray-light;
+        font-size: 1.1rem;
+    }
+
+    &__next {
+        font-size: 1.12rem; // Default compact
+        color: $text-secondary;
+        white-space: nowrap;
+        font-style: italic;
+    }
+
+    &__btn {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        border-radius: 4px;
+        width: 16px;
+        height: 16px;
+        font-size: 12px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // Bye Variant
+    &--bye {
+        padding: $spacing-sm;
+        flex-direction: column;
+        gap: 0;
+        border: none;
+
+        // Inherited/Adapted from ByeCard
+        .matchup-card__label {
+            font-size: 1.28rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: $text-gray-lighter;
+            font-weight: 500;
+        }
+
+        .matchup-card__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: $spacing-xs;
+            border-radius: $radius-sm;
+            width: 100%;
+            transition: background $duration-fast;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        .matchup-card__identity {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: $spacing-sm;
+        }
+
+        .matchup-card__seed {
+            font-size: 2.24rem;
+            color: $text-gray-light;
+        }
+
+        .matchup-card__stats {
+            transform: none; // Reset compact scale
+            gap: 8px;
+        }
+
+        .matchup-card__prob {
+            font-size: 1.6rem;
+            color: $text-primary; // White for Bye
+        }
+
+        .matchup-card__sep {
+            display: none; // Hide separator in Bye view if layout differs, or keep?
+            // User asked for separator in matchup, but bye is usually vertical layout?
+            // Actually bye card layout shows prob top, next bottom in previous design?
+            // "tu as passé le prob et next sur 2 lignes au lieu d’être sur une ligne" applies to general matchup?
+            // If Bye also needs to be one line, I'll keep it row.
+            // If Bye was previously column, I might need to adjust.
+            // "les prob doivent etre en vert dans matchup-card et en blanc dans matchup-card—bye"
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .matchup-card__next {
+            font-size: 1.44rem;
+            color: $text-gray-lighter;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+}

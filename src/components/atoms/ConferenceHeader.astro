@@ -1,0 +1,14 @@
+---
+interface Props {
+    conf: "AFC" | "NFC";
+}
+
+const { conf } = Astro.props;
+---
+
+<div class:list={["conf-header", `conf-header--${conf.toLowerCase()}`]}>
+    <svg class="conf-header__logo" width="30" height="30">
+        <use href={`/sprites.svg#${conf.toLowerCase()}`}></use>
+    </svg>
+    <span class="conf-header__text">{conf}</span>
+</div>

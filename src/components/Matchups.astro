@@ -1,4 +1,9 @@
 ---
+import SectionTitle from "./atoms/SectionTitle.astro";
+import ConferenceHeader from "./atoms/ConferenceHeader.astro";
+
+import MatchupCard from "./molecules/MatchupCard.astro";
+
 interface Team {
     seed: string;
     team: string;
@@ -36,11 +41,7 @@ interface Props {
 
 const { afc, nfc, seeds } = Astro.props;
 
-import {
-    getTeamId,
-    getTeamAbbreviation,
-    getTeamColor,
-} from "../utils/team-mapping.js";
+import { getTeamId } from "../utils/team-mapping.js";
 
 function getMatchups(teams: Team[]) {
     // Top 7 make playoffs
@@ -74,8 +75,6 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
 ---
 
 <script>
-    import { getTeamId, getTeamAbbreviation } from "../utils/team-mapping.js";
-
     document.addEventListener("click", (e) => {
         const target = e.target as HTMLElement;
         const btn = target.closest(".team-card-trigger");
@@ -94,848 +93,89 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
 </script>
 
 <div class="matchups-container">
-    <h2 class="section-title">Projected Matchups</h2>
+    <SectionTitle title="Projected Matchups" />
 
     <div class="conference-matchups">
-        <div class="conf-col afc">
-            <h3 class="conf-title">
-                <svg class="conf-logo" width="30" height="30"
-                    ><use href="/sprites.svg#afc"></use></svg
-                >
-                AFC
-            </h3>
+        <!-- AFC Column -->
+        <div class="conf-col">
+            <ConferenceHeader conf="AFC" />
 
             <!-- AFC Bye -->
-            <div
-                class="matchup-card bye-card"
-                style={`background: ${getTeamColor(afcMatchups.bye?.team)}; border: none;`}
-            >
-                <span class="label">First Round Bye</span>
-                <div
-                    class="team team-card-trigger"
-                    data-team={afcMatchups.bye?.team}
-                    data-schedule={JSON.stringify(
-                        getScrapedTeam(afcMatchups.bye?.team, "AFC")
-                            ?.remainingSchedule,
-                    )}
-                >
-                    <div class="team-details">
-                        <span class="seed">#1</span>
-                        <svg class="team-logo" width="40" height="40"
-                            ><use
-                                href={`/sprites.svg#${getTeamId(afcMatchups.bye?.team)}`}
-                            ></use></svg
-                        >
-                        <div class="name-col">
-                            <span class="name">
-                                <span class="name-full"
-                                    >{afcMatchups.bye?.team}</span
-                                >
-                                <span class="name-abbr"
-                                    >{
-                                        getTeamAbbreviation(
-                                            afcMatchups.bye?.team,
-                                        )
-                                    }</span
-                                >
-                            </span>
-                            <span class="record">{afcMatchups.bye?.record}</span
-                            >
-                        </div>
-                    </div>
-                    {
-                        getScrapedTeam(afcMatchups.bye?.team, "AFC") && (
-                            <div class="team-stats">
-                                <span class="prob">
-                                    {
-                                        getScrapedTeam(
-                                            afcMatchups.bye?.team,
-                                            "AFC",
-                                        )?.probability
-                                    }
-                                </span>
-                                {getScrapedTeam(afcMatchups.bye?.team, "AFC")
-                                    ?.nextOpponent && (
-                                    <div class="next-opp-container">
-                                        <span class="next-opp">
-                                            nxt{" "}
-                                            {
-                                                getScrapedTeam(
-                                                    afcMatchups.bye?.team,
-                                                    "AFC",
-                                                )?.nextOpponent?.location
-                                            }{" "}
-                                            <span class="desktop-opp">
-                                                {
-                                                    getScrapedTeam(
-                                                        afcMatchups.bye?.team,
-                                                        "AFC",
-                                                    )?.nextOpponent?.opponent
-                                                }
-                                            </span>
-                                            <span class="mobile-opp">
-                                                {getTeamAbbreviation(
-                                                    getScrapedTeam(
-                                                        afcMatchups.bye?.team,
-                                                        "AFC",
-                                                    )?.nextOpponent?.opponent,
-                                                )}
-                                            </span>
-                                        </span>
-                                        <div class="schedule-btn">+</div>
-                                    </div>
-                                )}
-                            </div>
-                        )
-                    }
-                </div>
-            </div>
-
             {
-                afcMatchups.matches.map((match) => (
-                    <div class="matchup-card compact">
-                        <div
-                            class="team away team-card-trigger"
-                            data-team={match.away?.team}
-                            data-schedule={JSON.stringify(
-                                getScrapedTeam(match.away?.team, "AFC")
-                                    ?.remainingSchedule,
-                            )}
-                        >
-                            <div class="team-details">
-                                <span class="seed">#{match.away?.seed}</span>
-                                <svg class="team-logo" width="40" height="40">
-                                    <use
-                                        href={`/sprites.svg#${getTeamId(match.away?.team)}`}
-                                    />
-                                </svg>
-                                <div class="name-col">
-                                    <span class="name">
-                                        <span class="name-full">
-                                            {match.away?.team}
-                                        </span>
-                                        <span class="name-abbr">
-                                            {getTeamAbbreviation(
-                                                match.away?.team,
-                                            )}
-                                        </span>
-                                    </span>
-                                    <span class="record">
-                                        {match.away?.record}
-                                    </span>
-                                </div>
-                            </div>
-                            {getScrapedTeam(match.away?.team, "AFC") && (
-                                <div class="team-stats">
-                                    <span class="prob">
-                                        {
-                                            getScrapedTeam(
-                                                match.away?.team,
-                                                "AFC",
-                                            )?.probability
-                                        }
-                                    </span>
-                                    {getScrapedTeam(match.away?.team, "AFC")
-                                        ?.nextOpponent && (
-                                        <div class="next-opp-container">
-                                            <span class="next-opp">
-                                                nxt{" "}
-                                                {
-                                                    getScrapedTeam(
-                                                        match.away?.team,
-                                                        "AFC",
-                                                    )?.nextOpponent?.location
-                                                }{" "}
-                                                <span class="desktop-opp">
-                                                    {
-                                                        getScrapedTeam(
-                                                            match.away?.team,
-                                                            "AFC",
-                                                        )?.nextOpponent
-                                                            ?.opponent
-                                                    }
-                                                </span>
-                                                <span class="mobile-opp">
-                                                    {getTeamAbbreviation(
-                                                        getScrapedTeam(
-                                                            match.away?.team,
-                                                            "AFC",
-                                                        )?.nextOpponent
-                                                            ?.opponent,
-                                                    )}
-                                                </span>
-                                            </span>
-                                            <div class="schedule-btn">+</div>
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-                        </div>
-                        <div class="versus">@</div>
-                        <div
-                            class="team home team-card-trigger"
-                            data-team={match.home?.team}
-                            data-schedule={JSON.stringify(
-                                getScrapedTeam(match.home?.team, "AFC")
-                                    ?.remainingSchedule,
-                            )}
-                        >
-                            <div class="team-details">
-                                <span class="seed">#{match.home?.seed}</span>
-                                <svg class="team-logo" width="40" height="40">
-                                    <use
-                                        href={`/sprites.svg#${getTeamId(match.home?.team)}`}
-                                    />
-                                </svg>
-                                <div class="name-col">
-                                    <span class="name">
-                                        <span class="name-full">
-                                            {match.home?.team}
-                                        </span>
-                                        <span class="name-abbr">
-                                            {getTeamAbbreviation(
-                                                match.home?.team,
-                                            )}
-                                        </span>
-                                    </span>
-                                    <span class="record">
-                                        {match.home?.record}
-                                    </span>
-                                </div>
-                            </div>
-                            {getScrapedTeam(match.home?.team, "AFC") && (
-                                <div class="team-stats">
-                                    <span class="prob">
-                                        {
-                                            getScrapedTeam(
-                                                match.home?.team,
-                                                "AFC",
-                                            )?.probability
-                                        }
-                                    </span>
-                                    {getScrapedTeam(match.home?.team, "AFC")
-                                        ?.nextOpponent && (
-                                        <div class="next-opp-container">
-                                            <span class="next-opp">
-                                                nxt{" "}
-                                                {
-                                                    getScrapedTeam(
-                                                        match.home?.team,
-                                                        "AFC",
-                                                    )?.nextOpponent?.location
-                                                }{" "}
-                                                <span class="desktop-opp">
-                                                    {
-                                                        getScrapedTeam(
-                                                            match.home?.team,
-                                                            "AFC",
-                                                        )?.nextOpponent
-                                                            ?.opponent
-                                                    }
-                                                </span>
-                                                <span class="mobile-opp">
-                                                    {getTeamAbbreviation(
-                                                        getScrapedTeam(
-                                                            match.home?.team,
-                                                            "AFC",
-                                                        )?.nextOpponent
-                                                            ?.opponent,
-                                                    )}
-                                                </span>
-                                            </span>
-                                            <div class="schedule-btn">+</div>
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                ))
+                afcMatchups.bye && (
+                    <MatchupCard
+                        variant="bye"
+                        team={afcMatchups.bye}
+                        stats={
+                            getScrapedTeam(afcMatchups.bye.team, "AFC") ||
+                            undefined
+                        }
+                    />
+                )
+            }
+
+            <!-- AFC Matches -->
+            {
+                afcMatchups.matches.map(
+                    (match) =>
+                        match.home &&
+                        match.away && (
+                            <MatchupCard
+                                home={match.home}
+                                away={match.away}
+                                homeStats={
+                                    getScrapedTeam(match.home.team, "AFC") ||
+                                    undefined
+                                }
+                                awayStats={
+                                    getScrapedTeam(match.away.team, "AFC") ||
+                                    undefined
+                                }
+                            />
+                        ),
+                )
             }
         </div>
 
-        <div class="conf-col nfc">
-            <h3 class="conf-title">
-                <svg class="conf-logo" width="30" height="30"
-                    ><use href="/sprites.svg#nfc"></use></svg
-                >
-                NFC
-            </h3>
+        <!-- NFC Column -->
+        <div class="conf-col">
+            <ConferenceHeader conf="NFC" />
 
             <!-- NFC Bye -->
-            <div
-                class="matchup-card bye-card"
-                style={`background: ${getTeamColor(nfcMatchups.bye?.team)}; border: none;`}
-            >
-                <span class="label">First Round Bye</span>
-                <div
-                    class="team team-card-trigger"
-                    data-team={nfcMatchups.bye?.team}
-                    data-schedule={JSON.stringify(
-                        getScrapedTeam(nfcMatchups.bye?.team, "NFC")
-                            ?.remainingSchedule,
-                    )}
-                >
-                    <div class="team-details">
-                        <span class="seed">#1</span>
-                        <svg class="team-logo" width="40" height="40"
-                            ><use
-                                href={`/sprites.svg#${getTeamId(nfcMatchups.bye?.team)}`}
-                            ></use></svg
-                        >
-                        <div class="name-col">
-                            <span class="name">
-                                <span class="name-full"
-                                    >{nfcMatchups.bye?.team}</span
-                                >
-                                <span class="name-abbr"
-                                    >{
-                                        getTeamAbbreviation(
-                                            nfcMatchups.bye?.team,
-                                        )
-                                    }</span
-                                >
-                            </span>
-                            <span class="record">{nfcMatchups.bye?.record}</span
-                            >
-                        </div>
-                    </div>
-                    {
-                        getScrapedTeam(nfcMatchups.bye?.team, "NFC") && (
-                            <div class="team-stats">
-                                <span class="prob">
-                                    {
-                                        getScrapedTeam(
-                                            nfcMatchups.bye?.team,
-                                            "NFC",
-                                        )?.probability
-                                    }
-                                </span>
-                                {getScrapedTeam(nfcMatchups.bye?.team, "NFC")
-                                    ?.nextOpponent && (
-                                    <div class="next-opp-container">
-                                        <span class="next-opp">
-                                            nxt{" "}
-                                            {
-                                                getScrapedTeam(
-                                                    nfcMatchups.bye?.team,
-                                                    "NFC",
-                                                )?.nextOpponent?.location
-                                            }{" "}
-                                            <span class="desktop-opp">
-                                                {
-                                                    getScrapedTeam(
-                                                        nfcMatchups.bye?.team,
-                                                        "NFC",
-                                                    )?.nextOpponent?.opponent
-                                                }
-                                            </span>
-                                            <span class="mobile-opp">
-                                                {getTeamAbbreviation(
-                                                    getScrapedTeam(
-                                                        nfcMatchups.bye?.team,
-                                                        "NFC",
-                                                    )?.nextOpponent?.opponent,
-                                                )}
-                                            </span>
-                                        </span>
-                                        <div class="schedule-btn">+</div>
-                                    </div>
-                                )}
-                            </div>
-                        )
-                    }
-                </div>
-            </div>
-
             {
-                nfcMatchups.matches.map((match) => (
-                    <div class="matchup-card compact">
-                        <div
-                            class="team away team-card-trigger"
-                            data-team={match.away?.team}
-                            data-schedule={JSON.stringify(
-                                getScrapedTeam(match.away?.team, "NFC")
-                                    ?.remainingSchedule,
-                            )}
-                        >
-                            <div class="team-details">
-                                <span class="seed">#{match.away?.seed}</span>
-                                <svg class="team-logo" width="40" height="40">
-                                    <use
-                                        href={`/sprites.svg#${getTeamId(match.away?.team)}`}
-                                    />
-                                </svg>
-                                <div class="name-col">
-                                    <span class="name">
-                                        <span class="name-full">
-                                            {match.away?.team}
-                                        </span>
-                                        <span class="name-abbr">
-                                            {getTeamAbbreviation(
-                                                match.away?.team,
-                                            )}
-                                        </span>
-                                    </span>
-                                    <span class="record">
-                                        {match.away?.record}
-                                    </span>
-                                </div>
-                            </div>
-                            {getScrapedTeam(match.away?.team, "NFC") && (
-                                <div class="team-stats">
-                                    <span class="prob">
-                                        {
-                                            getScrapedTeam(
-                                                match.away?.team,
-                                                "NFC",
-                                            )?.probability
-                                        }
-                                    </span>
-                                    {getScrapedTeam(match.away?.team, "NFC")
-                                        ?.nextOpponent && (
-                                        <div class="next-opp-container">
-                                            <span class="next-opp">
-                                                nxt{" "}
-                                                {
-                                                    getScrapedTeam(
-                                                        match.away?.team,
-                                                        "NFC",
-                                                    )?.nextOpponent?.location
-                                                }{" "}
-                                                <span class="desktop-opp">
-                                                    {
-                                                        getScrapedTeam(
-                                                            match.away?.team,
-                                                            "NFC",
-                                                        )?.nextOpponent
-                                                            ?.opponent
-                                                    }
-                                                </span>
-                                                <span class="mobile-opp">
-                                                    {getTeamAbbreviation(
-                                                        getScrapedTeam(
-                                                            match.away?.team,
-                                                            "NFC",
-                                                        )?.nextOpponent
-                                                            ?.opponent,
-                                                    )}
-                                                </span>
-                                            </span>
-                                            <div class="schedule-btn">+</div>
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-                        </div>
-                        <div class="versus">@</div>
-                        <div
-                            class="team home team-card-trigger"
-                            data-team={match.home?.team}
-                            data-schedule={JSON.stringify(
-                                getScrapedTeam(match.home?.team, "NFC")
-                                    ?.remainingSchedule,
-                            )}
-                        >
-                            <div class="team-details">
-                                <span class="seed">#{match.home?.seed}</span>
-                                <svg class="team-logo" width="40" height="40">
-                                    <use
-                                        href={`/sprites.svg#${getTeamId(match.home?.team)}`}
-                                    />
-                                </svg>
-                                <div class="name-col">
-                                    <span class="name">
-                                        <span class="name-full">
-                                            {match.home?.team}
-                                        </span>
-                                        <span class="name-abbr">
-                                            {getTeamAbbreviation(
-                                                match.home?.team,
-                                            )}
-                                        </span>
-                                    </span>
-                                    <span class="record">
-                                        {match.home?.record}
-                                    </span>
-                                </div>
-                            </div>
-                            {getScrapedTeam(match.home?.team, "NFC") && (
-                                <div class="team-stats">
-                                    <span class="prob">
-                                        {
-                                            getScrapedTeam(
-                                                match.home?.team,
-                                                "NFC",
-                                            )?.probability
-                                        }
-                                    </span>
-                                    {getScrapedTeam(match.home?.team, "NFC")
-                                        ?.nextOpponent && (
-                                        <div class="next-opp-container">
-                                            <span class="next-opp">
-                                                nxt{" "}
-                                                {
-                                                    getScrapedTeam(
-                                                        match.home?.team,
-                                                        "NFC",
-                                                    )?.nextOpponent?.location
-                                                }{" "}
-                                                <span class="desktop-opp">
-                                                    {
-                                                        getScrapedTeam(
-                                                            match.home?.team,
-                                                            "NFC",
-                                                        )?.nextOpponent
-                                                            ?.opponent
-                                                    }
-                                                </span>
-                                                <span class="mobile-opp">
-                                                    {getTeamAbbreviation(
-                                                        getScrapedTeam(
-                                                            match.home?.team,
-                                                            "NFC",
-                                                        )?.nextOpponent
-                                                            ?.opponent,
-                                                    )}
-                                                </span>
-                                            </span>
-                                            <div class="schedule-btn">+</div>
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                ))
+                nfcMatchups.bye && (
+                    <MatchupCard
+                        variant="bye"
+                        team={nfcMatchups.bye}
+                        stats={
+                            getScrapedTeam(nfcMatchups.bye.team, "NFC") ||
+                            undefined
+                        }
+                    />
+                )
+            }
+
+            <!-- NFC Matches -->
+            {
+                nfcMatchups.matches.map(
+                    (match) =>
+                        match.home &&
+                        match.away && (
+                            <MatchupCard
+                                home={match.home}
+                                away={match.away}
+                                homeStats={
+                                    getScrapedTeam(match.home.team, "NFC") ||
+                                    undefined
+                                }
+                                awayStats={
+                                    getScrapedTeam(match.away.team, "NFC") ||
+                                    undefined
+                                }
+                            />
+                        ),
+                )
             }
         </div>
     </div>
 </div>
-
-<style lang="scss">
-    .matchups-container {
-        margin-top: 1rem;
-        padding: 1rem;
-
-        @media (min-width: 768px) {
-            margin-top: 3rem;
-        }
-    }
-
-    .section-title {
-        text-align: center;
-        font-size: 2rem;
-        margin-bottom: 2rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-
-    .conference-matchups {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        max-width: 1000px;
-        margin: 0 auto;
-
-        @media (min-width: 768px) {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-    .conf-title {
-        text-align: center;
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        background: rgba(255, 255, 255, 0.05);
-        padding: 0.5rem;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-
-        .conf-logo {
-            fill: currentColor;
-        }
-    }
-
-    .afc .conf-title {
-        border-bottom: 2px solid var(--nfl-red);
-    }
-    .nfc .conf-title {
-        border-bottom: 2px solid var(--nfl-blue);
-    }
-
-    .matchup-card {
-        background: var(--bg-card);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-
-        &.compact {
-            flex-direction: row;
-            justify-content: center;
-            gap: 0.7rem;
-            padding: 1.25rem 0.3rem;
-
-            @media (min-width: 768px) {
-                height: 7rem;
-            }
-        }
-
-        &.bye-card {
-            background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.05) 0%,
-                rgba(0, 0, 0, 0) 100%
-            );
-            border-color: #444;
-
-            .label {
-                font-size: 0.8rem;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                color: var(--text-gray-lighter);
-            }
-
-            .team {
-                flex-wrap: nowrap;
-            }
-
-            .team {
-                .seed {
-                    font-size: 1.4rem;
-                    color: var(--text-gray-light);
-                }
-
-                .team-logo {
-                    width: 55px;
-                    height: 55px;
-                }
-
-                .team-details {
-                    .name {
-                        font-size: 1.6rem;
-                    }
-                }
-
-                .prob {
-                    font-size: 1rem;
-                    color: var(--text-gray-lighter);
-                }
-
-                .next-opp {
-                    font-size: 0.9rem;
-                    color: var(--text-gray-lighter);
-                }
-            }
-        }
-
-        .team {
-            display: flex;
-            flex-direction: column; // Stack details and stats vertically
-            align-items: center;
-            gap: 5px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            justify-content: center;
-
-            &.team-card-trigger {
-                cursor: pointer;
-                -webkit-tap-highlight-color: transparent;
-                transition: background 0.2s;
-                padding: 4px;
-                border-radius: 6px;
-
-                &:hover {
-                    background: rgba(255, 255, 255, 0.05);
-                }
-            }
-            // Allow wrapping on mobile - though now it's vertical so wrapping might be less relevant for items but potentially for inner content?
-            @media (max-width: 480px) {
-                // flex-wrap: wrap; // No longer needed if column
-                // gap: 5px;
-            }
-
-            .seed {
-                font-size: 1.2rem;
-                color: var(--text-secondary);
-                font-style: italic;
-
-                @media (min-width: 480px) {
-                    padding: 0 6px;
-                }
-            }
-
-            .team-logo {
-                flex-shrink: 0;
-
-                @media (max-width: 480px) {
-                    width: 40px;
-                    height: 40px;
-                }
-            }
-
-            .team-details {
-                display: flex;
-                flex-direction: row; // Horizontal for seed, logo, name
-                align-items: center;
-                gap: 10px; // Add gap between identity elements
-
-                // On mobile, keep it row
-                @media (max-width: 480px) {
-                    // display: contents; // Remove contents, keep it flex
-                }
-
-                .name-col {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    line-height: 1.1;
-
-                    .name {
-                        display: flex;
-                        align-items: center;
-
-                        .name-full {
-                            display: block;
-                            @media (max-width: 480px) {
-                                display: none;
-                            }
-                        }
-
-                        .name-abbr {
-                            display: none;
-                            @media (max-width: 480px) {
-                                display: block;
-                            }
-                        }
-
-                        @media (max-width: 480px) {
-                            font-size: 1.2rem;
-                            white-space: nowrap; // Keep name on one line if possible
-                        }
-                    }
-
-                    .record {
-                        font-size: 0.8rem;
-                        color: var(--text-gray-lighter);
-                        font-weight: normal;
-                        margin-top: 2px;
-                    }
-                }
-            }
-
-            .team-stats {
-                display: flex;
-                align-items: center; // Center stats below team details
-                width: 100%; // Ensure it takes full width if needed for alignment
-                justify-content: center;
-                gap: 0.5rem;
-            }
-
-            .prob {
-                font-size: 0.75rem;
-                color: #4ade80;
-                font-weight: normal;
-                // Add left margin on mobile since it's now inline with Name
-                @media (max-width: 480px) {
-                    margin-left: 2px;
-                    font-size: 0.8rem;
-                    align-self: center; // Align with name/logo
-                }
-            }
-
-            .next-opp-container {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-                margin-top: 2px;
-
-                // Force to new line on mobile
-                @media (max-width: 480px) {
-                    margin-top: 0;
-                    padding-left: 0;
-                    justify-content: center; // Or center if preferred? Left aligned usually better
-                }
-            }
-        }
-
-        &.compact .team {
-            flex: 1 1 45%;
-        }
-
-        .versus {
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: var(--text-secondary);
-            margin: 0;
-            opacity: 0.5;
-
-            @media (min-width: 480px) {
-                font-size: 1.6rem;
-            }
-        }
-
-        .team-stats {
-            display: flex;
-        }
-
-        .next-opp-container {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            margin-top: 2px;
-        }
-
-        .schedule-btn {
-            background: #333;
-            border: 1px solid #555;
-            color: #ccc;
-            border-radius: 4px;
-            width: 16px;
-            height: 16px;
-            font-size: 12px;
-            line-height: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-
-            &:hover {
-                background: #555;
-                color: #fff;
-            }
-        }
-
-        .next-opp {
-            font-family: var(--font-body);
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-    }
-
-    .desktop-opp {
-        display: none;
-        @media (min-width: 480px) {
-            display: inline;
-        }
-    }
-
-    .mobile-opp {
-        display: inline;
-        @media (min-width: 480px) {
-            display: none;
-        }
-    }
-</style>

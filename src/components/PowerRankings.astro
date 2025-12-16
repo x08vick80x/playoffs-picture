@@ -1,5 +1,6 @@
 ---
 import { getTeamId } from "../utils/team-mapping.js";
+import SectionTitle from "./atoms/SectionTitle.astro";
 
 interface Ranking {
     rank: number;
@@ -14,43 +15,41 @@ interface Props {
 
 const { rankings } = Astro.props;
 
-const getTrendColor = (trend: string | undefined) => {
+const getTrendModifier = (trend: string | undefined) => {
     if (!trend || trend === "0") return "neutral";
     return trend.startsWith("-") ? "negative" : "positive";
 };
 ---
 
-<section class="power-rankings">
-    <h2 class="section-title">
-        Power Rankings <span class="week-label">Week 15</span>
-    </h2>
+<section class="power-rankings" id="power-rankings">
+    <SectionTitle title="Power Rankings" />
 
-    <div class="rankings-list">
+    <div class="power-rankings__list">
         {
             rankings && rankings.length > 0 ? (
                 rankings.map((item) => {
-                    const trendColor = getTrendColor(item.trend);
+                    const trendModifier = getTrendModifier(item.trend);
                     return (
                         <article
                             class="ranking-item toggle-trigger"
                             id={`rank-${item.rank}`}
                         >
-                            <div class="rank-header">
-                                <div class="rank-badge">
-                                    <span class="rank-number">
+                            <div class="ranking-item__header">
+                                <div class="ranking-item__badge">
+                                    <span class="ranking-item__number">
                                         #{item.rank}
                                     </span>
                                     {item.trend && item.trend !== "0" && (
                                         <span
-                                            class={`trend-indicator ${trendColor}`}
+                                            class={`ranking-item__trend ranking-item__trend--${trendModifier}`}
                                         >
                                             {item.trend}
                                         </span>
                                     )}
                                 </div>
-                                <div class="team-info">
+                                <div class="ranking-item__info">
                                     <svg
-                                        class="team-logo"
+                                        class="team-logo team-logo--sm"
                                         width="40"
                                         height="40"
                                     >
@@ -58,11 +57,13 @@ const getTrendColor = (trend: string | undefined) => {
                                             href={`/sprites.svg#${getTeamId(item.team)}`}
                                         />
                                     </svg>
-                                    <span class="team-name">{item.team}</span>
+                                    <span class="ranking-item__name">
+                                        {item.team}
+                                    </span>
                                 </div>
-                                <div class="toggle-icon">
+                                <div class="ranking-item__toggle">
                                     <svg
-                                        class="chevron"
+                                        class="ranking-item__chevron"
                                         width="24"
                                         height="24"
                                         viewBox="0 0 24 24"
@@ -74,8 +75,8 @@ const getTrendColor = (trend: string | undefined) => {
                                     </svg>
                                 </div>
                             </div>
-                            <div class="rank-content-wrapper">
-                                <div class="rank-content">
+                            <div class="ranking-item__body-wrapper">
+                                <div class="ranking-item__content">
                                     {item.blurb ? (
                                         <p>{item.blurb}</p>
                                     ) : (
@@ -89,7 +90,9 @@ const getTrendColor = (trend: string | undefined) => {
                     );
                 })
             ) : (
-                <div class="empty-state">Rankings data unavailable.</div>
+                <div class="power-rankings__empty">
+                    Rankings data unavailable.
+                </div>
             )
         }
     </div>
@@ -99,174 +102,8 @@ const getTrendColor = (trend: string | undefined) => {
     // Toggle logic for the entire card
     document.querySelectorAll(".toggle-trigger").forEach((item) => {
         item.addEventListener("click", (e) => {
-            const contentWrapper = item.querySelector(".rank-content-wrapper");
-
             // Toggle expanded class on parent
-            item.classList.toggle("expanded");
+            item.classList.toggle("ranking-item--expanded");
         });
     });
 </script>
-
-<style lang="scss">
-    .power-rankings {
-        max-width: 800px;
-        margin: 3rem auto;
-        padding: 0 1rem;
-    }
-
-    .section-title {
-        text-align: center;
-        font-size: 2rem;
-        margin-bottom: 2rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-
-        .week-label {
-            display: block;
-            font-size: 1rem;
-            color: var(--nfl-red);
-            margin-top: 0.5rem;
-        }
-    }
-
-    .rankings-list {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .ranking-item {
-        background: var(--bg-card);
-        border: 1px solid #333;
-        border-radius: 8px;
-        overflow: hidden;
-        transition: all 0.2s;
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-
-        &:hover {
-            border-color: #666;
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        &.expanded {
-            border-color: var(--nfl-blue);
-
-            .chevron {
-                transform: rotate(180deg);
-            }
-        }
-    }
-
-    .rank-header {
-        display: grid;
-        grid-template-columns: 80px 1fr 40px;
-        align-items: center;
-        padding: 1rem;
-    }
-
-    .rank-badge {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2px;
-    }
-
-    .rank-number {
-        font-size: 1.4rem;
-        font-weight: 800;
-        color: #fff;
-    }
-
-    .trend-indicator {
-        font-size: 0.8rem;
-        font-weight: bold;
-
-        &.positive {
-            color: #2ecc71;
-            &::before {
-                content: "▲ ";
-            }
-        }
-        &.negative {
-            color: #e74c3c;
-            &::before {
-                content: "▼ ";
-            }
-        }
-        &.neutral {
-            color: var(--text-secondary);
-        }
-    }
-
-    .team-info {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .team-name {
-        font-size: 1.2rem;
-        font-weight: 700;
-    }
-
-    .toggle-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--text-secondary);
-
-        .chevron {
-            transition: transform 0.3s;
-        }
-    }
-
-    .rank-content-wrapper {
-        display: grid;
-        grid-template-rows: 0fr;
-        transition: grid-template-rows 0.3s ease-out;
-        border-top: 1px solid transparent; // Hidden initially
-    }
-
-    .ranking-item.expanded {
-        border-color: var(--nfl-blue);
-
-        .chevron {
-            transform: rotate(180deg);
-        }
-
-        .rank-content-wrapper {
-            grid-template-rows: 1fr;
-            border-top: 1px solid #333; // Show border when expanded
-        }
-    }
-
-    .rank-content {
-        overflow: hidden;
-        background: rgba(0, 0, 0, 0.2);
-
-        // Inner padding wrapper
-        p,
-        .no-content {
-            padding: 1rem 1.5rem;
-            margin: 0;
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #ddd;
-            font-family: var(--font-body);
-            font-weight: 400;
-        }
-
-        .no-content {
-            color: #666;
-            font-style: italic;
-        }
-    }
-
-    .empty-state {
-        text-align: center;
-        color: #666;
-        padding: 2rem;
-    }
-</style>

@@ -1,0 +1,9 @@
+@use '../../variables' as *;
+
+.last-updated {
+    text-align: center;
+    color: $text-secondary;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-family: $font-body;
+}
