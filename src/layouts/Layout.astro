@@ -1,5 +1,6 @@
 ---
 import { pwaInfo } from "virtual:pwa-info";
+import Analytics from "@vercel/analytics/astro";
 
 interface Props {
     title: string;
@@ -58,6 +59,7 @@ const { title } = Astro.props;
     </head>
     <body>
         <slot />
+        <Analytics />
         <script src="../pwa.ts"></script>
         <script is:inline>
             // PWA Install Prompt
