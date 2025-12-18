@@ -332,7 +332,25 @@ async function scrape() {
         });
 
         // 3. Scrape Schedule for Weeks 15-18
-        const WEEKS = ['REG15', 'REG16', 'REG17', 'REG18'];
+        // Define week boundaries (Tuesday morning after MNF)
+        const WEEK_SCHEDULE = [
+            { id: 'REG15', end: new Date('2025-12-17T12:00:00Z') },
+            { id: 'REG16', end: new Date('2025-12-24T12:00:00Z') },
+            { id: 'REG17', end: new Date('2025-12-31T12:00:00Z') },
+            { id: 'REG18', end: new Date('2026-01-07T12:00:00Z') }
+        ];
+
+        const now = new Date();
+        const WEEKS = WEEK_SCHEDULE
+            .filter(w => now < w.end || w.id === 'REG18') // Keep future weeks, always keep last week if we are past everything (or just let it empty?) - logic: if it's Dec 18, REG15 is gone.
+            .map(w => w.id);
+
+        console.log(`Current Date: ${now.toISOString()}`);
+        console.log(`Weeks to scrape: ${WEEKS.join(', ')}`);
+
+        // If we are past everything, maybe just keep REG18 to show something?
+        if (WEEKS.length === 0) WEEKS.push('REG18');
+
         const allMatches = [];
 
         for (const week of WEEKS) { // week is REG15, REG16...
