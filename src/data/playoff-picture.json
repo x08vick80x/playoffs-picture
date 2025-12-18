@@ -74,7 +74,7 @@
         "conf": "NFC",
         "top": 2259,
         "record": "8-6",
-        "probability": "14%",
+        "probability": "13%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -107,7 +107,7 @@
         "conf": "NFC",
         "top": 2409,
         "record": "7-7",
-        "probability": "5%",
+        "probability": "6%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -734,7 +734,7 @@
       {
         "name": "Chargers",
         "record": "10-4",
-        "probability": "90%",
+        "probability": "91%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -765,7 +765,7 @@
       {
         "name": "Bills",
         "record": "10-4",
-        "probability": ">99%",
+        "probability": "99%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -796,7 +796,7 @@
       {
         "name": "Texans",
         "record": "9-5",
-        "probability": "86%",
+        "probability": "87%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -860,7 +860,7 @@
       {
         "name": "Bears",
         "record": "10-4",
-        "probability": "59%",
+        "probability": "62%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -922,7 +922,7 @@
       {
         "name": "Buccaneers",
         "record": "7-7",
-        "probability": "57%",
+        "probability": "56%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -1015,7 +1015,7 @@
       {
         "name": "Packers",
         "record": "9-4-1",
-        "probability": "77%",
+        "probability": "78%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -1050,193 +1050,193 @@
       "rank": 1,
       "team": "Rams",
       "trend": "",
-      "blurb": "A week after their first loss since early October, the Rams racked up season highs in points (45) and yards from scrimmage (530) in a road beatdown of the Cardinals. Arizona played tough early but collapsed under the onslaught of Los Angeles' persistent and balanced attack. Right now, the Kyren Williams-Blake Corum backfield combo looks like a real winner. The Rams nearly ran for as many yards (249) as they threw for (281) on Sunday, and their only negative plays on offense came on a few annoying penalties. Other than that, they were dominant, rewarding my faith in them -- keeping them in the No. 1 spot -- after the Week 13 defeat at Carolina. Tough games lie ahead against the Lions and Seahawks, the latter of which likely will decide the NFC West and could seal the top seed for the Rams."
+      "blurb": "The Rams were potentially staring at a 10-point halftime deficit to the Lions before cranking it up late in the second quarter and ultimately outsourcing Detroit by a 27-10 count for the remainder of the game. Davante Adams' hamstring injury is concerning, but there's not yet reason to assume he'll miss the postseason, which would be a worthy silver lining. The Rams have officially clinched a playoff berth. Now the focus turns to winning the division and locking up the top seed in the NFC. With a short week before Thursday's game at Seattle, the Rams don't have much time to prepare for their second game against a Seahawks defense that has been stingy most of the season and held Los Angeles to just 249 yards of offense a month ago. And now the Rams will be without Adams this time around. Perhaps L.A.'s rushing attack, which has three TDs in each of the past two games, will be a big part of the solution."
     },
     {
       "rank": 2,
-      "team": "Seahawks",
-      "trend": "",
-      "blurb": "The Seahawks were surprisingly sluggish in the first half, but they cranked it up after the break, with Rashid Shaheed giving them a huge nudge via his 100-yard kickoff return. What makes these 'Hawks dangerous is that they have firepower in all three phases of the game. The special teams feature big legs and TD potential in the return games. Sam Darnold and the offense certainly can turn up the heat, as they did in the second half at Atlanta. But the defense might be the most incendiary unit on the team, holding the Falcons to three field goals and forcing three turnovers. Granted, Seattle hasn't faced the most fearsome group of quarterbacks (and will avoid Daniel Jones in this Sunday's game against Indianapolis), but Mike Macdonald's defense is close to full health and firing on all cylinders."
+      "team": "Broncos",
+      "trend": "+1",
+      "blurb": "The Broncos made their case to be considered the best team in the AFC with an impressive comeback win over the Packers, outscoring them 20-3 over the game's final 24 minutes. Bo Nix heated up and finished with one of his better career stat lines (302 yards and four touchdowns through the air), even with a few dropped picks by the Pack. Denver's offensive line held up well, and the penalties didn't get out of hand. On defense, the Broncos were tested on their first five possessions, but Patrick Surtain's interception flipped the game on its head. From that point on, the defense was dominant. Even with the late turnovers on downs, this performance was a muscle-flexer -- and Denver's 11th straight win. What else do you want to see? This is a strong, battle-tested team that can make a deep postseason run."
     },
     {
       "rank": 3,
-      "team": "Broncos",
-      "trend": "",
-      "blurb": "By sweeping the Raiders, the Broncos secured a key tiebreaker with the Patriots, earning a common-opponents edge between the two teams if they finish with the same record. That gives them pole position for the AFC's No. 1 seed, even if this thing could -- and probably will -- go down to the wire. Bo Nix led a very efficient offensive attack, with Denver scoring its first opening-drive touchdown since Week 2 and not letting up. There wasn't anything mind-blowing about Sunday's performance, but it was what was expected from a strong Denver team against a weak Las Vegas club, with the Raiders' late TD and field goal making this contest look a lot closer than it actually was. The Broncos' final four games are a real test, and don't expect any mercy when they visit Kansas City in a few weeks, even if the Chiefs are officially eliminated from postseason play by then."
+      "team": "Seahawks",
+      "trend": "-1",
+      "blurb": "Since the Seahawks' rout of the Cardinals in Week 10, during which they scored 21 first-quarter points, they've totaled a mere 12 first-quarter points over the last five games. The slow starts have made some of these recent contests tougher than they should have been, including Sunday's nail-biter against the Philip Rivers-led Colts. The offense got it going late with three important field-goal drives, but this attack hasn't quite looked right for a few games now. On Sunday, the run game was as poor as we've seen it all season, and Seattle went 2-for-13 on third down and 0-for-2 in the red zone. Without an incredible day from kicker Jason Myers, the 'Hawks would have lost. This has to change quickly, with the Rams coming to town for a game that likely will determine the fate of the NFC West and could push the winner closer to the NFC's top playoff seed."
     },
     {
       "rank": 4,
-      "team": "Patriots",
-      "trend": "",
-      "blurb": "Ten straight wins, followed by a bye and a shot to end the Bills' division run this Sunday in Foxborough. The Patriots are flying high in what could be a post-Chiefs playoff field, with a chance to earn a first-round bye and home-field advantage throughout the postseason. Beating Buffalo won't be easy, especially with Josh Allen heating up and undoubtedly champing at the bit for a second crack at that Patriots defense, which will be without Milton Williams. New England also will be shorthanded on the offensive line for a bit, and the run game has had its limitations. But Drake Maye and his receivers, with some brilliant guidance from Josh McDaniels, have made it work quite well to this point. The Pats aren't a perfect team, but they're pretty darned compelling, and they'll give anyone they face from here on out a great battle. That's guaranteed."
+      "team": "Bills",
+      "trend": "+2",
+      "blurb": "Josh Allen had just 35 pass yards at halftime, and Buffalo trailed, 24-7, with its division-title dreams seemingly up in smoke. But the Bills rallied with incredible fury, reminding the NFL world just how dangerous they are, especially in a post-Patrick Mahomes playoff environment. The win didn't clinch anything for Buffalo, but it did reinstill the belief that this team is capable of some magic. We can talk about how the Bills looked woefully unprepared for the start of the game, and they were lucky to only be down 17 points at the break, but we can also have a discussion on how beating the Bills requires keeping Allen and James Cook in check for four quarters. The Patriots couldn't do that, and I am not sure how many teams outside of the Texans and Broncos might be capable of that in the AFC field. It's been a strange path, but the Bills are nearly as desperate and dangerous as they've recently been."
     },
     {
       "rank": 5,
-      "team": "Packers",
-      "trend": "",
-      "blurb": "Jordan Love has stepped up in a major way over the past couple games, with four touchdown passes against Detroit and three more vs. Chicago, rallying on Sunday after a bad early interception. The big-play threat is back in the Packers' offense, even if it was surprising how much man coverage the Bears threw their way. Still, Christian Watson had two long touchdowns, Bo Melton added one of his own, and Jayden Reed reprised his old role (with three big first-down conversions) in his long-awaited return from injury. It also helps when Josh Jacobs is grinding out late yards, fueling the game-winning drive with some big plays. The defense looked gassed by game's end, but a third-down stuff and fourth-down pick were just what Green Bay needed. This is a tough team with Super Bowl potential, even if the Pack nearly coughed up a double-digit lead to the Bears."
+      "team": "Patriots",
+      "trend": "-1",
+      "blurb": "The Patriots were 30 game minutes away from the AFC EAST CHAMPIONS hats and T-shirts being ripped out of the boxes, leading 24-7 at the break following a dominant first half against a Bills team they'd already beaten. That's what made Sunday's 35-31 loss so devastating. New England managed just three first downs after halftime, and the defense allowed five straight touchdown drives by the Bills. Drake Maye played a strong, efficient first half, and the pass protection held up remarkably well, but it was a 180-degree turn after halftime. Maye completed just five of his 12 passes for 47 yards with an INT and three sacks after halftime, including only one completion (for 5 yards) on his final seven throws. That hurt Maye's fading MVP chances. And the loss certainly slowed the Patriots' division-title quest and their hopes for the AFC's top seed. The former still feels possible, if not likely, but the latter might have been kissed goodbye."
     },
     {
       "rank": 6,
-      "team": "Bills",
-      "trend": "+3",
-      "blurb": "Down 10 points late, with the snow really piling up, Josh Allen and an opportunistic Bills defense dominated the final eight minutes with an incredible flourish against the scrappy Bengals, keeping Buffalo's faint divisional hopes alive. The Bills will need to beat the well-rested Patriots on Sunday in Foxborough -- and do more than that -- to even harbor those thoughts, but it's possible. Yet, I think this team remains dangerous as a wild card, if that's the way it goes. With the Bengals, Ravens and Chiefs all falling off, and even the upstart Colts falling on hard times, you simply cannot count out an Allen-led group in the playoffs. I'm not ignoring Buffalo's defensive limitations, nor am I looking away from James Cook's rising fumble total. But with Allen, the Bills nearly always have a chance."
+      "team": "Bears",
+      "trend": "+1",
+      "blurb": "The secret to the Bears' success has been their turnover margin, with Chicago racking up 30 takeaways against just 10 turnovers. No one has taken the ball away from opponents as frequently as the Bears (the Jaguars rank second with 26 swipes), and only the Lions (eight turnovers) have coughed it up fewer times. It was a big factor Sunday, too, with the Bears winning the turnover battle 3-0, allowing them to put the Browns away late after leading just 14-3 six minutes into the second half. There were other positive developments, with Caleb Williams playing well against a good Browns defense and DJ Moore and Luther Burden III stepping up after Rome Odunze was a late scratch following pregame warmups. That showed a level of focus and mental toughness for a team that is rounding into postseason form -- one that also finds itself back in the NFC North lead after Green Bay's loss in Denver."
     },
     {
       "rank": 7,
-      "team": "Bears",
-      "trend": "-1",
-      "blurb": "This was a humbling loss, not a demoralizing one, even if the Packers have seized temporary control of the division. The Lions aren't going away, either, and to demonstrate just how tenuous everything is at this time of year, the Bears fell from the top seed in the NFC last week to the last team in the playoff field. All for a team that was a few plays away from potentially stealing the game up in Green Bay. The rematch in two weekends remains huge and could shift the division back in the Bears' direction, but their hopes of a first-round bye might be gone now, and the wind's at Green Bay's back. Caleb Williams had his moments but couldn't finish, and the defense just gave up too many big plays, with not enough pressure and crossed wires in the secondary."
+      "team": "Jaguars",
+      "trend": "+2",
+      "blurb": "The Jaguars have ripped off five straight wins, and they did so emphatically on Sunday by building a 31-10 halftime lead and continuing to pour it on in the second half against the helpless Jets. ﻿﻿﻿Trevor Lawrence﻿﻿﻿ engineered his finest statistical outing ever, accounting for six touchdowns himself and leading only three empty drives all game. Lawrence got hot in the latter half of the 2022 season to lead the Jags into the playoffs, and he’s on a similar heater now. This coming Sunday’s matchup against an even hotter Broncos team should provide Jacksonville the kind of playoff-caliber matchup it needs, and these two teams could meet again in January, for all we know."
     },
     {
       "rank": 8,
       "team": "49ers",
       "trend": "",
-      "blurb": "The league's most beat-up team rode into the Week 14 bye on a high, winning three straight, and you could make a strong case that having their week off earlier in the season might have helped more from a health standpoint. They're not going to get back any significant players from injury, and Kyle Juszczyk's status remains up in the air. That said, it's probably a great thing that San Francisco's stars -- especially workhorse Christian McCaffrey -- had a break. Winning out could actually give the Niners a shot at the No. 1 seed, and three of the final four are at home, with the lone road game (at Indianapolis) looking different following Daniel Jones' injury. Don't count San Francisco out, even with all the injuries."
+      "blurb": "On Kyle Shanahan's 46th birthday, Brock Purdy gifted his coach a pretty terrific performance, even with a lost fumble that the Titans swiftly converted into a touchdown. Ricky Pearsall reemerged with a big game, which was a positive development with the playoffs looming, while George Kittle and Jauan Jennings both stepped up with good outings, as well. It's concerning that the defense couldn't sack the Titans -- one of the worst pass-protecting teams in the league -- and dropped a few potential interceptions that helped make the game appear closer than it was for most of Sunday. The defensive concerns are the biggest ones for a Niners team that inched closer to the postseason. There's still a slim path to taking the NFC West -- and even the top seed in the conference -- but the defensive limitations could prevent that from happening."
     },
     {
       "rank": 9,
-      "team": "Jaguars",
-      "trend": "+3",
-      "blurb": "If you were to ask me to identify Jacksonville's superpower, I'd probably stumble my way through an answer before mentioning the run defense. But once Daniel Jones was knocked out of Sunday's game, the Jaguars flexed their muscles and put the Colts away to wrest temporary control of the division. The Texans are coming, but these Jaguars are making things work in Liam Coen's first season. He might be running third in the Coach of the Year race behind Mike Vrabel and Ben Johnson, but Coen's offense looked nice early against Indy before slowing down after halftime. All in all, though, this team is playing good football at the right time. Jacksonville has allowed just 13 points per game over the past four, and it's looking like the Jags could face undrafted rookie Brady Cook at QB when the Jets come to town this Sunday."
+      "team": "Packers",
+      "trend": "-4",
+      "blurb": "It was a season-changing loss in Denver, with Micah Parsons suffering a torn ACL and Christian Watson, Zach Tom, Quay Walker and Evan Williams all getting hurt, as well. The Packers were in control, up 23-14 in the third quarter, but Jordan Love underthrew a deep ball to Watson (the play in which the receiver got hurt), and everything turned in Denver's direction. Parsons is obviously the biggest blow; losing his pass-rush juice just takes a lot of the teeth out of this defense. It's still a capable unit without him, but it's fair to ask if Green Bay is capable of making a Super Bowl run now. The loss knocked the Packers out of the NFC North lead, handing it back to the Bears and shifting Green Bay into the final playoff slot for now. It's tough to understate how damaging this game was, even with the Pack having a chance to sweep the Bears this Saturday."
     },
     {
       "rank": 10,
-      "team": "Lions",
+      "team": "Texans",
       "trend": "+1",
-      "blurb": "With their backs against the wall, the Lions willed their way to victory over the Cowboys and kept alive their streak of 15 straight wins following a loss. That's the kind of mental toughness Dan Campbell has instilled in his team, but that resilience is going to be put to the test with Brian Branch suffering a season-ending Achilles injury. The star safety is as much the heartbeat of Detroit's defense as Aidan Hutchinson is -- losing Branch at an already-thin position could be a massive blow to Kelvin Sheppard's unit. Adding to the degree of difficulty: three road games in the final four, with zero gimmes remaining. The Lions' only contest against a team that's not currently in the playoff field comes in a short week at Minnesota on Christmas Day. With Jahmyr Gibbs on their side, anything is possible. But no doubt, the Lions still have a ton of work to do and several obstacles in their way."
+      "blurb": "The win streak sits at six, the playoffs are nearly a certainty, and the offense is showing signs of growth. Ringing up 40 points is always welcome, as C.J. Stroud and a surprisingly productive run game had their way with Arizona on Sunday. But another highly encouraging development has been the reduction of turnovers, with only one in the Texans' past five games combined. Giveaways cost them a few early-season losses, but they haven't been an issue for months now. The defense didn't have a flawless game by its sterling standards, but it was a solid effort that allowed Houston to build a 23-point lead. The Raiders could be another tune-up for the final two games, at the Chargers and home against the Colts, which could ultimately decide whether the Texans are a wild-card team or your AFC South champs."
     },
     {
       "rank": 11,
-      "team": "Texans",
-      "trend": "+2",
-      "blurb": "C.J. Stroud completed three passes in the second half -- three! -- but the Texans produced just enough offense to finish what the defense started. DeMeco Ryans' elite D has thrown some beauties this season, but Sunday night's effort was probably its most important performance of the season, with Houston intercepting Patrick Mahomes three times (even if the last one was a gift off the hands of Travis Kelce). Andy Reid rolled the dice twice on fourth downs, and in some ways, that was a nod to just how good the Texans are defensively. Reid felt he had to play that riskily in order to get any spark offensively. Houston also managed an injury to Nick Chubb, with Dare Ogunbowale spelling Woody Marks to score his first rushing TD since 2022 (on only his fourth carry of the season). The Texans keep finding ways to win games, and they could run their streak to seven straight, with the Cardinals and Raiders on tap in Houston."
+      "team": "Chargers",
+      "trend": "+1",
+      "blurb": "The Chargers have won three straight games, and they’ve beaten last season’s Super Bowl teams in back-to-back thrillers. You can thank the defense for both, coming up with critical late interceptions in the red zone to finish them off. On Sunday, it was ﻿﻿﻿﻿﻿﻿Derwin James﻿﻿﻿﻿﻿﻿’ INT of ﻿﻿﻿﻿﻿﻿Gardner Minshew﻿﻿﻿﻿﻿﻿ with 20 seconds left, after ﻿﻿﻿﻿﻿﻿Patrick Mahomes﻿﻿﻿﻿﻿﻿ suffered a season-ending torn ACL. The significance of this win can’t be understated, officially ending the Chiefs’ dynastic run at Arrowhead, and the way the defense is playing now makes the Chargers look like legitimate contenders. That said, the shorthanded offense hasn’t carried its share of the weight lately, with ﻿﻿﻿﻿﻿﻿Justin Herbert﻿﻿﻿﻿﻿﻿ throwing his 12th interception of the season -- marking his fourth straight game with a pick. The division race mathematically remains up for grabs, and Herbert must be smarter with the ball down the stretch."
     },
     {
       "rank": 12,
-      "team": "Chargers",
-      "trend": "+3",
-      "blurb": "Justin Herbert was sacked seven times and hit a whole lot more, struggling to find open receivers and protect the broken left hand he had surgery on a week before Monday’s game. But it was Herbert’s running that gave the offense the tiny boost it needed, and though the Chargers failed to score a touchdown after their opening drive, they held on for dear life for a dramatic overtime win. The defense rose up time and time again, picking off Jalen Hurts four times, including the game-sealer just outside the end zone in overtime. Cameron Dicker remains the league's most underrated kicker, making five field goals, with three coming in the final eight minutes of regulation and overtime. Just a gutsy, ugly, chaotic victory for Jim Harbaugh’s team, with style points absolutely unnecessary. The Bolts keep scraping by."
+      "team": "Eagles",
+      "trend": "+1",
+      "blurb": "The Eagles needed a tension-breaker game, and they got exactly that. Beating the Raiders won’t tell us whether the offense is truly fixed or if Philadelphia is suddenly any more playoff-ready, making this result comparable to the 2023 Eagles’ December win over a bad Giants team. Then again, just imagine if Philly had not had its way with an even worse Las Vegas outfit. ﻿﻿﻿﻿﻿﻿﻿﻿Jalen Hurts﻿﻿﻿﻿﻿﻿﻿﻿ followed his five-turnover game against the Chargers with a clean, crisp performance Sunday, and that was a positive sign. The red-zone package was a little more inspired, too, and the defense turned in a near-perfect showing, even accounting for how challenged the Raiders are offensively. The Eagles will take this and try to build on it, with Sunday's game against the 4-10 Commanders presenting a similar assignment."
     },
     {
       "rank": 13,
-      "team": "Eagles",
-      "trend": "-3",
-      "blurb": "Jalen Hurts overcame a nightmarish first half to rally the Eagles and put them in position to beat the Chargers in overtime ... but then threw his fourth interception of the game on a pass forced into coverage. Hurts’ third INT clanged off A.J. Brown’s hands, but the other three -- plus his fumble after his own pick -- were on the quarterback. In the first half, the Eagles had a touchdown erased by a holding penalty, missed a field goal and generally looked listless offensively outside of Saquon Barkley. It was Barkley’s terrific, fourth-quarter TD run that put Philadelphia ahead for the first time, but the Eagles couldn’t contain Justin Herbert as a runner. Still, it’s hard to blame a defense that held the Chargers to 3.9 yards per play and didn't allow a touchdown after Los Angeles' opening drive. The Eagles consistently got good starting field position from the return teams but had eight empty drives and went 0-for-2 in the red zone. After a third straight loss, this will be another long week in Philly. If the Eagles can't get right in Sunday's home game against the lowly Raiders, the reigning champs are in serious trouble."
+      "team": "Steelers",
+      "trend": "+1",
+      "blurb": "The Steelers dawdled around for much of the first half, unable to convert a third down to save their lives, but they flipped the switch just before halftime, logging the first of four straight touchdown drives in a dominant heel turn against the Dolphins. The run game started cooking in the second half, and ﻿﻿﻿﻿Aaron Rodgers﻿﻿﻿﻿ had a good night distributing the ball around. ﻿﻿﻿﻿DK Metcalf﻿﻿﻿﻿ scored his first TD since Week 8, and ﻿﻿﻿﻿Jaylen Warren﻿﻿﻿﻿ had an all-around strong night. Losing LG ﻿﻿﻿﻿Isaac Seumalo﻿﻿﻿﻿ for any length of time would be a blow, but LT ﻿﻿﻿﻿Dylan Cook﻿﻿﻿﻿ stood tall in his first NFL start. The AFC North still likely hinges on the Week 18 game against the Ravens, assuming Baltimore keeps winning, but the Steelers maintained their one-game lead, with a still-tough assignment on tap this Sunday at Detroit."
     },
     {
       "rank": 14,
-      "team": "Steelers",
-      "trend": "+6",
-      "blurb": "What a difference a week made. Mike Tomlin's future in Pittsburgh was in question, it felt like it could be it for ﻿﻿﻿﻿Aaron Rodgers﻿﻿﻿﻿ and the Steelers were cooked ... until they went out and beat the Ravens in Baltimore. Rodgers came out like a man on a mission. He didn’t complete a pass of 20-plus air yards in the entire month of November, but he hit on three of them against the Ravens. Granted, the offense ran out of steam in the fourth quarter, and the defense started cracking, allowing Baltimore to score on four straight drives. But the Steelers were terrific in the red zone, holding the Ravens to two field goals and turning them over on downs in that area of the field, with ﻿﻿﻿﻿Alex Highsmith﻿﻿﻿﻿’s sack deep in Pittsburgh territory ending it. The Steelers now have stolen the momentum back in the AFC North. Can they hang on to give Tomlin an eighth division title (and first since 2020)?"
+      "team": "Lions",
+      "trend": "-4",
+      "blurb": "Another loss has put Detroit in a deeper hole, with the playoff hopes sliding even farther away. The Lions can get in, and winning the final three would give them a great chance of doing so. That would miraculously give Detroit 11 victories against a very tough schedule. But even as explosive as the Lions were at times against the Rams, Jahmyr Gibbs was bottled up, the pass protection became leaky and the defense allowed a season-worst 41 points. I'm not going to throw dirt on Detroit's grave because I haven't even dug the hole yet, although I admit I have the shovels oiled up and ready to go. Losing Brian Branch this late in the season was a huge blow to the defense, and I don't know if the unit can make it through these final three games unscathed without him."
     },
     {
       "rank": 15,
-      "team": "Colts",
-      "trend": "-8",
-      "blurb": "No way to sugarcoat it: Sunday went about as poorly as the Colts possibly could have imagined. Daniel Jones suffered a season-ending Achilles injury, Indianapolis lost in Jacksonville (again), and now the Colts are a game back in the division race. We've elevated the concern level to DEFCON 1, with Indy falling to a 32 percent chance to make the playoffs. Even if the Colts can get back DeForest Buckner and Sauce Gardner on defense, the offense is adrift without Jones, and now backup QB Riley Leonard is dealing with a leg injury of his own. Jones' Achilles tear could significantly impact the team's future plans for him, with the quarterback now set to hit free agency while rehabbing a major health setback. Just an awful turn of events that has thrown the franchise into a state of desperation. At the beginning of November, Indianapolis owned the best record in the NFL at 7-1. On Tuesday, the Colts signed 44-year-old Philip Rivers, who hasn't taken an NFL snap since January of 2021."
+      "team": "Ravens",
+      "trend": "+1",
+      "blurb": "Lamar Jackson took four sacks, and Baltimore's offense scored just 17 points, but it was arguably the team's most complete performance since before Jackson got hurt. The Ravens were outstanding defensively, with Kyle Van Noy's INT and Alohi Gilman's TD return the cherry on top. They kept the Bengals from getting into any kind of rhythm, achieving that classic Baltimorean balance they've always sought. And most importantly, Jackson looked like Lamar Jackson; inherently, Baltimore looked like a playoff team. The Ravens' postseason chances likely will hinge on the Week 18 showdown with the Steelers, but the Ravens have two tough games before that. Don't snooze on them just yet. They can heat up in a hurry."
     },
     {
       "rank": 16,
-      "team": "Ravens",
-      "trend": "-2",
-      "blurb": "The Ravens’ playoff chances aren’t dead, but they absolutely coughed up a great chance by losing two straight at home to division rivals. After Baltimore was blown out by Cincinnati, it felt that the Ravens understood the assignment against a battered Steelers team, yet they fell behind by two touchdowns early and ultimately couldn’t make up enough ground. John Harbaugh's team probably needs to win out (vs. the Bengals, Patriots, Packers and Steelers) in order to get in, and that just doesn’t look likely after another disjointed, uneven performance. Watching ﻿﻿﻿﻿﻿﻿Jaylen Warren﻿﻿﻿﻿﻿﻿ go untouched for a long catch-and-run TD was a painful sight after all the progress the Ravens had made defensively, and ﻿﻿﻿﻿﻿﻿Lamar Jackson﻿﻿﻿﻿﻿﻿ -- as it’s been much of the season -- just couldn’t find a consistent rhythm."
+      "team": "Colts",
+      "trend": "-1",
+      "blurb": "The movie script was writing itself in real time, with grandpa Philip Rivers helping the Colts take a final-minute lead in a game no one even imagined him playing just a few weeks ago. But the Seahawks were not about to let the feel-good story come to fruition on Sunday, as Seattle topped Indianapolis with a long field goal to win it. Still, all things considered, Rivers was pretty impressive, and he gave the Colts what they wanted: a shot at winning in a tough environment. The playoff dream isn't dead, and winning the final three against the 49ers, Jaguars and Texans would give Indy an excellent shot, even if that's asking quite a bit. Rivers deserves to play out the string, and his toughness deserves to be rewarded, yet the odds are very much stacked against the Colts."
     },
     {
       "rank": 17,
       "team": "Buccaneers",
       "trend": "",
-      "blurb": "Less than three minutes into Sunday’s game in Tampa, the Buccaneers found themselves in a hole they’d spend much of the game trying to dig themselves out of. They turned the ball over on downs a whopping five times, with Tampa Bay scoring only three points after the Saints gave the ball up in three possessions via a missed kick, an interception and their own fourth-down failure. Twice, the Bucs took the lead, only to see the Saints take it back both times. There would be no third-time charm. The Bucs remain the statistical favorites to win the NFC South, but they’ve made it harder on themselves and given the dangerous Panthers even more hope and opportunity to steal the division. Tampa Bay just hasn't looked right for a month or more."
+      "blurb": "The Buccaneers walked off the field at Raymond James Stadium last Thursday with some seriously bad vibes, having blown a 14-point, fourth-quarter lead in a 29-28 loss to the Falcons. Baker Mayfield threw a careless interception, and Atlanta overcame third-and-28 and fourth-and-14 on its final drive before ultimately nailing the game-winning field goal. Yet somehow, the Bucs came out of the weekend -- thanks to New Orleans finishing a season sweep of Carolina -- in a remarkably similar position to how they started it: in first place, with a ton of questions. Whom do you trust more at this point, the Bucs or Panthers? The division comes down to the teams' two head-to-head games over the next three Sundays, with this week's showdown taking place in Charlotte. Can Mike Evans help Tampa regain a little of its early-season magic? The offense needs to step up with the defense seemingly in tatters."
     },
     {
       "rank": 18,
       "team": "Panthers",
       "trend": "",
-      "blurb": "The league's most curiously competitive team (along with the Jaguars), the Panthers floated into their Week 14 bye following the dramatic home victory over the Rams that gave them a real path to the postseason. Tampa Bay's crushing loss to New Orleans just made it a little smoother, too. Of course, the way this Carolina season has gone -- ping-ponging between wins and losses since Week 7, and having some interesting results along the way -- we're not taking anything for granted. The Saints are no gimme this Sunday; they beat the Panthers, 17-7, a month ago. But the division should be decided in Carolina's showdowns with Tampa Bay in Weeks 16 and 18. Can Bryce Young deliver? He, like the team, has been alternately hot and cold, but Young has a chance to fully secure his future in Carolina with a big finish."
+      "blurb": "After watching the Buccaneers blow a 14-point lead on Thursday, shifting all the momentum in Carolina’s direction for the NFC South, the Panthers coughed up that advantage in a frustrating loss at New Orleans. The Panthers have now been swept by the Saints, and they’ll have to take care of business in the Week 16 game against the Bucs with less wiggle room. ﻿Bryce Young﻿ made some big throws to give Carolina a 17-7 lead early in the third quarter, but the Panthers came up empty on their next three drives, with a turnover on downs and two quick punts. Every time it feels like Young is ready to elevate his game with back-to-back performances, he and his team are seemingly unable to do so. With 11 penalties and late defensive breakdowns, the Panthers didn’t play playoff-caliber football in any facet on Sunday."
     },
     {
       "rank": 19,
       "team": "Cowboys",
-      "trend": "-3",
-      "blurb": "The Cowboys' playoff chances are on life support after the loss at Detroit, a game in which the defense reverted to old form and the offensive line couldn't protect Dak Prescott consistently enough. CeeDee Lamb also was knocked out with a concussion, and George Pickens couldn't pick up the slack -- even if Ryan Flournoy did, in an eye-opening performance for the second-year pro. It will be interesting to see how much Flournoy is featured down the stretch and whether Pickens plays well enough to convince the Cowboys to make him a strong contract offer in the offseason. The 'Boys will still have plenty to play for down the stretch, even with the postseason dreams essentially cooked."
+      "trend": "",
+      "blurb": "The Cowboys haven't officially been eliminated from postseason play, but practically speaking, Sunday night's home loss to Minnesota essentially marked the end of all realistic hope. The 'Boys almost certainly needed to pull an inside straight over their final four games, but it was disappointing to see the defense suffer through another long game and the offense come up short in key situations against the Vikings. Can't really blame this one on Dak Prescott, as the pressure was immense, and George Pickens was held in check once more. Prescott has been very good for most of this season, and he was fine on Sunday, but he wasn't good enough to overcome Dallas' collective issues elsewhere. Brian Schottenheimer's first season brought some fight after the bye, but the Cowboys now find themselves in a real battle just to finish .500 or better."
     },
     {
       "rank": 20,
       "team": "Chiefs",
-      "trend": "-1",
-      "blurb": "Kansas City isn't mathematically eliminated from the playoffs -- yet -- but Sunday felt like a funeral at Arrowhead, with the 20-10 loss to Houston officially ending the Chiefs' streak of division titles at nine. Patrick Mahomes didn't have anything close to a vintage game against a terrific Texans defense, but he also didn't drop two catchable passes with a chance to tie or win the game in the fourth quarter. First came Rashee Rice's brutal flub on fourth down, giving the ball back to the Texans. Then, after a great defensive stand, Travis Kelce's bobble ended up as a game-killing Texans interception. There couldn't have been a more cruel, painful knife twist than that ending -- a surefire sign that this offense is broken, even if we've known it for a while. We've done various pre-eulogies, maybe even retracting a few along the way, but this feels like it. A shocking end to an incredible run."
+      "trend": "",
+      "blurb": "In a shocking double blow, the Chiefs were officially eliminated from postseason contention and ﻿﻿﻿Patrick Mahomes﻿﻿﻿ suffered a season-ending torn ACL, which likely will affect his offseason outlook and timetable, as well. There might be a tangible argument that the Chiefs finding a way into this season's playoffs could have given them a false sense of security in the system and that, as it’s been for most of the past decade, things are gonna be OK. I’m not going to buy that, and it’s hard to put a positive light on Mahomes’ injury. I also don’t think major offseason changes are guaranteed, but one way or another, Kansas City must boost the pass rush, add some RB punch and figure out how best to get the most from this QB and these receivers."
     },
     {
       "rank": 21,
-      "team": "Dolphins",
-      "trend": "",
-      "blurb": "The Dolphins have won four straight games, and they’ve all come with ﻿﻿Tua Tagovailoa﻿﻿ failing to reach the 200-yard passing mark. They’ve undergone an identity shift in those four games, holding all four opponents to 17 points or fewer and leaning heavily on the run game. We’ll see if that can continue after ﻿﻿De'Von Achane﻿﻿ left the game with a rib injury (apparently, it's not too severe), although ﻿﻿Jaylen Wright﻿﻿ had a career game and ﻿﻿Ollie Gordon II﻿﻿ also chipped in with his own score. With its own playoff hopes dwindling, Miami continues its quest to play the role of spoiler down the stretch (three of its four remaining opponents harbor playoff hopes). But Mike McDaniel deserves credit for getting these Fins back on track. The fourth-year head coach appears to have cooled his seat considerably, even as the postseason remains the longest of long shots."
+      "team": "Vikings",
+      "trend": "+1",
+      "blurb": "After scoring only 42 total points in Weeks 10-13, the Vikings have now put up back-to-back outings with 31 or more on the scoreboard, led by a resurgent ﻿﻿﻿J.J. McCarthy﻿﻿﻿. Following his interception on the second snap of Sunday's win, McCarthy was pretty dialed in, resilient and effective, even if his shoddy connection with ﻿﻿﻿Justin Jefferson﻿﻿﻿ remains a major point of confoundment. They just haven’t been on the same page most of the season, and Sunday was similar. Jefferson is Minnesota's star receiver. McCarthy likely remains the quarterback of the foreseeable future. At some point, these two must become more simpatico. Credit to McCarthy for finding other ways to get it done the past two weeks, but the Vikings can’t win games this way forever."
     },
     {
       "rank": 22,
-      "team": "Vikings",
-      "trend": "+3",
-      "blurb": "Granted, it happened against a Washington defense that has made all kinds of opposing quarterbacks sparkle this season, but while many weren't looking, ﻿﻿﻿﻿J.J. McCarthy﻿﻿﻿﻿ had his most efficient and encouraging performance of the season on Sunday. Derailed by injuries and ineffectiveness to this point in his career, McCarthy put together a good showing on which to build. He moved around efficiently, didn't throw the ball into harm's way and generally made quicker, smarter decisions. And though ﻿﻿﻿﻿Justin Jefferson﻿﻿﻿﻿ was quiet again, McCarthy leaned heavily on his tight ends. That and a lights-out game defensively appeared to stun the home crowd after four straight losses. Other than the dip in draft position that resulted from this win, McCarthy playing a good game can only be viewed as a positive development."
+      "team": "Dolphins",
+      "trend": "-1",
+      "blurb": "The Dolphins came in as a hot team, having won four straight while allowing a total of 53 points in that span, and they held the Steelers down for a half on Monday. But the cold weather has historically been unkind to the Dolphins, and they froze up in the third quarter, netting minus-20 yards. Never good to gain fewer yards in a quarter than there are degrees on a cold night, and the Dolphins fell below that threshold with ease. Even with a little fourth-quarter flurry, they came up multiple scores short. The loss ended Miami's playoff hopes and dropped ﻿﻿Tua Tagovailoa﻿﻿'s record to 0-6 in games where the kickoff temperature is below 40 degrees (including playoffs). He also leads the league this season in interceptions with 15 and was sacked four times, bringing him to a career-worst 30 with three games left. A big offseason awaits the Dolphins, and even in light of the recent run, this game reflected poorly on everyone."
     },
     {
       "rank": 23,
       "team": "Bengals",
-      "trend": "-1",
-      "blurb": "We had fully bought into the Bengals' absurd and improbable playoff dream, but it almost certainly required holding on for victory Sunday against the Bills. Up 10 with eight minutes left, Joe Burrow was picked twice (on two of the shorter, stranger INTs you'll see on back-to-back passes), and Cincinnati allowed two quick TD drives to completely flip the game. The Bengals made their own bed with a disastrous string of games while Burrow was hurt, so blaming him after Sunday's two rather unlucky plays feels like a giant stretch. For most of the game, he matched Josh Allen blow for blow. Eventually, the Bengals must figure out how to avoid an early-season meltdown, lest they might perpetually find themselves in \"There's always next year\" mode."
+      "trend": "",
+      "blurb": "Joe Burrow shredded the Ravens on Thanksgiving and, for most of the game anyway, the Bills in Week 14. But, after Burrow said he wanted to enjoy what he could of the remainder of a lost season, he and the Bengals' offense had a horrid day at the office on Sunday. Burrow's pick-six was the official death knell against Baltimore, although a three-score comeback didn't exactly feel imminent the play prior. Cincinnati's receivers certainly didn't do Burrow any favors, but he also struggled. The NFL is more fun when Burrow is dealing, so whatever funk he's in, I can't wait until it's over. The Bengals' defense played pretty well, all things considered, and kept the game close. But not well enough to overcome a shutout, something I didn't think was possible with this group, even without Tee Higgins (concussion)."
     },
     {
       "rank": 24,
       "team": "Falcons",
       "trend": "",
-      "blurb": "Sunday's depressing defeat guaranteed that the Falcons will finish with a losing record, but honestly, that has felt clinched for a few weeks now. They're also 2-4 in Atlanta, with a home date left against the Rams. There just aren't many things to get excited about now, especially with DROY candidate Jalon Walker leaving the game with a quad injury. Bijan Robinson lost a fumble in the red zone, Kirk Cousins was picked twice and the special teams melted down for a second straight game, with a blocked field goal and a 100-yard TD allowed on a kickoff return, giving Seattle the momentum it needed to get going. Rookie James Pearce Jr. stepped up and played well, which is great, but then you remember where Atlanta's traded first-rounder is likely to land -- in the top 10 -- and it's depressing all over again."
+      "blurb": "It was a big night last Thursday for Kyle Pitts and Kirk Cousins, whose strong performances might change their offseason opportunities for the better. Pitts, an impending free agent, could have an extremely healthy market for his services if the Falcons can't keep him. Cousins has less freedom, but he at least sent a message that he can still play a little, bouncing back from a tough game against the Seahawks. The dramatic win was also a sad reminder of what could have been for this team in terms of offensive prowess, but the shocking number of mistakes Atlanta made reflected this squad's lack of discipline."
     },
     {
       "rank": 25,
       "team": "Saints",
-      "trend": "+5",
-      "blurb": "Tyler Shough﻿﻿﻿﻿﻿ hasn't been amazing, but he's played well enough for the Saints to consider him as the possible starter in 2026. Even with an interception and limited passing success in Sunday's win over Tampa, Shough dealt well with heavy pressure and made big plays with his legs on his first two career rushing TDs. The rookie has looked pretty composed in leading two Saints victories in his five starts, and the Saints might have a chance to finish with five or six total Ws. It might be foolish at this moment to simply hand Shough the starting job next year. But this feels a little different than, say, when ﻿﻿﻿﻿﻿Desmond Ridder﻿﻿﻿﻿﻿ -- another former Day 2 pick -- finished his rookie season with a solid four-game opportunity for the 2022 Falcons, winning a few games down the stretch and needing only to beat out ﻿﻿﻿﻿﻿Taylor Heinicke﻿﻿﻿﻿﻿ for the starting job in Atlanta the next season."
+      "trend": "",
+      "blurb": "Tyler Shough﻿﻿ left the injury tent and got the ball back with 4:37 remaining against the Panthers, down 17-10, and immediately hit on seven of his eight passes, each for 9 yards or more. Shough hit ﻿﻿Chris Olave﻿﻿ for the game-tying TD, and New Orleans' defense got a stop. It didn’t feel likely, but Shough did enough to move the Saints from their own 9-yard line into field-goal range for the game-winning kick as time expired. Shough has shown promise in each of his six starts, but the way he finished this one has to have some Saints fans hoping the team bypasses a quarterback in the next draft. It was a gutsy performance, and it was finished by another new hero, kicker ﻿﻿Charlie Smyth﻿﻿ of Northern Ireland fame. The Saints have won two straight and have a fairly realistic chance of ending the season on a five-game win streak now with games against the Jets, Titans and Falcons upcoming."
     },
     {
       "rank": 26,
       "team": "Commanders",
-      "trend": "-3",
-      "blurb": "That’s now three contests, each roughly a month apart, where ﻿﻿﻿﻿Jayden Daniels﻿﻿﻿﻿ has left a game he started with injury. It’s fair to wonder if we’ll see him again in 2025, because why would we? Entering the season, he was viewed as the crown jewel of an ascending franchise that went 12-5 and reached the NFC Championship Game, and now the Commanders are suddenly in the mix for the No. 1 overall pick. Eight straight losses will have that kind of effect on a team. Throw in ﻿﻿﻿﻿Zach Ertz﻿﻿﻿﻿'s torn ACL, and the suffering only has gotten worse. Dan Quinn was a Coach of the Year candidate last season, but he has had no solutions for the Commanders’ issues, which suddenly run deep and wide. This is going to be a fascinating offseason for this wayward team."
+      "trend": "",
+      "blurb": "Dan Quinn will take the draft-pick dip after Sunday’s win, which ended an eight-game losing streak that no one thought was in the realm of possibilities when this season started. The Commanders were beginning to look like a wayward franchise, and that sort of thing can leak into the locker room, but they took control against the Giants and held on late for a confidence-boosting win. Two lost fumbles in the final six minutes don’t reflect well, but the Giants made sure to make even more mistakes down the stretch. The Commanders did better defensively than in some recent games, but it was the special teams (even with a missed extra point) that helped deliver the win even more."
     },
     {
       "rank": 27,
       "team": "Cardinals",
-      "trend": "-1",
-      "blurb": "With Arizona's fifth straight loss (and 10th in 11 games) and the news that Kyler Murray won't return this season, it feels like we could be headed for another organizational shift of some note in the offseason. It's not clear who will survive and who'll be deemed expendable, but changes figure to come after a lost season. For the glass-half-full folks, yes, there have been more close losses than embarrassments this season, but we half-empty people also can't help but notice how three of the past five defeats have come via blowout, with 41 or more points allowed in each. This after the defense was provided a lot of resources last offseason. In a stacked NFC West, the Cardinals just can't compete as they're currently constructed."
+      "trend": "",
+      "blurb": "Thank the maker for Trey McBride. He's arguably the league's best tight end right now, and even with the Cardinals in one of their darkest stretches, he remains a joy to watch. Now, sadly, we must talk business, and the Cards are a mess right now. They've been decimated by injuries, especially on offense, but the defense has taken a turn for the worse, and that's why they've lost six straight and have only one win since Week 2. McBride should be the centerpiece offensively, but it's a pretty good bet this team is going to look vastly different next season. There are questions surrounding Kyler Murray and the coaching staff, and Arizona has two dozen impending free agents, so prepare for some new faces."
     },
     {
       "rank": 28,
-      "team": "Jets",
-      "trend": "-1",
-      "blurb": "Brady Cook﻿﻿﻿ was thrown into a tough spot in his NFL debut after ﻿﻿﻿Tyrod Taylor﻿﻿﻿ left with a groin injury, asked to pull the Jets out of a 21-0 hole without many weapons or good protection. The Jets' special teams did their part, but the other two units came up way short in the loss to Miami. Cook certainly missed a few throws against the Dolphins, including a pair of red-zone picks, but his receivers didn't do him many favors, either. Taylor isn't the Jets' future. ﻿﻿﻿Justin Fields﻿﻿﻿ probably isn't, either. And Cook has a long way to go just to prove he deserves a roster spot next summer. So, the Jets almost certainly will focus their energies on solving the long-running QB concern this team has been dealing with for, well, decades. The Jets are currently slotted to pick fifth in the 2026 NFL Draft, and there's no guarantee they can get the right one there, although it helps that a few teams above them might already have their quarterbacks rostered. Not to mention, New York has a second first-rounder to play with, thanks to the Sauce Gardner trade."
+      "team": "Browns",
+      "trend": "+1",
+      "blurb": "Two things I'll be tracking in the Browns' final three games: whether Myles Garrett can break the sack record and whether they can win another game. If we take owner Jimmy Haslam at his word from back in July, once again going “3-14 won't cut it.” The Browns sit at 3-11, with the Bills and Steelers coming to Cleveland in the next two weeks before the regular-season finale at Cincinnati. The entire franchise feels like it's again at a flashpoint, with Shedeur Sanders taking a step back on Sunday against the Bears, throwing three interceptions (even if one wasn't his fault). Kevin Stefanski might be a two-time Coach of the Year, but the wind is blowing pretty stiffly in his (and his team's) face right now."
     },
     {
       "rank": 29,
-      "team": "Browns",
+      "team": "Jets",
       "trend": "-1",
-      "blurb": "Shedeur Sanders﻿﻿﻿ is still only completing 52.4 percent of his passes, and his stressed-out prayer throw into traffic -- which was predictably intercepted -- is the kind of play he'll need to work out of his system as he grows into NFL quarterbacking. But Sanders has provided more high notes than lows to this point, adding a clever rushing touchdown, with two of his three TD passes being absolute beauties. He hasn't done enough to be anointed anything after this season, but it's very tough to say he hasn't earned this shot to start for the rest of the year -- and Sanders had nothing to do with the second disastrous two-point try that prevented the Browns from tying the game late. The defense's failure to hem in the Titans' run game was one of the stranger developments of the season. Then again, losing in disappointing fashion is old hat for these Browns."
+      "blurb": "The Jets have fired defensive coordinator Steve Wilks, making him the scapegoat for a unit that has predictably fallen apart since trading away major resources at the deadline. That’s now 14 straight games without an interception, which feels nigh impossible. It also hasn’t helped that they’re hamstrung offensively with undrafted rookie ﻿﻿﻿Brady Cook﻿﻿﻿ at QB and ﻿﻿﻿Garrett Wilson﻿﻿﻿ not playing. But Cook could have been Joe Namath Jr. on Sunday, and the Jets still wouldn’t have won. They trailed the Jags 14-0 nine minutes in, and that was all she wrote. Cook started hot in his first NFL start before throwing three picks, including one in the end zone for a second straight game. The Jets probably will give him another shot because it wasn’t even the team’s worst QB outing of the season and, well, who else do they have there?"
     },
     {
       "rank": 30,
       "team": "Giants",
-      "trend": "-1",
-      "blurb": "Coming off a pretty humbling loss, even by 2-11 team standards, the Giants had an interesting bye week. GM Joe Schoen took some bullets during a pretty stressful press conference -- hat tip to him for taking it like a man and accepting blame. It seems for now that Schoen will return in 2026, although no final decisions have been made. On Sunday, two of the Giants' QBs did the pre-game circuit, hamming for the cameras -- and no, Jaxson Dart was not one of them. He's had a really promising rookie season and is probably the biggest feather Schoen has in his cap, even with other high-end talents on injured reserve. How the Giants play out the string against, presumably, four non-playoff teams will tell us a lot about how the subsequent offseason could look."
+      "trend": "",
+      "blurb": "Interim coach Mike Kafka is now 0-4, and the Giants have dropped eight straight games since the season high point of crushing the Eagles back in Week 6. Everything has pointed downward since then, and it’s raising questions of just how many major changes might come from it, even after Brian Daboll was already let go. Sure, if you look hard enough, there were some mild positives Sunday, with a nice run game and ﻿﻿Abdul Carter﻿﻿ finally showing something significant, but the Giants fell behind at home to the Commanders a little more than five minutes in and never even got back to a tie game. They’re now 5-26 since the start of last season and need a major change in vision going forward."
     },
     {
       "rank": 31,
       "team": "Titans",
       "trend": "",
-      "blurb": "Someone will have to explain to me how a Titans rushing offense that ranked 32nd entering Week 14 racked up 184 yards -- tied for the most the Browns have allowed in a game this season -- against a unit that is barely allowing 100 yards on the ground per game even after Sunday. Whatever the case, the Titans put forth their best all-around effort of the season, functionally good in all three phases. Yes, ﻿﻿﻿﻿Cam Ward﻿﻿﻿﻿ had a pick and averaged only 4.2 yards per pass attempt; he also threw two impressive TD passes and avoided the huge mistakes. Cleveland gifted the Titans two short-field touchdowns, but Tennessee's defense showed up when it needed to most, and it was a gutsy outing for a team that has been through the ringer. Mike McCoy certainly had to enjoy that one after losing his first six games as interim coach by a combined 80 points."
+      "blurb": "Even with many positive flashes for Cam Ward during a trying rookie season, he's also made his share of mistakes. On Sunday, he had opportunities to make plays at times but didn't, and he still has a ways to go to be an effective starting quarterback in the NFL. Ward was not sacked in a game for the first time all season and wasn't under heavy duress against the 49ers -- and yet, he still missed some open receivers and threw two passes that should have been picked off. Even if Ward hits on some of those plays, the Titans are not a good enough operation right now to beat quality teams very often, with the defense suffering through another long day at the office in Santa Clara."
     },
     {
       "rank": 32,
       "team": "Raiders",
       "trend": "",
-      "blurb": "I preemptively moved Las Vegas into the cellar a couple weeks ago, even though Tennessee had a worse record, and it was one of my smarter calls of the season. Not to dance on the Raiders' grave or anything, but even after a moderately respectable showing against Denver, they still looked eons away from truly competing on Sunday. Hey, at least Vegas didn't turn the ball over once for the first time since Week 3. But the run game remains anemic, putting a lot of pressure on the Raiders to figure out how to unlock Ashton Jeanty going forward. The Raiders somehow ran for 240 yards against the Bears in Week 4 but have just 232 rush yards combined in the past five games. That's ... something."
+      "blurb": "Las Vegas now owns a pair of 31-zip losses this season in which the offense failed to reach 100 total yards and the defense allowed more than 350. Not many teams can claim this, so the 2025 Raiders certainly have put themselves in rare air indeed. They’ve lost eight straight games and eight total this season by double-digit points. Sunday was also the ninth time they’ve failed to top the 17-point mark in what has been an utter disaster of a season in Pete Carroll’s first year. Will he get a second? Does he even want another crack at fixing this? Even with a few clear building blocks, this looks like a massive reconstruction that will require time and patience, and with Carroll at 74, it’s fair to wonder if the coach has the gumption for that -- or even the opportunity, depending on what management decides in a few weeks."
     }
   ]
 }

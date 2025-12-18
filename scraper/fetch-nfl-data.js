@@ -468,7 +468,10 @@ async function scrape() {
         });
 
         // 4. Scrape Power Rankings
-        const PR_URL = 'https://www.nfl.com/news/nfl-power-rankings-week-15-2025-nfl-season';
+        const currentWeekId = WEEKS[0] || 'REG18';
+        const weekNum = currentWeekId.replace('REG', '');
+        console.log(`Determined Power Rankings Week: ${weekNum}`);
+        const PR_URL = `https://www.nfl.com/news/nfl-power-rankings-week-${weekNum}-2025-nfl-season`;
         console.log(`Navigating to Power Rankings: ${PR_URL}...`);
         await page.goto(PR_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
         await new Promise(r => setTimeout(r, 2000)); // Wait for content
