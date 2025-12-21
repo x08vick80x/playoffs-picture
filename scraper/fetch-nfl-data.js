@@ -367,7 +367,7 @@ async function scrape() {
             // Simple wait for hydration
             await new Promise(r => setTimeout(r, 1500));
 
-            const weekMatches = await page.evaluate((currentWeek) => {
+            const weekMatches = await page.evaluate((currentWeek, currentSlug) => {
                 const matches = [];
                 const seenConfig = new Set(); // Track unique games e.g. "teamA-teamB"
 
@@ -375,10 +375,16 @@ async function scrape() {
                 links.forEach(a => {
                     const href = a.getAttribute('href');
                     // href format: /games/away-at-home-2025-reg-15
-                    const match = href.match(/\/games\/([a-z0-9-]+)-at-([a-z0-9-]+)-\d{4}/);
+                    // Capture the week part at the end
+                    const match = href.match(/\/games\/([a-z0-9-]+)-at-([a-z0-9-]+)-\d{4}-([a-z0-9-]+)/);
                     if (match) {
                         const away = match[1];
                         const home = match[2];
+                        const weekPart = match[3];
+
+                        // Strict check: The URL must belong to the current week we are looking at
+                        if (weekPart !== currentSlug) return;
+
                         const key = `${away}-at-${home}`;
 
                         if (!seenConfig.has(key)) {
@@ -388,7 +394,7 @@ async function scrape() {
                     }
                 });
                 return matches;
-            }, week);
+            }, week, weekSlug);
             console.log(`Found ${weekMatches.length} matchups in ${week}.`);
             allMatches.push(...weekMatches);
         }
