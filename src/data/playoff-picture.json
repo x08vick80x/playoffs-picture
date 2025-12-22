@@ -4,8 +4,8 @@
       {
         "name": "Ravens",
         "conf": "AFC",
-        "top": 3094.5,
-        "record": "7-7",
+        "top": 2944.5,
+        "record": "7-8",
         "probability": "11%",
         "trend": "0",
         "trendDirection": "same",
@@ -14,7 +14,7 @@
             "opponent": "Patriots",
             "location": "vs",
             "week": "REG16",
-            "opponentRecord": "11-3-0"
+            "opponentRecord": "12-3-0"
           },
           {
             "opponent": "Packers",
@@ -37,7 +37,7 @@
       {
         "name": "Colts",
         "conf": "AFC",
-        "top": 2944.5,
+        "top": 2794.5,
         "record": "8-6",
         "probability": "2%",
         "trend": "0",
@@ -72,7 +72,7 @@
       {
         "name": "Buccaneers",
         "conf": "NFC",
-        "top": 3095,
+        "top": 2945,
         "record": "7-8",
         "probability": "58%",
         "trend": "0",
@@ -105,9 +105,9 @@
       {
         "name": "Lions",
         "conf": "NFC",
-        "top": 2944.5,
+        "top": 2794.5,
         "record": "8-7",
-        "probability": "9%",
+        "probability": "8%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -142,7 +142,7 @@
       {
         "name": "Chiefs",
         "conf": "AFC",
-        "top": 3331.5,
+        "top": 3181.5,
         "record": "6-9",
         "probability": "",
         "trend": "0",
@@ -175,7 +175,7 @@
       {
         "name": "Dolphins",
         "conf": "AFC",
-        "top": 3483.5,
+        "top": 3333.5,
         "record": "6-9",
         "probability": "",
         "trend": "0",
@@ -197,7 +197,7 @@
             "opponent": "Patriots",
             "location": "@",
             "week": "REG18",
-            "opponentRecord": "11-3-0"
+            "opponentRecord": "12-3-0"
           }
         ],
         "nextOpponent": {
@@ -208,7 +208,7 @@
       {
         "name": "Bengals",
         "conf": "AFC",
-        "top": 3635.5,
+        "top": 3485.5,
         "record": "5-10",
         "probability": "",
         "trend": "0",
@@ -241,7 +241,7 @@
       {
         "name": "Jets",
         "conf": "AFC",
-        "top": 3787.5,
+        "top": 3637.5,
         "record": "3-12",
         "probability": "",
         "trend": "0",
@@ -257,7 +257,7 @@
             "opponent": "Patriots",
             "location": "vs",
             "week": "REG17",
-            "opponentRecord": "11-3-0"
+            "opponentRecord": "12-3-0"
           },
           {
             "opponent": "Bills",
@@ -274,7 +274,7 @@
       {
         "name": "Titans",
         "conf": "AFC",
-        "top": 3939.5,
+        "top": 3789.5,
         "record": "3-12",
         "probability": "",
         "trend": "0",
@@ -307,7 +307,7 @@
       {
         "name": "Browns",
         "conf": "AFC",
-        "top": 4091.5,
+        "top": 3941.5,
         "record": "3-12",
         "probability": "",
         "trend": "0",
@@ -340,7 +340,7 @@
       {
         "name": "Raiders",
         "conf": "AFC",
-        "top": 4243.5,
+        "top": 4093.5,
         "record": "2-13",
         "probability": "",
         "trend": "0",
@@ -375,7 +375,7 @@
       {
         "name": "Vikings",
         "conf": "NFC",
-        "top": 3331.5,
+        "top": 3181.5,
         "record": "7-8",
         "probability": "",
         "trend": "0",
@@ -408,7 +408,7 @@
       {
         "name": "Cowboys",
         "conf": "NFC",
-        "top": 3483.5,
+        "top": 3333.5,
         "record": "6-8-1",
         "probability": "",
         "trend": "0",
@@ -441,7 +441,7 @@
       {
         "name": "Falcons",
         "conf": "NFC",
-        "top": 3635.5,
+        "top": 3485.5,
         "record": "6-9",
         "probability": "",
         "trend": "0",
@@ -474,7 +474,7 @@
       {
         "name": "Saints",
         "conf": "NFC",
-        "top": 3787.5,
+        "top": 3637.5,
         "record": "5-10",
         "probability": "",
         "trend": "0",
@@ -507,7 +507,7 @@
       {
         "name": "Commanders",
         "conf": "NFC",
-        "top": 3939.5,
+        "top": 3789.5,
         "record": "4-11",
         "probability": "",
         "trend": "0",
@@ -540,7 +540,7 @@
       {
         "name": "Cardinals",
         "conf": "NFC",
-        "top": 4091.5,
+        "top": 3941.5,
         "record": "3-12",
         "probability": "",
         "trend": "0",
@@ -573,7 +573,7 @@
       {
         "name": "Giants",
         "conf": "NFC",
-        "top": 4243.5,
+        "top": 4093.5,
         "record": "2-13",
         "probability": "",
         "trend": "0",
@@ -640,8 +640,8 @@
       },
       {
         "name": "Patriots",
-        "record": "11-3",
-        "probability": ">99%",
+        "record": "12-3",
+        "probability": "100%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -649,7 +649,7 @@
             "opponent": "Ravens",
             "location": "@",
             "week": "REG16",
-            "opponentRecord": "7-7-0"
+            "opponentRecord": "7-8-0"
           },
           {
             "opponent": "Jets",
@@ -703,7 +703,7 @@
       {
         "name": "Steelers",
         "record": "9-6",
-        "probability": "74%",
+        "probability": "89%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -723,7 +723,7 @@
             "opponent": "Ravens",
             "location": "vs",
             "week": "REG18",
-            "opponentRecord": "7-7-0"
+            "opponentRecord": "7-8-0"
           }
         ],
         "nextOpponent": {
@@ -1015,7 +1015,7 @@
       {
         "name": "Packers",
         "record": "9-5-1",
-        "probability": "91%",
+        "probability": "92%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -1029,7 +1029,7 @@
             "opponent": "Ravens",
             "location": "vs",
             "week": "REG17",
-            "opponentRecord": "7-7-0"
+            "opponentRecord": "7-8-0"
           },
           {
             "opponent": "Vikings",
