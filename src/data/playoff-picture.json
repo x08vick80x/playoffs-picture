@@ -325,7 +325,7 @@
             "opponent": "Bears",
             "location": "@",
             "week": "REG18",
-            "opponentRecord": "11-4-0"
+            "opponentRecord": "11-5-0"
           }
         ],
         "nextOpponent": {
@@ -693,7 +693,7 @@
             "opponent": "49ers",
             "location": "@",
             "week": "REG18",
-            "opponentRecord": "11-4-0"
+            "opponentRecord": "12-4-0"
           }
         ],
         "nextOpponent": {
@@ -703,7 +703,7 @@
       },
       {
         "name": "Bears",
-        "record": "11-4",
+        "record": "11-5",
         "probability": "100%",
         "trend": "0",
         "trendDirection": "same",
@@ -712,7 +712,7 @@
             "opponent": "49ers",
             "location": "@",
             "week": "REG17",
-            "opponentRecord": "11-4-0"
+            "opponentRecord": "12-4-0"
           },
           {
             "opponent": "Lions",
@@ -778,7 +778,7 @@
       },
       {
         "name": "49ers",
-        "record": "11-4",
+        "record": "12-4",
         "probability": "100%",
         "trend": "0",
         "trendDirection": "same",
@@ -787,7 +787,7 @@
             "opponent": "Bears",
             "location": "vs",
             "week": "REG17",
-            "opponentRecord": "11-4-0"
+            "opponentRecord": "11-5-0"
           },
           {
             "opponent": "Seahawks",
