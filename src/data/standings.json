@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-28T21:37:32.596Z",
+  "lastUpdated": "2025-12-29T02:39:57.085Z",
   "AFC": [
     {
       "seed": "1",
@@ -27,19 +27,19 @@
     },
     {
       "seed": "5",
-      "team": "Buffalo",
-      "record": "11-4-0",
-      "status": ""
-    },
-    {
-      "seed": "6",
       "team": "Houston",
       "record": "11-5-0",
       "status": ""
     },
     {
-      "seed": "7",
+      "seed": "6",
       "team": "L.A. Chargers",
+      "record": "11-5-0",
+      "status": ""
+    },
+    {
+      "seed": "7",
+      "team": "Buffalo",
       "record": "11-5-0",
       "status": ""
     },
@@ -94,7 +94,7 @@
     {
       "seed": "16",
       "team": "Las Vegas",
-      "record": "2-13-0",
+      "record": "2-14-0",
       "status": ""
     }
   ],
@@ -114,7 +114,7 @@
     {
       "seed": "3",
       "team": "Philadelphia",
-      "record": "10-5-0",
+      "record": "11-5-0",
       "status": ""
     },
     {
@@ -192,7 +192,7 @@
     {
       "seed": "16",
       "team": "N.Y. Giants",
-      "record": "2-13-0",
+      "record": "3-13-0",
       "status": ""
     }
   ]

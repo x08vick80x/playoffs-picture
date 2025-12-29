@@ -161,7 +161,7 @@
             "opponent": "Raiders",
             "location": "@",
             "week": "REG18",
-            "opponentRecord": "2-13-0"
+            "opponentRecord": "2-14-0"
           }
         ],
         "nextOpponent": {
@@ -242,7 +242,7 @@
             "opponent": "Bills",
             "location": "@",
             "week": "REG18",
-            "opponentRecord": "11-4-0"
+            "opponentRecord": "11-5-0"
           }
         ],
         "nextOpponent": {
@@ -254,7 +254,7 @@
         "name": "Raiders",
         "conf": "AFC",
         "top": 3645.5,
-        "record": "2-13",
+        "record": "2-14",
         "probability": "",
         "trend": "0",
         "trendDirection": "same",
@@ -263,7 +263,7 @@
             "opponent": "Giants",
             "location": "vs",
             "week": "REG17",
-            "opponentRecord": "2-13-0"
+            "opponentRecord": "3-13-0"
           },
           {
             "opponent": "Chiefs",
@@ -352,7 +352,7 @@
             "opponent": "Giants",
             "location": "@",
             "week": "REG18",
-            "opponentRecord": "2-13-0"
+            "opponentRecord": "3-13-0"
           }
         ],
         "nextOpponent": {
@@ -433,7 +433,7 @@
             "opponent": "Eagles",
             "location": "@",
             "week": "REG18",
-            "opponentRecord": "10-5-0"
+            "opponentRecord": "11-5-0"
           }
         ],
         "nextOpponent": {
@@ -472,7 +472,7 @@
         "name": "Giants",
         "conf": "NFC",
         "top": 3645.5,
-        "record": "2-13",
+        "record": "3-13",
         "probability": "",
         "trend": "0",
         "trendDirection": "same",
@@ -481,7 +481,7 @@
             "opponent": "Raiders",
             "location": "@",
             "week": "REG17",
-            "opponentRecord": "2-13-0"
+            "opponentRecord": "2-14-0"
           },
           {
             "opponent": "Cowboys",
@@ -600,31 +600,6 @@
         }
       },
       {
-        "name": "Bills",
-        "record": "11-4",
-        "probability": "100%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Eagles",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "10-5-0"
-          },
-          {
-            "opponent": "Jets",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "3-13-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Eagles",
-          "location": "vs"
-        }
-      },
-      {
         "name": "Texans",
         "record": "11-5",
         "probability": "100%",
@@ -671,6 +646,31 @@
         ],
         "nextOpponent": {
           "opponent": "Texans",
+          "location": "vs"
+        }
+      },
+      {
+        "name": "Bills",
+        "record": "11-5",
+        "probability": "100%",
+        "trend": "0",
+        "trendDirection": "same",
+        "remainingSchedule": [
+          {
+            "opponent": "Eagles",
+            "location": "vs",
+            "week": "REG17",
+            "opponentRecord": "11-5-0"
+          },
+          {
+            "opponent": "Jets",
+            "location": "vs",
+            "week": "REG18",
+            "opponentRecord": "3-13-0"
+          }
+        ],
+        "nextOpponent": {
+          "opponent": "Eagles",
           "location": "vs"
         }
       }
@@ -728,7 +728,7 @@
       },
       {
         "name": "Eagles",
-        "record": "10-5",
+        "record": "11-5",
         "probability": "100%",
         "trend": "0",
         "trendDirection": "same",
@@ -737,7 +737,7 @@
             "opponent": "Bills",
             "location": "@",
             "week": "REG17",
-            "opponentRecord": "11-4-0"
+            "opponentRecord": "11-5-0"
           },
           {
             "opponent": "Commanders",
