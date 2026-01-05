@@ -52,7 +52,7 @@
         "name": "Dolphins",
         "conf": "AFC",
         "top": 2883.5,
-        "record": "7-9",
+        "record": "7-10",
         "probability": "",
         "trend": "0",
         "trendDirection": "same",
@@ -61,7 +61,7 @@
             "opponent": "Patriots",
             "location": "@",
             "week": "REG18",
-            "opponentRecord": "13-3-0"
+            "opponentRecord": "14-3-0"
           }
         ],
         "nextOpponent": {
@@ -70,30 +70,9 @@
         }
       },
       {
-        "name": "Chiefs",
-        "conf": "AFC",
-        "top": 3035.5,
-        "record": "6-10",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Raiders",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "2-14-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Raiders",
-          "location": "@"
-        }
-      },
-      {
         "name": "Bengals",
         "conf": "AFC",
-        "top": 3187.5,
+        "top": 3035.5,
         "record": "6-11",
         "probability": "",
         "trend": "0",
@@ -109,6 +88,27 @@
         "nextOpponent": {
           "opponent": "Browns",
           "location": "vs"
+        }
+      },
+      {
+        "name": "Chiefs",
+        "conf": "AFC",
+        "top": 3187.5,
+        "record": "6-11",
+        "probability": "",
+        "trend": "0",
+        "trendDirection": "same",
+        "remainingSchedule": [
+          {
+            "opponent": "Raiders",
+            "location": "@",
+            "week": "REG18",
+            "opponentRecord": "3-14-0"
+          }
+        ],
+        "nextOpponent": {
+          "opponent": "Raiders",
+          "location": "@"
         }
       },
       {
@@ -133,10 +133,31 @@
         }
       },
       {
-        "name": "Jets",
+        "name": "Raiders",
         "conf": "AFC",
         "top": 3491.5,
-        "record": "3-13",
+        "record": "3-14",
+        "probability": "",
+        "trend": "0",
+        "trendDirection": "same",
+        "remainingSchedule": [
+          {
+            "opponent": "Chiefs",
+            "location": "vs",
+            "week": "REG18",
+            "opponentRecord": "6-11-0"
+          }
+        ],
+        "nextOpponent": {
+          "opponent": "Chiefs",
+          "location": "vs"
+        }
+      },
+      {
+        "name": "Jets",
+        "conf": "AFC",
+        "top": 3643.5,
+        "record": "3-14",
         "probability": "",
         "trend": "0",
         "trendDirection": "same",
@@ -145,7 +166,7 @@
             "opponent": "Bills",
             "location": "@",
             "week": "REG18",
-            "opponentRecord": "11-5-0"
+            "opponentRecord": "12-5-0"
           }
         ],
         "nextOpponent": {
@@ -156,7 +177,7 @@
       {
         "name": "Titans",
         "conf": "AFC",
-        "top": 3643.5,
+        "top": 3795.5,
         "record": "3-14",
         "probability": "",
         "trend": "0",
@@ -172,27 +193,6 @@
         "nextOpponent": {
           "opponent": "Jaguars",
           "location": "@"
-        }
-      },
-      {
-        "name": "Raiders",
-        "conf": "AFC",
-        "top": 3795.5,
-        "record": "2-14",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Chiefs",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "6-10-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Chiefs",
-          "location": "vs"
         }
       }
     ],
@@ -222,7 +222,7 @@
         "name": "Lions",
         "conf": "NFC",
         "top": 2883.5,
-        "record": "8-8",
+        "record": "9-8",
         "probability": "",
         "trend": "0",
         "trendDirection": "same",
@@ -231,7 +231,7 @@
             "opponent": "Bears",
             "location": "@",
             "week": "REG18",
-            "opponentRecord": "11-5-0"
+            "opponentRecord": "11-6-0"
           }
         ],
         "nextOpponent": {
@@ -327,7 +327,7 @@
         "name": "Commanders",
         "conf": "NFC",
         "top": 3643.5,
-        "record": "4-12",
+        "record": "5-12",
         "probability": "",
         "trend": "0",
         "trendDirection": "same",
@@ -336,7 +336,7 @@
             "opponent": "Eagles",
             "location": "@",
             "week": "REG18",
-            "opponentRecord": "11-5-0"
+            "opponentRecord": "11-6-0"
           }
         ],
         "nextOpponent": {
@@ -369,7 +369,7 @@
         "name": "Cardinals",
         "conf": "NFC",
         "top": 3947.5,
-        "record": "3-13",
+        "record": "3-14",
         "probability": "",
         "trend": "0",
         "trendDirection": "same",
@@ -378,7 +378,7 @@
             "opponent": "Rams",
             "location": "@",
             "week": "REG18",
-            "opponentRecord": "11-5-0"
+            "opponentRecord": "12-5-0"
           }
         ],
         "nextOpponent": {
@@ -392,7 +392,7 @@
     "AFC": [
       {
         "name": "Broncos",
-        "record": "13-3",
+        "record": "14-3",
         "probability": "100%",
         "trend": "0",
         "trendDirection": "same",
@@ -401,7 +401,7 @@
             "opponent": "Chargers",
             "location": "vs",
             "week": "REG18",
-            "opponentRecord": "11-5-0"
+            "opponentRecord": "11-6-0"
           }
         ],
         "nextOpponent": {
@@ -411,7 +411,7 @@
       },
       {
         "name": "Patriots",
-        "record": "13-3",
+        "record": "14-3",
         "probability": "100%",
         "trend": "0",
         "trendDirection": "same",
@@ -420,7 +420,7 @@
             "opponent": "Dolphins",
             "location": "vs",
             "week": "REG18",
-            "opponentRecord": "7-9-0"
+            "opponentRecord": "7-10-0"
           }
         ],
         "nextOpponent": {
@@ -486,27 +486,8 @@
         }
       },
       {
-        "name": "Chargers",
-        "record": "11-5",
-        "probability": "100%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Broncos",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "13-3-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Broncos",
-          "location": "@"
-        }
-      },
-      {
         "name": "Bills",
-        "record": "11-5",
+        "record": "12-5",
         "probability": "100%",
         "trend": "0",
         "trendDirection": "same",
@@ -515,12 +496,31 @@
             "opponent": "Jets",
             "location": "vs",
             "week": "REG18",
-            "opponentRecord": "3-13-0"
+            "opponentRecord": "3-14-0"
           }
         ],
         "nextOpponent": {
           "opponent": "Jets",
           "location": "vs"
+        }
+      },
+      {
+        "name": "Chargers",
+        "record": "11-6",
+        "probability": "100%",
+        "trend": "0",
+        "trendDirection": "same",
+        "remainingSchedule": [
+          {
+            "opponent": "Broncos",
+            "location": "@",
+            "week": "REG18",
+            "opponentRecord": "14-3-0"
+          }
+        ],
+        "nextOpponent": {
+          "opponent": "Broncos",
+          "location": "@"
         }
       }
     ],
@@ -546,7 +546,7 @@
       },
       {
         "name": "Bears",
-        "record": "11-5",
+        "record": "11-6",
         "probability": "100%",
         "trend": "0",
         "trendDirection": "same",
@@ -555,7 +555,7 @@
             "opponent": "Lions",
             "location": "vs",
             "week": "REG18",
-            "opponentRecord": "8-8-0"
+            "opponentRecord": "9-8-0"
           }
         ],
         "nextOpponent": {
@@ -565,7 +565,7 @@
       },
       {
         "name": "Eagles",
-        "record": "11-5",
+        "record": "11-6",
         "probability": "100%",
         "trend": "0",
         "trendDirection": "same",
@@ -574,7 +574,7 @@
             "opponent": "Commanders",
             "location": "vs",
             "week": "REG18",
-            "opponentRecord": "4-12-0"
+            "opponentRecord": "5-12-0"
           }
         ],
         "nextOpponent": {
@@ -602,6 +602,25 @@
         }
       },
       {
+        "name": "Rams",
+        "record": "12-5",
+        "probability": "100%",
+        "trend": "0",
+        "trendDirection": "same",
+        "remainingSchedule": [
+          {
+            "opponent": "Cardinals",
+            "location": "vs",
+            "week": "REG18",
+            "opponentRecord": "3-14-0"
+          }
+        ],
+        "nextOpponent": {
+          "opponent": "Cardinals",
+          "location": "vs"
+        }
+      },
+      {
         "name": "49ers",
         "record": "12-5",
         "probability": "100%",
@@ -617,25 +636,6 @@
         ],
         "nextOpponent": {
           "opponent": "Seahawks",
-          "location": "vs"
-        }
-      },
-      {
-        "name": "Rams",
-        "record": "11-5",
-        "probability": "100%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Cardinals",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "3-13-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Cardinals",
           "location": "vs"
         }
       },
