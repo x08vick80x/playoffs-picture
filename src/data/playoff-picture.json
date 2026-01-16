@@ -8,7 +8,7 @@
       {
         "name": "Colts",
         "conf": "AFC",
-        "top": 2348.5,
+        "top": 2472.5,
         "record": "8-9",
         "probability": "",
         "trend": "0",
@@ -29,7 +29,7 @@
       {
         "name": "Ravens",
         "conf": "AFC",
-        "top": 2500.5,
+        "top": 2624.5,
         "record": "8-9",
         "probability": "",
         "trend": "0",
@@ -50,7 +50,7 @@
       {
         "name": "Dolphins",
         "conf": "AFC",
-        "top": 2652.5,
+        "top": 2776.5,
         "record": "7-10",
         "probability": "",
         "trend": "0",
@@ -71,7 +71,7 @@
       {
         "name": "Bengals",
         "conf": "AFC",
-        "top": 2804.5,
+        "top": 2928.5,
         "record": "6-11",
         "probability": "",
         "trend": "0",
@@ -92,7 +92,7 @@
       {
         "name": "Chiefs",
         "conf": "AFC",
-        "top": 2956.5,
+        "top": 3080.5,
         "record": "6-11",
         "probability": "",
         "trend": "0",
@@ -113,7 +113,7 @@
       {
         "name": "Browns",
         "conf": "AFC",
-        "top": 3108.5,
+        "top": 3232.5,
         "record": "5-12",
         "probability": "",
         "trend": "0",
@@ -134,7 +134,7 @@
       {
         "name": "Raiders",
         "conf": "AFC",
-        "top": 3260.5,
+        "top": 3384.5,
         "record": "3-14",
         "probability": "",
         "trend": "0",
@@ -155,7 +155,7 @@
       {
         "name": "Jets",
         "conf": "AFC",
-        "top": 3412.5,
+        "top": 3536.5,
         "record": "3-14",
         "probability": "",
         "trend": "0",
@@ -176,7 +176,7 @@
       {
         "name": "Titans",
         "conf": "AFC",
-        "top": 3564.5,
+        "top": 3688.5,
         "record": "3-14",
         "probability": "",
         "trend": "0",
@@ -199,7 +199,7 @@
       {
         "name": "Vikings",
         "conf": "NFC",
-        "top": 2348.5,
+        "top": 2472.5,
         "record": "9-8",
         "probability": "",
         "trend": "0",
@@ -220,7 +220,7 @@
       {
         "name": "Lions",
         "conf": "NFC",
-        "top": 2500.5,
+        "top": 2624.5,
         "record": "9-8",
         "probability": "",
         "trend": "0",
@@ -241,7 +241,7 @@
       {
         "name": "Buccaneers",
         "conf": "NFC",
-        "top": 2652.5,
+        "top": 2776.5,
         "record": "8-9",
         "probability": "",
         "trend": "0",
@@ -262,7 +262,7 @@
       {
         "name": "Falcons",
         "conf": "NFC",
-        "top": 2804.5,
+        "top": 2928.5,
         "record": "8-9",
         "probability": "",
         "trend": "0",
@@ -283,7 +283,7 @@
       {
         "name": "Cowboys",
         "conf": "NFC",
-        "top": 2956.5,
+        "top": 3080.5,
         "record": "7-9-1",
         "probability": "",
         "trend": "0",
@@ -304,7 +304,7 @@
       {
         "name": "Saints",
         "conf": "NFC",
-        "top": 3108.5,
+        "top": 3232.5,
         "record": "6-11",
         "probability": "",
         "trend": "0",
@@ -325,7 +325,7 @@
       {
         "name": "Commanders",
         "conf": "NFC",
-        "top": 3260.5,
+        "top": 3384.5,
         "record": "5-12",
         "probability": "",
         "trend": "0",
@@ -346,7 +346,7 @@
       {
         "name": "Giants",
         "conf": "NFC",
-        "top": 3412.5,
+        "top": 3536.5,
         "record": "4-13",
         "probability": "",
         "trend": "0",
@@ -367,7 +367,7 @@
       {
         "name": "Cardinals",
         "conf": "NFC",
-        "top": 3564.5,
+        "top": 3688.5,
         "record": "3-14",
         "probability": "",
         "trend": "0",
@@ -486,8 +486,8 @@
       },
       {
         "name": "Bills",
-        "record": "27-24",
-        "probability": "",
+        "record": "",
+        "probability": "100%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
