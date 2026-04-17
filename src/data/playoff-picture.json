@@ -8,7 +8,7 @@
       {
         "name": "Colts",
         "conf": "AFC",
-        "top": 2300.5,
+        "top": 2304.5,
         "record": "8-9",
         "probability": "",
         "trend": "0",
@@ -29,7 +29,7 @@
       {
         "name": "Ravens",
         "conf": "AFC",
-        "top": 2452.5,
+        "top": 2456.5,
         "record": "8-9",
         "probability": "",
         "trend": "0",
@@ -50,7 +50,7 @@
       {
         "name": "Dolphins",
         "conf": "AFC",
-        "top": 2604.5,
+        "top": 2608.5,
         "record": "7-10",
         "probability": "",
         "trend": "0",
@@ -71,7 +71,7 @@
       {
         "name": "Bengals",
         "conf": "AFC",
-        "top": 2756.5,
+        "top": 2760.5,
         "record": "6-11",
         "probability": "",
         "trend": "0",
@@ -92,7 +92,7 @@
       {
         "name": "Chiefs",
         "conf": "AFC",
-        "top": 2908.5,
+        "top": 2912.5,
         "record": "6-11",
         "probability": "",
         "trend": "0",
@@ -113,7 +113,7 @@
       {
         "name": "Browns",
         "conf": "AFC",
-        "top": 3060.5,
+        "top": 3064.5,
         "record": "5-12",
         "probability": "",
         "trend": "0",
@@ -134,7 +134,7 @@
       {
         "name": "Raiders",
         "conf": "AFC",
-        "top": 3212.5,
+        "top": 3216.5,
         "record": "3-14",
         "probability": "",
         "trend": "0",
@@ -155,7 +155,7 @@
       {
         "name": "Jets",
         "conf": "AFC",
-        "top": 3364.5,
+        "top": 3368.5,
         "record": "3-14",
         "probability": "",
         "trend": "0",
@@ -176,7 +176,7 @@
       {
         "name": "Titans",
         "conf": "AFC",
-        "top": 3516.5,
+        "top": 3520.5,
         "record": "3-14",
         "probability": "",
         "trend": "0",
@@ -199,7 +199,7 @@
       {
         "name": "Vikings",
         "conf": "NFC",
-        "top": 2300.5,
+        "top": 2304.5,
         "record": "9-8",
         "probability": "",
         "trend": "0",
@@ -220,7 +220,7 @@
       {
         "name": "Lions",
         "conf": "NFC",
-        "top": 2452.5,
+        "top": 2456.5,
         "record": "9-8",
         "probability": "",
         "trend": "0",
@@ -241,7 +241,7 @@
       {
         "name": "Buccaneers",
         "conf": "NFC",
-        "top": 2604.5,
+        "top": 2608.5,
         "record": "8-9",
         "probability": "",
         "trend": "0",
@@ -262,7 +262,7 @@
       {
         "name": "Falcons",
         "conf": "NFC",
-        "top": 2756.5,
+        "top": 2760.5,
         "record": "8-9",
         "probability": "",
         "trend": "0",
@@ -283,7 +283,7 @@
       {
         "name": "Cowboys",
         "conf": "NFC",
-        "top": 2908.5,
+        "top": 2912.5,
         "record": "7-9-1",
         "probability": "",
         "trend": "0",
@@ -304,7 +304,7 @@
       {
         "name": "Saints",
         "conf": "NFC",
-        "top": 3060.5,
+        "top": 3064.5,
         "record": "6-11",
         "probability": "",
         "trend": "0",
@@ -325,7 +325,7 @@
       {
         "name": "Commanders",
         "conf": "NFC",
-        "top": 3212.5,
+        "top": 3216.5,
         "record": "5-12",
         "probability": "",
         "trend": "0",
@@ -346,7 +346,7 @@
       {
         "name": "Giants",
         "conf": "NFC",
-        "top": 3364.5,
+        "top": 3368.5,
         "record": "4-13",
         "probability": "",
         "trend": "0",
@@ -367,7 +367,7 @@
       {
         "name": "Cardinals",
         "conf": "NFC",
-        "top": 3516.5,
+        "top": 3520.5,
         "record": "3-14",
         "probability": "",
         "trend": "0",
@@ -706,7 +706,7 @@
       "rank": 8,
       "team": "Texans",
       "trend": "+2",
-      "blurb": "The Texans continue to fascinate as potential playoff sleepers. On Saturday, they showed some early offensive flash against the Chargers before turning the game over to be finished off by their terrific defense. It wasn't easy against Justin Herbert, who made some heroic plays to keep Los Angeles in it, but Houston found a way to win its eighth straight. When you consider that streak and the caliber of opponent that has managed to beat the Texans so far this season (Houston has fallen to potentially five playoff teams, none by more than eight points), it paints a picture of this squad's postseason potential, especially in a field that won't include ﻿﻿﻿﻿﻿Patrick Mahomes﻿﻿﻿﻿﻿. The Texans aren't perfect, and ﻿﻿﻿﻿﻿C.J. Stroud﻿﻿﻿﻿﻿ still must be more consistent, but any measure of steadiness would make Houston a fearsome playoff matchup."
+      "blurb": "The Texans continue to fascinate as potential playoff sleepers. On Saturday, they showed some early offensive flash against the Chargers before turning the game over to be finished off by their terrific defense. It wasn't easy against Justin Herbert, who made some heroic plays to keep Los Angeles in it, but Houston found a way to win its eighth straight. When you consider that streak and the caliber of opponent that has managed to beat the Texans so far this season (Houston has fallen to potentially five playoff teams, none by more than eight points), it paints a picture of this squad's postseason potential, especially in a field that won't include Patrick Mahomes. The Texans aren't perfect, and C.J. Stroud still must be more consistent, but any measure of steadiness would make Houston a fearsome playoff matchup."
     },
     {
       "rank": 9,
@@ -718,31 +718,31 @@
       "rank": 10,
       "team": "Eagles",
       "trend": "+1",
-      "blurb": "For the second time this season, the Eagles won a game in which ﻿﻿﻿Jalen Hurts﻿﻿﻿ didn't complete a pass after halftime. If that's not a testament to Vic Fangio's defense, I am not sure what is. The group was lights out for the game's first 50-plus minutes in Buffalo, and even if there was some luck involved in the late defensive stand -- with ﻿﻿﻿Josh Allen﻿﻿﻿ missing an open two-point opportunity -- you can't say too much more about the way the Eagles played on that side of the ball. That's the best thing they have going for them heading into the playoffs. Performing like the offense did in the second half -- punting five straight times -- just isn't going to cut it, however. The Eagles should have been able to increase their two-score lead at some point after halftime, but Hurts and Co. are in a complete rut. We've seen a lot of that this season -- too much for me to suddenly boost Philly into the upper tier. But in the right matchup, the Eagles absolutely can be a problem for someone."
+      "blurb": "For the second time this season, the Eagles won a game in which Jalen Hurts didn't complete a pass after halftime. If that's not a testament to Vic Fangio's defense, I am not sure what is. The group was lights out for the game's first 50-plus minutes in Buffalo, and even if there was some luck involved in the late defensive stand -- with Josh Allen missing an open two-point opportunity -- you can't say too much more about the way the Eagles played on that side of the ball. That's the best thing they have going for them heading into the playoffs. Performing like the offense did in the second half -- punting five straight times -- just isn't going to cut it, however. The Eagles should have been able to increase their two-score lead at some point after halftime, but Hurts and Co. are in a complete rut. We've seen a lot of that this season -- too much for me to suddenly boost Philly into the upper tier. But in the right matchup, the Eagles absolutely can be a problem for someone."
     },
     {
       "rank": 11,
       "team": "Chargers",
       "trend": "-2",
-      "blurb": "The fighting Chargers kept charging back from a 17-3 deficit against the Texans but couldn't finish the deal in a playoff-like atmosphere. Two early TDs from Houston hurt, as did a slew of offensive errors, including a pair of wicked drops from ﻿﻿﻿Oronde Gadsden II﻿﻿﻿, one of which ended up as a red-zone pick. It raises the question of how much ﻿﻿﻿Justin Herbert﻿﻿﻿ can trust his rookie tight end in the postseason, even with Gadsden catching a TD pass and a long seam throw after those flubs in the comeback attempt. Two missed boots from ﻿﻿﻿Cameron Dicker﻿﻿﻿, one of the NFL's best kickers this season, also were major head-scratchers in the loss. If the Chargers can somehow avoid matching up with a great pass-rushing team in the first round of the playoffs, they could pull off a road upset, but given the shape of the offensive line, it's hard to imagine the Bolts going on a run much longer than that."
+      "blurb": "The fighting Chargers kept charging back from a 17-3 deficit against the Texans but couldn't finish the deal in a playoff-like atmosphere. Two early TDs from Houston hurt, as did a slew of offensive errors, including a pair of wicked drops from Oronde Gadsden II, one of which ended up as a red-zone pick. It raises the question of how much Justin Herbert can trust his rookie tight end in the postseason, even with Gadsden catching a TD pass and a long seam throw after those flubs in the comeback attempt. Two missed boots from Cameron Dicker, one of the NFL's best kickers this season, also were major head-scratchers in the loss. If the Chargers can somehow avoid matching up with a great pass-rushing team in the first round of the playoffs, they could pull off a road upset, but given the shape of the offensive line, it's hard to imagine the Bolts going on a run much longer than that."
     },
     {
       "rank": 12,
       "team": "Packers",
       "trend": "",
-      "blurb": "The Packers are locked in as the seventh seed (for the third consecutive season), and they can use Week 18 to give certain players -- maybe including ﻿﻿﻿Jordan Love﻿﻿﻿ and ﻿﻿﻿Malik Willis﻿﻿﻿ -- some much-needed rest. But does this team scare anyone in the shape it is in? Not long ago, Super Bowl talk couldn't be scoffed at, but now? It's hard to envision, especially after the Ravens ran roughshod over the Packers with the ground game. There are also just too many players that won't be coming back from injuries, including ﻿﻿﻿Tucker Kraft﻿﻿﻿ and ﻿﻿﻿Micah Parsons﻿﻿﻿. With those two and a few others on the field, they were dangerous. Now, they look like a team that could be fortunate to win a playoff game, even if it's a rematch against a Bears team they beat once and nearly beat a second time in 2025."
+      "blurb": "The Packers are locked in as the seventh seed (for the third consecutive season), and they can use Week 18 to give certain players -- maybe including Jordan Love and Malik Willis -- some much-needed rest. But does this team scare anyone in the shape it is in? Not long ago, Super Bowl talk couldn't be scoffed at, but now? It's hard to envision, especially after the Ravens ran roughshod over the Packers with the ground game. There are also just too many players that won't be coming back from injuries, including Tucker Kraft and Micah Parsons. With those two and a few others on the field, they were dangerous. Now, they look like a team that could be fortunate to win a playoff game, even if it's a rematch against a Bears team they beat once and nearly beat a second time in 2025."
     },
     {
       "rank": 13,
       "team": "Steelers",
       "trend": "",
-      "blurb": "The Steelers really seemed to miss WR ﻿﻿DK Metcalf﻿﻿ in their humbling Week 17 loss at Cleveland, setting up the loser-goes-home game against the Ravens next Sunday night. They'll be without him in that one, too, thanks to Metcalf's poorly timed two-game suspension, leaving the Steelers to find offensive answers in a pinch. They won't have to worry about a ﻿﻿Myles Garrett﻿﻿-caliber force up front on the Ravens' defense, but Metcalf had nearly half of Pittsburgh's offensive yards in the Steelers' first meeting against Baltimore, a Week 14 win."
+      "blurb": "The Steelers really seemed to miss WR DK Metcalf in their humbling Week 17 loss at Cleveland, setting up the loser-goes-home game against the Ravens next Sunday night. They'll be without him in that one, too, thanks to Metcalf's poorly timed two-game suspension, leaving the Steelers to find offensive answers in a pinch. They won't have to worry about a Myles Garrett-caliber force up front on the Ravens' defense, but Metcalf had nearly half of Pittsburgh's offensive yards in the Steelers' first meeting against Baltimore, a Week 14 win."
     },
     {
       "rank": 14,
       "team": "Ravens",
       "trend": "+2",
-      "blurb": "The Ravens just keep hanging around, setting up the Week 18 battle royale against the Steelers for the AFC North title. There's more intrigue and firepower in this divisional showdown than there is in the other win-or-go-home match between the Panthers and Buccaneers. But the Ravens still face major questions heading into Pittsburgh, with ﻿﻿﻿﻿﻿Lamar Jackson﻿﻿﻿﻿﻿'s health being the biggest of the lot. It would be foolish to write the Ravens off, especially after ﻿﻿﻿﻿Derrick Henry﻿﻿﻿﻿ turned in a vintage performance in Saturday's win over Green Bay that could be a harbinger of things to come as we approach January. On the flip side, this Baltimore defense has plenty to clean up, and the Ravens just lost to this Steelers team a few weeks back. We're still in a holding pattern here, with this team not yet cleared for takeoff."
+      "blurb": "The Ravens just keep hanging around, setting up the Week 18 battle royale against the Steelers for the AFC North title. There's more intrigue and firepower in this divisional showdown than there is in the other win-or-go-home match between the Panthers and Buccaneers. But the Ravens still face major questions heading into Pittsburgh, with Lamar Jackson's health being the biggest of the lot. It would be foolish to write the Ravens off, especially after Derrick Henry turned in a vintage performance in Saturday's win over Green Bay that could be a harbinger of things to come as we approach January. On the flip side, this Baltimore defense has plenty to clean up, and the Ravens just lost to this Steelers team a few weeks back. We're still in a holding pattern here, with this team not yet cleared for takeoff."
     },
     {
       "rank": 15,
@@ -772,7 +772,7 @@
       "rank": 19,
       "team": "Colts",
       "trend": "-2",
-      "blurb": "Philip Rivers﻿﻿﻿﻿ deserves commendation for coming in cold and providing a steadying force for the Colts. But they also lost his first three starts, and Sunday was probably his toughest outing of this mini-revival, with the QB seemingly running out of gas after halftime. Though the Colts surely don't regret at all bringing Rivers in as a last-gasp dart throw, it also makes sense to use the season finale vs. Houston to evaluate rookie ﻿﻿﻿﻿Riley Leonard﻿﻿﻿﻿ for next year. Lacking a first-round pick (thanks to the trade for ﻿﻿﻿﻿Sauce Gardner﻿﻿﻿﻿) and facing questions about their QB future, with ﻿﻿﻿﻿Daniel Jones﻿﻿﻿﻿ in the early stages of his rehab (and headed for free agency), the Colts are in a very delicate situation. Yes, we all saw how well that offense hummed early on, and that absolutely could happen again, but it's hard not to have some doubt, too, especially with that void in their draft coffers for 2026."
+      "blurb": "Philip Rivers deserves commendation for coming in cold and providing a steadying force for the Colts. But they also lost his first three starts, and Sunday was probably his toughest outing of this mini-revival, with the QB seemingly running out of gas after halftime. Though the Colts surely don't regret at all bringing Rivers in as a last-gasp dart throw, it also makes sense to use the season finale vs. Houston to evaluate rookie Riley Leonard for next year. Lacking a first-round pick (thanks to the trade for Sauce Gardner) and facing questions about their QB future, with Daniel Jones in the early stages of his rehab (and headed for free agency), the Colts are in a very delicate situation. Yes, we all saw how well that offense hummed early on, and that absolutely could happen again, but it's hard not to have some doubt, too, especially with that void in their draft coffers for 2026."
     },
     {
       "rank": 20,
@@ -790,13 +790,13 @@
       "rank": 22,
       "team": "Bengals",
       "trend": "+1",
-      "blurb": "It feels like the past two games have helped ease the pain of missing the playoffs, as the offense has unloaded on its opponents with a barrage of fireworks. ﻿﻿﻿Joe Burrow﻿﻿﻿ is back to throwing dimes, ﻿﻿﻿Chase Brown﻿﻿﻿ keeps stacking productive games and even 345-pound ﻿﻿﻿Cody Ford﻿﻿﻿ is out there logging 21-yard catch-and-runs (16 YAC!). That's the version of the Bengals we all know and love. It appears Zac Taylor -- who seems likely to stick around for a while yet -- is effectively doing everything he can to prime Burrow and the big guns for a return to prominence next season. That renewed competitiveness won't be automatic or assumed, and the Ravens debacle wasn't that long ago, but it's a pretty good sign for this team's health that the Bengals are playing freely and effectively in another lost season."
+      "blurb": "It feels like the past two games have helped ease the pain of missing the playoffs, as the offense has unloaded on its opponents with a barrage of fireworks. Joe Burrow is back to throwing dimes, Chase Brown keeps stacking productive games and even 345-pound Cody Ford is out there logging 21-yard catch-and-runs (16 YAC!). That's the version of the Bengals we all know and love. It appears Zac Taylor -- who seems likely to stick around for a while yet -- is effectively doing everything he can to prime Burrow and the big guns for a return to prominence next season. That renewed competitiveness won't be automatic or assumed, and the Ravens debacle wasn't that long ago, but it's a pretty good sign for this team's health that the Bengals are playing freely and effectively in another lost season."
     },
     {
       "rank": 23,
       "team": "Saints",
       "trend": "+1",
-      "blurb": "After sleeping through the first half offensively, the Saints turned on the afterburners in the comeback win -- their fourth straight victory, putting a bow on what had been a tough season. Granted, it came against a beleaguered Titans defense, but what ﻿﻿Tyler Shough﻿﻿ has done has paved the way for him to be New Orleans' 2026 starter. Shough completed 12 of 16 passes for 251 yards and two TDs after halftime, and he did so without relying on his scrambling as much as we had seen in recent games. He and Kellen Moore appear to be in a groove right now, setting up the Saints as a potential future contender in an NFC South that doesn't have a clear favorite right now. Also, it hasn't been talked about a lot, but how good has ﻿﻿Chase Young﻿﻿ been? He's shaping up to be one of the team's best signings in recent years."
+      "blurb": "After sleeping through the first half offensively, the Saints turned on the afterburners in the comeback win -- their fourth straight victory, putting a bow on what had been a tough season. Granted, it came against a beleaguered Titans defense, but what Tyler Shough has done has paved the way for him to be New Orleans' 2026 starter. Shough completed 12 of 16 passes for 251 yards and two TDs after halftime, and he did so without relying on his scrambling as much as we had seen in recent games. He and Kellen Moore appear to be in a groove right now, setting up the Saints as a potential future contender in an NFC South that doesn't have a clear favorite right now. Also, it hasn't been talked about a lot, but how good has Chase Young been? He's shaping up to be one of the team's best signings in recent years."
     },
     {
       "rank": 24,
@@ -820,19 +820,19 @@
       "rank": 27,
       "team": "Browns",
       "trend": "+2",
-      "blurb": "The Browns enjoyed playing the role of spoilers, even if they let the Ravens know on socials that this was no favor to their hated divisional rivals. It was another sub-17-point performance on offense, but the defense rose to the challenge and stunted the Steelers -- though ﻿﻿﻿﻿﻿Myles Garrett﻿﻿﻿﻿﻿ was unable to break the sack record, seemingly facing a crowd of blockers on most pass plays. The loss hurt the Browns' draft outlook and could keep them out of range for a quarterback, although they have the picks to move up if they so desire. Where Cleveland goes at that position in the offseason will be fascinating, especially with ﻿﻿﻿﻿﻿Shedeur Sanders﻿﻿﻿﻿﻿ doing enough good things to suggest he could be part of the solution. Then again, when it comes to the Browns, it's anyone's guess as to how it'll all unfold."
+      "blurb": "The Browns enjoyed playing the role of spoilers, even if they let the Ravens know on socials that this was no favor to their hated divisional rivals. It was another sub-17-point performance on offense, but the defense rose to the challenge and stunted the Steelers -- though Myles Garrett was unable to break the sack record, seemingly facing a crowd of blockers on most pass plays. The loss hurt the Browns' draft outlook and could keep them out of range for a quarterback, although they have the picks to move up if they so desire. Where Cleveland goes at that position in the offseason will be fascinating, especially with Shedeur Sanders doing enough good things to suggest he could be part of the solution. Then again, when it comes to the Browns, it's anyone's guess as to how it'll all unfold."
     },
     {
       "rank": 28,
       "team": "Titans",
       "trend": "",
-      "blurb": "Cam Ward﻿﻿'s high notes have been pretty strong this season, even if they've been noticeably outnumbered by the lower ones. He threw some big-time passes in the loss to the Saints, and there has been a tangible uptick in his play recently -- that's four straight games with two TD passes. Even still, Tennessee's next head coach will have to sell himself on making Ward a more consistent player in Year 2, assuming the Titans can provide him with more help on both sides of the ball. Some of the weapons appear to be in place, but they'll need better blocking and a more efficient offensive system to coax greatness out of Ward."
+      "blurb": "Cam Ward's high notes have been pretty strong this season, even if they've been noticeably outnumbered by the lower ones. He threw some big-time passes in the loss to the Saints, and there has been a tangible uptick in his play recently -- that's four straight games with two TD passes. Even still, Tennessee's next head coach will have to sell himself on making Ward a more consistent player in Year 2, assuming the Titans can provide him with more help on both sides of the ball. Some of the weapons appear to be in place, but they'll need better blocking and a more efficient offensive system to coax greatness out of Ward."
     },
     {
       "rank": 29,
       "team": "Cardinals",
       "trend": "-2",
-      "blurb": "The misery continued Sunday with the Cardinals' eighth straight loss (and 13th in 14 games). It's not often you see a 2-0 start to the season so thoroughly flushed away, but here we are. What it means for Jonathan Gannon is yet to be determined, but two things are certain: This was Arizona's fifth double-digit blowout since the Week 8 bye and yet another game where the defense was taken to the woodshed. Defense is Gannon's supposed calling card, and yet that unit -- in spite of many big additions in the past few seasons -- has been a major disappointment, especially down the stretch. Even accounting for the impact of injuries, it seems clear something must change drastically on that side of the ball. There's also the looming ﻿﻿﻿Kyler Murray﻿﻿﻿ situation, setting up a pretty significant offseason in Glendale."
+      "blurb": "The misery continued Sunday with the Cardinals' eighth straight loss (and 13th in 14 games). It's not often you see a 2-0 start to the season so thoroughly flushed away, but here we are. What it means for Jonathan Gannon is yet to be determined, but two things are certain: This was Arizona's fifth double-digit blowout since the Week 8 bye and yet another game where the defense was taken to the woodshed. Defense is Gannon's supposed calling card, and yet that unit -- in spite of many big additions in the past few seasons -- has been a major disappointment, especially down the stretch. Even accounting for the impact of injuries, it seems clear something must change drastically on that side of the ball. There's also the looming Kyler Murray situation, setting up a pretty significant offseason in Glendale."
     },
     {
       "rank": 30,
