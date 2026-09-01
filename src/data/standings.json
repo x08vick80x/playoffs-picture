@@ -1,5 +1,91 @@
 {
-  "lastUpdated": "2026-08-31T12:15:20.393Z",
-  "AFC": [],
-  "NFC": []
+  "lastUpdated": "2026-09-01T10:58:21.103Z",
+  "AFC": [
+    {
+      "seed": "1",
+      "team": "Baltimore",
+      "record": "0-0-0",
+      "status": ""
+    },
+    {
+      "seed": "2",
+      "team": "Buffalo",
+      "record": "0-0-0",
+      "status": ""
+    },
+    {
+      "seed": "3",
+      "team": "Denver",
+      "record": "0-0-0",
+      "status": ""
+    },
+    {
+      "seed": "4",
+      "team": "Houston",
+      "record": "0-0-0",
+      "status": ""
+    },
+    {
+      "seed": "5",
+      "team": "Cincinnati",
+      "record": "0-0-0",
+      "status": ""
+    },
+    {
+      "seed": "6",
+      "team": "Cleveland",
+      "record": "0-0-0",
+      "status": ""
+    },
+    {
+      "seed": "7",
+      "team": "Indianapolis",
+      "record": "0-0-0",
+      "status": ""
+    }
+  ],
+  "NFC": [
+    {
+      "seed": "1",
+      "team": "Arizona",
+      "record": "0-0-0",
+      "status": ""
+    },
+    {
+      "seed": "2",
+      "team": "Atlanta",
+      "record": "0-0-0",
+      "status": ""
+    },
+    {
+      "seed": "3",
+      "team": "Chicago",
+      "record": "0-0-0",
+      "status": ""
+    },
+    {
+      "seed": "4",
+      "team": "Dallas",
+      "record": "0-0-0",
+      "status": ""
+    },
+    {
+      "seed": "5",
+      "team": "Carolina",
+      "record": "0-0-0",
+      "status": ""
+    },
+    {
+      "seed": "6",
+      "team": "Detroit",
+      "record": "0-0-0",
+      "status": ""
+    },
+    {
+      "seed": "7",
+      "team": "Green Bay",
+      "record": "0-0-0",
+      "status": ""
+    }
+  ]
 }
