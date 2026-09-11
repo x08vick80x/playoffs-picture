@@ -145,22 +145,22 @@
     ],
     "NFC": [
       {
-        "name": "Cardinals",
-        "record": "0-0",
+        "name": "49ers",
+        "record": "1-0",
         "probability": "100%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
           {
-            "opponent": "Rams",
-            "location": "@",
+            "opponent": "Seahawks",
+            "location": "vs",
             "week": "REG18",
-            "opponentRecord": "??"
+            "opponentRecord": "1-0-0"
           }
         ],
         "nextOpponent": {
-          "opponent": "Rams",
-          "location": "@"
+          "opponent": "Seahawks",
+          "location": "vs"
         }
       },
       {
@@ -193,7 +193,7 @@
             "opponent": "Lions",
             "location": "vs",
             "week": "REG18",
-            "opponentRecord": "0-0-0"
+            "opponentRecord": "??"
           }
         ],
         "nextOpponent": {
@@ -221,6 +221,44 @@
         }
       },
       {
+        "name": "Seahawks",
+        "record": "1-0",
+        "probability": "100%",
+        "trend": "0",
+        "trendDirection": "same",
+        "remainingSchedule": [
+          {
+            "opponent": "49ers",
+            "location": "@",
+            "week": "REG18",
+            "opponentRecord": "1-0-0"
+          }
+        ],
+        "nextOpponent": {
+          "opponent": "49ers",
+          "location": "@"
+        }
+      },
+      {
+        "name": "Cardinals",
+        "record": "0-0",
+        "probability": "100%",
+        "trend": "0",
+        "trendDirection": "same",
+        "remainingSchedule": [
+          {
+            "opponent": "Rams",
+            "location": "@",
+            "week": "REG18",
+            "opponentRecord": "??"
+          }
+        ],
+        "nextOpponent": {
+          "opponent": "Rams",
+          "location": "@"
+        }
+      },
+      {
         "name": "Panthers",
         "record": "0-0",
         "probability": "100%",
@@ -236,44 +274,6 @@
         ],
         "nextOpponent": {
           "opponent": "Buccaneers",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Lions",
-        "record": "0-0",
-        "probability": "100%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Bears",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "0-0-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Bears",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Packers",
-        "record": "0-0",
-        "probability": "100%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Vikings",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "??"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Vikings",
           "location": "@"
         }
       }

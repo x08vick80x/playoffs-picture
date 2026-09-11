@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-08T10:28:00.237Z",
+  "lastUpdated": "2026-09-11T10:04:18.583Z",
   "AFC": [
     {
       "seed": "1",
@@ -47,8 +47,8 @@
   "NFC": [
     {
       "seed": "1",
-      "team": "Arizona",
-      "record": "0-0-0",
+      "team": "San Francisco",
+      "record": "1-0-0",
       "status": ""
     },
     {
@@ -71,19 +71,19 @@
     },
     {
       "seed": "5",
-      "team": "Carolina",
-      "record": "0-0-0",
+      "team": "Seattle",
+      "record": "1-0-0",
       "status": ""
     },
     {
       "seed": "6",
-      "team": "Detroit",
+      "team": "Arizona",
       "record": "0-0-0",
       "status": ""
     },
     {
       "seed": "7",
-      "team": "Green Bay",
+      "team": "Carolina",
       "record": "0-0-0",
       "status": ""
     }
