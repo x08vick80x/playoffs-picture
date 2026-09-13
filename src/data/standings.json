@@ -1,46 +1,46 @@
 {
-  "lastUpdated": "2026-09-11T10:04:18.583Z",
+  "lastUpdated": "2026-09-13T23:16:33.744Z",
   "AFC": [
     {
       "seed": "1",
-      "team": "Baltimore",
-      "record": "0-0-0",
+      "team": "Jacksonville",
+      "record": "1-0-0",
       "status": ""
     },
     {
       "seed": "2",
-      "team": "Buffalo",
-      "record": "0-0-0",
+      "team": "Baltimore",
+      "record": "1-0-0",
       "status": ""
     },
     {
       "seed": "3",
+      "team": "N.Y. Jets",
+      "record": "1-0-0",
+      "status": ""
+    },
+    {
+      "seed": "4",
       "team": "Denver",
       "record": "0-0-0",
       "status": ""
     },
     {
-      "seed": "4",
-      "team": "Houston",
-      "record": "0-0-0",
-      "status": ""
-    },
-    {
       "seed": "5",
-      "team": "Cincinnati",
-      "record": "0-0-0",
+      "team": "Buffalo",
+      "record": "1-0-0",
       "status": ""
     },
     {
       "seed": "6",
-      "team": "Cleveland",
-      "record": "0-0-0",
+      "team": "Cincinnati",
+      "record": "1-0-0",
       "status": ""
     },
     {
       "seed": "7",
-      "team": "Indianapolis",
-      "record": "0-0-0",
+      "team": "Pittsburgh",
+      "record": "1-0-0",
       "status": ""
     }
   ],
@@ -53,37 +53,37 @@
     },
     {
       "seed": "2",
-      "team": "Atlanta",
-      "record": "0-0-0",
+      "team": "Detroit",
+      "record": "1-0-0",
       "status": ""
     },
     {
       "seed": "3",
-      "team": "Chicago",
-      "record": "0-0-0",
-      "status": ""
-    },
-    {
-      "seed": "4",
       "team": "Dallas",
       "record": "0-0-0",
       "status": ""
     },
     {
+      "seed": "4",
+      "team": "New Orleans",
+      "record": "0-1-0",
+      "status": ""
+    },
+    {
       "seed": "5",
-      "team": "Seattle",
+      "team": "Chicago",
       "record": "1-0-0",
       "status": ""
     },
     {
       "seed": "6",
-      "team": "Arizona",
-      "record": "0-0-0",
+      "team": "Seattle",
+      "record": "1-0-0",
       "status": ""
     },
     {
       "seed": "7",
-      "team": "Carolina",
+      "team": "Arizona",
       "record": "0-0-0",
       "status": ""
     }
