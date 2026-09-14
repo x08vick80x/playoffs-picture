@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-14T05:19:22.174Z",
+  "lastUpdated": "2026-09-14T11:19:22.017Z",
   "AFC": [
     {
       "seed": "1",
@@ -59,7 +59,7 @@
     },
     {
       "seed": "3",
-      "team": "Philadelphia",
+      "team": "N.Y. Giants",
       "record": "1-0-0",
       "status": ""
     },
@@ -71,19 +71,19 @@
     },
     {
       "seed": "5",
-      "team": "N.Y. Giants",
-      "record": "1-0-0",
-      "status": ""
-    },
-    {
-      "seed": "6",
       "team": "Chicago",
       "record": "1-0-0",
       "status": ""
     },
     {
-      "seed": "7",
+      "seed": "6",
       "team": "Detroit",
+      "record": "1-0-0",
+      "status": ""
+    },
+    {
+      "seed": "7",
+      "team": "Philadelphia",
       "record": "1-0-0",
       "status": ""
     }

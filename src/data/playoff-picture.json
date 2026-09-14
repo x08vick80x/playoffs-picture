@@ -183,21 +183,21 @@
         }
       },
       {
-        "name": "Eagles",
+        "name": "Giants",
         "record": "1-0",
         "probability": "100%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
           {
-            "opponent": "Commanders",
+            "opponent": "Cowboys",
             "location": "vs",
             "week": "REG18",
             "opponentRecord": "??"
           }
         ],
         "nextOpponent": {
-          "opponent": "Commanders",
+          "opponent": "Cowboys",
           "location": "vs"
         }
       },
@@ -217,25 +217,6 @@
         ],
         "nextOpponent": {
           "opponent": "Saints",
-          "location": "vs"
-        }
-      },
-      {
-        "name": "Giants",
-        "record": "1-0",
-        "probability": "100%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Cowboys",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "??"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Cowboys",
           "location": "vs"
         }
       },
@@ -275,6 +256,25 @@
         "nextOpponent": {
           "opponent": "Bears",
           "location": "@"
+        }
+      },
+      {
+        "name": "Eagles",
+        "record": "1-0",
+        "probability": "100%",
+        "trend": "0",
+        "trendDirection": "same",
+        "remainingSchedule": [
+          {
+            "opponent": "Commanders",
+            "location": "vs",
+            "week": "REG18",
+            "opponentRecord": "??"
+          }
+        ],
+        "nextOpponent": {
+          "opponent": "Commanders",
+          "location": "vs"
         }
       }
     ]
