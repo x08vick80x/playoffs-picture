@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-18T10:07:31.917Z",
+  "lastUpdated": "2026-09-20T23:20:20.642Z",
   "AFC": [
     {
       "seed": "1",
@@ -9,8 +9,8 @@
     },
     {
       "seed": "2",
-      "team": "Jacksonville",
-      "record": "1-0-0",
+      "team": "Cincinnati",
+      "record": "2-0-0",
       "status": ""
     },
     {
@@ -21,63 +21,63 @@
     },
     {
       "seed": "4",
-      "team": "Baltimore",
-      "record": "1-0-0",
+      "team": "Jacksonville",
+      "record": "1-1-0",
       "status": ""
     },
     {
       "seed": "5",
-      "team": "N.Y. Jets",
-      "record": "1-0-0",
-      "status": ""
-    },
-    {
-      "seed": "6",
       "team": "Las Vegas",
       "record": "1-0-0",
       "status": ""
     },
     {
+      "seed": "6",
+      "team": "New England",
+      "record": "1-1-0",
+      "status": ""
+    },
+    {
       "seed": "7",
-      "team": "Cincinnati",
-      "record": "1-0-0",
+      "team": "Baltimore",
+      "record": "1-1-0",
       "status": ""
     }
   ],
   "NFC": [
     {
       "seed": "1",
+      "team": "Minnesota",
+      "record": "2-0-0",
+      "status": ""
+    },
+    {
+      "seed": "2",
+      "team": "Philadelphia",
+      "record": "2-0-0",
+      "status": ""
+    },
+    {
+      "seed": "3",
       "team": "San Francisco",
       "record": "1-0-0",
       "status": ""
     },
     {
-      "seed": "2",
-      "team": "Minnesota",
-      "record": "1-0-0",
+      "seed": "4",
+      "team": "Carolina",
+      "record": "1-1-0",
       "status": ""
     },
     {
-      "seed": "3",
+      "seed": "5",
       "team": "N.Y. Giants",
       "record": "1-0-0",
       "status": ""
     },
     {
-      "seed": "4",
-      "team": "Atlanta",
-      "record": "0-1-0",
-      "status": ""
-    },
-    {
-      "seed": "5",
-      "team": "Chicago",
-      "record": "1-0-0",
-      "status": ""
-    },
-    {
       "seed": "6",
-      "team": "Philadelphia",
+      "team": "Seattle",
       "record": "1-0-0",
       "status": ""
     },
