@@ -22,3 +22,12 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# scraper debug/scratch artifacts
+*_debug.html
+temp_*.html
+*_output.html
+*_output.txt
+debug_lines.json
+inspect-*.js
+verify_*.webp
