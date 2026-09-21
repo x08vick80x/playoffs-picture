@@ -1,22 +1,22 @@
 {
-  "lastUpdated": "2026-09-20T23:20:20.642Z",
+  "lastUpdated": "2026-09-21T05:18:24.223Z",
   "AFC": [
     {
       "seed": "1",
-      "team": "Buffalo",
+      "team": "Las Vegas",
       "record": "2-0-0",
       "status": ""
     },
     {
       "seed": "2",
-      "team": "Cincinnati",
+      "team": "Buffalo",
       "record": "2-0-0",
       "status": ""
     },
     {
       "seed": "3",
-      "team": "Kansas City",
-      "record": "1-0-0",
+      "team": "Cincinnati",
+      "record": "2-0-0",
       "status": ""
     },
     {
@@ -27,8 +27,8 @@
     },
     {
       "seed": "5",
-      "team": "Las Vegas",
-      "record": "1-0-0",
+      "team": "Kansas City",
+      "record": "2-0-0",
       "status": ""
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "seed": "7",
-      "team": "Baltimore",
+      "team": "N.Y. Jets",
       "record": "1-1-0",
       "status": ""
     }
@@ -53,14 +53,14 @@
     },
     {
       "seed": "2",
-      "team": "Philadelphia",
+      "team": "Seattle",
       "record": "2-0-0",
       "status": ""
     },
     {
       "seed": "3",
-      "team": "San Francisco",
-      "record": "1-0-0",
+      "team": "Philadelphia",
+      "record": "2-0-0",
       "status": ""
     },
     {
@@ -71,20 +71,20 @@
     },
     {
       "seed": "5",
+      "team": "San Francisco",
+      "record": "2-0-0",
+      "status": ""
+    },
+    {
+      "seed": "6",
       "team": "N.Y. Giants",
       "record": "1-0-0",
       "status": ""
     },
     {
-      "seed": "6",
-      "team": "Seattle",
-      "record": "1-0-0",
-      "status": ""
-    },
-    {
       "seed": "7",
-      "team": "Arizona",
-      "record": "1-0-0",
+      "team": "Detroit",
+      "record": "1-1-0",
       "status": ""
     }
   ]
