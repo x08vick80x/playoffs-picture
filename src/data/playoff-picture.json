@@ -390,22 +390,22 @@
   "seeds": {
     "AFC": [
       {
-        "name": "Raiders",
+        "name": "Chiefs",
         "record": "2-0",
-        "probability": "61%",
+        "probability": "82%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
           {
-            "opponent": "Chiefs",
-            "location": "vs",
+            "opponent": "Raiders",
+            "location": "@",
             "week": "REG18",
             "opponentRecord": "2-0-0"
           }
         ],
         "nextOpponent": {
-          "opponent": "Chiefs",
-          "location": "vs"
+          "opponent": "Raiders",
+          "location": "@"
         }
       },
       {
@@ -466,22 +466,22 @@
         }
       },
       {
-        "name": "Chiefs",
+        "name": "Raiders",
         "record": "2-0",
-        "probability": "82%",
+        "probability": "61%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
           {
-            "opponent": "Raiders",
-            "location": "@",
+            "opponent": "Chiefs",
+            "location": "vs",
             "week": "REG18",
             "opponentRecord": "2-0-0"
           }
         ],
         "nextOpponent": {
-          "opponent": "Raiders",
-          "location": "@"
+          "opponent": "Chiefs",
+          "location": "vs"
         }
       },
       {
