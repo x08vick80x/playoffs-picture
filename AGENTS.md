@@ -65,6 +65,7 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
    the start of each new NFL season** — every other date is derived from them.
 4. A GitHub Actions cron (`update-data.yml`) runs the scrapers on a schedule and auto-commits the
    resulting JSON directly to `main` (`file_pattern: src/data/*.json` already covers `schedule.json`).
+   **This routinely diverges from any local work touching the same files** (see gotcha below).
 5. `src/pages/index.astro` reads `src/data/*.json` synchronously via `node:fs` at build time and
    passes it down as props — everything is static, no client-side fetching of team data.
 6. `src/utils/team-mapping.js` bridges the naming inconsistencies between the two data sources
@@ -73,6 +74,13 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
 
 ## Known fragility / gotchas for future sessions
 
+- **Local work and the `update-data.yml` cron both commit to `main` and both touch
+  `src/data/*.json`** — a local push can get rejected as non-fast-forward as soon as the cron has
+  committed in the meantime. `.gitattributes` declares `merge=ours` for `src/data/*.json` so a
+  normal `git pull`/merge keeps the local version without conflicting (the data is regenerated
+  constantly anyway, so losing a remote snapshot is harmless). **One-time setup per clone/machine**:
+  run `git config merge.ours.driver true` (the driver itself isn't stored in the repo, only the
+  attribute mapping is). Prefer `git pull` before pushing over reaching for `--force`.
 - **`scraper/fetch-nfl-data.js` is season-specific**: only `SEASON_YEAR` and `REG18_END` in
   `scraper/config.js` need to change at the start of each new NFL season — every other week
   boundary and URL is derived from them.
