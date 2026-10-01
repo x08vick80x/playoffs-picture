@@ -1,0 +1,86 @@
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+.season-schedule-container {
+    padding: $spacing-sm;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.week-tabs {
+    display: flex;
+    gap: $spacing-xs;
+    overflow-x: auto;
+    padding-bottom: $spacing-xs;
+    margin-bottom: $spacing-sm;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .week-tab {
+        flex: 0 0 auto;
+        background: $bg-card;
+        color: $text-secondary;
+        border: 1px solid #333;
+        border-radius: $radius-sm;
+        padding: 0.8rem 1.6rem;
+        font-weight: bold;
+        font-size: 1.4rem;
+        white-space: nowrap;
+        transition: background 0.2s, color 0.2s;
+
+        &.active {
+            background: $nfl-red;
+            color: white;
+            border-color: $nfl-red;
+        }
+    }
+}
+
+.week-panel {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+
+    &[hidden] {
+        display: none;
+    }
+}
+
+.schedule-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: $bg-card;
+    border-radius: $radius-md;
+    padding: $spacing-xs $spacing-sm;
+
+    &__date {
+        color: $text-secondary;
+        font-size: 1.2rem;
+    }
+
+    &__teams {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+    }
+
+    .team-row {
+        flex: 1;
+    }
+
+    &__at {
+        color: $text-secondary;
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+}
+
+.season-schedule-container .empty-state {
+    text-align: center;
+    color: $text-secondary;
+    padding: $spacing-md 0;
+}

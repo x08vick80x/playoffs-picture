@@ -1,0 +1,97 @@
+---
+import SectionTitle from "./atoms/SectionTitle.astro";
+import TeamRow from "./molecules/TeamRow.astro";
+
+interface Match {
+    home: string;
+    away: string;
+    date: string | null;
+    time: string | null;
+    final: boolean;
+}
+
+interface Week {
+    week: string; // "REG1"
+    matches: Match[];
+}
+
+interface Props {
+    weeks: Week[];
+    currentWeek: number;
+}
+
+const { weeks, currentWeek } = Astro.props;
+
+const weekLabel = (id: string) => `Week ${id.replace("REG", "")}`;
+const defaultWeekId = `REG${currentWeek}`;
+---
+
+<div class="season-schedule-container">
+    <SectionTitle title="Season Schedule" />
+
+    <div class="week-tabs" id="week-tabs">
+        {
+            weeks.map((w) => (
+                <button
+                    class:list={["week-tab", { active: w.week === defaultWeekId }]}
+                    data-week={w.week}
+                >
+                    {weekLabel(w.week)}
+                </button>
+            ))
+        }
+    </div>
+
+    {
+        weeks.map((w) => (
+            <div
+                class="week-panel"
+                data-week-panel={w.week}
+                hidden={w.week !== defaultWeekId}
+            >
+                {w.matches.length === 0 && (
+                    <div class="empty-state">- No matchups available -</div>
+                )}
+                {w.matches.map((m) => (
+                    <div class="schedule-row">
+                        <span class="schedule-row__date">
+                            {m.date}
+                            {m.final ? " — Final" : m.time ? ` — ${m.time}` : ""}
+                        </span>
+                        <div class="schedule-row__teams">
+                            <TeamRow team={m.away} size="sm" showRecord={false} />
+                            <span class="schedule-row__at">@</span>
+                            <TeamRow team={m.home} size="sm" showRecord={false} />
+                        </div>
+                    </div>
+                ))}
+            </div>
+        ))
+    }
+</div>
+
+<script>
+    const tabsContainer = document.getElementById("week-tabs");
+
+    tabsContainer?.addEventListener("click", (e) => {
+        const target = e.target as HTMLElement;
+        const btn = target.closest(".week-tab") as HTMLElement | null;
+        if (!btn) return;
+
+        const week = btn.getAttribute("data-week");
+        if (!week) return;
+
+        tabsContainer
+            .querySelectorAll(".week-tab")
+            .forEach((el) =>
+                el.classList.toggle("active", el.getAttribute("data-week") === week),
+            );
+
+        document.querySelectorAll("[data-week-panel]").forEach((panel) => {
+            (panel as HTMLElement).hidden =
+                panel.getAttribute("data-week-panel") !== week;
+        });
+
+        btn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    });
+</script>

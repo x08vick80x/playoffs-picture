@@ -2,7 +2,7 @@
 import { getTeamId, getTeamAbbreviation } from "../utils/team-mapping.js";
 import Button from "./atoms/Button.astro";
 
-const { standings, playoffPicture } = Astro.props;
+const { standings, playoffPicture, teamSchedules } = Astro.props;
 
 // Build Master Map for Client
 // We need to handle mapping from "City" (Standings) to "ID" and "Abbr"
@@ -26,6 +26,7 @@ const normalize = (name: string) => name.trim();
 const teamsData = {
     standings,
     playoffPicture,
+    teamSchedules: teamSchedules || {},
     masterMap: masterTeamMap,
 };
 ---
@@ -104,6 +105,14 @@ const teamsData = {
         return null;
     };
 
+    // teamSchedules (always available, independent of the playoff-picture week-8 gate) is keyed
+    // by nickname (e.g. "Chiefs"); build a reverse index keyed by the masterMap's city key.
+    const scheduleByCityKey = {};
+    Object.entries(teamsData.teamSchedules).forEach(([nickname, sched]) => {
+        const cityKey = resolveTeamKey(nickname);
+        if (cityKey) scheduleByCityKey[cityKey] = sched;
+    });
+
     function getTeamStats(cityKey) {
         const meta = teamsData.masterMap[cityKey];
         if (!meta) return null;
@@ -145,8 +154,6 @@ const teamsData = {
             stats.isInProjected = true;
             stats.seed = seedRow.seed;
             stats.probability = seedRow.probability;
-            stats.nextOpp = seedRow.nextOpponent;
-            stats.schedule = seedRow.remainingSchedule;
         } else {
             const bubbleRow = teamsData.playoffPicture.bubble[meta.conf].find(
                 (t) => resolveTeamKey(t.name) === cityKey,
@@ -154,8 +161,6 @@ const teamsData = {
             if (bubbleRow) {
                 stats.isBubble = true;
                 stats.probability = bubbleRow.probability;
-                stats.nextOpp = bubbleRow.nextOpponent;
-                stats.schedule = bubbleRow.remainingSchedule;
             } else {
                 const elimRow = teamsData.playoffPicture.eliminated[
                     meta.conf
@@ -166,6 +171,20 @@ const teamsData = {
                 }
             }
         }
+
+        // Next game + remaining schedule: always available (independent of the week-8 gate
+        // that keeps seeds/bubble/eliminated empty early in the season).
+        const sched = scheduleByCityKey[cityKey] || [];
+        stats.schedule = sched;
+        stats.nextOpp = sched.length > 0
+            ? {
+                opponent: sched[0].opponent,
+                location: sched[0].location,
+                date: sched[0].date,
+                time: sched[0].time,
+            }
+            : null;
+
         return stats;
     }
 
@@ -274,6 +293,7 @@ const teamsData = {
                 nextOppHtml = `
                     <div class="team-item__next-opp-container">
                         <span class="team-item__next-opp">nxt ${stats.nextOpp.location} ${stats.nextOpp.opponent}</span>
+                        ${stats.nextOpp.date ? `<span class="team-item__next-opp-date">${stats.nextOpp.date}${stats.nextOpp.time ? ` \u2022 ${stats.nextOpp.time}` : ""}</span>` : ""}
                     </div>
                 `;
             } else if (stats.isInProjected) {

@@ -11,6 +11,7 @@ import PowerRankings from "../components/PowerRankings.astro";
 import PageTitle from "../components/atoms/PageTitle.astro";
 import LastUpdated from "../components/atoms/LastUpdated.astro";
 import Button from "../components/atoms/Button.astro";
+import SeasonSchedule from "../components/SeasonSchedule.astro";
 import fs from "node:fs";
 
 import path from "node:path";
@@ -21,6 +22,9 @@ const standings = JSON.parse(fs.readFileSync(standingsPath, "utf-8"));
 
 const playoffPicturePath = path.resolve("./src/data/playoff-picture.json");
 const playoffPicture = JSON.parse(fs.readFileSync(playoffPicturePath, "utf-8"));
+
+const schedulePath = path.resolve("./src/data/schedule.json");
+const schedule = JSON.parse(fs.readFileSync(schedulePath, "utf-8"));
 
 // Use today's date or a specific timestamp from data if available
 const lastUpdated = new Date().toLocaleString("en-US", {
@@ -64,7 +68,11 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 				</p>
 			</div>
 
-			<MyTeams standings={standings} playoffPicture={playoffPicture} />
+			<MyTeams
+				standings={standings}
+				playoffPicture={playoffPicture}
+				teamSchedules={schedule.teamSchedules}
+			/>
 
 			<script>
 				const installContainer =
@@ -124,17 +132,26 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 				});
 			</script>
 
+			<section id="schedule">
+				<SeasonSchedule
+					weeks={schedule.weeks}
+					currentWeek={schedule.currentWeek}
+				/>
+			</section>
+
 			<section id="matchups">
 				<Matchups
 					afc={standings.AFC}
 					nfc={standings.NFC}
 					seeds={playoffPicture.seeds}
+					currentWeek={schedule.currentWeek}
 				/>
 			</section>
 
 			<BubbleEliminated
 				bubble={playoffPicture.bubble}
 				eliminated={playoffPicture.eliminated}
+				currentWeek={schedule.currentWeek}
 			/>
 
 			<section id="power-rankings">

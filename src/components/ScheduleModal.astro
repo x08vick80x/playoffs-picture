@@ -31,7 +31,7 @@ import { getTeamId } from "../utils/team-mapping.js";
                 .map(
                     (game) => `
                 <div class="game-item">
-                    <div class="game-item__week">${game.week}</div>
+                    <div class="game-item__week">${game.date || game.week}</div>
                     <div class="game-item__info">
                         <span class="game-item__location">${game.location === "vs" ? "vs" : "@"}</span>
                         <div class="game-item__opponent clearfix">
