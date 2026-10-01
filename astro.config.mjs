@@ -34,9 +34,9 @@ export default defineConfig({
     AstroPWA({
         registerType: 'autoUpdate',
         manifest: {
-          name: 'NFL Playoff Picture 2025',
+          name: 'NFL Playoff Picture 2026',
           short_name: 'NFL Playoff',
-          description: 'NFL Playoff Picture 2025 Standings',
+          description: 'NFL Playoff Picture 2026 Standings',
           theme_color: '#013369',
           background_color: '#013369',
           display: 'standalone',
