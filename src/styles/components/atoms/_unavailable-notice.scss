@@ -1,0 +1,11 @@
+@use '../../variables' as *;
+
+.unavailable-notice {
+    text-align: center;
+    color: $text-secondary;
+    background: $bg-card;
+    border: 1px dashed #444;
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    font-size: 1.4rem;
+}

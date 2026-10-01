@@ -1,6 +1,7 @@
 ---
 import SectionTitle from "./atoms/SectionTitle.astro";
 import ConferenceHeader from "./atoms/ConferenceHeader.astro";
+import UnavailableNotice from "./atoms/UnavailableNotice.astro";
 
 import MatchupCard from "./molecules/MatchupCard.astro";
 
@@ -37,9 +38,14 @@ interface Props {
     afc: Team[];
     nfc: Team[];
     seeds: ScrapedData;
+    currentWeek?: number;
 }
 
-const { afc, nfc, seeds } = Astro.props;
+const { afc, nfc, seeds, currentWeek } = Astro.props;
+
+// Keep in sync with scraper/config.js PLAYOFF_PICTURE_MIN_WEEK.
+const MIN_WEEK = 8;
+const isAvailable = currentWeek === undefined || currentWeek >= MIN_WEEK;
 
 import { getTeamId } from "../utils/team-mapping.js";
 
@@ -95,6 +101,9 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
 <div class="matchups-container">
     <SectionTitle title="Projected Matchups" />
 
+    {!isAvailable && <UnavailableNotice until={MIN_WEEK} />}
+
+    {isAvailable && (
     <div class="conference-matchups">
         <!-- AFC Column -->
         <div class="conf-col">
@@ -178,4 +187,5 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
             }
         </div>
     </div>
+    )}
 </div>

@@ -1,6 +1,7 @@
 ---
 import SectionTitle from "./atoms/SectionTitle.astro";
 import ConferenceHeader from "./atoms/ConferenceHeader.astro";
+import UnavailableNotice from "./atoms/UnavailableNotice.astro";
 import BubbleCard from "./molecules/BubbleCard.astro";
 
 interface Team {
@@ -29,9 +30,14 @@ interface ConferenceData {
 interface Props {
     bubble: ConferenceData;
     eliminated: ConferenceData;
+    currentWeek?: number;
 }
 
-const { bubble, eliminated } = Astro.props;
+const { bubble, eliminated, currentWeek } = Astro.props;
+
+// Keep in sync with scraper/config.js PLAYOFF_PICTURE_MIN_WEEK.
+const MIN_WEEK = 8;
+const isAvailable = currentWeek === undefined || currentWeek >= MIN_WEEK;
 ---
 
 <script>
@@ -53,6 +59,10 @@ const { bubble, eliminated } = Astro.props;
 </script>
 
 <div class="bubble-eliminated-container">
+    {!isAvailable && <UnavailableNotice until={MIN_WEEK} />}
+
+    {isAvailable && (
+    <>
     <!-- Bubble Section -->
     <section id="bubble" class="section-group">
         <SectionTitle title="On The Bubble" />
@@ -104,4 +114,6 @@ const { bubble, eliminated } = Astro.props;
             }
         </div>
     </section>
+    </>
+    )}
 </div>

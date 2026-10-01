@@ -1,0 +1,11 @@
+---
+interface Props {
+    until: number;
+}
+
+const { until } = Astro.props;
+---
+
+<div class="unavailable-notice">
+    <p>Not available until Week {until} — standings aren't meaningful yet.</p>
+</div>

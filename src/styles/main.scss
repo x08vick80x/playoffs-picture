@@ -11,6 +11,7 @@
 @use 'components/atoms/page-title';
 @use 'components/atoms/last-updated';
 @use 'components/atoms/button';
+@use 'components/atoms/unavailable-notice';
 
 // Molecules
 @use 'components/molecules/team-row';
@@ -26,4 +27,5 @@
 @use 'components/organisms/footer';
 @use 'components/organisms/power-rankings';
 @use 'components/organisms/schedule-modal';
+@use 'components/organisms/season-schedule';
 @use 'components/organisms/my-teams';
