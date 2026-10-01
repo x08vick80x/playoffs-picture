@@ -3,9 +3,9 @@
 ## What this is
 
 A static Astro site (deployed as a PWA) that displays the NFL playoff picture: standings,
-seeds/bubble/eliminated teams, power rankings, matchups/schedule, and a "My Teams" favorites
-dashboard. All data is pre-scraped into JSON files at build/update time — there is no runtime
-API, backend, or database.
+seeds/bubble/eliminated teams, power rankings, a full-season schedule, matchups, and a "My Teams"
+favorites dashboard. All data is pre-scraped into JSON files at build/update time — there is no
+runtime API, backend, or database.
 
 ## Tech stack
 
@@ -20,13 +20,14 @@ API, backend, or database.
 
 ```
 scraper/                   # Standalone Node scripts (not part of the Astro build)
+  config.js                # Season config: SEASON_YEAR, week boundaries, current-week helper
   fetch-standings.js       # Scrapes cbssports.com -> src/data/standings.json
-  fetch-nfl-data.js        # Scrapes nfl.com/standings + nfl.com/schedules -> src/data/playoff-picture.json
-  inspect-cbs.js           # One-off debugging helper (not part of the pipeline)
+  fetch-nfl-data.js        # Scrapes nfl.com (playoff picture, full schedule, power rankings)
+                           # -> src/data/playoff-picture.json + src/data/schedule.json
 
 src/
   components/              # Atomic-design-ish split: flat components + atoms/ + molecules/
-  data/                     # Generated JSON (standings.json, playoff-picture.json) — data, not code
+  data/                     # Generated JSON (standings.json, playoff-picture.json, schedule.json) — data, not code
   layouts/Layout.astro
   pages/index.astro         # Single page app; reads data/*.json directly via node:fs at build time
   styles/                   # _variables.scss, _mixins.scss, _base.scss, global.scss, main.scss
@@ -46,23 +47,35 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
 
 1. `scraper/fetch-standings.js` scrapes CBS Sports standings table → `src/data/standings.json`
    (seed, team, record per conference).
-2. `scraper/fetch-nfl-data.js` scrapes NFL.com's playoff-picture page using **DOM text-matching
-   heuristics** (no stable selectors/IDs available on the source page) to bucket teams into seeds
-   (top 7 from standings), bubble, and eliminated. It also scrapes `nfl.com/schedules` for
-   weeks 15–18 matchups.
-3. A GitHub Actions cron (`update-data.yml`) runs the scrapers on a schedule and auto-commits the
-   resulting JSON directly to `main`.
-4. `src/pages/index.astro` reads `src/data/*.json` synchronously via `node:fs` at build time and
+2. `scraper/fetch-nfl-data.js` scrapes NFL.com:
+   - **Playoff picture** (seeds/bubble/eliminated, with probabilities/trends) via **DOM
+     text-matching heuristics** (no stable selectors/IDs available on the source page). **Gated
+     behind `PLAYOFF_PICTURE_MIN_WEEK` (week 8, in `scraper/config.js`)** — before that, standings
+     are too volatile for bubble/eliminated to mean anything, so this section is skipped entirely
+     and `src/data/playoff-picture.json` keeps empty `bubble`/`eliminated`/`seeds` arrays (the UI
+     already handles empty state).
+   - **Full season schedule** (`nfl.com/schedules`, all 18 regular season weeks, always scraped
+     regardless of the week-8 gate) → written to `src/data/schedule.json`. Used both to enrich
+     playoff-picture teams with their next opponent/remaining schedule, and to power the always-on
+     `SeasonSchedule` homepage section (fills the gap during weeks 1–7).
+   - **Power rankings** (`nfl.com/news/...`) via stable CSS classes (`.nfl-o-ranked-item`) — runs
+     every week from week 1, not gated.
+3. `scraper/config.js` centralizes the season year, the 18 weekly boundaries (derived from a single
+   `REG18_END` date), and `getCurrentWeekNumber()`. **Update `SEASON_YEAR` and `REG18_END` once at
+   the start of each new NFL season** — every other date is derived from them.
+4. A GitHub Actions cron (`update-data.yml`) runs the scrapers on a schedule and auto-commits the
+   resulting JSON directly to `main` (`file_pattern: src/data/*.json` already covers `schedule.json`).
+5. `src/pages/index.astro` reads `src/data/*.json` synchronously via `node:fs` at build time and
    passes it down as props — everything is static, no client-side fetching of team data.
-5. `src/utils/team-mapping.js` bridges the naming inconsistencies between the two data sources
+6. `src/utils/team-mapping.js` bridges the naming inconsistencies between the two data sources
    (e.g. "L.A. Chargers" vs "Los Angeles Chargers" vs "Chargers") to resolve a logo id used with
    `public/sprites.svg`.
 
 ## Known fragility / gotchas for future sessions
 
-- **`scraper/fetch-nfl-data.js` is season-specific**: the `WEEK_SCHEDULE` array hardcodes the 2025
-  season week-boundary dates and the schedule URL hardcodes `/2025/`. This must be updated at the
-  start of each new NFL season.
+- **`scraper/fetch-nfl-data.js` is season-specific**: only `SEASON_YEAR` and `REG18_END` in
+  `scraper/config.js` need to change at the start of each new NFL season — every other week
+  boundary and URL is derived from them.
 - **The NFL.com scraping is heuristic-based** (matches team names in arbitrary DOM nodes, infers
   sections by vertical pixel position via `getBoundingClientRect().top`, infers trend
   direction/probability from nearby text via regex). It is expected to break silently if

@@ -3,6 +3,7 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { SEASON_YEAR, WEEK_SCHEDULE, getCurrentWeekNumber, PLAYOFF_PICTURE_MIN_WEEK } from './config.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -84,7 +85,19 @@ async function scrape() {
     const standingsRaw = fs.readFileSync(standingsPath, 'utf8');
     const standings = JSON.parse(standingsRaw);
 
+    const currentWeekNumber = getCurrentWeekNumber();
+    console.log(`Current NFL week: ${currentWeekNumber}`);
+
+    const finalResult = {
+        bubble: { AFC: [], NFC: [] },
+        eliminated: { AFC: [], NFC: [] },
+        seeds: { AFC: [], NFC: [] }
+    };
+
     try {
+      if (currentWeekNumber < PLAYOFF_PICTURE_MIN_WEEK) {
+        console.log(`Week ${currentWeekNumber} < ${PLAYOFF_PICTURE_MIN_WEEK}: skipping playoff picture scrape (standings aren't meaningful yet).`);
+      } else {
         await page.goto(TARGET_URL, { waitUntil: 'networkidle2', timeout: 60000 });
 
         console.log('Page loaded. Checking for content...');
@@ -233,12 +246,6 @@ async function scrape() {
             return result;
         }, TEAMS_CONF);
 
-        const finalResult = {
-            bubble: { AFC: [], NFC: [] },
-            eliminated: { AFC: [], NFC: [] },
-            seeds: { AFC: [], NFC: [] }
-        };
-
         const scrapedTeams = rawData.teams;
         const processedTeams = new Set();
 
@@ -330,33 +337,23 @@ async function scrape() {
             // Eliminated teams are better sorted by "best record" at top, closest to not being eliminated.
             finalResult.eliminated[conf] = sortTeams(finalResult.eliminated[conf]);
         });
+      }
 
-        // 3. Scrape Schedule for Weeks 15-18
-        // Define week boundaries (Tuesday morning after MNF)
-        const WEEK_SCHEDULE = [
-            { id: 'REG15', end: new Date('2025-12-17T12:00:00Z') },
-            { id: 'REG16', end: new Date('2025-12-24T12:00:00Z') },
-            { id: 'REG17', end: new Date('2025-12-31T12:00:00Z') },
-            { id: 'REG18', end: new Date('2026-01-07T12:00:00Z') }
-        ];
-
+        // 3. Scrape the full season schedule (all 18 regular season weeks)
         const now = new Date();
-        const WEEKS = WEEK_SCHEDULE
-            .filter(w => now < w.end || w.id === 'REG18') // Keep future weeks, always keep last week if we are past everything (or just let it empty?) - logic: if it's Dec 18, REG15 is gone.
-            .map(w => w.id);
+        const WEEKS = WEEK_SCHEDULE.map(w => w.id);
 
         console.log(`Current Date: ${now.toISOString()}`);
-        console.log(`Weeks to scrape: ${WEEKS.join(', ')}`);
-
-        // If we are past everything, maybe just keep REG18 to show something?
-        if (WEEKS.length === 0) WEEKS.push('REG18');
+        console.log(`Scraping all ${WEEKS.length} weeks: ${WEEKS.join(', ')}`);
 
         const allMatches = [];
 
-        for (const week of WEEKS) { // week is REG15, REG16...
-            // Convert REG15 -> reg-15 for URL
-            const weekSlug = week.toLowerCase().replace('reg', 'reg-');
-            const SCHEDULE_URL = `https://www.nfl.com/schedules/2025/by-week/${weekSlug}`;
+        for (const week of WEEKS) { // week is REG1, REG2...
+            // Page navigation uses "week-N" (nfl.com/schedules by-week route); game hrefs use "reg-N".
+            const weekNum = week.replace('REG', '');
+            const pageSlug = `week-${weekNum}`;
+            const gameSlug = `reg-${weekNum}`;
+            const SCHEDULE_URL = `https://www.nfl.com/schedules/${SEASON_YEAR}/by-week/${pageSlug}`;
             console.log(`Navigating to ${SCHEDULE_URL}...`);
             await page.goto(SCHEDULE_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
@@ -386,15 +383,31 @@ async function scrape() {
                         if (weekPart !== currentSlug) return;
 
                         const key = `${away}-at-${home}`;
+                        if (seenConfig.has(key)) return;
 
-                        if (!seenConfig.has(key)) {
-                            seenConfig.add(key);
-                            matches.push({ away, home, week: currentWeek });
-                        }
+                        // Link text looks like "Away at Home, Thursday, October 8th, 8:15 PM, GamePass"
+                        // (future game) or "Away 31, Home 41, FINAL, Thursday, September 17th" (played game).
+                        // The "Watch Replay" duplicate link for the same game carries no date, skip it.
+                        const text = a.innerText || '';
+                        const dateMatch = text.match(/([A-Za-z]+), ([A-Za-z]+ \d{1,2})(?:st|nd|rd|th)/);
+                        if (!dateMatch) return;
+
+                        const timeMatch = text.match(/(\d{1,2}:\d{2}\s?[AP]M)/);
+                        const final = /FINAL/.test(text);
+
+                        seenConfig.add(key);
+                        matches.push({
+                            away,
+                            home,
+                            week: currentWeek,
+                            date: `${dateMatch[1]}, ${dateMatch[2]}`,
+                            time: !final && timeMatch ? timeMatch[1] : null,
+                            final,
+                        });
                     }
                 });
                 return matches;
-            }, week, weekSlug);
+            }, week, gameSlug);
             console.log(`Found ${weekMatches.length} matchups in ${week}.`);
             allMatches.push(...weekMatches);
         }
@@ -407,9 +420,12 @@ async function scrape() {
             return name.charAt(0).toUpperCase() + name.slice(1);
         };
 
+        // Only future weeks count as "remaining schedule" for next-opponent enrichment.
+        const futureWeekIds = new Set(WEEK_SCHEDULE.filter(w => now < w.end).map(w => w.id));
+
         const teamSchedules = {};
 
-        allMatches.forEach(m => {
+        allMatches.filter(m => futureWeekIds.has(m.week)).forEach(m => {
             let away = normalizeSlug(m.away);
             let home = normalizeSlug(m.home);
 
@@ -420,12 +436,16 @@ async function scrape() {
             teamSchedules[away].push({
                 opponent: home,
                 location: '@',
-                week: m.week
+                week: m.week,
+                date: m.date,
+                time: m.time
             });
             teamSchedules[home].push({
                 opponent: away,
                 location: 'vs',
-                week: m.week
+                week: m.week,
+                date: m.date,
+                time: m.time
             });
         });
 
@@ -443,28 +463,26 @@ async function scrape() {
              return "??";
         };
 
+        // Enriched, sorted remaining schedule per team. Independent of the playoff-picture week-8
+        // gate, so it stays available for every team all season (e.g. for the "My Teams" next game).
+        const enrichedTeamSchedules = {};
+        Object.keys(teamSchedules).forEach(teamName => {
+            enrichedTeamSchedules[teamName] = teamSchedules[teamName]
+                .map(s => ({ ...s, opponentRecord: getOpponentRecord(s.opponent) }))
+                // Sort by week number (REG10 must come after REG4, not before it lexicographically).
+                .sort((a, b) => parseInt(a.week.replace('REG', ''), 10) - parseInt(b.week.replace('REG', ''), 10));
+        });
+
         const enrichWithSchedule = (team) => {
-            const sched = teamSchedules[team.name] || [];
-
-            // Enrich with records
-            team.remainingSchedule = sched.map(s => ({
-                ...s,
-                opponentRecord: getOpponentRecord(s.opponent)
-            }));
-
-            // Keep next opponent text for easy display (usually first item if sorted, or specifically Week 15)
-            // But user wants next opponent display + modal.
-            // We can just take the first one as nextOpponent.
-            if (team.remainingSchedule.length > 0) {
-                 // Sort by week? REG15 < REG16
-                 team.remainingSchedule.sort((a,b) => a.week.localeCompare(b.week));
-                 team.nextOpponent = {
-                     opponent: team.remainingSchedule[0].opponent,
-                     location: team.remainingSchedule[0].location
-                 };
-            } else {
-                team.nextOpponent = null;
-            }
+            team.remainingSchedule = enrichedTeamSchedules[team.name] || [];
+            team.nextOpponent = team.remainingSchedule.length > 0
+                ? {
+                    opponent: team.remainingSchedule[0].opponent,
+                    location: team.remainingSchedule[0].location,
+                    date: team.remainingSchedule[0].date,
+                    time: team.remainingSchedule[0].time
+                }
+                : null;
         };
 
         ['AFC', 'NFC'].forEach(conf => {
@@ -474,70 +492,36 @@ async function scrape() {
         });
 
         // 4. Scrape Power Rankings
-        const currentWeekId = WEEKS[0] || 'REG18';
-        const weekNum = currentWeekId.replace('REG', '');
+        const weekNum = currentWeekNumber;
         console.log(`Determined Power Rankings Week: ${weekNum}`);
-        const PR_URL = `https://www.nfl.com/news/nfl-power-rankings-week-${weekNum}-2025-nfl-season`;
+        const PR_URL = `https://www.nfl.com/news/nfl-power-rankings-week-${weekNum}-${SEASON_YEAR}-nfl-season`;
         console.log(`Navigating to Power Rankings: ${PR_URL}...`);
-        await page.goto(PR_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
+        await page.goto(PR_URL, { waitUntil: 'networkidle2', timeout: 60000 });
         await new Promise(r => setTimeout(r, 2000)); // Wait for content
 
+        // nfl.com doesn't expose stable CSS classes for ranked items (they're renamed/restructured
+        // periodically), but the rendered text always follows a fixed "Rank\nN\n..." pattern, so we
+        // parse document.body.innerText instead of relying on brittle selectors.
         const rankings = await page.evaluate(() => {
+            const text = document.body.innerText || '';
             const results = [];
-            const items = Array.from(document.querySelectorAll('.nfl-o-ranked-item'));
+            const regex = /Rank\n(\d+)\n(?:Rank (increased|decreased) by\n(\d+)|—\nNo Rank change)\n([^\n]+)\n(\d+-\d+(?:-\d+)?)\n\n([\s\S]*?)(?=\nRank\n\d+\n|$)/g;
 
-            items.forEach(item => {
-                try {
-                    // Extract Rank
-                    const rankEl = item.querySelector('.nfl-o-ranked-item__label--second');
-                    if (!rankEl) return;
-                    const rank = parseInt(rankEl.innerText.trim(), 10);
-                    if (isNaN(rank)) return;
+            let match;
+            while ((match = regex.exec(text)) !== null) {
+                const [, rankStr, direction, delta, team, , blurb] = match;
+                const rank = parseInt(rankStr, 10);
+                if (isNaN(rank)) continue;
 
-                    // Extract Team
-                    const titleEl = item.querySelector('.nfl-o-ranked-item__title');
-                    const team = titleEl ? titleEl.innerText.trim() : "Unknown";
+                let trend = "0";
+                if (direction === 'increased') trend = `+${delta}`;
+                else if (direction === 'decreased') trend = `-${delta}`;
 
-                    // Extract Trend
-                    let trend = "0";
-                    const trendUp = item.querySelector('.nfl-o-ranked-item__trend--up');
-                    const trendDown = item.querySelector('.nfl-o-ranked-item__trend--down');
-                    const trendShift = item.querySelector('.nfl-o-ranked-item__trend-shift');
-
-                    if (trendShift) {
-                        const val = trendShift.innerText.trim();
-                        if (trendUp) trend = "+" + val;
-                        else if (trendDown) trend = "-" + val;
-                        else trend = val; // Should not happen if shift exists usually
-                    }
-
-                    // Extract Blurb (Next Sibling)
-                    let blurb = "";
-                    let nextParams = item.nextElementSibling;
-                    // Sometimes there might be a spacer or something, but usually it's the text body
-                    // We look for .nfl-c-body-part--text
-                    while (nextParams) {
-                        if (nextParams.classList.contains('nfl-c-body-part--text')) {
-                            blurb = nextParams.innerText.trim();
-                            break;
-                        }
-                        // Stop if we hit another ranked item or a new section
-                        if (nextParams.classList.contains('nfl-o-ranked-item') || nextParams.tagName === 'H2') {
-                            break;
-                        }
-                        nextParams = nextParams.nextElementSibling;
-                    }
-
-                    results.push({ rank, team, trend, blurb });
-                } catch (err) {
-                    // Silent fail for one item
-                }
-            });
+                results.push({ rank, team: team.trim(), trend, blurb: blurb.trim() });
+            }
 
             return results;
         });
-
-        // Remove debug logic to keep it clean
 
         // Deduplicate and Sort
         const uniqueRankings = [];
@@ -568,15 +552,34 @@ async function scrape() {
              r.team = last;
         });
 
-        // Write to file
+        // Write playoff picture data
         const outputPath = path.resolve(__dirname, '../src/data/playoff-picture.json');
-
-        if (finalResult.powerRankings.length > 0) {
-            console.log('DEBUG FINAL OBJECT [0]:', JSON.stringify(finalResult.powerRankings[0], null, 2));
-        }
 
         fs.writeFileSync(outputPath, JSON.stringify(finalResult, null, 2));
         console.log(`Successfully wrote to ${outputPath}`);
+
+        // Write the full season schedule (independent of playoff-picture gating, always available)
+        const scheduleByWeek = WEEK_SCHEDULE.map(w => ({
+            week: w.id,
+            matches: allMatches
+                .filter(m => m.week === w.id)
+                .map(m => ({
+                    home: normalizeSlug(m.home),
+                    away: normalizeSlug(m.away),
+                    date: m.date,
+                    time: m.time,
+                    final: m.final
+                }))
+        }));
+
+        const schedulePath = path.resolve(__dirname, '../src/data/schedule.json');
+        fs.writeFileSync(schedulePath, JSON.stringify({
+            season: SEASON_YEAR,
+            currentWeek: currentWeekNumber,
+            weeks: scheduleByWeek,
+            teamSchedules: enrichedTeamSchedules
+        }, null, 2));
+        console.log(`Successfully wrote to ${schedulePath}`);
 
     } catch (e) {
         console.error('Error scraping:', e);

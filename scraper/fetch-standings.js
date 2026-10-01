@@ -52,13 +52,16 @@ async function fetchStandings() {
 
                 const rows = table.querySelectorAll('tr.TableBase-bodyTr');
 
-                rows.forEach(row => {
-                    const seedCell = row.querySelector('td:nth-child(1)');
-                    const seed = seedCell ? seedCell.innerText.trim() : '';
-                    if (!seed) return;
-
+                rows.forEach((row, index) => {
                     const nameLink = row.querySelector('.TeamName a');
-                    const teamName = nameLink ? nameLink.innerText.trim() : 'Unknown';
+                    if (!nameLink) return; // skip separator/empty rows
+
+                    // CBS only numbers the top playoff seeds; teams outside the playoff spot
+                    // have a blank seed cell. Fall back to row position so all 16 teams are kept.
+                    const seedCell = row.querySelector('td:nth-child(1)');
+                    const seed = (seedCell ? seedCell.innerText.trim() : '') || String(index + 1);
+
+                    const teamName = nameLink.innerText.trim();
 
                     const numberCell = row.querySelector('td.TableBase-bodyTd--number');
                     const record = numberCell ? numberCell.innerText.trim() : '0-0';

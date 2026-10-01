@@ -1,1242 +1,208 @@
 {
   "bubble": {
-    "AFC": [
-      {
-        "name": "Ravens",
-        "conf": "AFC",
-        "top": 2707,
-        "record": "7-7",
-        "probability": "27%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Patriots",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "11-3-0"
-          },
-          {
-            "opponent": "Packers",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "9-5-1"
-          },
-          {
-            "opponent": "Steelers",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "8-6-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Patriots",
-          "location": "vs"
-        }
-      },
-      {
-        "name": "Colts",
-        "conf": "AFC",
-        "top": 2557,
-        "record": "8-6",
-        "probability": "5%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "49ers",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "10-4-0"
-          },
-          {
-            "opponent": "Jaguars",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "10-4-0"
-          },
-          {
-            "opponent": "Texans",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "9-5-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "49ers",
-          "location": "vs"
-        }
-      }
-    ],
-    "NFC": [
-      {
-        "name": "Lions",
-        "conf": "NFC",
-        "top": 2557,
-        "record": "8-6",
-        "probability": "6%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Steelers",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "8-6-0"
-          },
-          {
-            "opponent": "Vikings",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "6-8-0"
-          },
-          {
-            "opponent": "Bears",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "11-4-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Steelers",
-          "location": "vs"
-        }
-      },
-      {
-        "name": "Panthers",
-        "conf": "NFC",
-        "top": 2707,
-        "record": "7-7",
-        "probability": "5%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Buccaneers",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "7-7-0"
-          },
-          {
-            "opponent": "Seahawks",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "12-3-0"
-          },
-          {
-            "opponent": "Buccaneers",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "7-7-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Buccaneers",
-          "location": "vs"
-        }
-      }
-    ]
+    "AFC": [],
+    "NFC": []
   },
   "eliminated": {
-    "AFC": [
-      {
-        "name": "Chiefs",
-        "conf": "AFC",
-        "top": 2944,
-        "record": "6-8",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Titans",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "2-12-0"
-          },
-          {
-            "opponent": "Broncos",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "12-2-0"
-          },
-          {
-            "opponent": "Raiders",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "2-12-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Titans",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Dolphins",
-        "conf": "AFC",
-        "top": 3096,
-        "record": "6-8",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Bengals",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "4-10-0"
-          },
-          {
-            "opponent": "Buccaneers",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "7-7-0"
-          },
-          {
-            "opponent": "Patriots",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "11-3-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Bengals",
-          "location": "vs"
-        }
-      },
-      {
-        "name": "Bengals",
-        "conf": "AFC",
-        "top": 3248,
-        "record": "4-10",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Dolphins",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "6-8-0"
-          },
-          {
-            "opponent": "Cardinals",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "3-11-0"
-          },
-          {
-            "opponent": "Browns",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "3-11-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Dolphins",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Jets",
-        "conf": "AFC",
-        "top": 3400,
-        "record": "3-11",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Saints",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "4-10-0"
-          },
-          {
-            "opponent": "Patriots",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "11-3-0"
-          },
-          {
-            "opponent": "Bills",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "10-4-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Saints",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Browns",
-        "conf": "AFC",
-        "top": 3552,
-        "record": "3-11",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Bills",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "10-4-0"
-          },
-          {
-            "opponent": "Steelers",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "8-6-0"
-          },
-          {
-            "opponent": "Bengals",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "4-10-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Bills",
-          "location": "vs"
-        }
-      },
-      {
-        "name": "Raiders",
-        "conf": "AFC",
-        "top": 3704,
-        "record": "2-12",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Texans",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "9-5-0"
-          },
-          {
-            "opponent": "Giants",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "2-12-0"
-          },
-          {
-            "opponent": "Chiefs",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "6-8-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Texans",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Titans",
-        "conf": "AFC",
-        "top": 3856,
-        "record": "2-12",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Chiefs",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "6-8-0"
-          },
-          {
-            "opponent": "Saints",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "4-10-0"
-          },
-          {
-            "opponent": "Jaguars",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "10-4-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Chiefs",
-          "location": "vs"
-        }
-      }
-    ],
-    "NFC": [
-      {
-        "name": "Cowboys",
-        "conf": "NFC",
-        "top": 2944,
-        "record": "6-7-1",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Chargers",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "10-4-0"
-          },
-          {
-            "opponent": "Commanders",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "4-11-0"
-          },
-          {
-            "opponent": "Giants",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "2-12-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Chargers",
-          "location": "vs"
-        }
-      },
-      {
-        "name": "Vikings",
-        "conf": "NFC",
-        "top": 3096,
-        "record": "6-8",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Giants",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "2-12-0"
-          },
-          {
-            "opponent": "Lions",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "8-6-0"
-          },
-          {
-            "opponent": "Packers",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "9-5-1"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Giants",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Falcons",
-        "conf": "NFC",
-        "top": 3248,
-        "record": "5-9",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Cardinals",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "3-11-0"
-          },
-          {
-            "opponent": "Rams",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "11-4-0"
-          },
-          {
-            "opponent": "Saints",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "4-10-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Cardinals",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Saints",
-        "conf": "NFC",
-        "top": 3400,
-        "record": "4-10",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Jets",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "3-11-0"
-          },
-          {
-            "opponent": "Titans",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "2-12-0"
-          },
-          {
-            "opponent": "Falcons",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "5-9-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Jets",
-          "location": "vs"
-        }
-      },
-      {
-        "name": "Commanders",
-        "conf": "NFC",
-        "top": 3552,
-        "record": "4-11",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Eagles",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "10-5-0"
-          },
-          {
-            "opponent": "Cowboys",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "6-7-1"
-          },
-          {
-            "opponent": "Eagles",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "10-5-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Eagles",
-          "location": "vs"
-        }
-      },
-      {
-        "name": "Cardinals",
-        "conf": "NFC",
-        "top": 3704,
-        "record": "3-11",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Falcons",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "5-9-0"
-          },
-          {
-            "opponent": "Bengals",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "4-10-0"
-          },
-          {
-            "opponent": "Rams",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "11-4-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Falcons",
-          "location": "vs"
-        }
-      },
-      {
-        "name": "Giants",
-        "conf": "NFC",
-        "top": 3856,
-        "record": "2-12",
-        "probability": "",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Vikings",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "6-8-0"
-          },
-          {
-            "opponent": "Raiders",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "2-12-0"
-          },
-          {
-            "opponent": "Cowboys",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "6-7-1"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Vikings",
-          "location": "vs"
-        }
-      }
-    ]
+    "AFC": [],
+    "NFC": []
   },
   "seeds": {
-    "AFC": [
-      {
-        "name": "Broncos",
-        "record": "12-2",
-        "probability": "100%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Jaguars",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "10-4-0"
-          },
-          {
-            "opponent": "Chiefs",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "6-8-0"
-          },
-          {
-            "opponent": "Chargers",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "10-4-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Jaguars",
-          "location": "vs"
-        }
-      },
-      {
-        "name": "Patriots",
-        "record": "11-3",
-        "probability": ">99%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Ravens",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "7-7-0"
-          },
-          {
-            "opponent": "Jets",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "3-11-0"
-          },
-          {
-            "opponent": "Dolphins",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "6-8-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Ravens",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Jaguars",
-        "record": "10-4",
-        "probability": "97%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Broncos",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "12-2-0"
-          },
-          {
-            "opponent": "Colts",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "8-6-0"
-          },
-          {
-            "opponent": "Titans",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "2-12-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Broncos",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Steelers",
-        "record": "8-6",
-        "probability": "55%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Lions",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "8-6-0"
-          },
-          {
-            "opponent": "Browns",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "3-11-0"
-          },
-          {
-            "opponent": "Ravens",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "7-7-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Lions",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Chargers",
-        "record": "10-4",
-        "probability": "91%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Cowboys",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "6-7-1"
-          },
-          {
-            "opponent": "Texans",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "9-5-0"
-          },
-          {
-            "opponent": "Broncos",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "12-2-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Cowboys",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Bills",
-        "record": "10-4",
-        "probability": "99%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Browns",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "3-11-0"
-          },
-          {
-            "opponent": "Eagles",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "10-5-0"
-          },
-          {
-            "opponent": "Jets",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "3-11-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Browns",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Texans",
-        "record": "9-5",
-        "probability": "87%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Raiders",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "2-12-0"
-          },
-          {
-            "opponent": "Chargers",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "10-4-0"
-          },
-          {
-            "opponent": "Colts",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "8-6-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Raiders",
-          "location": "vs"
-        }
-      }
-    ],
-    "NFC": [
-      {
-        "name": "Seahawks",
-        "record": "12-3",
-        "probability": "100%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Rams",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "11-4-0"
-          },
-          {
-            "opponent": "Panthers",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "7-7-0"
-          },
-          {
-            "opponent": "49ers",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "10-4-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Rams",
-          "location": "vs"
-        }
-      },
-      {
-        "name": "Bears",
-        "record": "11-4",
-        "probability": "94%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Packers",
-            "location": "vs",
-            "week": "REG16",
-            "opponentRecord": "9-5-1"
-          },
-          {
-            "opponent": "49ers",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "10-4-0"
-          },
-          {
-            "opponent": "Lions",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "8-6-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Packers",
-          "location": "vs"
-        }
-      },
-      {
-        "name": "Eagles",
-        "record": "10-5",
-        "probability": "100%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Commanders",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "4-11-0"
-          },
-          {
-            "opponent": "Bills",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "10-4-0"
-          },
-          {
-            "opponent": "Commanders",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "4-11-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Commanders",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Buccaneers",
-        "record": "7-7",
-        "probability": "57%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Panthers",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "7-7-0"
-          },
-          {
-            "opponent": "Dolphins",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "6-8-0"
-          },
-          {
-            "opponent": "Panthers",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "7-7-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Panthers",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Rams",
-        "record": "11-4",
-        "probability": "100%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Seahawks",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "12-3-0"
-          },
-          {
-            "opponent": "Falcons",
-            "location": "@",
-            "week": "REG17",
-            "opponentRecord": "5-9-0"
-          },
-          {
-            "opponent": "Cardinals",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "3-11-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Seahawks",
-          "location": "@"
-        }
-      },
-      {
-        "name": "49ers",
-        "record": "10-4",
-        "probability": "95%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Colts",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "8-6-0"
-          },
-          {
-            "opponent": "Bears",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "11-4-0"
-          },
-          {
-            "opponent": "Seahawks",
-            "location": "vs",
-            "week": "REG18",
-            "opponentRecord": "12-3-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Colts",
-          "location": "@"
-        }
-      },
-      {
-        "name": "Packers",
-        "record": "9-5-1",
-        "probability": "78%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Bears",
-            "location": "@",
-            "week": "REG16",
-            "opponentRecord": "11-4-0"
-          },
-          {
-            "opponent": "Ravens",
-            "location": "vs",
-            "week": "REG17",
-            "opponentRecord": "7-7-0"
-          },
-          {
-            "opponent": "Vikings",
-            "location": "@",
-            "week": "REG18",
-            "opponentRecord": "6-8-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Bears",
-          "location": "@"
-        }
-      }
-    ]
+    "AFC": [],
+    "NFC": []
   },
   "powerRankings": [
     {
       "rank": 1,
-      "team": "Rams",
-      "trend": "",
-      "blurb": "The Rams were potentially staring at a 10-point halftime deficit to the Lions before cranking it up late in the second quarter and ultimately outsourcing Detroit by a 27-10 count for the remainder of the game. Davante Adams' hamstring injury is concerning, but there's not yet reason to assume he'll miss the postseason, which would be a worthy silver lining. The Rams have officially clinched a playoff berth. Now the focus turns to winning the division and locking up the top seed in the NFC. With a short week before Thursday's game at Seattle, the Rams don't have much time to prepare for their second game against a Seahawks defense that has been stingy most of the season and held Los Angeles to just 249 yards of offense a month ago. And now the Rams will be without Adams this time around. Perhaps L.A.'s rushing attack, which has three TDs in each of the past two games, will be a big part of the solution."
+      "team": "49ers",
+      "trend": "+6",
+      "blurb": "It’s fair to wonder if a softer schedule over the last two weeks has aided the 49ers, and if their litany of injuries will be too much to overcome against better opponents. As of now, though, San Francisco boasts an offense that has cruise control set five miles per hour over the speed limit and is rolling along down the fast lane. Collectively, this team is strong enough to take care of business on a weekly basis. Oh, and those Brock Purdy MVP murmurs are legitimate, too."
     },
     {
       "rank": 2,
-      "team": "Broncos",
-      "trend": "+1",
-      "blurb": "The Broncos made their case to be considered the best team in the AFC with an impressive comeback win over the Packers, outscoring them 20-3 over the game's final 24 minutes. Bo Nix heated up and finished with one of his better career stat lines (302 yards and four touchdowns through the air), even with a few dropped picks by the Pack. Denver's offensive line held up well, and the penalties didn't get out of hand. On defense, the Broncos were tested on their first five possessions, but Patrick Surtain's interception flipped the game on its head. From that point on, the defense was dominant. Even with the late turnovers on downs, this performance was a muscle-flexer -- and Denver's 11th straight win. What else do you want to see? This is a strong, battle-tested team that can make a deep postseason run."
+      "team": "Chiefs",
+      "trend": "+2",
+      "blurb": "The Chiefs are very aware of who they are just three weeks into the season. They didn't need to fully exert themselves on Sunday, earning a professional win against a scrappy but undermanned Dolphins team. They decreased Kenneth Walker III’s touches, too, which was a requirement for me in such a matchup, especially with most of the season still ahead."
     },
     {
       "rank": 3,
-      "team": "Seahawks",
+      "team": "Bills",
       "trend": "-1",
-      "blurb": "Since the Seahawks' rout of the Cardinals in Week 10, during which they scored 21 first-quarter points, they've totaled a mere 12 first-quarter points over the last five games. The slow starts have made some of these recent contests tougher than they should have been, including Sunday's nail-biter against the Philip Rivers-led Colts. The offense got it going late with three important field-goal drives, but this attack hasn't quite looked right for a few games now. On Sunday, the run game was as poor as we've seen it all season, and Seattle went 2-for-13 on third down and 0-for-2 in the red zone. Without an incredible day from kicker Jason Myers, the 'Hawks would have lost. This has to change quickly, with the Rams coming to town for a game that likely will determine the fate of the NFC West and could push the winner closer to the NFC's top playoff seed."
+      "blurb": "After looking like a juggernaut through two weeks, the Bills did everything in their power to hand the Chargers a victory on Sunday. And yet, Josh Allen and Co. ultimately still won. Buffalo has plenty to clean up and can’t afford such a showing against the league’s best, but it’s telling when a team can look like a complete mess and still figure it out in time to prevail."
     },
     {
       "rank": 4,
-      "team": "Bills",
-      "trend": "+2",
-      "blurb": "Josh Allen had just 35 pass yards at halftime, and Buffalo trailed, 24-7, with its division-title dreams seemingly up in smoke. But the Bills rallied with incredible fury, reminding the NFL world just how dangerous they are, especially in a post-Patrick Mahomes playoff environment. The win didn't clinch anything for Buffalo, but it did reinstill the belief that this team is capable of some magic. We can talk about how the Bills looked woefully unprepared for the start of the game, and they were lucky to only be down 17 points at the break, but we can also have a discussion on how beating the Bills requires keeping Allen and James Cook in check for four quarters. The Patriots couldn't do that, and I am not sure how many teams outside of the Texans and Broncos might be capable of that in the AFC field. It's been a strange path, but the Bills are nearly as desperate and dangerous as they've recently been."
+      "team": "Seahawks",
+      "trend": "-3",
+      "blurb": "Sam Darnold’s first game back began with the most predictable outcome in the NFC West: a Jaxon Smith-Njigba touchdown reception. The rest was far from foreseeable. Two Darnold interceptions -- including a fourth-quarter pick-six -- doomed the Seahawks, who gave the Commanders a collection of extra chances and paid the price. No, that’s not a pun intended to demean rookie running back Jadarian Price (who fumbled early in the game and was benched for a while), although he didn’t help matters, either."
     },
     {
       "rank": 5,
-      "team": "Patriots",
-      "trend": "-1",
-      "blurb": "The Patriots were 30 game minutes away from the AFC EAST CHAMPIONS hats and T-shirts being ripped out of the boxes, leading 24-7 at the break following a dominant first half against a Bills team they'd already beaten. That's what made Sunday's 35-31 loss so devastating. New England managed just three first downs after halftime, and the defense allowed five straight touchdown drives by the Bills. Drake Maye played a strong, efficient first half, and the pass protection held up remarkably well, but it was a 180-degree turn after halftime. Maye completed just five of his 12 passes for 47 yards with an INT and three sacks after halftime, including only one completion (for 5 yards) on his final seven throws. That hurt Maye's fading MVP chances. And the loss certainly slowed the Patriots' division-title quest and their hopes for the AFC's top seed. The former still feels possible, if not likely, but the latter might have been kissed goodbye."
+      "team": "Ravens",
+      "trend": "0",
+      "blurb": "The Ravens returned closer to their explosive Week 1 form on Sunday, pulling off a thrilling win in Rio by executing slightly better than their opponent. They also have serious offensive issues in the red zone, but it was nice to see their passing attack open up again, thanks to the return of Zay Flowers.\n\nScott Hanson's 3 biggest wins from Sunday | 'The NFL Report'\n\nNFL RedZone host Scott Hanson shares his three biggest wins from Sunday of Week 3."
     },
     {
       "rank": 6,
-      "team": "Bears",
-      "trend": "+1",
-      "blurb": "The secret to the Bears' success has been their turnover margin, with Chicago racking up 30 takeaways against just 10 turnovers. No one has taken the ball away from opponents as frequently as the Bears (the Jaguars rank second with 26 swipes), and only the Lions (eight turnovers) have coughed it up fewer times. It was a big factor Sunday, too, with the Bears winning the turnover battle 3-0, allowing them to put the Browns away late after leading just 14-3 six minutes into the second half. There were other positive developments, with Caleb Williams playing well against a good Browns defense and DJ Moore and Luther Burden III stepping up after Rome Odunze was a late scratch following pregame warmups. That showed a level of focus and mental toughness for a team that is rounding into postseason form -- one that also finds itself back in the NFC North lead after Green Bay's loss in Denver."
+      "team": "Broncos",
+      "trend": "0",
+      "blurb": "Eventually, the Broncos will play a complete game. For now, we’ll have to accept that their defense is going to hold long enough for their offense to wake up in most weeks (and is liable to make a few game-changing plays in every contest, especially in the second half) and acknowledge that their big-time offensive playmakers still make this a better unit than it was a year ago."
     },
     {
       "rank": 7,
       "team": "Jaguars",
       "trend": "+2",
-      "blurb": "The Jaguars have ripped off five straight wins, and they did so emphatically on Sunday by building a 31-10 halftime lead and continuing to pour it on in the second half against the helpless Jets. ﻿﻿﻿Trevor Lawrence﻿﻿﻿ engineered his finest statistical outing ever, accounting for six touchdowns himself and leading only three empty drives all game. Lawrence got hot in the latter half of the 2022 season to lead the Jags into the playoffs, and he’s on a similar heater now. This coming Sunday’s matchup against an even hotter Broncos team should provide Jacksonville the kind of playoff-caliber matchup it needs, and these two teams could meet again in January, for all we know."
+      "blurb": "What a nice get-right week for the Jaguars, who handled the Patriots with ease and even tousled their hair for good measure. Congratulations are in order for Travis Hunter, who recorded his first career interception amid a runaway win for Jacksonville."
     },
     {
       "rank": 8,
-      "team": "49ers",
-      "trend": "",
-      "blurb": "On Kyle Shanahan's 46th birthday, Brock Purdy gifted his coach a pretty terrific performance, even with a lost fumble that the Titans swiftly converted into a touchdown. Ricky Pearsall reemerged with a big game, which was a positive development with the playoffs looming, while George Kittle and Jauan Jennings both stepped up with good outings, as well. It's concerning that the defense couldn't sack the Titans -- one of the worst pass-protecting teams in the league -- and dropped a few potential interceptions that helped make the game appear closer than it was for most of Sunday. The defensive concerns are the biggest ones for a Niners team that inched closer to the postseason. There's still a slim path to taking the NFC West -- and even the top seed in the conference -- but the defensive limitations could prevent that from happening."
+      "team": "Bengals",
+      "trend": "-5",
+      "blurb": "Cincinnati's hyped defense took a big reputation hit Sunday when it allowed Aaron Rodgers to turn back the clock and lead Pittsburgh -- the NFL’s second-worst scoring offense entering Week 3 -- to a 30-point performance and a one-score win over a division rival. It’s tough to pin down exactly where the Bengals stand after a loss like this, but I think we’ll learn plenty in this week’s cats-vs.-cats showdown with the Jaguars."
     },
     {
       "rank": 9,
-      "team": "Packers",
-      "trend": "-4",
-      "blurb": "It was a season-changing loss in Denver, with Micah Parsons suffering a torn ACL and Christian Watson, Zach Tom, Quay Walker and Evan Williams all getting hurt, as well. The Packers were in control, up 23-14 in the third quarter, but Jordan Love underthrew a deep ball to Watson (the play in which the receiver got hurt), and everything turned in Denver's direction. Parsons is obviously the biggest blow; losing his pass-rush juice just takes a lot of the teeth out of this defense. It's still a capable unit without him, but it's fair to ask if Green Bay is capable of making a Super Bowl run now. The loss knocked the Packers out of the NFC North lead, handing it back to the Bears and shifting Green Bay into the final playoff slot for now. It's tough to understate how damaging this game was, even with the Pack having a chance to sweep the Bears this Saturday."
+      "team": "Vikings",
+      "trend": "+6",
+      "blurb": "I know the Vikings' offense is completely unreliable. I also know Minnesota’s defense is special and the reason these Vikes are 3-0. That’s enough for me to move them into the top 10 for the first time this season, even if I still can’t trust Kyler Murray."
     },
     {
       "rank": 10,
-      "team": "Texans",
-      "trend": "+1",
-      "blurb": "The win streak sits at six, the playoffs are nearly a certainty, and the offense is showing signs of growth. Ringing up 40 points is always welcome, as C.J. Stroud and a surprisingly productive run game had their way with Arizona on Sunday. But another highly encouraging development has been the reduction of turnovers, with only one in the Texans' past five games combined. Giveaways cost them a few early-season losses, but they haven't been an issue for months now. The defense didn't have a flawless game by its sterling standards, but it was a solid effort that allowed Houston to build a 23-point lead. The Raiders could be another tune-up for the final two games, at the Chargers and home against the Colts, which could ultimately decide whether the Texans are a wild-card team or your AFC South champs."
+      "team": "Raiders",
+      "trend": "+12",
+      "blurb": "Sure, I might be overreacting to the Raiders’ hot start, but how can I pass on the rare opportunity to push the Silver and Black into the top 10? Klint Kubiak has inspired this previously downtrodden franchise, and Las Vegas is playing a wildly entertaining brand of football built on contributions from both established (Kirk Cousins, Brock Bowers) and unknown players (fifth-round rookie Hezekiah Masses has three interceptions this season!)."
     },
     {
       "rank": 11,
-      "team": "Chargers",
+      "team": "Cowboys",
       "trend": "+1",
-      "blurb": "The Chargers have won three straight games, and they’ve beaten last season’s Super Bowl teams in back-to-back thrillers. You can thank the defense for both, coming up with critical late interceptions in the red zone to finish them off. On Sunday, it was ﻿﻿﻿﻿﻿﻿Derwin James﻿﻿﻿﻿﻿﻿’ INT of ﻿﻿﻿﻿﻿﻿Gardner Minshew﻿﻿﻿﻿﻿﻿ with 20 seconds left, after ﻿﻿﻿﻿﻿﻿Patrick Mahomes﻿﻿﻿﻿﻿﻿ suffered a season-ending torn ACL. The significance of this win can’t be understated, officially ending the Chiefs’ dynastic run at Arrowhead, and the way the defense is playing now makes the Chargers look like legitimate contenders. That said, the shorthanded offense hasn’t carried its share of the weight lately, with ﻿﻿﻿﻿﻿﻿Justin Herbert﻿﻿﻿﻿﻿﻿ throwing his 12th interception of the season -- marking his fourth straight game with a pick. The division race mathematically remains up for grabs, and Herbert must be smarter with the ball down the stretch."
+      "blurb": "Dallas could have scored a major victory in an international setting if coach Brian Schottenheimer hadn’t micromanaged the end-game situation with an underlying fear of defeat powering his decisions. There were plenty of positives in this game, though: The Cowboys' maligned defense finally earned a signature stop with a goal-line stand that opened the door for a fourth-quarter comeback, Dak Prescott continued to play at an elite level with both CeeDee Lamb and George Pickens, and rookie linebacker Jaishawn Barham logged the first significant stop of his pro career. The same problems surfaced in the end, though, when the defense allowed the Ravens to complete a deep pass to set up a walk-off field goal that never should have been on the table in the game’s final second. I suppose it’s a good lesson to learn in the first month of the season."
     },
     {
       "rank": 12,
-      "team": "Eagles",
-      "trend": "+1",
-      "blurb": "The Eagles needed a tension-breaker game, and they got exactly that. Beating the Raiders won’t tell us whether the offense is truly fixed or if Philadelphia is suddenly any more playoff-ready, making this result comparable to the 2023 Eagles’ December win over a bad Giants team. Then again, just imagine if Philly had not had its way with an even worse Las Vegas outfit. ﻿﻿﻿﻿﻿﻿﻿﻿Jalen Hurts﻿﻿﻿﻿﻿﻿﻿﻿ followed his five-turnover game against the Chargers with a clean, crisp performance Sunday, and that was a positive sign. The red-zone package was a little more inspired, too, and the defense turned in a near-perfect showing, even accounting for how challenged the Raiders are offensively. The Eagles will take this and try to build on it, with Sunday's game against the 4-10 Commanders presenting a similar assignment."
+      "team": "Bears",
+      "trend": "+4",
+      "blurb": "Who needs Caleb Williams when you have ... Case Keenum?! Monday night served as a testament to the value of experience and lasting athletic talent, because they blended perfectly to produce a memorable performance for Keenum, the 38-year-old who diced up the Eagles and propelled Chicago’s offense to a 20-point victory. As impressive as Keenum was, so too was Chicago’s defense, which stifled Philadelphia’s offense, forced three turnovers and ensured the Eagles weren’t going to come close to mounting a comeback. It’s only one win, but it represents a whole lot more for the Bears, who had every reason to lose themselves in self-pity. They instead decided to rise above and drop a hammer on Philadelphia."
     },
     {
       "rank": 13,
-      "team": "Steelers",
-      "trend": "+1",
-      "blurb": "The Steelers dawdled around for much of the first half, unable to convert a third down to save their lives, but they flipped the switch just before halftime, logging the first of four straight touchdown drives in a dominant heel turn against the Dolphins. The run game started cooking in the second half, and ﻿﻿﻿﻿Aaron Rodgers﻿﻿﻿﻿ had a good night distributing the ball around. ﻿﻿﻿﻿DK Metcalf﻿﻿﻿﻿ scored his first TD since Week 8, and ﻿﻿﻿﻿Jaylen Warren﻿﻿﻿﻿ had an all-around strong night. Losing LG ﻿﻿﻿﻿Isaac Seumalo﻿﻿﻿﻿ for any length of time would be a blow, but LT ﻿﻿﻿﻿Dylan Cook﻿﻿﻿﻿ stood tall in his first NFL start. The AFC North still likely hinges on the Week 18 game against the Ravens, assuming Baltimore keeps winning, but the Steelers maintained their one-game lead, with a still-tough assignment on tap this Sunday at Detroit."
+      "team": "Rams",
+      "trend": "-5",
+      "blurb": "We’ve seen the Rams look flat (20-point loss to the 49ers in Australia), play like an elite team (22-point win over the Giants in Los Angeles) and collapse in a road game they led 16-0 at halftime (Sunday night's defeat to the Broncos). It’s better to get these mistakes out of the way now, but we can all agree this isn’t how we expected L.A. to start its season."
     },
     {
       "rank": 14,
       "team": "Lions",
-      "trend": "-4",
-      "blurb": "Another loss has put Detroit in a deeper hole, with the playoff hopes sliding even farther away. The Lions can get in, and winning the final three would give them a great chance of doing so. That would miraculously give Detroit 11 victories against a very tough schedule. But even as explosive as the Lions were at times against the Rams, Jahmyr Gibbs was bottled up, the pass protection became leaky and the defense allowed a season-worst 41 points. I'm not going to throw dirt on Detroit's grave because I haven't even dug the hole yet, although I admit I have the shovels oiled up and ready to go. Losing Brian Branch this late in the season was a huge blow to the defense, and I don't know if the unit can make it through these final three games unscathed without him."
+      "trend": "-1",
+      "blurb": "We know the Lions can put up points in bunches by leaning heavily on Jahmyr Gibbs, and this offense is capable of keeping them in every game they play. Their defensive struggles in the fourth quarter remain concerning, even if a takeaway saved them from another trip to overtime.\n\nJahmyr Gibbs' best plays from 3-TD game | Week 3\n\nWatch Detroit Lions running back Jahmyr Gibbs' best plays from 3-TD game during Week 3 of the 2026 NFL season."
     },
     {
       "rank": 15,
-      "team": "Ravens",
-      "trend": "+1",
-      "blurb": "Lamar Jackson took four sacks, and Baltimore's offense scored just 17 points, but it was arguably the team's most complete performance since before Jackson got hurt. The Ravens were outstanding defensively, with Kyle Van Noy's INT and Alohi Gilman's TD return the cherry on top. They kept the Bengals from getting into any kind of rhythm, achieving that classic Baltimorean balance they've always sought. And most importantly, Jackson looked like Lamar Jackson; inherently, Baltimore looked like a playoff team. The Ravens' postseason chances likely will hinge on the Week 18 showdown with the Steelers, but the Ravens have two tough games before that. Don't snooze on them just yet. They can heat up in a hurry."
+      "team": "Eagles",
+      "trend": "-5",
+      "blurb": "The Eagles failed their first real test of 2026 in a fashion that suggested they didn’t even take time to study. Jalen Hurts struggled for most of the night, Philadelphia wasted a promising, Saquon Barkley-heavy drive by throwing an interception in the end zone, and the defense surrendered 375 yards to a Case Keenum-led offense. The Eagles’ offensive evolution under Sean Mannion hasn’t yet taken hold (Hurts didn’t help with that much on Monday night), and right now, I’m not exactly sure how to feel about this team. Philly should be good, but through three weeks, it has logged two narrow wins over teams it's expected to beat, and lost a lopsided game on the road. Not great, Nick (Sirianni)!"
     },
     {
       "rank": 16,
-      "team": "Colts",
-      "trend": "-1",
-      "blurb": "The movie script was writing itself in real time, with grandpa Philip Rivers helping the Colts take a final-minute lead in a game no one even imagined him playing just a few weeks ago. But the Seahawks were not about to let the feel-good story come to fruition on Sunday, as Seattle topped Indianapolis with a long field goal to win it. Still, all things considered, Rivers was pretty impressive, and he gave the Colts what they wanted: a shot at winning in a tough environment. The playoff dream isn't dead, and winning the final three against the 49ers, Jaguars and Texans would give Indy an excellent shot, even if that's asking quite a bit. Rivers deserves to play out the string, and his toughness deserves to be rewarded, yet the odds are very much stacked against the Colts."
+      "team": "Saints",
+      "trend": "-2",
+      "blurb": "Instead of putting it all together in the fourth quarter as they had in their first two games, the Saints inverted on Sunday, falling apart in spectacular fashion in a loss to the Raiders. Tyler Shough’s fourth-quarter clutch gene disappeared in a wild game that should serve as a bit of humble pie for an upstart team that could benefit from such a lesson in late September."
     },
     {
       "rank": 17,
-      "team": "Buccaneers",
-      "trend": "",
-      "blurb": "The Buccaneers walked off the field at Raymond James Stadium last Thursday with some seriously bad vibes, having blown a 14-point, fourth-quarter lead in a 29-28 loss to the Falcons. Baker Mayfield threw a careless interception, and Atlanta overcame third-and-28 and fourth-and-14 on its final drive before ultimately nailing the game-winning field goal. Yet somehow, the Bucs came out of the weekend -- thanks to New Orleans finishing a season sweep of Carolina -- in a remarkably similar position to how they started it: in first place, with a ton of questions. Whom do you trust more at this point, the Bucs or Panthers? The division comes down to the teams' two head-to-head games over the next three Sundays, with this week's showdown taking place in Charlotte. Can Mike Evans help Tampa regain a little of its early-season magic? The offense needs to step up with the defense seemingly in tatters."
+      "team": "Browns",
+      "trend": "+6",
+      "blurb": "The Browns’ defense is back and playing a cohesive brand that rivals the best units in the NFL over the last two weeks. Mason Graham is off to a fantastic start, Jared Verse has started to make an impact and Carson Schwesinger picked up right where he left off in last season's Defensive Rookie of the Year campaign. Deshaun Watson also seems to have rediscovered a fourth-quarter clutch mode we haven’t seen from him since he was in Houston. Cleveland's offense needs to be better, but the Browns have definitely looked competent and earned the last two wins."
     },
     {
       "rank": 18,
-      "team": "Panthers",
-      "trend": "",
-      "blurb": "After watching the Buccaneers blow a 14-point lead on Thursday, shifting all the momentum in Carolina’s direction for the NFC South, the Panthers coughed up that advantage in a frustrating loss at New Orleans. The Panthers have now been swept by the Saints, and they’ll have to take care of business in the Week 16 game against the Bucs with less wiggle room. ﻿Bryce Young﻿ made some big throws to give Carolina a 17-7 lead early in the third quarter, but the Panthers came up empty on their next three drives, with a turnover on downs and two quick punts. Every time it feels like Young is ready to elevate his game with back-to-back performances, he and his team are seemingly unable to do so. With 11 penalties and late defensive breakdowns, the Panthers didn’t play playoff-caliber football in any facet on Sunday."
+      "team": "Jets",
+      "trend": "+7",
+      "blurb": "I don’t believe in moral victories, but I do think teams can find positives in close losses. After the Week 2 nightmare at MetLife Stadium, the Jets had plenty to be proud of in Sunday's road defeat. Sure, they gave up 31 to Detroit (just like the last two defenses that faced the Lions), but they battled back from a two-touchdown deficit in the fourth quarter to give themselves a legitimate chance to win in the Motor City. That’s much, much more than we could have said about the Jets in recent years."
     },
     {
       "rank": 19,
-      "team": "Cowboys",
-      "trend": "",
-      "blurb": "The Cowboys haven't officially been eliminated from postseason play, but practically speaking, Sunday night's home loss to Minnesota essentially marked the end of all realistic hope. The 'Boys almost certainly needed to pull an inside straight over their final four games, but it was disappointing to see the defense suffer through another long game and the offense come up short in key situations against the Vikings. Can't really blame this one on Dak Prescott, as the pressure was immense, and George Pickens was held in check once more. Prescott has been very good for most of this season, and he was fine on Sunday, but he wasn't good enough to overcome Dallas' collective issues elsewhere. Brian Schottenheimer's first season brought some fight after the bye, but the Cowboys now find themselves in a real battle just to finish .500 or better."
+      "team": "Steelers",
+      "trend": "+7",
+      "blurb": "Pittsburgh's offense woke up! It was refreshing to watch the Steelers finally produce with the approach (aggressively pushing the ball downfield) they’ve been trying to force this season. It wasn’t at all surprising that their defense was the one to finish the job, either. I won’t be taken for an easy sale, though; they’ll need to do it more than once offensively for me to emotionally invest."
     },
     {
       "rank": 20,
-      "team": "Chiefs",
-      "trend": "",
-      "blurb": "In a shocking double blow, the Chiefs were officially eliminated from postseason contention and ﻿﻿﻿Patrick Mahomes﻿﻿﻿ suffered a season-ending torn ACL, which likely will affect his offseason outlook and timetable, as well. There might be a tangible argument that the Chiefs finding a way into this season's playoffs could have given them a false sense of security in the system and that, as it’s been for most of the past decade, things are gonna be OK. I’m not going to buy that, and it’s hard to put a positive light on Mahomes’ injury. I also don’t think major offseason changes are guaranteed, but one way or another, Kansas City must boost the pass rush, add some RB punch and figure out how best to get the most from this QB and these receivers."
+      "team": "Colts",
+      "trend": "-1",
+      "blurb": "In what was the toughest watch of the week, the Colts managed to outlast the Texans despite three Daniel Jones giveaways. They can thank their defense -- one of the worst in the NFL entering Week 3 -- for finding some solid footing and shutting down Houston's woeful offense (for most of the game). Kicker Spencer Shrader deserves some flowers, too, because the guy has been nails this season: 8-for-8 on field-goal attempts, including 3-for-3 from 50-plus."
     },
     {
       "rank": 21,
-      "team": "Vikings",
-      "trend": "+1",
-      "blurb": "After scoring only 42 total points in Weeks 10-13, the Vikings have now put up back-to-back outings with 31 or more on the scoreboard, led by a resurgent ﻿﻿﻿J.J. McCarthy﻿﻿﻿. Following his interception on the second snap of Sunday's win, McCarthy was pretty dialed in, resilient and effective, even if his shoddy connection with ﻿﻿﻿Justin Jefferson﻿﻿﻿ remains a major point of confoundment. They just haven’t been on the same page most of the season, and Sunday was similar. Jefferson is Minnesota's star receiver. McCarthy likely remains the quarterback of the foreseeable future. At some point, these two must become more simpatico. Credit to McCarthy for finding other ways to get it done the past two weeks, but the Vikings can’t win games this way forever."
+      "team": "Commanders",
+      "trend": "+7",
+      "blurb": "Marcus Mariota hive, stand up! The veteran backup played hero Sunday, powering Washington past Seattle for the biggest upset of the week. The contest ended in fitting fashion with Mariota scrambling for the game-sealing first down. Equal praise is due for Washington's defense, which has played above expectation all season and notched a peak showing in the takeaways department, logging two to keep the Commanders in the game and a third to give them enough of a lead to emerge victorious.\n\nSeahawks vs. Commanders Week 3 Recap | NFL Daily\n\nGregg Rosenthal, Jourdan Rodrigue and Nick Shook recap the Week 3 matchup between Seahawks and Commanders."
     },
     {
       "rank": 22,
-      "team": "Dolphins",
-      "trend": "-1",
-      "blurb": "The Dolphins came in as a hot team, having won four straight while allowing a total of 53 points in that span, and they held the Steelers down for a half on Monday. But the cold weather has historically been unkind to the Dolphins, and they froze up in the third quarter, netting minus-20 yards. Never good to gain fewer yards in a quarter than there are degrees on a cold night, and the Dolphins fell below that threshold with ease. Even with a little fourth-quarter flurry, they came up multiple scores short. The loss ended Miami's playoff hopes and dropped ﻿﻿Tua Tagovailoa﻿﻿'s record to 0-6 in games where the kickoff temperature is below 40 degrees (including playoffs). He also leads the league this season in interceptions with 15 and was sacked four times, bringing him to a career-worst 30 with three games left. A big offseason awaits the Dolphins, and even in light of the recent run, this game reflected poorly on everyone."
+      "team": "Panthers",
+      "trend": "-5",
+      "blurb": "Last week’s drubbing of Atlanta appeared to be an anomaly by the time Sunday’s game concluded. Carolina’s offense struggled to find success for most of the afternoon in Cleveland, a reality exacerbated by the injury to Jalen Coker. Devin Lloyd’s absence hurt the Panthers’ defense, which wilted in the fourth quarter against a motivated Browns offense. Carolina also struggled to protect Bryce Young, who was banged up and saw his performance suffer because of it. Fortunately, the bye week is near, but not before a Sunday night date with the Lions that could teach us plenty about the current state of the Panthers."
     },
     {
       "rank": 23,
-      "team": "Bengals",
-      "trend": "",
-      "blurb": "Joe Burrow shredded the Ravens on Thanksgiving and, for most of the game anyway, the Bills in Week 14. But, after Burrow said he wanted to enjoy what he could of the remainder of a lost season, he and the Bengals' offense had a horrid day at the office on Sunday. Burrow's pick-six was the official death knell against Baltimore, although a three-score comeback didn't exactly feel imminent the play prior. Cincinnati's receivers certainly didn't do Burrow any favors, but he also struggled. The NFL is more fun when Burrow is dealing, so whatever funk he's in, I can't wait until it's over. The Bengals' defense played pretty well, all things considered, and kept the game close. But not well enough to overcome a shutout, something I didn't think was possible with this group, even without Tee Higgins (concussion)."
+      "team": "Falcons",
+      "trend": "+8",
+      "blurb": "With their backs against the wall, the Falcons traveled to Green Bay with renewed energy and benefitted from the contributions of one of the NFL’s best players in Bijan Robinson, an elite playmaker who shines brightest under the prime-time lights. HC Kevin Stefanski and OC Tommy Rees didn’t get too cute in their first game with Michael Penix Jr. in the lineup, leaning heavily on Robinson and allowing their star running back to open up the rest of the offense in a lopsided victory that repaired the Falcons' reputation and may have saved their season."
     },
     {
       "rank": 24,
-      "team": "Falcons",
-      "trend": "",
-      "blurb": "It was a big night last Thursday for Kyle Pitts and Kirk Cousins, whose strong performances might change their offseason opportunities for the better. Pitts, an impending free agent, could have an extremely healthy market for his services if the Falcons can't keep him. Cousins has less freedom, but he at least sent a message that he can still play a little, bouncing back from a tough game against the Seahawks. The dramatic win was also a sad reminder of what could have been for this team in terms of offensive prowess, but the shocking number of mistakes Atlanta made reflected this squad's lack of discipline."
+      "team": "Texans",
+      "trend": "-13",
+      "blurb": "The Texans have serious problems offensively that are painfully familiar. They can’t run the ball, lack difference-makers at receiver and still can’t consistently sustain drives. After a six-point output in the Week 2 loss to Cincinnati, the Texans were nearly as dreadful Sunday in Indianapolis, save for one urgent drive to briefly take a late lead. It’s unrealistic to expect the defense to carry Houston on a weekly basis, and until offensive coordinator Nick Caley finds some solutions, the Texans will remain mired in these struggles."
     },
     {
       "rank": 25,
-      "team": "Saints",
-      "trend": "",
-      "blurb": "Tyler Shough﻿﻿ left the injury tent and got the ball back with 4:37 remaining against the Panthers, down 17-10, and immediately hit on seven of his eight passes, each for 9 yards or more. Shough hit ﻿﻿Chris Olave﻿﻿ for the game-tying TD, and New Orleans' defense got a stop. It didn’t feel likely, but Shough did enough to move the Saints from their own 9-yard line into field-goal range for the game-winning kick as time expired. Shough has shown promise in each of his six starts, but the way he finished this one has to have some Saints fans hoping the team bypasses a quarterback in the next draft. It was a gutsy performance, and it was finished by another new hero, kicker ﻿﻿Charlie Smyth﻿﻿ of Northern Ireland fame. The Saints have won two straight and have a fairly realistic chance of ending the season on a five-game win streak now with games against the Jets, Titans and Falcons upcoming."
+      "team": "Giants",
+      "trend": "-4",
+      "blurb": "We shouldn’t be surprised the Giants traded for J.J. McCarthy on Monday, not after that rough showing from their offense vs. Tennessee amid a downpour at MetLife Stadium on Sunday. We also shouldn't be surprised the Giants won an ugly game. It’s precisely the type of contest John Harbaugh’s team is built to win. How New York proceeds from here -- including how quickly McCarthy sees the field -- is hard to say, making this 2-1 team one of the biggest wild cards in the NFL."
     },
     {
       "rank": 26,
-      "team": "Commanders",
-      "trend": "",
-      "blurb": "Dan Quinn will take the draft-pick dip after Sunday’s win, which ended an eight-game losing streak that no one thought was in the realm of possibilities when this season started. The Commanders were beginning to look like a wayward franchise, and that sort of thing can leak into the locker room, but they took control against the Giants and held on late for a confidence-boosting win. Two lost fumbles in the final six minutes don’t reflect well, but the Giants made sure to make even more mistakes down the stretch. The Commanders did better defensively than in some recent games, but it was the special teams (even with a missed extra point) that helped deliver the win even more."
+      "team": "Cardinals",
+      "trend": "+4",
+      "blurb": "I’ll give credit to the Cardinals for refusing to quit Sunday in a game in which lesser teams would have laid down and accepted defeat. There is still plenty to clean up, especially for a defense that gave up a ton of big plays to the 49ers."
     },
     {
       "rank": 27,
-      "team": "Cardinals",
-      "trend": "",
-      "blurb": "Thank the maker for Trey McBride. He's arguably the league's best tight end right now, and even with the Cardinals in one of their darkest stretches, he remains a joy to watch. Now, sadly, we must talk business, and the Cards are a mess right now. They've been decimated by injuries, especially on offense, but the defense has taken a turn for the worse, and that's why they've lost six straight and have only one win since Week 2. McBride should be the centerpiece offensively, but it's a pretty good bet this team is going to look vastly different next season. There are questions surrounding Kyler Murray and the coaching staff, and Arizona has two dozen impending free agents, so prepare for some new faces."
+      "team": "Chargers",
+      "trend": "+2",
+      "blurb": "The Chargers fixed many errors in the first half against the Bills on Sunday, playing a clean two quarters that included three takeaways. Signs of an impending loss were still evident, though, as Los Angeles only scored 10 points off those turnovers before reverting to its sloppy ways in the second half, crumbling and giving away a very winnable game on the road. I understand your frustration, Chargers fans."
     },
     {
       "rank": 28,
-      "team": "Browns",
-      "trend": "+1",
-      "blurb": "Two things I'll be tracking in the Browns' final three games: whether Myles Garrett can break the sack record and whether they can win another game. If we take owner Jimmy Haslam at his word from back in July, once again going “3-14 won't cut it.” The Browns sit at 3-11, with the Bills and Steelers coming to Cleveland in the next two weeks before the regular-season finale at Cincinnati. The entire franchise feels like it's again at a flashpoint, with Shedeur Sanders taking a step back on Sunday against the Bears, throwing three interceptions (even if one wasn't his fault). Kevin Stefanski might be a two-time Coach of the Year, but the wind is blowing pretty stiffly in his (and his team's) face right now."
+      "team": "Packers",
+      "trend": "-8",
+      "blurb": "Matt LaFleur accurately summarized Thursday's 21-point loss to Atlanta in the postgame interview, calling it a “humbling night.” Green Bay’s offense lacks a running game and is putting too much on the shoulders of Jordan Love, and the defense’s inability to tackle effectively doomed the Packers in their second defeat. It’s fair to say they could easily be 0-3 right now, and I’m not sure where they go from here. If these issues persist against the Buccaneers in Week 4, we’ll be entering crisis territory."
     },
     {
       "rank": 29,
-      "team": "Jets",
-      "trend": "-1",
-      "blurb": "The Jets have fired defensive coordinator Steve Wilks, making him the scapegoat for a unit that has predictably fallen apart since trading away major resources at the deadline. That’s now 14 straight games without an interception, which feels nigh impossible. It also hasn’t helped that they’re hamstrung offensively with undrafted rookie ﻿﻿﻿Brady Cook﻿﻿﻿ at QB and ﻿﻿﻿Garrett Wilson﻿﻿﻿ not playing. But Cook could have been Joe Namath Jr. on Sunday, and the Jets still wouldn’t have won. They trailed the Jags 14-0 nine minutes in, and that was all she wrote. Cook started hot in his first NFL start before throwing three picks, including one in the end zone for a second straight game. The Jets probably will give him another shot because it wasn’t even the team’s worst QB outing of the season and, well, who else do they have there?"
+      "team": "Buccaneers",
+      "trend": "-5",
+      "blurb": "Tampa Bay’s offense remains stuck in the mud. It can’t protect Baker Mayfield, who also can’t find much comfort in Zac Robinson’s offense, which lacks a clear direction. This roster is good enough to be better than 0-3, yet that’s what these Bucs are after three weeks. And now they're facing a disaster scenario, with Mayfield expected to miss at least three weeks due to the thumb injury he suffered at the end of Sunday’s disheartening loss."
     },
     {
       "rank": 30,
-      "team": "Giants",
-      "trend": "",
-      "blurb": "Interim coach Mike Kafka is now 0-4, and the Giants have dropped eight straight games since the season high point of crushing the Eagles back in Week 6. Everything has pointed downward since then, and it’s raising questions of just how many major changes might come from it, even after Brian Daboll was already let go. Sure, if you look hard enough, there were some mild positives Sunday, with a nice run game and ﻿﻿Abdul Carter﻿﻿ finally showing something significant, but the Giants fell behind at home to the Commanders a little more than five minutes in and never even got back to a tie game. They’re now 5-26 since the start of last season and need a major change in vision going forward."
+      "team": "Dolphins",
+      "trend": "+2",
+      "blurb": "The Dolphins perform admirably between the 20-yard lines on a weekly basis but can’t find ways to finish drives with trips to the end zone. They’re the most undermanned team in the NFL but don’t lack effort. In this league, however, talent tends to win when effort is comparable. For now, Miami is still figuring out how to walk before attempting to run."
     },
     {
       "rank": 31,
-      "team": "Titans",
-      "trend": "",
-      "blurb": "Even with many positive flashes for Cam Ward during a trying rookie season, he's also made his share of mistakes. On Sunday, he had opportunities to make plays at times but didn't, and he still has a ways to go to be an effective starting quarterback in the NFL. Ward was not sacked in a game for the first time all season and wasn't under heavy duress against the 49ers -- and yet, he still missed some open receivers and threw two passes that should have been picked off. Even if Ward hits on some of those plays, the Titans are not a good enough operation right now to beat quality teams very often, with the defense suffering through another long day at the office in Santa Clara."
+      "team": "Patriots",
+      "trend": "-13",
+      "blurb": "Save for the defensively driven victory in Week 2, the Patriots have been a mess and have a major problem at quarterback. Drake Maye looks completely lost, and judging by the tone of his postgame press conference on Sunday, he might not find his way back onto New England's intended route for some time. Mike Vrabel was right when describing his concern level as “very high” afterward. There are problems everywhere for the defending AFC champions and a simple solution isn’t in sight."
     },
     {
       "rank": 32,
-      "team": "Raiders",
-      "trend": "",
-      "blurb": "Las Vegas now owns a pair of 31-zip losses this season in which the offense failed to reach 100 total yards and the defense allowed more than 350. Not many teams can claim this, so the 2025 Raiders certainly have put themselves in rare air indeed. They’ve lost eight straight games and eight total this season by double-digit points. Sunday was also the ninth time they’ve failed to top the 17-point mark in what has been an utter disaster of a season in Pete Carroll’s first year. Will he get a second? Does he even want another crack at fixing this? Even with a few clear building blocks, this looks like a massive reconstruction that will require time and patience, and with Carroll at 74, it’s fair to wonder if the coach has the gumption for that -- or even the opportunity, depending on what management decides in a few weeks."
+      "team": "Titans",
+      "trend": "-5",
+      "blurb": "A second straight rainy Sunday at MetLife Stadium claimed the Titans’ offense as its victim. Tennessee finally found some life late in its Week 3 loss to the Giants, but Cam Ward -- who has experienced a rough start to his sophomore season -- made a horrendous decision, throwing an end zone interception to a lurking Jevon Holland to seal another defeat. Tennessee is currently on a one step forward, two steps back pacing that doesn’t lead me to believe it'll suddenly improve any time soon.\n\nRELATED CONTENT\nNEWS\n\nPower Rankings: Bengals enter top three; Bears, Bucs, Chargers plummet\n\nNEWS\n\nPower Rankings: Change at No. 1! 49ers, Bears and Chiefs enter top 10\n\nNEWS\n\nPower Rankings: Who's rising/falling entering Week 1? Defending champs at No. 3\n\nNEWS\n\nPower Rankings: Defending champion Seahawks at No. 3; Patriots outside of top 10\n\nAFC\n\nNFC\n\nGeneral & Legal\n\nSupport\nPrivacy Policy\nTerms & Conditions\nSubscription Terms & Conditions\nAccessibility\nAd Choices\nYour Privacy Choices\nCookie Settings\nPreference Center: US, CA, MX\nPreference Center: International\nSitemap\n\nNFL Culture\n\nCareers\nInclusion\nIn the Community\nInspire Change\nNFL HBCU\nPor La Cultura\nPlay Football\nPlay 60\nNFL Origins\n\nNFL Ecosystems\n\nNFL Football Operations\nNFL Shop\nNFL Films\nOn Location\nPro Football Hall of Fame\nUSA Football\nNFL Extra Points Credit Card\nNFL Ticket Exchange\nNFL Auction\nFlag Football\nActivate - CTV\n\nMedia\n\nNFL Communications\nMedia Guides\nRecord & Fact Book\nRule Book\nLicensing\n\nPlayers\n\nNFL Health & Safety\nPlayer Engagement\nNFL Legends Community\nNFL Alumni Association\nNFL Player Care\n\nDownload the App\n\n© 2026 NFL Enterprises LLC. NFL and the NFL shield design are registered trademarks of the National Football League. The team names, logos and uniform designs are registered trademarks of the teams indicated. All other NFL-related trademarks are trademarks of the National Football League. NFL footage © NFL Productions LLC.\n\nNous nous soucions de votre vie privée\n\nNous et nos 1016 partenaires stockons et accédons à des données personnelles, telles que des données de navigation ou des identifiants uniques, sur votre appareil. Si vous sélectionnez J’accepte, les technologies de suivi prendront en charge les finalités affichées dans la section « Nous et nos partenaires traitons des données pour fournir ». Si vous choisissez Rejeter tout ou que vous retirez votre consentement, elles seront désactivées. Si les technologies de suivi sont désactivées, il est possible que certains contenus et annonces qui vous sont présentés ne soient pas pertinents pour vous. Vous pouvez faire réapparaître ce menu pour modifier vos choix ou pour retirer votre consentement à tout moment en cliquant sur le lien Gérer les préférences en bas de page. Les choix que vous avez fait aurons un effet sur notre ou nos Site Web. Pour plus d’informations, reportez-vous à notre politique de confidentialité.\n\nNous et nos partenaires traitons les données pour fournir :\n\nUtiliser des données de géolocalisation précises. Analyser activement les caractéristiques de l’appareil pour l’identification. Stocker et/ou accéder à des informations sur un appareil. Publicités et contenu personnalisés, mesure de performance des publicités et du contenu, études d’audience et développement de services.\nListe des partenaires (fournisseurs)\n\nJ’accepte\nRejeter tout\nAfficher les objectifs"
     }
   ]
 }
