@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-01T09:11:01.752Z",
+  "lastUpdated": "2026-10-02T11:26:08.583Z",
   "AFC": [
     {
       "seed": "1",
@@ -15,13 +15,13 @@
     },
     {
       "seed": "3",
-      "team": "Jacksonville",
-      "record": "2-1-0",
+      "team": "Cleveland",
+      "record": "3-1-0",
       "status": ""
     },
     {
       "seed": "4",
-      "team": "Pittsburgh",
+      "team": "Jacksonville",
       "record": "2-1-0",
       "status": ""
     },
@@ -45,14 +45,14 @@
     },
     {
       "seed": "8",
-      "team": "Cleveland",
+      "team": "Cincinnati",
       "record": "2-1-0",
       "status": ""
     },
     {
       "seed": "9",
-      "team": "Cincinnati",
-      "record": "2-1-0",
+      "team": "Pittsburgh",
+      "record": "2-2-0",
       "status": ""
     },
     {
