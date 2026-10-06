@@ -465,8 +465,8 @@
           "home": "Saints",
           "away": "Falcons",
           "date": "Monday, October 5",
-          "time": "8:15 PM",
-          "final": false
+          "time": null,
+          "final": true
         }
       ]
     },
@@ -1860,7 +1860,7 @@
         "week": "REG7",
         "date": "Sunday, October 25",
         "time": "9:30 AM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "1-3-0"
       },
       {
         "opponent": "Browns",
@@ -1974,7 +1974,7 @@
         "week": "REG9",
         "date": "Sunday, November 8",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "1-3-0"
       },
       {
         "opponent": "Texans",
@@ -2006,7 +2006,7 @@
         "week": "REG14",
         "date": "Sunday, December 13",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "2-2-0"
       },
       {
         "opponent": "Giants",
@@ -2218,7 +2218,7 @@
         "week": "REG15",
         "date": "Sunday, December 20",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "2-2-0"
       }
     ],
     "Titans": [
@@ -2342,7 +2342,7 @@
         "week": "REG5",
         "date": "Sunday, October 11",
         "time": "8:20 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "2-2-0"
       },
       {
         "opponent": "Browns",
@@ -2766,7 +2766,7 @@
         "week": "REG6",
         "date": "Sunday, October 18",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "2-2-0"
       },
       {
         "opponent": "Patriots",
@@ -2798,7 +2798,7 @@
         "week": "REG11",
         "date": "Sunday, November 22",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "1-3-0"
       },
       {
         "opponent": "Lions",
@@ -2986,7 +2986,7 @@
         "week": "REG9",
         "date": "Sunday, November 8",
         "time": "9:30 AM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "2-2-0"
       },
       {
         "opponent": "Steelers",
@@ -3010,7 +3010,7 @@
         "week": "REG12",
         "date": "Sunday, November 29",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "1-3-0"
       },
       {
         "opponent": "Browns",
@@ -3352,7 +3352,7 @@
         "week": "REG16",
         "date": "Sunday, December 27",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "1-3-0"
       },
       {
         "opponent": "Raiders",
@@ -3386,7 +3386,7 @@
         "week": "REG6",
         "date": "Sunday, October 18",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "1-3-0"
       },
       {
         "opponent": "Texans",
@@ -3744,7 +3744,7 @@
         "week": "REG13",
         "date": "Sunday, December 6",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "1-3-0"
       },
       {
         "opponent": "Bills",
@@ -3818,7 +3818,7 @@
         "week": "REG8",
         "date": "Sunday, November 1",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "2-2-0"
       },
       {
         "opponent": "Bears",
@@ -3866,7 +3866,7 @@
         "week": "REG15",
         "date": "Sunday, December 20",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "1-3-0"
       }
     ],
     "Dolphins": [
@@ -3990,7 +3990,7 @@
         "week": "REG5",
         "date": "Sunday, October 11",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "1-3-0"
       },
       {
         "opponent": "Colts",
@@ -4038,7 +4038,7 @@
         "week": "REG12",
         "date": "Sunday, November 29",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "2-2-0"
       },
       {
         "opponent": "Panthers",
@@ -4120,7 +4120,7 @@
         "week": "REG10",
         "date": "Sunday, November 15",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "2-2-0"
       },
       {
         "opponent": "Cardinals",
@@ -4610,7 +4610,7 @@
         "week": "REG7",
         "date": "Sunday, October 25",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "2-2-0"
       },
       {
         "opponent": "Raiders",
@@ -4756,7 +4756,7 @@
         "week": "REG13",
         "date": "Sunday, December 6",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "2-2-0"
       },
       {
         "opponent": "Titans",
@@ -4838,7 +4838,7 @@
         "week": "REG10",
         "date": "Sunday, November 15",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "1-3-0"
       },
       {
         "opponent": "Ravens",
@@ -4870,7 +4870,7 @@
         "week": "REG14",
         "date": "Sunday, December 13",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "1-3-0"
       },
       {
         "opponent": "Bengals",
@@ -4895,8 +4895,8 @@
         "location": "@",
         "week": "REG4",
         "date": "Monday, October 5",
-        "time": "8:15 PM",
-        "opponentRecord": "1-2-0"
+        "time": null,
+        "opponentRecord": "1-3-0"
       },
       {
         "opponent": "Ravens",
@@ -4984,7 +4984,7 @@
         "week": "REG17",
         "date": "Sunday, January 3",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "1-3-0"
       }
     ],
     "Saints": [
@@ -4993,8 +4993,8 @@
         "location": "vs",
         "week": "REG4",
         "date": "Monday, October 5",
-        "time": "8:15 PM",
-        "opponentRecord": "1-2-0"
+        "time": null,
+        "opponentRecord": "2-2-0"
       },
       {
         "opponent": "Vikings",
@@ -5090,7 +5090,7 @@
         "week": "REG17",
         "date": "Sunday, January 3",
         "time": "1:00 PM",
-        "opponentRecord": "1-2-0"
+        "opponentRecord": "2-2-0"
       }
     ]
   }
