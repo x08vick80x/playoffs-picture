@@ -71,6 +71,7 @@
     border-radius: 6px;
     transition: transform 0.2s, background 0.2s;
     cursor: pointer; // Make entire card clickable
+    box-shadow: $box-shadow;
 
     &:hover {
         background: rgba(255, 255, 255, 0.08);
@@ -99,7 +100,7 @@
     &__power-row {
         display: flex;
         align-items: center;
-        gap: 4px;
+        gap: $spacing-xs;
         font-size: 1.2rem;
         color: $text-secondary;
         font-family: monospace;
@@ -114,6 +115,14 @@
 
     &__power-trend {
         font-weight: bold;
+
+        &--up {
+            color: $nfl-green;
+        }
+
+        &--down {
+            color: $nfl-red;
+        }
     }
 
     &__stats {
@@ -124,15 +133,15 @@
 
     &__record {
         font-size: 1.3rem;
-        color: $text-secondary;
+        color: $nfl-light-blue;
         font-family: monospace;
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: $spacing-xs;
     }
 
     &__seed-badge {
-        background: $nfl-blue;
+        background: $nfl-light-blue;
         color: white;
         font-size: 0.7rem;
         padding: 1px 4px;
@@ -142,7 +151,7 @@
     &__prob {
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: $spacing-xs;
         font-size: 1.3rem;
         font-weight: bold;
     }

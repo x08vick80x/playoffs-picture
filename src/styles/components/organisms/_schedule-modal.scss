@@ -77,6 +77,11 @@
         &:hover {
             color: #fff;
         }
+
+        &:focus-visible {
+            outline: none;
+        }
+
     }
 
     &__list {

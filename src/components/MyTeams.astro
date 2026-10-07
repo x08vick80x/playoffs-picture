@@ -176,14 +176,15 @@ const teamsData = {
         // that keeps seeds/bubble/eliminated empty early in the season).
         const sched = scheduleByCityKey[cityKey] || [];
         stats.schedule = sched;
-        stats.nextOpp = sched.length > 0
-            ? {
-                opponent: sched[0].opponent,
-                location: sched[0].location,
-                date: sched[0].date,
-                time: sched[0].time,
-            }
-            : null;
+        stats.nextOpp =
+            sched.length > 0
+                ? {
+                      opponent: sched[0].opponent,
+                      location: sched[0].location,
+                      date: sched[0].date,
+                      time: sched[0].time,
+                  }
+                : null;
 
         return stats;
     }
@@ -310,10 +311,10 @@ const teamsData = {
                 let trendSymbol = stats.powerTrend || "";
                 let trendClass = "neutral";
                 if (trendSymbol.startsWith("+")) {
-                    trendClass = "text-green";
+                    trendClass = "team-item__power-trend--up";
                     trendSymbol = "▲ " + trendSymbol.substring(1);
                 } else if (trendSymbol.startsWith("-")) {
-                    trendClass = "text-red";
+                    trendClass = "team-item__power-trend--down";
                     trendSymbol = "▼ " + trendSymbol.substring(1);
                 }
                 if (trendSymbol === "0") trendSymbol = "-";

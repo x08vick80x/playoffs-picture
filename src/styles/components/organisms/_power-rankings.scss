@@ -9,7 +9,7 @@
     &__list {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     &__empty {
@@ -27,6 +27,7 @@
     transition: all 0.2s;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    box-shadow: $box-shadow;
 
     &:hover {
         border-color: #666;
