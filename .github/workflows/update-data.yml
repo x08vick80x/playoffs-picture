@@ -9,6 +9,8 @@ on:
     - cron: '0 6 * * 1'
     # Tuesday morning (for Monday Night Football)
     - cron: '0 6 * * 2'
+    # Tuesday afternoon (5:30 PM for power rankings)
+    - cron: '0 16 * * 2'
     # Sunday evening (22:30 CET / 21:30 UTC)
     - cron: '30 21 * * 0'
     # Monday morning middle of night (01:30 CET / 00:30 UTC)
