@@ -67,7 +67,7 @@
     &__teams {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-        align-items: start;
+        align-items: center;
         gap: $spacing-xs;
     }
 
@@ -91,8 +91,8 @@
     }
 
     .team-logo {
-        width: 2.4rem;
-        height: 2.4rem;
+        width: 4rem;
+        height: 4rem;
     }
 
     .team-row__name {
@@ -155,8 +155,8 @@
         }
 
         .team-logo {
-            width: 2rem;
-            height: 2rem;
+            width: 2.7rem;
+            height: 2.7rem;
         }
 
         .team-row__name {
