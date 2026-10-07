@@ -393,7 +393,12 @@ async function scrape() {
                         if (!dateMatch) return;
 
                         const timeMatch = text.match(/(\d{1,2}:\d{2}\s?[AP]M)/);
-                        const final = /FINAL/.test(text);
+                        const final = /\bFINAL\b/i.test(text);
+                        // Scores follow each team name, before FINAL (also FINAL/OT).
+                        // Anchoring to commas avoids treating the 49ers name as a score.
+                        const scores = final
+                            ? text.match(/^\s*[^,]+?\s+(\d+)\s*,\s*[^,]+?\s+(\d+)\s*,\s*FINAL\b/i)
+                            : null;
 
                         seenConfig.add(key);
                         matches.push({
@@ -403,6 +408,8 @@ async function scrape() {
                             date: `${dateMatch[1]}, ${dateMatch[2]}`,
                             time: !final && timeMatch ? timeMatch[1] : null,
                             final,
+                            awayScore: scores ? Number(scores[1]) : null,
+                            homeScore: scores ? Number(scores[2]) : null,
                         });
                     }
                 });
@@ -568,7 +575,9 @@ async function scrape() {
                     away: normalizeSlug(m.away),
                     date: m.date,
                     time: m.time,
-                    final: m.final
+                    final: m.final,
+                    awayScore: m.awayScore,
+                    homeScore: m.homeScore
                 }))
         }));
 

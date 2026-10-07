@@ -1,6 +1,7 @@
 ---
 import SectionTitle from "./atoms/SectionTitle.astro";
 import TeamRow from "./molecules/TeamRow.astro";
+import { getScheduleWeekNumber } from "../../scraper/config.js";
 
 interface Match {
     home: string;
@@ -8,6 +9,8 @@ interface Match {
     date: string | null;
     time: string | null;
     final: boolean;
+    awayScore?: number | null;
+    homeScore?: number | null;
 }
 
 interface Week {
@@ -17,13 +20,16 @@ interface Week {
 
 interface Props {
     weeks: Week[];
-    currentWeek: number;
 }
 
-const { weeks, currentWeek } = Astro.props;
+const { weeks } = Astro.props;
 
 const weekLabel = (id: string) => `Week ${id.replace("REG", "")}`;
-const defaultWeekId = `REG${currentWeek}`;
+const defaultWeekId = `REG${getScheduleWeekNumber()}`;
+const compactDate = (date: string | null) => date?.replace(
+    /\b(January|February|March|April|May|June|July|August|September|October|November|December)\b/g,
+    (month) => month.slice(0, 3),
+);
 ---
 
 <div class="season-schedule-container">
@@ -55,14 +61,29 @@ const defaultWeekId = `REG${currentWeek}`;
                 {w.matches.map((m) => (
                     <div class="schedule-row">
                         <span class="schedule-row__date">
-                            {m.date}
-                            {m.final ? " — Final" : m.time ? ` — ${m.time}` : ""}
+                            {compactDate(m.date)}
                         </span>
                         <div class="schedule-row__teams">
-                            <TeamRow team={m.away} size="sm" showRecord={false} />
-                            <span class="schedule-row__at">@</span>
-                            <TeamRow team={m.home} size="sm" showRecord={false} />
+                            <div class="schedule-row__team">
+                                <TeamRow team={m.away} size="sm" showRecord={false} />
+                                {m.final && m.awayScore != null && (
+                                    <span class="schedule-row__score">{m.awayScore}</span>
+                                )}
+                            </div>
+                            <div class="schedule-row__status">
+                                <span class="schedule-row__at">@</span>
+                                {m.final && <span class="schedule-row__final">Final</span>}
+                            </div>
+                            <div class="schedule-row__team">
+                                <TeamRow team={m.home} size="sm" showRecord={false} />
+                                {m.final && m.homeScore != null && (
+                                    <span class="schedule-row__score">{m.homeScore}</span>
+                                )}
+                            </div>
                         </div>
+                        {!m.final && m.time && (
+                            <span class="schedule-row__time">{m.time}</span>
+                        )}
                     </div>
                 ))}
             </div>
@@ -71,7 +92,35 @@ const defaultWeekId = `REG${currentWeek}`;
 </div>
 
 <script>
+    import { getScheduleWeekNumber } from "../../scraper/config.js";
+
     const tabsContainer = document.getElementById("week-tabs");
+
+    const selectWeek = (week: string) => {
+        tabsContainer?.querySelectorAll(".week-tab").forEach((el) =>
+            el.classList.toggle("active", el.getAttribute("data-week") === week),
+        );
+        document.querySelectorAll<HTMLElement>("[data-week-panel]").forEach((panel) => {
+            panel.hidden = panel.getAttribute("data-week-panel") !== week;
+        });
+    };
+
+    // Recompute on page load: the build and the scraped JSON may be several days old.
+    selectWeek(`REG${getScheduleWeekNumber()}`);
+
+    requestAnimationFrame(() => {
+        const activeTab = tabsContainer?.querySelector<HTMLElement>(".week-tab.active");
+        if (!tabsContainer || !activeTab) return;
+
+        const containerBounds = tabsContainer.getBoundingClientRect();
+        const tabBounds = activeTab.getBoundingClientRect();
+        if (tabBounds.left < containerBounds.left || tabBounds.right > containerBounds.right) {
+            // Scroll only the tabs, keeping the page at its initial vertical position.
+            tabsContainer.scrollLeft +=
+                tabBounds.left - containerBounds.left -
+                (tabsContainer.clientWidth - tabBounds.width) / 2;
+        }
+    });
 
     tabsContainer?.addEventListener("click", (e) => {
         const target = e.target as HTMLElement;
@@ -81,16 +130,7 @@ const defaultWeekId = `REG${currentWeek}`;
         const week = btn.getAttribute("data-week");
         if (!week) return;
 
-        tabsContainer
-            .querySelectorAll(".week-tab")
-            .forEach((el) =>
-                el.classList.toggle("active", el.getAttribute("data-week") === week),
-            );
-
-        document.querySelectorAll("[data-week-panel]").forEach((panel) => {
-            (panel as HTMLElement).hidden =
-                panel.getAttribute("data-week-panel") !== week;
-        });
+        selectWeek(week);
 
         btn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
     });

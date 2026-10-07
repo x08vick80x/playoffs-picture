@@ -10,112 +10,144 @@
           "away": "Patriots",
           "date": "Wednesday, September 9",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 10,
+          "homeScore": 13
         },
         {
           "home": "Rams",
           "away": "49ers",
           "date": "Thursday, September 10",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 27,
+          "homeScore": 7
         },
         {
           "home": "Panthers",
           "away": "Bears",
           "date": "Sunday, September 13",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 59,
+          "homeScore": 37
         },
         {
           "home": "Bengals",
           "away": "Buccaneers",
           "date": "Sunday, September 13",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 27,
+          "homeScore": 33
         },
         {
           "home": "Lions",
           "away": "Saints",
           "date": "Sunday, September 13",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 30,
+          "homeScore": 31
         },
         {
           "home": "Texans",
           "away": "Bills",
           "date": "Sunday, September 13",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 36,
+          "homeScore": 31
         },
         {
           "home": "Colts",
           "away": "Ravens",
           "date": "Sunday, September 13",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 41,
+          "homeScore": 23
         },
         {
           "home": "Jaguars",
           "away": "Browns",
           "date": "Sunday, September 13",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 10,
+          "homeScore": 34
         },
         {
           "home": "Steelers",
           "away": "Falcons",
           "date": "Sunday, September 13",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 13,
+          "homeScore": 20
         },
         {
           "home": "Titans",
           "away": "Jets",
           "date": "Sunday, September 13",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 23,
+          "homeScore": 10
         },
         {
           "home": "Chargers",
           "away": "Cardinals",
           "date": "Sunday, September 13",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 26,
+          "homeScore": 14
         },
         {
           "home": "Raiders",
           "away": "Dolphins",
           "date": "Sunday, September 13",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 13,
+          "homeScore": 27
         },
         {
           "home": "Vikings",
           "away": "Packers",
           "date": "Sunday, September 13",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 22,
+          "homeScore": 39
         },
         {
           "home": "Eagles",
           "away": "Commanders",
           "date": "Sunday, September 13",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 22,
+          "homeScore": 24
         },
         {
           "home": "Giants",
           "away": "Cowboys",
           "date": "Sunday, September 13",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 20,
+          "homeScore": 28
         },
         {
           "home": "Chiefs",
           "away": "Broncos",
           "date": "Monday, September 14",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 10,
+          "homeScore": 31
         }
       ]
     },
@@ -127,112 +159,144 @@
           "away": "Lions",
           "date": "Thursday, September 17",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 31,
+          "homeScore": 41
         },
         {
           "home": "Falcons",
           "away": "Panthers",
           "date": "Sunday, September 20",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 34,
+          "homeScore": 3
         },
         {
           "home": "Ravens",
           "away": "Saints",
           "date": "Sunday, September 20",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 24,
+          "homeScore": 17
         },
         {
           "home": "Bears",
           "away": "Vikings",
           "date": "Sunday, September 20",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 9,
+          "homeScore": 3
         },
         {
           "home": "Texans",
           "away": "Bengals",
           "date": "Sunday, September 20",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 20,
+          "homeScore": 6
         },
         {
           "home": "Patriots",
           "away": "Steelers",
           "date": "Sunday, September 20",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 3,
+          "homeScore": 20
         },
         {
           "home": "Jets",
           "away": "Packers",
           "date": "Sunday, September 20",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 20,
+          "homeScore": 17
         },
         {
           "home": "Buccaneers",
           "away": "Browns",
           "date": "Sunday, September 20",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 23,
+          "homeScore": 19
         },
         {
           "home": "Titans",
           "away": "Eagles",
           "date": "Sunday, September 20",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 24,
+          "homeScore": 20
         },
         {
           "home": "Broncos",
           "away": "Jaguars",
           "date": "Sunday, September 20",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 13,
+          "homeScore": 20
         },
         {
           "home": "Chargers",
           "away": "Raiders",
           "date": "Sunday, September 20",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 26,
+          "homeScore": 14
         },
         {
           "home": "Cardinals",
           "away": "Seahawks",
           "date": "Sunday, September 20",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 31,
+          "homeScore": 7
         },
         {
           "home": "Cowboys",
           "away": "Commanders",
           "date": "Sunday, September 20",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 20,
+          "homeScore": 37
         },
         {
           "home": "49ers",
           "away": "Dolphins",
           "date": "Sunday, September 20",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 13,
+          "homeScore": 35
         },
         {
           "home": "Chiefs",
           "away": "Colts",
           "date": "Sunday, September 20",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 30,
+          "homeScore": 33
         },
         {
           "home": "Rams",
           "away": "Giants",
           "date": "Monday, September 21",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 6,
+          "homeScore": 28
         }
       ]
     },
@@ -244,112 +308,144 @@
           "away": "Falcons",
           "date": "Thursday, September 24",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 35,
+          "homeScore": 14
         },
         {
           "home": "Bills",
           "away": "Chargers",
           "date": "Sunday, September 27",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 16,
+          "homeScore": 24
         },
         {
           "home": "Browns",
           "away": "Panthers",
           "date": "Sunday, September 27",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 18,
+          "homeScore": 21
         },
         {
           "home": "Lions",
           "away": "Jets",
           "date": "Sunday, September 27",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 24,
+          "homeScore": 31
         },
         {
           "home": "Colts",
           "away": "Texans",
           "date": "Sunday, September 27",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 17,
+          "homeScore": 19
         },
         {
           "home": "Jaguars",
           "away": "Patriots",
           "date": "Sunday, September 27",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 6,
+          "homeScore": 35
         },
         {
           "home": "Dolphins",
           "away": "Chiefs",
           "date": "Sunday, September 27",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 24,
+          "homeScore": 10
         },
         {
           "home": "Giants",
           "away": "Titans",
           "date": "Sunday, September 27",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 7,
+          "homeScore": 12
         },
         {
           "home": "Steelers",
           "away": "Bengals",
           "date": "Sunday, September 27",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 27,
+          "homeScore": 30
         },
         {
           "home": "Commanders",
           "away": "Seahawks",
           "date": "Sunday, September 27",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 31,
+          "homeScore": 33
         },
         {
           "home": "49ers",
           "away": "Cardinals",
           "date": "Sunday, September 27",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 30,
+          "homeScore": 36
         },
         {
           "home": "Buccaneers",
           "away": "Vikings",
           "date": "Sunday, September 27",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 23,
+          "homeScore": 16
         },
         {
           "home": "Saints",
           "away": "Raiders",
           "date": "Sunday, September 27",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 35,
+          "homeScore": 27
         },
         {
           "home": "Cowboys",
           "away": "Ravens",
           "date": "Sunday, September 27",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 34,
+          "homeScore": 31
         },
         {
           "home": "Broncos",
           "away": "Rams",
           "date": "Sunday, September 27",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 26,
+          "homeScore": 30
         },
         {
           "home": "Bears",
           "away": "Eagles",
           "date": "Monday, September 28",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 7,
+          "homeScore": 27
         }
       ]
     },
@@ -361,112 +457,144 @@
           "away": "Steelers",
           "date": "Thursday, October 1",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 24,
+          "homeScore": 27
         },
         {
           "home": "Commanders",
           "away": "Colts",
           "date": "Sunday, October 4",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 30,
+          "homeScore": 13
         },
         {
           "home": "Ravens",
           "away": "Titans",
           "date": "Sunday, October 4",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 18,
+          "homeScore": 24
         },
         {
           "home": "Bills",
           "away": "Patriots",
           "date": "Sunday, October 4",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 29,
+          "homeScore": 26
         },
         {
           "home": "Bears",
           "away": "Jets",
           "date": "Sunday, October 4",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 12,
+          "homeScore": 23
         },
         {
           "home": "Bengals",
           "away": "Jaguars",
           "date": "Sunday, October 4",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 22,
+          "homeScore": 17
         },
         {
           "home": "Texans",
           "away": "Cowboys",
           "date": "Sunday, October 4",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 34,
+          "homeScore": 30
         },
         {
           "home": "Giants",
           "away": "Cardinals",
           "date": "Sunday, October 4",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 24,
+          "homeScore": 36
         },
         {
           "home": "Eagles",
           "away": "Rams",
           "date": "Sunday, October 4",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 24,
+          "homeScore": 20
         },
         {
           "home": "Buccaneers",
           "away": "Packers",
           "date": "Sunday, October 4",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 17,
+          "homeScore": 14
         },
         {
           "home": "Vikings",
           "away": "Dolphins",
           "date": "Sunday, October 4",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 10,
+          "homeScore": 15
         },
         {
           "home": "Raiders",
           "away": "Chiefs",
           "date": "Sunday, October 4",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 30,
+          "homeScore": 27
         },
         {
           "home": "Seahawks",
           "away": "Chargers",
           "date": "Sunday, October 4",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 23,
+          "homeScore": 30
         },
         {
           "home": "49ers",
           "away": "Broncos",
           "date": "Sunday, October 4",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 14,
+          "homeScore": 24
         },
         {
           "home": "Panthers",
           "away": "Lions",
           "date": "Sunday, October 4",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 26,
+          "homeScore": 32
         },
         {
           "home": "Saints",
           "away": "Falcons",
           "date": "Monday, October 5",
           "time": null,
-          "final": true
+          "final": true,
+          "awayScore": 45,
+          "homeScore": 24
         }
       ]
     },
@@ -478,105 +606,135 @@
           "away": "Buccaneers",
           "date": "Thursday, October 8",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Jaguars",
           "away": "Eagles",
           "date": "Sunday, October 11",
           "time": "9:30 AM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Dolphins",
           "away": "Bengals",
           "date": "Sunday, October 11",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Patriots",
           "away": "Raiders",
           "date": "Sunday, October 11",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Saints",
           "away": "Vikings",
           "date": "Sunday, October 11",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Jets",
           "away": "Browns",
           "date": "Sunday, October 11",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Steelers",
           "away": "Colts",
           "date": "Sunday, October 11",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Titans",
           "away": "Texans",
           "date": "Sunday, October 11",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Commanders",
           "away": "Giants",
           "date": "Sunday, October 11",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Packers",
           "away": "Bears",
           "date": "Sunday, October 11",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Chargers",
           "away": "Broncos",
           "date": "Sunday, October 11",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Cardinals",
           "away": "Lions",
           "date": "Sunday, October 11",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Seahawks",
           "away": "49ers",
           "date": "Sunday, October 11",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Falcons",
           "away": "Ravens",
           "date": "Sunday, October 11",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Rams",
           "away": "Bills",
           "date": "Monday, October 12",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         }
       ]
     },
@@ -588,98 +746,126 @@
           "away": "Seahawks",
           "date": "Thursday, October 15",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Jaguars",
           "away": "Texans",
           "date": "Sunday, October 18",
           "time": "9:30 AM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Falcons",
           "away": "Bears",
           "date": "Sunday, October 18",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Browns",
           "away": "Ravens",
           "date": "Sunday, October 18",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Colts",
           "away": "Titans",
           "date": "Sunday, October 18",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Patriots",
           "away": "Jets",
           "date": "Sunday, October 18",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Giants",
           "away": "Saints",
           "date": "Sunday, October 18",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Eagles",
           "away": "Panthers",
           "date": "Sunday, October 18",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Buccaneers",
           "away": "Steelers",
           "date": "Sunday, October 18",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Rams",
           "away": "Cardinals",
           "date": "Sunday, October 18",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Chiefs",
           "away": "Chargers",
           "date": "Sunday, October 18",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Raiders",
           "away": "Bills",
           "date": "Sunday, October 18",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Packers",
           "away": "Cowboys",
           "date": "Sunday, October 18",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "49ers",
           "away": "Commanders",
           "date": "Monday, October 19",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         }
       ]
     },
@@ -691,98 +877,126 @@
           "away": "Patriots",
           "date": "Thursday, October 22",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Saints",
           "away": "Steelers",
           "date": "Sunday, October 25",
           "time": "9:30 AM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Falcons",
           "away": "49ers",
           "date": "Sunday, October 25",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Ravens",
           "away": "Bengals",
           "date": "Sunday, October 25",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Panthers",
           "away": "Buccaneers",
           "date": "Sunday, October 25",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Texans",
           "away": "Giants",
           "date": "Sunday, October 25",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Vikings",
           "away": "Colts",
           "date": "Sunday, October 25",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Jets",
           "away": "Dolphins",
           "date": "Sunday, October 25",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Titans",
           "away": "Browns",
           "date": "Sunday, October 25",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Cardinals",
           "away": "Broncos",
           "date": "Sunday, October 25",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Lions",
           "away": "Packers",
           "date": "Sunday, October 25",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Raiders",
           "away": "Rams",
           "date": "Sunday, October 25",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Seahawks",
           "away": "Chiefs",
           "date": "Sunday, October 25",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Eagles",
           "away": "Cowboys",
           "date": "Monday, October 26",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         }
       ]
     },
@@ -794,98 +1008,126 @@
           "away": "Panthers",
           "date": "Thursday, October 29",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Bills",
           "away": "Ravens",
           "date": "Sunday, November 1",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Bengals",
           "away": "Titans",
           "date": "Sunday, November 1",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Cowboys",
           "away": "Cardinals",
           "date": "Sunday, November 1",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Lions",
           "away": "Vikings",
           "date": "Sunday, November 1",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Jaguars",
           "away": "Colts",
           "date": "Sunday, November 1",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Jets",
           "away": "Raiders",
           "date": "Sunday, November 1",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Steelers",
           "away": "Browns",
           "date": "Sunday, November 1",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Buccaneers",
           "away": "Falcons",
           "date": "Sunday, November 1",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Rams",
           "away": "Chargers",
           "date": "Sunday, November 1",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Broncos",
           "away": "Chiefs",
           "date": "Sunday, November 1",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Dolphins",
           "away": "Patriots",
           "date": "Sunday, November 1",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Commanders",
           "away": "Eagles",
           "date": "Sunday, November 1",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Seahawks",
           "away": "Bears",
           "date": "Monday, November 2",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         }
       ]
     },
@@ -897,105 +1139,135 @@
           "away": "Jaguars",
           "date": "Thursday, November 5",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Falcons",
           "away": "Bengals",
           "date": "Sunday, November 8",
           "time": "9:30 AM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Panthers",
           "away": "Broncos",
           "date": "Sunday, November 8",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Colts",
           "away": "Cowboys",
           "date": "Sunday, November 8",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Chiefs",
           "away": "Jets",
           "date": "Sunday, November 8",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Dolphins",
           "away": "Lions",
           "date": "Sunday, November 8",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Saints",
           "away": "Browns",
           "date": "Sunday, November 8",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Eagles",
           "away": "Giants",
           "date": "Sunday, November 8",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Commanders",
           "away": "Rams",
           "date": "Sunday, November 8",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Chargers",
           "away": "Texans",
           "date": "Sunday, November 8",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "49ers",
           "away": "Raiders",
           "date": "Sunday, November 8",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Patriots",
           "away": "Packers",
           "date": "Sunday, November 8",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Seahawks",
           "away": "Cardinals",
           "date": "Sunday, November 8",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Bears",
           "away": "Buccaneers",
           "date": "Sunday, November 8",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Vikings",
           "away": "Bills",
           "date": "Monday, November 9",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         }
       ]
     },
@@ -1007,98 +1279,126 @@
           "away": "Commanders",
           "date": "Thursday, November 12",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Lions",
           "away": "Patriots",
           "date": "Sunday, November 15",
           "time": "9:30 AM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Falcons",
           "away": "Chiefs",
           "date": "Sunday, November 15",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Browns",
           "away": "Texans",
           "date": "Sunday, November 15",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Packers",
           "away": "Vikings",
           "date": "Sunday, November 15",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Colts",
           "away": "Dolphins",
           "date": "Sunday, November 15",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Saints",
           "away": "Panthers",
           "date": "Sunday, November 15",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Jets",
           "away": "Bills",
           "date": "Sunday, November 15",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Titans",
           "away": "Jaguars",
           "date": "Sunday, November 15",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Cardinals",
           "away": "Rams",
           "date": "Sunday, November 15",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Raiders",
           "away": "Seahawks",
           "date": "Sunday, November 15",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Cowboys",
           "away": "49ers",
           "date": "Sunday, November 15",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Bengals",
           "away": "Steelers",
           "date": "Sunday, November 15",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Ravens",
           "away": "Chargers",
           "date": "Monday, November 16",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         }
       ]
     },
@@ -1110,91 +1410,117 @@
           "away": "Colts",
           "date": "Thursday, November 19",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Bills",
           "away": "Dolphins",
           "date": "Sunday, November 22",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Panthers",
           "away": "Ravens",
           "date": "Sunday, November 22",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Bears",
           "away": "Saints",
           "date": "Sunday, November 22",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Cowboys",
           "away": "Titans",
           "date": "Sunday, November 22",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Lions",
           "away": "Buccaneers",
           "date": "Sunday, November 22",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Chiefs",
           "away": "Cardinals",
           "date": "Sunday, November 22",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Giants",
           "away": "Jaguars",
           "date": "Sunday, November 22",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Chargers",
           "away": "Jets",
           "date": "Sunday, November 22",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Broncos",
           "away": "Raiders",
           "date": "Sunday, November 22",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Eagles",
           "away": "Steelers",
           "date": "Sunday, November 22",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "49ers",
           "away": "Vikings",
           "date": "Sunday, November 22",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Commanders",
           "away": "Bengals",
           "date": "Monday, November 23",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         }
       ]
     },
@@ -1206,112 +1532,144 @@
           "away": "Packers",
           "date": "Wednesday, November 25",
           "time": "8:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Lions",
           "away": "Bears",
           "date": "Thursday, November 26",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Cowboys",
           "away": "Eagles",
           "date": "Thursday, November 26",
           "time": "4:30 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Bills",
           "away": "Chiefs",
           "date": "Thursday, November 26",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Steelers",
           "away": "Broncos",
           "date": "Friday, November 27",
           "time": "3:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Bengals",
           "away": "Saints",
           "date": "Sunday, November 29",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Browns",
           "away": "Raiders",
           "date": "Sunday, November 29",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Texans",
           "away": "Ravens",
           "date": "Sunday, November 29",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Colts",
           "away": "Giants",
           "date": "Sunday, November 29",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Dolphins",
           "away": "Jets",
           "date": "Sunday, November 29",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Vikings",
           "away": "Falcons",
           "date": "Sunday, November 29",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Jaguars",
           "away": "Titans",
           "date": "Sunday, November 29",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Cardinals",
           "away": "Commanders",
           "date": "Sunday, November 29",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "49ers",
           "away": "Seahawks",
           "date": "Sunday, November 29",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Chargers",
           "away": "Patriots",
           "date": "Sunday, November 29",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Buccaneers",
           "away": "Panthers",
           "date": "Monday, November 30",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         }
       ]
     },
@@ -1323,98 +1681,126 @@
           "away": "Chiefs",
           "date": "Thursday, December 3",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Falcons",
           "away": "Lions",
           "date": "Sunday, December 6",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Bears",
           "away": "Jaguars",
           "date": "Sunday, December 6",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Browns",
           "away": "Bengals",
           "date": "Sunday, December 6",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Saints",
           "away": "Packers",
           "date": "Sunday, December 6",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Giants",
           "away": "49ers",
           "date": "Sunday, December 6",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Buccaneers",
           "away": "Chargers",
           "date": "Sunday, December 6",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Titans",
           "away": "Commanders",
           "date": "Sunday, December 6",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Cardinals",
           "away": "Eagles",
           "date": "Sunday, December 6",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Broncos",
           "away": "Dolphins",
           "date": "Sunday, December 6",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Vikings",
           "away": "Panthers",
           "date": "Sunday, December 6",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Patriots",
           "away": "Bills",
           "date": "Sunday, December 6",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Steelers",
           "away": "Texans",
           "date": "Sunday, December 6",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Seahawks",
           "away": "Cowboys",
           "date": "Monday, December 7",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         }
       ]
     },
@@ -1426,105 +1812,135 @@
           "away": "Vikings",
           "date": "Thursday, December 10",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Ravens",
           "away": "Buccaneers",
           "date": "Sunday, December 13",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Panthers",
           "away": "Saints",
           "date": "Sunday, December 13",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Browns",
           "away": "Falcons",
           "date": "Sunday, December 13",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Lions",
           "away": "Titans",
           "date": "Sunday, December 13",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Dolphins",
           "away": "Bears",
           "date": "Sunday, December 13",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Jets",
           "away": "Broncos",
           "date": "Sunday, December 13",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Eagles",
           "away": "Colts",
           "date": "Sunday, December 13",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Commanders",
           "away": "Texans",
           "date": "Sunday, December 13",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Raiders",
           "away": "Chargers",
           "date": "Sunday, December 13",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Bengals",
           "away": "Chiefs",
           "date": "Sunday, December 13",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Seahawks",
           "away": "Giants",
           "date": "Sunday, December 13",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "49ers",
           "away": "Rams",
           "date": "Sunday, December 13",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Packers",
           "away": "Bills",
           "date": "Sunday, December 13",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Jaguars",
           "away": "Steelers",
           "date": "Monday, December 14",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         }
       ]
     },
@@ -1536,112 +1952,144 @@
           "away": "49ers",
           "date": "Thursday, December 17",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Eagles",
           "away": "Seahawks",
           "date": "Saturday, December 19",
           "time": "5:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Bills",
           "away": "Bears",
           "date": "Saturday, December 19",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Panthers",
           "away": "Bengals",
           "date": "Sunday, December 20",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Packers",
           "away": "Dolphins",
           "date": "Sunday, December 20",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Texans",
           "away": "Jaguars",
           "date": "Sunday, December 20",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Giants",
           "away": "Browns",
           "date": "Sunday, December 20",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Steelers",
           "away": "Ravens",
           "date": "Sunday, December 20",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Buccaneers",
           "away": "Saints",
           "date": "Sunday, December 20",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Titans",
           "away": "Colts",
           "date": "Sunday, December 20",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Commanders",
           "away": "Falcons",
           "date": "Sunday, December 20",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Cardinals",
           "away": "Jets",
           "date": "Sunday, December 20",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Rams",
           "away": "Cowboys",
           "date": "Sunday, December 20",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Raiders",
           "away": "Broncos",
           "date": "Sunday, December 20",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Vikings",
           "away": "Lions",
           "date": "Sunday, December 20",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Chiefs",
           "away": "Patriots",
           "date": "Monday, December 21",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         }
       ]
     },
@@ -1653,84 +2101,108 @@
           "away": "Texans",
           "date": "Thursday, December 24",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Bears",
           "away": "Packers",
           "date": "Friday, December 25",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Broncos",
           "away": "Bills",
           "date": "Friday, December 25",
           "time": "4:30 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Seahawks",
           "away": "Rams",
           "date": "Friday, December 25",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Ravens",
           "away": "Browns",
           "date": "Sunday, December 27",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Dolphins",
           "away": "Chargers",
           "date": "Sunday, December 27",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Saints",
           "away": "Cardinals",
           "date": "Sunday, December 27",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Jets",
           "away": "Patriots",
           "date": "Sunday, December 27",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Raiders",
           "away": "Titans",
           "date": "Sunday, December 27",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Chiefs",
           "away": "49ers",
           "date": "Sunday, December 27",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Cowboys",
           "away": "Jaguars",
           "date": "Sunday, December 27",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Lions",
           "away": "Giants",
           "date": "Monday, December 28",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         }
       ]
     },
@@ -1742,84 +2214,108 @@
           "away": "Ravens",
           "date": "Thursday, December 31",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Falcons",
           "away": "Saints",
           "date": "Sunday, January 3",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Panthers",
           "away": "Seahawks",
           "date": "Sunday, January 3",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Browns",
           "away": "Colts",
           "date": "Sunday, January 3",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Cowboys",
           "away": "Giants",
           "date": "Sunday, January 3",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Dolphins",
           "away": "Bills",
           "date": "Sunday, January 3",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Jets",
           "away": "Vikings",
           "date": "Sunday, January 3",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Titans",
           "away": "Steelers",
           "date": "Sunday, January 3",
           "time": "1:00 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Cardinals",
           "away": "Raiders",
           "date": "Sunday, January 3",
           "time": "4:05 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Bears",
           "away": "Lions",
           "date": "Sunday, January 3",
           "time": "4:25 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "49ers",
           "away": "Eagles",
           "date": "Sunday, January 3",
           "time": "8:20 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         },
         {
           "home": "Packers",
           "away": "Texans",
           "date": "Monday, January 4",
           "time": "8:15 PM",
-          "final": false
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
         }
       ]
     },

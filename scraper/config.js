@@ -36,5 +36,19 @@ export function getCurrentWeekNumber(now = new Date()) {
     return upcoming ? parseInt(upcoming.id.replace('REG', ''), 10) : TOTAL_WEEKS;
 }
 
+// The schedule tab advances every Wednesday at midnight in France, independently
+// of when the static data was last scraped. REG1 ends on the first Wednesday below.
+export function getScheduleWeekNumber(now = new Date()) {
+    const parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'Europe/Paris', year: 'numeric', month: '2-digit', day: '2-digit',
+    }).formatToParts(now);
+    const value = (type) => Number(parts.find(part => part.type === type).value);
+    const today = Date.UTC(value('year'), value('month') - 1, value('day'));
+    const firstEnd = WEEK_SCHEDULE[0].end;
+    const firstWednesday = Date.UTC(firstEnd.getUTCFullYear(), firstEnd.getUTCMonth(), firstEnd.getUTCDate());
+    const week = 2 + Math.floor((today - firstWednesday) / (7 * 24 * 60 * 60 * 1000));
+    return Math.max(1, Math.min(TOTAL_WEEKS, week));
+}
+
 // Below this week, standings are too volatile for playoff seeds/bubble/eliminated to be meaningful.
 export const PLAYOFF_PICTURE_MIN_WEEK = 8;

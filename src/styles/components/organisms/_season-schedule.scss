@@ -40,8 +40,8 @@
 }
 
 .week-panel {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: $spacing-xs;
 
     &[hidden] {
@@ -55,31 +55,118 @@
     gap: 0.4rem;
     background: $bg-card;
     border-radius: $radius-md;
-    padding: $spacing-xs $spacing-sm;
+    padding: $spacing-xs;
+    min-width: 0;
 
     &__date {
         color: $text-secondary;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        text-align: center;
     }
 
     &__teams {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        align-items: start;
+        gap: $spacing-xs;
+    }
+
+    &__team {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: $spacing-sm;
+        min-width: 0;
+
+        &:first-child {
+            align-items: flex-start;
+        }
+        &:last-child {
+            align-items: flex-end;
+        }
     }
 
     .team-row {
-        flex: 1;
+        justify-content: center;
+        gap: $spacing-xs;
+    }
+
+    .team-logo {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+    .team-row__name {
+        font-size: 1.6rem;
     }
 
     &__at {
         color: $text-secondary;
         font-weight: bold;
         font-size: 1.3rem;
+        line-height: 2.4rem;
+    }
+
+    &__status {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 1.3rem;
+    }
+
+    &__final,
+    &__time {
+        color: $text-secondary;
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        text-align: center;
+    }
+
+    &__time {
+        line-height: 1.5rem;
+    }
+
+    &__score {
+        align-self: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        font-style: italic;
+        font-variant-numeric: tabular-nums;
+        color: var(--text-secondary);
+    }
+
+    @media (max-width: 767px) {
+        .team-row__name-full {
+            display: none;
+        }
+
+        .team-row__name-abbr {
+            display: block;
+        }
+    }
+
+    @include mobile {
+        &__teams {
+            gap: 0.2rem;
+        }
+
+        &__at {
+            line-height: 2rem;
+        }
+
+        .team-logo {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .team-row__name {
+            font-size: 1.4rem;
+        }
     }
 }
 
 .season-schedule-container .empty-state {
+    grid-column: 1 / -1;
     text-align: center;
     color: $text-secondary;
     padding: $spacing-md 0;
