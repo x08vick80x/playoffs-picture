@@ -1,0 +1,35 @@
+---
+import Logo from '@/components/atoms/Logo/Logo.astro';
+
+interface Props {
+    title: string;
+    teams: { team: string; record: string; seed: string; rank?: number }[];
+    ranking?: 'division' | 'conference' | 'league';
+}
+
+const { title, teams, ranking = 'division' } = Astro.props;
+---
+
+<table class="standings-table">
+    <caption>{title}</caption>
+    <thead>
+        <tr><th scope="col">#</th><th scope="col">Team</th><th scope="col">Rec</th></tr>
+    </thead>
+    <tbody>
+        {teams.map((team, index) => (
+            <tr class:list={{
+                'playoff-spot': ranking === 'conference' && Number(team.seed) <= 7,
+                'top-seed': ranking === 'conference' && Number(team.seed) === 1,
+            }}>
+                <td class="standings-table__rank">{ranking === 'conference' ? team.seed : ranking === 'league' ? team.rank : index + 1}</td>
+                <th scope="row">
+                    <span class="standings-table__team">
+                        <Logo team={team.team} size="sm" />
+                        <span>{team.team}</span>
+                    </span>
+                </th>
+                <td class="standings-table__record">{team.record}</td>
+            </tr>
+        ))}
+    </tbody>
+</table>

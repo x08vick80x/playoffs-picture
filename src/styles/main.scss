@@ -16,6 +16,7 @@
 @use '@/components/atoms/UnavailableNotice/UnavailableNotice';
 
 // Molecules
+@use "@/components/molecules/StandingsTable/StandingsTable";
 @use '@/components/molecules/TeamRow/TeamRow';
 @use '@/components/molecules/ByeCard/ByeCard';
 @use '@/components/molecules/MatchupCard/MatchupCard';

@@ -49,8 +49,8 @@ export default defineConfig({
           name: 'NFL Playoff Picture 2026',
           short_name: 'NFL Playoff',
           description: 'NFL Playoff Picture 2026 Standings',
-          theme_color: '#013369',
-          background_color: '#013369',
+          theme_color: '#252525',
+          background_color: '#252525',
           display: 'standalone',
           start_url: '/',
           icons: [

@@ -1,6 +1,7 @@
 ---
-import SectionTitle from "@/components/atoms/SectionTitle/SectionTitle.astro";
-import Logo from "@/components/atoms/Logo/Logo.astro";
+import SectionTitle from '@/components/atoms/SectionTitle/SectionTitle.astro';
+import StandingsTable from '@/components/molecules/StandingsTable/StandingsTable.astro';
+import { DIVISIONS, getDivisionTeams, rankLeague } from '@/utils/standings.js';
 
 interface Team {
     seed: string;
@@ -15,108 +16,74 @@ interface Props {
 }
 
 const { afc, nfc } = Astro.props;
+const conferences = { AFC: afc, NFC: nfc };
+const filters = [
+    { id: 'divisions', label: 'Divisions' },
+    { id: 'afc', label: 'AFC' },
+    { id: 'nfc', label: 'NFC' },
+    { id: 'league', label: 'NFL' },
+];
 ---
 
-<div class="standings-container">
+<div class="standings-container" data-standings>
     <SectionTitle title="Standings" />
 
-    <div class="conference-toggle" id="conf-toggle" data-active="afc">
-        <div class="toggle-glider"></div>
-        <button id="btn-afc" class="toggle-btn active" data-conf="afc">
-            <svg class="conf-logo" width="30" height="30"
-                ><use href="/sprites.svg#afc"></use></svg
-            >
-            AFC
-        </button>
-        <button id="btn-nfc" class="toggle-btn" data-conf="nfc">
-            <svg class="conf-logo" width="30" height="30"
-                ><use href="/sprites.svg#nfc"></use></svg
-            >
-            NFC
-        </button>
+    <nav class="standings-filters" aria-label="Standings filters">
+        {filters.map(({ id, label }) => (
+            <a
+                href={`#standings-${id}`}
+                class="standings-filters__link"
+                data-standings-filter={id}
+                aria-controls={`standings-${id}`}
+                aria-current={id === 'divisions' ? 'true' : undefined}
+            >{label}</a>
+        ))}
+    </nav>
+
+    <div id="standings-divisions" class="standings-divisions" data-standings-panel="divisions">
+        {DIVISIONS.map(division => (
+            <StandingsTable
+                title={division.name}
+                teams={getDivisionTeams(conferences[division.conference as keyof typeof conferences], division)}
+            />
+        ))}
     </div>
 
-    <div id="table-afc" class="standings-table active">
-        <div class="table-header">
-            <span class="col-seed">#</span>
-            <span class="col-team">Team</span>
-            <span class="col-record">Rec</span>
-        </div>
-        {
-            afc.map((team, index) => (
-                <div
-                    class={`table-row ${index < 7 ? "playoff-spot" : ""} ${index === 0 ? "top-seed" : ""}`}
-                >
-                    <span class="col-seed">{team.seed}</span>
-                    <span class="col-team">
-                        <Logo team={team.team} size="sm" />
-                        <span class="team-name">{team.team}</span>
-                    </span>
-                    <span class="col-record">{team.record}</span>
-                </div>
-            ))
-        }
+    <div id="standings-afc" data-standings-panel="afc" hidden>
+        <StandingsTable title="AFC" teams={afc} ranking="conference" />
     </div>
-
-    <div id="table-nfc" class="standings-table">
-        <div class="table-header nfc-header">
-            <span class="col-seed">#</span>
-            <span class="col-team">Team</span>
-            <span class="col-record">Rec</span>
-        </div>
-        {
-            nfc.map((team, index) => (
-                <div
-                    class={`table-row ${index < 7 ? "playoff-spot" : ""} ${index === 0 ? "top-seed" : ""}`}
-                >
-                    <span class="col-seed">{team.seed}</span>
-                    <span class="col-team">
-                        <Logo team={team.team} size="sm" />
-                        <span class="team-name">{team.team}</span>
-                    </span>
-                    <span class="col-record">{team.record}</span>
-                </div>
-            ))
-        }
+    <div id="standings-nfc" data-standings-panel="nfc" hidden>
+        <StandingsTable title="NFC" teams={nfc} ranking="conference" />
+    </div>
+    <div id="standings-league" data-standings-panel="league" hidden>
+        <p class="standings-note">Sorted by win percentage. Tied teams share the same rank.</p>
+        <StandingsTable title="NFL" teams={rankLeague([...afc, ...nfc])} ranking="league" />
     </div>
 </div>
 
 <script>
-    const container = document.getElementById("conf-toggle");
-    const btnAfc = document.getElementById("btn-afc");
-    const btnNfc = document.getElementById("btn-nfc");
-    const tableAfc = document.getElementById("table-afc");
-    const tableNfc = document.getElementById("table-nfc");
+    document.querySelectorAll<HTMLElement>('[data-standings]').forEach(container => {
+        const links = container.querySelectorAll<HTMLAnchorElement>('[data-standings-filter]');
+        const panels = container.querySelectorAll<HTMLElement>('[data-standings-panel]');
 
-    function setActive(conf: string) {
-        if (!container || !btnAfc || !btnNfc || !tableAfc || !tableNfc) return;
-
-        // Update container state for glider transition
-        container.setAttribute("data-active", conf);
-
-        // Update buttons text color
-        if (conf === "afc") {
-            btnAfc.classList.add("active");
-            btnNfc.classList.remove("active");
-            tableAfc.classList.add("active");
-            tableNfc.classList.remove("active");
-        } else {
-            btnNfc.classList.add("active");
-            btnAfc.classList.remove("active");
-            tableNfc.classList.add("active");
-            tableAfc.classList.remove("active");
+        function activate(filter: string) {
+            panels.forEach(panel => { panel.hidden = panel.dataset.standingsPanel !== filter; });
+            links.forEach(link => {
+                if (link.dataset.standingsFilter === filter) link.setAttribute('aria-current', 'true');
+                else link.removeAttribute('aria-current');
+            });
         }
-    }
 
-    if (btnAfc && btnNfc) {
-        btnAfc.addEventListener("click", () => {
-            setActive("afc");
-            if (navigator.vibrate) navigator.vibrate(10);
-        });
+        function syncHash() {
+            const link = Array.from(links).find(link => link.hash === window.location.hash);
+            activate(link?.dataset.standingsFilter || 'divisions');
+        }
 
-        btnNfc.addEventListener("click", () => {
-            setActive("nfc");
-            if (navigator.vibrate) navigator.vibrate(10);
-        });
-    }
+        links.forEach(link => link.addEventListener('click', event => {
+            if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+            activate(link.dataset.standingsFilter!);
+        }));
+        window.addEventListener('hashchange', syncHash);
+        syncHash();
+    });
 </script>

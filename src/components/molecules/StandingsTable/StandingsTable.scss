@@ -1,0 +1,73 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.standings-table {
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0;
+    background: $bg-card;
+    border: 1px solid #333;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+    text-align: left;
+
+    caption {
+        padding: $spacing-sm $spacing-xs;
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    th, td {
+        padding: 1.2rem 0.6rem;
+        border-bottom: 1px solid #2a2a2a;
+    }
+
+    thead {
+        background: $bg-dark-light;
+        color: $text-secondary;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+
+        th:first-child { width: 3.2rem; }
+        th:last-child { width: 6.8rem; }
+    }
+
+    tbody tr:last-child {
+        th, td { border-bottom: none; }
+    }
+
+    &__rank { color: $text-secondary; }
+
+    &__team {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 1.4rem;
+        overflow-wrap: anywhere;
+
+        .team-logo { width: 3rem; height: 3rem; }
+    }
+
+    &__record {
+        font-family: monospace;
+        font-size: 1.4rem;
+        white-space: nowrap;
+    }
+
+    .playoff-spot {
+        background: rgba(255, 255, 255, 0.05);
+        td:first-child { box-shadow: inset 3px 0 #4ade80; }
+    }
+
+    .top-seed {
+        background: rgba(255, 215, 0, 0.1);
+        td:first-child { box-shadow: inset 3px 0 gold; }
+    }
+
+    @include wide-mobile {
+        th, td { padding: $spacing-sm $spacing-xs; }
+        &__team { font-size: 1.6rem; }
+    }
+}

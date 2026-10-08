@@ -2,7 +2,7 @@
 @use '@/styles/mixins' as *;
 
 .header {
-    background-color: #252525;
+    background-color: $bg-dark-light;
     position: sticky;
     top: -4.8rem;
     z-index: $z-header;
