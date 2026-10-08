@@ -1,4 +1,5 @@
 ---
+import { PLAYOFF_PICTURE_MIN_WEEK as MIN_WEEK } from "@scraper/config.js";
 import SectionTitle from "@/components/atoms/SectionTitle/SectionTitle.astro";
 import ConferenceHeader from "@/components/atoms/ConferenceHeader/ConferenceHeader.astro";
 import UnavailableNotice from "@/components/atoms/UnavailableNotice/UnavailableNotice.astro";
@@ -35,8 +36,6 @@ interface Props {
 
 const { bubble, eliminated, currentWeek } = Astro.props;
 
-// Keep in sync with scraper/config.js PLAYOFF_PICTURE_MIN_WEEK.
-const MIN_WEEK = 8;
 const isAvailable = currentWeek === undefined || currentWeek >= MIN_WEEK;
 ---
 

@@ -1,5 +1,17 @@
 ---
+import { PLAYOFF_PICTURE_MIN_WEEK } from "@scraper/config.js";
 
+interface Props {
+    currentWeek?: number;
+}
+
+const { currentWeek } = Astro.props;
+const isPlayoffPictureActive = currentWeek === undefined || currentWeek >= PLAYOFF_PICTURE_MIN_WEEK;
+const playoffLinks = [
+    { href: "#matchups", label: "Matchups" },
+    { href: "#bubble", label: "Bubble" },
+    { href: "#eliminated", label: "Eliminated" },
+];
 ---
 
 <header class="header">
@@ -14,14 +26,21 @@
         <nav class="main-nav">
             <ul class="main-nav__list">
                 <li class="main-nav__item">
-                    <a href="#matchups" class="main-nav__link">Matchups</a>
+                    <a href="#schedule" class="main-nav__link">Schedule</a>
                 </li>
-                <li class="main-nav__item">
-                    <a href="#bubble" class="main-nav__link">Bubble</a>
-                </li>
-                <li class="main-nav__item">
-                    <a href="#eliminated" class="main-nav__link">Eliminated</a>
-                </li>
+                {playoffLinks.map(({ href, label }) => (
+                    <li class="main-nav__item">
+                        <a
+                            href={isPlayoffPictureActive ? href : undefined}
+                            class="main-nav__link"
+                            role={isPlayoffPictureActive ? undefined : "link"}
+                            aria-disabled={isPlayoffPictureActive ? undefined : "true"}
+                            title={isPlayoffPictureActive ? undefined : `Available from Week ${PLAYOFF_PICTURE_MIN_WEEK}`}
+                        >
+                            {label}
+                        </a>
+                    </li>
+                ))}
                 <li class="main-nav__item">
                     <a href="#power-rankings" class="main-nav__link"
                         >Power Rankings</a>

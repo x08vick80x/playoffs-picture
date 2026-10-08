@@ -108,7 +108,12 @@
         font-weight: 600;
         transition: all 0.2s;
 
-        &:hover {
+        &[aria-disabled="true"] {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        &:not([aria-disabled="true"]):hover {
             background: $nfl-red;
             color: white;
             transform: translateY(-1px);
@@ -118,7 +123,7 @@
             background: transparent;
             padding: 0.5rem;
 
-            &:hover {
+            &:not([aria-disabled="true"]):hover {
                 background: transparent;
                 color: $nfl-red;
                 transform: none;
