@@ -1,0 +1,109 @@
+---
+import { getTeamId } from "@/utils/team-mapping.js";
+import SectionTitle from "@/components/atoms/SectionTitle/SectionTitle.astro";
+
+interface Ranking {
+    rank: number;
+    team: string; // e.g. "Lions"
+    trend?: string; // e.g. "+1", "-2", "0"
+    blurb: string;
+}
+
+interface Props {
+    rankings: Ranking[];
+}
+
+const { rankings } = Astro.props;
+
+const getTrendModifier = (trend: string | undefined) => {
+    if (!trend || trend === "0") return "neutral";
+    return trend.startsWith("-") ? "negative" : "positive";
+};
+---
+
+<section class="power-rankings" id="power-rankings">
+    <SectionTitle title="Power Rankings" />
+
+    <div class="power-rankings__list">
+        {
+            rankings && rankings.length > 0 ? (
+                rankings.map((item) => {
+                    const trendModifier = getTrendModifier(item.trend);
+                    return (
+                        <article
+                            class="ranking-item toggle-trigger"
+                            id={`rank-${item.rank}`}
+                        >
+                            <div class="ranking-item__header">
+                                <div class="ranking-item__badge">
+                                    <span class="ranking-item__number">
+                                        #{item.rank}
+                                    </span>
+                                    {item.trend && item.trend !== "0" && (
+                                        <span
+                                            class={`ranking-item__trend ranking-item__trend--${trendModifier}`}
+                                        >
+                                            {item.trend}
+                                        </span>
+                                    )}
+                                </div>
+                                <div class="ranking-item__info">
+                                    <svg
+                                        class="team-logo team-logo--sm"
+                                        width="40"
+                                        height="40"
+                                    >
+                                        <use
+                                            href={`/sprites.svg#${getTeamId(item.team)}`}
+                                        />
+                                    </svg>
+                                    <span class="ranking-item__name">
+                                        {item.team}
+                                    </span>
+                                </div>
+                                <div class="ranking-item__toggle">
+                                    <svg
+                                        class="ranking-item__chevron"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    >
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="ranking-item__body-wrapper">
+                                <div class="ranking-item__content">
+                                    {item.blurb ? (
+                                        <p>{item.blurb}</p>
+                                    ) : (
+                                        <p class="no-content">
+                                            Analyst comment unavailable.
+                                        </p>
+                                    )}
+                                </div>
+                            </div>
+                        </article>
+                    );
+                })
+            ) : (
+                <div class="power-rankings__empty">
+                    Rankings data unavailable.
+                </div>
+            )
+        }
+    </div>
+</section>
+
+<script>
+    // Toggle logic for the entire card
+    document.querySelectorAll(".toggle-trigger").forEach((item) => {
+        item.addEventListener("click", (e) => {
+            // Toggle expanded class on parent
+            item.classList.toggle("ranking-item--expanded");
+        });
+    });
+</script>

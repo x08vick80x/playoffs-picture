@@ -1,31 +1,34 @@
-@forward 'variables';
-@forward 'mixins';
-@use 'base';
+@forward '@/styles/variables';
+@forward '@/styles/mixins';
+@use '@/styles/base';
 
+// Component styles stay global for shared atoms and markup rendered by client scripts.
+// Keep atoms before molecules and organisms so contextual overrides win.
 // Components
 // Atoms
-@use 'components/atoms/logo';
-@use 'components/atoms/badge';
-@use 'components/atoms/section-title';
-@use 'components/atoms/conference-header';
-@use 'components/atoms/page-title';
-@use 'components/atoms/last-updated';
-@use 'components/atoms/button';
-@use 'components/atoms/unavailable-notice';
+@use '@/components/atoms/Logo/Logo';
+@use '@/components/atoms/Badge/Badge';
+@use '@/components/atoms/SectionTitle/SectionTitle';
+@use '@/components/atoms/ConferenceHeader/ConferenceHeader';
+@use '@/components/atoms/PageTitle/PageTitle';
+@use '@/components/atoms/LastUpdated/LastUpdated';
+@use '@/components/atoms/Button/Button';
+@use '@/components/atoms/UnavailableNotice/UnavailableNotice';
 
 // Molecules
-@use 'components/molecules/team-row';
-@use 'components/molecules/matchup-card';
-@use 'components/molecules/bubble-card';
+@use '@/components/molecules/TeamRow/TeamRow';
+@use '@/components/molecules/ByeCard/ByeCard';
+@use '@/components/molecules/MatchupCard/MatchupCard';
+@use '@/components/molecules/BubbleCard/BubbleCard';
 
 
 // Organisms
-@use 'components/organisms/matchups';
-@use 'components/organisms/bubble-eliminated';
-@use 'components/organisms/standings';
-@use 'components/organisms/header';
-@use 'components/organisms/footer';
-@use 'components/organisms/power-rankings';
-@use 'components/organisms/schedule-modal';
-@use 'components/organisms/season-schedule';
-@use 'components/organisms/my-teams';
+@use '@/components/organisms/Matchups/Matchups';
+@use '@/components/organisms/BubbleEliminated/BubbleEliminated';
+@use '@/components/organisms/Standings/Standings';
+@use '@/components/organisms/Header/Header';
+@use '@/components/organisms/Footer/Footer';
+@use '@/components/organisms/PowerRankings/PowerRankings';
+@use '@/components/organisms/ScheduleModal/ScheduleModal';
+@use '@/components/organisms/SeasonSchedule/SeasonSchedule';
+@use '@/components/organisms/MyTeams/MyTeams';

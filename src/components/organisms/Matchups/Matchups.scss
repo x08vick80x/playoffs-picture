@@ -1,0 +1,23 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.matchups-container {
+    margin-top: $spacing-sm;
+    padding: $spacing-sm;
+
+    @include tablet {
+        margin-top: $spacing-lg;
+    }
+}
+
+.conference-matchups {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @include tablet {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

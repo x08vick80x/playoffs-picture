@@ -1,0 +1,122 @@
+---
+import SectionTitle from "@/components/atoms/SectionTitle/SectionTitle.astro";
+import Logo from "@/components/atoms/Logo/Logo.astro";
+
+interface Team {
+    seed: string;
+    team: string;
+    record: string;
+    status: string;
+}
+
+interface Props {
+    afc: Team[];
+    nfc: Team[];
+}
+
+const { afc, nfc } = Astro.props;
+---
+
+<div class="standings-container">
+    <SectionTitle title="Standings" />
+
+    <div class="conference-toggle" id="conf-toggle" data-active="afc">
+        <div class="toggle-glider"></div>
+        <button id="btn-afc" class="toggle-btn active" data-conf="afc">
+            <svg class="conf-logo" width="30" height="30"
+                ><use href="/sprites.svg#afc"></use></svg
+            >
+            AFC
+        </button>
+        <button id="btn-nfc" class="toggle-btn" data-conf="nfc">
+            <svg class="conf-logo" width="30" height="30"
+                ><use href="/sprites.svg#nfc"></use></svg
+            >
+            NFC
+        </button>
+    </div>
+
+    <div id="table-afc" class="standings-table active">
+        <div class="table-header">
+            <span class="col-seed">#</span>
+            <span class="col-team">Team</span>
+            <span class="col-record">Rec</span>
+        </div>
+        {
+            afc.map((team, index) => (
+                <div
+                    class={`table-row ${index < 7 ? "playoff-spot" : ""} ${index === 0 ? "top-seed" : ""}`}
+                >
+                    <span class="col-seed">{team.seed}</span>
+                    <span class="col-team">
+                        <Logo team={team.team} size="sm" />
+                        <span class="team-name">{team.team}</span>
+                    </span>
+                    <span class="col-record">{team.record}</span>
+                </div>
+            ))
+        }
+    </div>
+
+    <div id="table-nfc" class="standings-table">
+        <div class="table-header nfc-header">
+            <span class="col-seed">#</span>
+            <span class="col-team">Team</span>
+            <span class="col-record">Rec</span>
+        </div>
+        {
+            nfc.map((team, index) => (
+                <div
+                    class={`table-row ${index < 7 ? "playoff-spot" : ""} ${index === 0 ? "top-seed" : ""}`}
+                >
+                    <span class="col-seed">{team.seed}</span>
+                    <span class="col-team">
+                        <Logo team={team.team} size="sm" />
+                        <span class="team-name">{team.team}</span>
+                    </span>
+                    <span class="col-record">{team.record}</span>
+                </div>
+            ))
+        }
+    </div>
+</div>
+
+<script>
+    const container = document.getElementById("conf-toggle");
+    const btnAfc = document.getElementById("btn-afc");
+    const btnNfc = document.getElementById("btn-nfc");
+    const tableAfc = document.getElementById("table-afc");
+    const tableNfc = document.getElementById("table-nfc");
+
+    function setActive(conf: string) {
+        if (!container || !btnAfc || !btnNfc || !tableAfc || !tableNfc) return;
+
+        // Update container state for glider transition
+        container.setAttribute("data-active", conf);
+
+        // Update buttons text color
+        if (conf === "afc") {
+            btnAfc.classList.add("active");
+            btnNfc.classList.remove("active");
+            tableAfc.classList.add("active");
+            tableNfc.classList.remove("active");
+        } else {
+            btnNfc.classList.add("active");
+            btnAfc.classList.remove("active");
+            tableNfc.classList.add("active");
+            tableAfc.classList.remove("active");
+        }
+    }
+
+    if (btnAfc && btnNfc) {
+        btnAfc.addEventListener("click", () => {
+            setActive("afc");
+            if (navigator.vibrate) navigator.vibrate(10);
+        });
+
+        btnNfc.addEventListener("click", () => {
+            setActive("nfc");
+            if (navigator.vibrate) navigator.vibrate(10);
+        });
+    }
+</script>

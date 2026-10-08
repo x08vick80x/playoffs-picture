@@ -1,0 +1,73 @@
+---
+import { getTeamId } from "@/utils/team-mapping.js";
+---
+
+<dialog id="schedule-modal" class="modal">
+    <div class="modal__content">
+        <header class="modal__header">
+            <h2 id="modal-team-name" class="modal__title">Team Name</h2>
+            <button id="close-modal" class="modal__close-btn">&times;</button>
+        </header>
+
+        <div class="modal__list" id="schedule-list">
+            <!-- Populated via JS -->
+        </div>
+    </div>
+</dialog>
+
+<script is:inline>
+    const modal = document.getElementById("schedule-modal");
+    const closeBtn = document.getElementById("close-modal");
+    const title = document.getElementById("modal-team-name");
+    const list = document.getElementById("schedule-list");
+
+    window.addEventListener("open-schedule-modal", (e) => {
+        const { teamName, schedule } = e.detail;
+
+        if (title) title.innerText = `Remaining Schedule: ${teamName}`;
+
+        if (list) {
+            list.innerHTML = schedule
+                .map(
+                    (game) => `
+                <div class="game-item">
+                    <div class="game-item__week">${game.date || game.week}</div>
+                    <div class="game-item__info">
+                        <span class="game-item__location">${game.location === "vs" ? "vs" : "@"}</span>
+                        <div class="game-item__opponent clearfix">
+                            <span class="game-item__opp-name">${game.opponent}</span>
+                            <span class="game-item__opp-record">(${game.opponentRecord || "??"})</span>
+                        </div>
+                    </div>
+                </div>
+            `,
+                )
+                .join("");
+        }
+
+        modal?.showModal();
+    });
+
+    closeBtn?.addEventListener("click", () => {
+        closeModal();
+    });
+
+    modal?.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    function closeModal() {
+        if (!modal) return;
+        modal.classList.add("modal--closing");
+        modal.addEventListener(
+            "animationend",
+            () => {
+                modal.classList.remove("modal--closing");
+                modal.close();
+            },
+            { once: true },
+        );
+    }
+</script>

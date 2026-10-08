@@ -1,0 +1,18 @@
+@use '@/styles/variables' as *;
+
+.unavailable-notice {
+    text-align: center;
+    color: $text-secondary;
+    background: $bg-card;
+    border: 1px dashed #444;
+    border-radius: $radius-md;
+    padding: $spacing-sm;
+    overflow-wrap: anywhere;
+
+    @media (min-width: $tablet) {
+        padding: $spacing-md;
+    }
+    font-size: 1.4rem;
+    box-shadow: $box-shadow;
+}
+

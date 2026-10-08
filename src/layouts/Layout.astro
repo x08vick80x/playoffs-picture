@@ -56,14 +56,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
         {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
 
-        <style is:global>
-            @import "../styles/main.scss";
+        <style is:global lang="scss">
+            @use "@/styles/main.scss";
         </style>
     </head>
     <body>
         <slot />
         <Analytics />
-        <script src="../pwa.ts"></script>
+        <script src="@/pwa.ts"></script>
         <script is:inline>
             // PWA Install Prompt
             window.deferredPrompt = null;

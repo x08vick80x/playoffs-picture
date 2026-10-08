@@ -1,0 +1,168 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.season-schedule-container {
+    padding: $spacing-sm;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.week-tabs {
+    display: flex;
+    gap: $spacing-xs;
+    overflow-x: auto;
+    padding-bottom: $spacing-xs;
+    margin-bottom: $spacing-sm;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .week-tab {
+        flex: 0 0 auto;
+        background: $bg-card;
+        color: $text-secondary;
+        border: 1px solid #333;
+        border-radius: $radius-sm;
+        padding: 0.8rem 1.6rem;
+        font-weight: bold;
+        font-size: 1.4rem;
+        white-space: nowrap;
+        transition: background 0.2s, color 0.2s;
+        box-shadow: $box-shadow;
+
+        &.active {
+            background: $nfl-red;
+            color: white;
+            border-color: $nfl-red;
+        }
+    }
+}
+
+.week-panel {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $spacing-sm $spacing-xs;
+
+    &[hidden] {
+        display: none;
+    }
+}
+
+.schedule-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: $bg-card;
+    border-radius: $radius-md;
+    padding: $spacing-xs;
+    min-width: 0;
+    box-shadow: $box-shadow;
+
+    &__date {
+        color: $text-secondary;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    &__teams {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        align-items: center;
+        gap: 0.2rem;
+    }
+
+    &__team {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 0;
+
+        &:first-child {
+            align-items: flex-start;
+        }
+        &:last-child {
+            align-items: flex-end;
+        }
+    }
+
+    .team-row {
+        justify-content: center;
+        gap: $spacing-xs;
+    }
+
+    .team-logo {
+        width: 2.7rem;
+        height: 2.7rem;
+    }
+
+    .team-row__name {
+        font-size: 1.4rem;
+    }
+
+    &__at {
+        color: $text-secondary;
+        font-weight: bold;
+        font-size: 1.3rem;
+        line-height: 2rem;
+    }
+
+    &__status {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 1.3rem;
+    }
+
+    &__final,
+    &__time {
+        color: $text-secondary;
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        text-align: center;
+    }
+
+    &__time {
+        line-height: 1.5rem;
+    }
+
+    &__score {
+        align-self: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        font-style: italic;
+        font-variant-numeric: tabular-nums;
+        color: var(--text-secondary);
+    }
+
+    .team-row__name-full {
+        display: none;
+    }
+
+    .team-row__name-abbr {
+        display: block;
+    }
+
+    @include wide-mobile {
+        &__teams { gap: $spacing-xs; }
+        &__at { line-height: 2.4rem; }
+        .team-logo { width: 4rem; height: 4rem; }
+        .team-row__name { font-size: 1.6rem; }
+    }
+
+    @include tablet {
+        .team-row__name-full { display: block; }
+        .team-row__name-abbr { display: none; }
+    }
+
+}
+
+.season-schedule-container .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: $text-secondary;
+    padding: $spacing-md 0;
+}
+

@@ -1,7 +1,8 @@
-@use 'variables' as *;
+@use '@/styles/variables' as *;
 
-@mixin mobile {
-    @media (max-width: $mobile) {
+// Base rules target phones; enhancements only use ascending breakpoints.
+@mixin wide-mobile {
+    @media (min-width: $mobile + 1px) {
         @content;
     }
 }

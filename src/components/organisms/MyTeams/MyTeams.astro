@@ -1,0 +1,403 @@
+---
+import { getTeamId, getTeamAbbreviation } from "@/utils/team-mapping.js";
+import Button from "@/components/atoms/Button/Button.astro";
+
+const { standings, playoffPicture, teamSchedules } = Astro.props;
+
+// Build Master Map for Client
+// We need to handle mapping from "City" (Standings) to "ID" and "Abbr"
+const masterTeamMap: Record<string, any> = {};
+
+// Helper to normalized name
+const normalize = (name: string) => name.trim();
+
+["AFC", "NFC"].forEach((conf) => {
+    standings[conf].forEach((team: any) => {
+        const name = normalize(team.team);
+        masterTeamMap[name] = {
+            id: getTeamId(name),
+            abbr: getTeamAbbreviation(name),
+            conf: conf,
+        };
+    });
+});
+
+// Pass data to client-side script
+const teamsData = {
+    standings,
+    playoffPicture,
+    teamSchedules: teamSchedules || {},
+    masterMap: masterTeamMap,
+};
+---
+
+<div id="my-teams-root" class="my-teams-container" hidden>
+    <div id="mt-intro" class="intro">
+        <h2 class="intro__title">My Teams</h2>
+        <button
+            id="btn-edit-teams"
+            class="intro__action"
+            aria-label="Edit Favorites"
+            onclick="window.openModal()"
+        >
+            <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="pointer-events: none;"
+                ><path
+                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                ></path><path
+                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                ></path></svg
+            >
+        </button>
+    </div>
+
+    <div id="mt-dashboard" class="dashboard-grid">
+        <!-- Cards will be injected here -->
+        <p class="empty-msg">No teams selected.</p>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="mt-selector-modal" class="selector-modal" hidden>
+        <div class="selector-modal__content">
+            <div class="selector-modal__header">
+                <h3 class="selector-modal__title">Select Favorites</h3>
+                <button id="btn-close-modal" class="selector-modal__close-btn"
+                    >&times;</button
+                >
+            </div>
+
+            <div class="selector-modal__body">
+                <div class="selector-modal__grid" id="team-checklist">
+                    <!-- Cards injected here -->
+                </div>
+            </div>
+
+            <div class="selector-modal__footer">
+                <Button
+                    id="btn-save-teams"
+                    className="selector-modal__save-btn"
+                >
+                    Save
+                </Button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script define:vars={{ teamsData }}>
+    // --- Data Helpers ---
+    const resolveTeamKey = (inputName) => {
+        if (teamsData.masterMap[inputName]) return inputName;
+        const inputParts = inputName.split(" ");
+        const inputLast = inputParts[inputParts.length - 1]; // "Bills"
+        for (const [key, meta] of Object.entries(teamsData.masterMap)) {
+            if (meta.id === inputLast.toLowerCase()) return key;
+            if (key.includes(inputName) || inputName.includes(key)) return key;
+        }
+        return null;
+    };
+
+    // teamSchedules (always available, independent of the playoff-picture week-8 gate) is keyed
+    // by nickname (e.g. "Chiefs"); build a reverse index keyed by the masterMap's city key.
+    const scheduleByCityKey = {};
+    Object.entries(teamsData.teamSchedules).forEach(([nickname, sched]) => {
+        const cityKey = resolveTeamKey(nickname);
+        if (cityKey) scheduleByCityKey[cityKey] = sched;
+    });
+
+    function getTeamStats(cityKey) {
+        const meta = teamsData.masterMap[cityKey];
+        if (!meta) return null;
+
+        let stats = {
+            name: cityKey,
+            abbr: meta.abbr,
+            id: meta.id,
+            seed: null,
+            record: "0-0",
+            probability: "N/A",
+            nextOpp: null,
+            isInProjected: false,
+            isBubble: false,
+            isEliminated: false,
+            schedule: [],
+        };
+
+        const standingsRow = teamsData.standings[meta.conf].find(
+            (t) => t.team === cityKey,
+        );
+        if (standingsRow) stats.record = standingsRow.record;
+
+        // Power Ranking Lookup
+        if (teamsData.playoffPicture.powerRankings) {
+            const pr = teamsData.playoffPicture.powerRankings.find(
+                (p) => resolveTeamKey(p.team) === cityKey,
+            );
+            if (pr) {
+                stats.powerRank = pr.rank;
+                stats.powerTrend = pr.trend;
+            }
+        }
+
+        const seedRow = teamsData.playoffPicture.seeds[meta.conf].find(
+            (t) => resolveTeamKey(t.name) === cityKey,
+        );
+        if (seedRow) {
+            stats.isInProjected = true;
+            stats.seed = seedRow.seed;
+            stats.probability = seedRow.probability;
+        } else {
+            const bubbleRow = teamsData.playoffPicture.bubble[meta.conf].find(
+                (t) => resolveTeamKey(t.name) === cityKey,
+            );
+            if (bubbleRow) {
+                stats.isBubble = true;
+                stats.probability = bubbleRow.probability;
+            } else {
+                const elimRow = teamsData.playoffPicture.eliminated[
+                    meta.conf
+                ].find((t) => resolveTeamKey(t.name) === cityKey);
+                if (elimRow) {
+                    stats.isEliminated = true;
+                    stats.probability = elimRow.probability || "0%";
+                }
+            }
+        }
+
+        // Next game + remaining schedule: always available (independent of the week-8 gate
+        // that keeps seeds/bubble/eliminated empty early in the season).
+        const sched = scheduleByCityKey[cityKey] || [];
+        stats.schedule = sched;
+        stats.nextOpp =
+            sched.length > 0
+                ? {
+                      opponent: sched[0].opponent,
+                      location: sched[0].location,
+                      date: sched[0].date,
+                      time: sched[0].time,
+                  }
+                : null;
+
+        return stats;
+    }
+
+    // --- UI Logic ---
+    const root = document.getElementById("my-teams-root");
+    const dashboard = document.getElementById("mt-dashboard");
+    const modal = document.getElementById("mt-selector-modal");
+    const checklist = document.getElementById("team-checklist");
+    const btnEdit = document.getElementById("btn-edit-teams");
+    const btnSave = document.getElementById("btn-save-teams");
+    const btnClose = document.getElementById("btn-close-modal");
+
+    const STORAGE_KEY = "nfl-favorites";
+    let myTeams = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    // Temp set for editing before save
+    let editSet = new Set(myTeams);
+
+    // Render Grid in Modal
+    function renderSelector() {
+        checklist.innerHTML = "";
+        // Sort keys properly
+        const keys = Object.keys(teamsData.masterMap).sort();
+
+        keys.forEach((teamRaw) => {
+            const meta = teamsData.masterMap[teamRaw];
+            const isSelected = editSet.has(teamRaw);
+
+            const card = document.createElement("div");
+            card.className = `select-card ${isSelected ? "select-card--selected" : ""}`;
+            card.onclick = () => toggleSelection(teamRaw, card);
+
+            card.innerHTML = `
+                <div class="select-card__content">
+                    <svg class="select-card__logo" width="40" height="40">
+                        <use href="/sprites.svg#${meta.id}" />
+                    </svg>
+                    <span class="select-card__abbr">${meta.abbr}</span>
+                </div>
+                <!-- Checkmark Icon (visible only when selected) -->
+                ${isSelected ? '<div class="select-card__check">✓</div>' : ""}
+            `;
+            checklist.appendChild(card);
+        });
+    }
+
+    function toggleSelection(teamRaw, cardEl) {
+        if (editSet.has(teamRaw)) {
+            editSet.delete(teamRaw);
+            cardEl.classList.remove("select-card--selected");
+            const check = cardEl.querySelector(".select-card__check");
+            if (check) check.remove();
+        } else {
+            editSet.add(teamRaw);
+            cardEl.classList.add("select-card--selected");
+            if (!cardEl.querySelector(".select-card__check")) {
+                cardEl.insertAdjacentHTML(
+                    "beforeend",
+                    '<div class="select-card__check">✓</div>',
+                );
+            }
+        }
+    }
+
+    function renderDashboard() {
+        dashboard.innerHTML = "";
+        if (myTeams.length === 0) {
+            dashboard.innerHTML = `<button id="btn-empty-start" class="empty-start-btn">Select Teams +</button>`;
+            document.getElementById("btn-empty-start").onclick =
+                window.openModal;
+            return;
+        }
+
+        myTeams.forEach((teamKey) => {
+            const stats = getTeamStats(teamKey);
+            if (!stats) return;
+
+            const card = document.createElement("div");
+            card.className = "team-item";
+
+            // Make whole card clickable if schedule exists
+            if (stats.schedule && stats.schedule.length > 0) {
+                const scheduleJson = JSON.stringify(stats.schedule);
+                card.classList.add("team-card-trigger");
+                card.dataset.team = stats.name;
+                card.dataset.schedule = scheduleJson;
+            }
+
+            let probModifier = "";
+            let probDisplayText = stats.probability;
+
+            if (stats.isInProjected) {
+                probModifier = "team-item__prob-value--green";
+            } else if (stats.isBubble) {
+                probModifier = "team-item__prob-value--red";
+            } else if (
+                stats.isEliminated ||
+                stats.probability === "0%" ||
+                stats.probability === "0.0%"
+            ) {
+                probModifier = "team-item__prob-value--red"; // User requested Red for eliminated
+                probDisplayText = "ELIMINATED";
+            }
+
+            let nextOppHtml = "";
+            if (stats.nextOpp) {
+                nextOppHtml = `
+                    <div class="team-item__next-opp-container">
+                        <span class="team-item__next-opp">nxt ${stats.nextOpp.location} ${stats.nextOpp.opponent}</span>
+                        ${stats.nextOpp.date ? `<span class="team-item__next-opp-date">${stats.nextOpp.date}${stats.nextOpp.time ? ` \u2022 ${stats.nextOpp.time}` : ""}</span>` : ""}
+                    </div>
+                `;
+            } else if (stats.isInProjected) {
+                nextOppHtml = `<span class="team-item__next-opp">-</span>`;
+            }
+
+            const seedHtml = stats.seed
+                ? `<span class="team-item__seed-badge">#${stats.seed}</span>`
+                : "";
+
+            // Power Ranking HTML
+            let powerHtml = "";
+            if (stats.powerRank) {
+                let trendSymbol = stats.powerTrend || "";
+                let trendClass = "neutral";
+                if (trendSymbol.startsWith("+")) {
+                    trendClass = "team-item__power-trend--up";
+                    trendSymbol = "▲ " + trendSymbol.substring(1);
+                } else if (trendSymbol.startsWith("-")) {
+                    trendClass = "team-item__power-trend--down";
+                    trendSymbol = "▼ " + trendSymbol.substring(1);
+                }
+                if (trendSymbol === "0") trendSymbol = "-";
+
+                powerHtml = `
+                    <div class="team-item__power-row">
+                        <span class="power-label">PWR:</span>
+                        <span class="team-item__power-val">#${stats.powerRank}</span>
+                        <span class="team-item__power-trend ${trendClass}">${trendSymbol}</span>
+                    </div>
+                `;
+            }
+
+            card.innerHTML = `
+                <div class="team-item__info">
+                    <svg class="team-logo team-logo--md" width="55" height="55">
+                        <use href="/sprites.svg#${stats.id}" />
+                    </svg>
+                    <div class="team-item__ident">
+                        <span class="team-item__abbr">${stats.abbr}</span>
+                        ${powerHtml}
+                    </div>
+                </div>
+
+                <div class="team-item__stats">
+                     <span class="team-item__record">${seedHtml} ${stats.record}</span>
+                     ${
+                         probDisplayText !== "N/A"
+                             ? `
+                        <div class="team-item__prob">
+                            ${probDisplayText === "ELIMINATED" ? "" : '<span class="team-item__prob-label">PROB</span>'}
+                            <span class="team-item__prob-value ${probModifier}">${probDisplayText}</span>
+                        </div>
+                     `
+                             : ""
+                     }
+                     ${nextOppHtml}
+                </div>
+            `;
+            dashboard.appendChild(card);
+        });
+    }
+
+    window.openModal = function () {
+        try {
+            editSet = new Set(myTeams);
+            renderSelector();
+            const modal = document.getElementById("mt-selector-modal");
+            if (modal) {
+                modal.classList.add("is-open");
+                document.body.style.overflow = "hidden";
+            }
+        } catch (e) {
+            console.error("Error opening modal:", e);
+        }
+    };
+
+    function closeModal() {
+        const modal = document.getElementById("mt-selector-modal");
+        if (modal) {
+            modal.classList.remove("is-open");
+            document.body.style.overflow = "";
+        }
+    }
+
+    if (btnEdit) btnEdit.addEventListener("click", window.openModal);
+    if (btnClose) btnClose.addEventListener("click", closeModal);
+
+    btnSave.addEventListener("click", () => {
+        myTeams = Array.from(editSet);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(myTeams));
+        renderDashboard();
+        closeModal();
+    });
+
+    // Close on outside click
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    renderDashboard();
+
+    window.addEventListener("appinstalled", () => {
+        root.hidden = false;
+    });
+</script>

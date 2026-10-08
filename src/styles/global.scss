@@ -1,10 +1,10 @@
 /* Google Fonts import removed as Outfit is replaced by Arial, and Montserrat is local */
 
-@use "components/atoms/button";
+@use "@/components/atoms/Button/Button";
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/montserrat-webfont.woff2') format('woff2');
+    src: url('@/fonts/montserrat-webfont.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;

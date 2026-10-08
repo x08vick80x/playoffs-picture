@@ -1,0 +1,191 @@
+---
+import SectionTitle from "@/components/atoms/SectionTitle/SectionTitle.astro";
+import ConferenceHeader from "@/components/atoms/ConferenceHeader/ConferenceHeader.astro";
+import UnavailableNotice from "@/components/atoms/UnavailableNotice/UnavailableNotice.astro";
+
+import MatchupCard from "@/components/molecules/MatchupCard/MatchupCard.astro";
+
+interface Team {
+    seed: string;
+    team: string;
+    record: string;
+}
+
+interface ScrapedTeam {
+    name: string;
+    record: string;
+    probability: string;
+    trend: string;
+    trendDirection: string;
+    nextOpponent?: {
+        opponent: string;
+        location: string;
+    };
+    remainingSchedule?: Array<{
+        opponent: string;
+        location: string;
+        week: string;
+        opponentRecord: string;
+    }>;
+}
+
+interface ScrapedData {
+    AFC: ScrapedTeam[];
+    NFC: ScrapedTeam[];
+}
+
+interface Props {
+    afc: Team[];
+    nfc: Team[];
+    seeds: ScrapedData;
+    currentWeek?: number;
+}
+
+const { afc, nfc, seeds, currentWeek } = Astro.props;
+
+// Keep in sync with scraper/config.js PLAYOFF_PICTURE_MIN_WEEK.
+const MIN_WEEK = 8;
+const isAvailable = currentWeek === undefined || currentWeek >= MIN_WEEK;
+
+import { getTeamId } from "@/utils/team-mapping.js";
+
+function getMatchups(teams: Team[]) {
+    // Top 7 make playoffs
+    const playoffTeams = teams.slice(0, 7);
+    const seed1 = playoffTeams.find((t) => t.seed === "1");
+    const seed2 = playoffTeams.find((t) => t.seed === "2");
+    const seed3 = playoffTeams.find((t) => t.seed === "3");
+    const seed4 = playoffTeams.find((t) => t.seed === "4");
+    const seed5 = playoffTeams.find((t) => t.seed === "5");
+    const seed6 = playoffTeams.find((t) => t.seed === "6");
+    const seed7 = playoffTeams.find((t) => t.seed === "7");
+
+    return {
+        bye: seed1,
+        matches: [
+            { home: seed2, away: seed7 },
+            { home: seed3, away: seed6 },
+            { home: seed4, away: seed5 },
+        ],
+    };
+}
+
+const afcMatchups = getMatchups(afc);
+const nfcMatchups = getMatchups(nfc);
+
+function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
+    if (!teamName || !seeds || !seeds[conf]) return null;
+    const targetId = getTeamId(teamName);
+    return seeds[conf].find((s) => getTeamId(s.name) === targetId);
+}
+---
+
+<script>
+    document.addEventListener("click", (e) => {
+        const target = e.target as HTMLElement;
+        const btn = target.closest(".team-card-trigger");
+        if (btn) {
+            const team = btn.getAttribute("data-team");
+            const schedule = JSON.parse(
+                btn.getAttribute("data-schedule") || "[]",
+            );
+
+            const event = new CustomEvent("open-schedule-modal", {
+                detail: { teamName: team, schedule },
+            });
+            window.dispatchEvent(event);
+        }
+    });
+</script>
+
+<div class="matchups-container">
+    <SectionTitle title="Projected Matchups" />
+
+    {!isAvailable && <UnavailableNotice until={MIN_WEEK} />}
+
+    {isAvailable && (
+    <div class="conference-matchups">
+        <!-- AFC Column -->
+        <div class="conf-col">
+            <ConferenceHeader conf="AFC" />
+
+            <!-- AFC Bye -->
+            {
+                afcMatchups.bye && (
+                    <MatchupCard
+                        variant="bye"
+                        team={afcMatchups.bye}
+                        stats={
+                            getScrapedTeam(afcMatchups.bye.team, "AFC") ||
+                            undefined
+                        }
+                    />
+                )
+            }
+
+            <!-- AFC Matches -->
+            {
+                afcMatchups.matches.map(
+                    (match) =>
+                        match.home &&
+                        match.away && (
+                            <MatchupCard
+                                home={match.home}
+                                away={match.away}
+                                homeStats={
+                                    getScrapedTeam(match.home.team, "AFC") ||
+                                    undefined
+                                }
+                                awayStats={
+                                    getScrapedTeam(match.away.team, "AFC") ||
+                                    undefined
+                                }
+                            />
+                        ),
+                )
+            }
+        </div>
+
+        <!-- NFC Column -->
+        <div class="conf-col">
+            <ConferenceHeader conf="NFC" />
+
+            <!-- NFC Bye -->
+            {
+                nfcMatchups.bye && (
+                    <MatchupCard
+                        variant="bye"
+                        team={nfcMatchups.bye}
+                        stats={
+                            getScrapedTeam(nfcMatchups.bye.team, "NFC") ||
+                            undefined
+                        }
+                    />
+                )
+            }
+
+            <!-- NFC Matches -->
+            {
+                nfcMatchups.matches.map(
+                    (match) =>
+                        match.home &&
+                        match.away && (
+                            <MatchupCard
+                                home={match.home}
+                                away={match.away}
+                                homeStats={
+                                    getScrapedTeam(match.home.team, "NFC") ||
+                                    undefined
+                                }
+                                awayStats={
+                                    getScrapedTeam(match.away.team, "NFC") ||
+                                    undefined
+                                }
+                            />
+                        ),
+                )
+            }
+        </div>
+    </div>
+    )}
+</div>

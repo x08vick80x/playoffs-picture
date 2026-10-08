@@ -1,5 +1,5 @@
 /* Global Reset and Base Styles */
-@use 'variables' as *;
+@use '@/styles/variables' as *;
 
 :root {
     --nfl-blue: #{$nfl-blue};

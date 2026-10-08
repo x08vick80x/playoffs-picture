@@ -1,0 +1,119 @@
+---
+import SectionTitle from "@/components/atoms/SectionTitle/SectionTitle.astro";
+import ConferenceHeader from "@/components/atoms/ConferenceHeader/ConferenceHeader.astro";
+import UnavailableNotice from "@/components/atoms/UnavailableNotice/UnavailableNotice.astro";
+import BubbleCard from "@/components/molecules/BubbleCard/BubbleCard.astro";
+
+interface Team {
+    name: string;
+    record: string;
+    probability?: string;
+    trend?: string;
+    trendDirection?: string;
+    nextOpponent?: {
+        opponent: string;
+        location: string;
+    };
+    remainingSchedule?: Array<{
+        opponent: string;
+        location: string;
+        week: string;
+        opponentRecord: string;
+    }>;
+}
+
+interface ConferenceData {
+    AFC: Team[];
+    NFC: Team[];
+}
+
+interface Props {
+    bubble: ConferenceData;
+    eliminated: ConferenceData;
+    currentWeek?: number;
+}
+
+const { bubble, eliminated, currentWeek } = Astro.props;
+
+// Keep in sync with scraper/config.js PLAYOFF_PICTURE_MIN_WEEK.
+const MIN_WEEK = 8;
+const isAvailable = currentWeek === undefined || currentWeek >= MIN_WEEK;
+---
+
+<script>
+    document.addEventListener("click", (e) => {
+        const target = e.target as HTMLElement;
+        const btn = target.closest(".team-card-trigger");
+        if (btn) {
+            const team = btn.getAttribute("data-team");
+            const schedule = JSON.parse(
+                btn.getAttribute("data-schedule") || "[]",
+            );
+
+            const event = new CustomEvent("open-schedule-modal", {
+                detail: { teamName: team, schedule },
+            });
+            window.dispatchEvent(event);
+        }
+    });
+</script>
+
+<div class="bubble-eliminated-container">
+    {!isAvailable && <UnavailableNotice until={MIN_WEEK} />}
+
+    {isAvailable && (
+    <>
+    <!-- Bubble Section -->
+    <section id="bubble" class="section-group">
+        <SectionTitle title="On The Bubble" />
+
+        <div class="grid-container">
+            {
+                (["AFC", "NFC"] as const).map((conf) => (
+                    <div class="conference-col">
+                        <ConferenceHeader conf={conf} />
+
+                        <div class="team-list">
+                            {bubble[conf].map((team) => (
+                                <BubbleCard team={team} />
+                            ))}
+                            {bubble[conf].length === 0 && (
+                                <div class="empty-state">
+                                    - No teams on the bubble -
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </section>
+
+    <!-- Eliminated Section -->
+    <section id="eliminated" class="section-group">
+        <SectionTitle title="Eliminated" />
+
+        <div class="grid-container">
+            {
+                (["AFC", "NFC"] as const).map((conf) => (
+                    <div class="conference-col">
+                        <ConferenceHeader conf={conf} />
+
+                        <div class="team-list">
+                            {eliminated[conf].map((team) => (
+                                <BubbleCard team={team} isEliminated={true} />
+                            ))}
+                            {eliminated[conf].length === 0 && (
+                                <div class="empty-state">
+                                    - No teams eliminated -
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </section>
+    </>
+    )}
+</div>

@@ -1,0 +1,28 @@
+@use '@/styles/variables' as *;
+
+.page-title {
+    text-align: center;
+    font-size: clamp(3.2rem, 9vw, 4.3rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, #fff 0%, #aaa 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+
+    &__highlight {
+        font-weight: 900;
+        font-style: italic;
+    }
+
+    &__year {
+        font-weight: 300;
+        color: $nfl-red;
+        -webkit-text-fill-color: $nfl-red;
+    }
+
+}

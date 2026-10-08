@@ -4,11 +4,20 @@ import sitemap from '@astrojs/sitemap';
 import AstroPWA from '@vite-pwa/astro';
 import Critters from 'critters';
 import { readFile, writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://playoffs-picture.vercel.app',
+  // Explicit Vite aliases also resolve Sass modules and asset URLs.
+  vite: {
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+        '@scraper': fileURLToPath(new URL('./scraper', import.meta.url)),
+      },
+    },
+  },
   integrations: [
     sitemap(),
     {
