@@ -3,7 +3,7 @@
 
 .matchup-card {
     background: $bg-card;
-    border: 1px solid #333;
+    border: 1px solid $gray-800;
     border-radius: $radius-lg;
     padding: 2rem .5rem; // Default to old compact padding
     display: flex;
@@ -30,7 +30,7 @@
         transition: background $duration-fast;
 
         &:hover {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba($white, 0.05);
         }
     }
 
@@ -67,9 +67,9 @@
     }
 
     &__btn {
-        background: rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        color: #fff;
+        background: rgba($black, 0.3);
+        border: 1px solid rgba($white, 0.3);
+        color: $white;
         border-radius: 4px;
         width: 16px;
         height: 16px;
@@ -108,7 +108,7 @@
             transition: background $duration-fast;
 
             &:hover {
-                background: rgba(255, 255, 255, 0.1);
+                background: rgba($white, 0.1);
             }
         }
 
@@ -136,7 +136,7 @@
 
         .matchup-card__sep {
             display: none; // Hide separator in Bye view if layout differs, or keep?
-            color: rgba(255, 255, 255, 0.3);
+            color: rgba($white, 0.3);
         }
 
         .matchup-card__next {

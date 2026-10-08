@@ -2,15 +2,15 @@
 @use '@/styles/mixins' as *;
 
 .modal {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba($black, 0.8);
     border: none;
     border-radius: 16px;
     padding: 0;
-    color: #fff;
+    color: $white;
     max-width: 90vw;
     width: 400px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 25px 50px -12px rgba($black, 0.5);
 
     /* Center the modal */
     position: fixed;
@@ -23,7 +23,7 @@
     overscroll-behavior: contain;
 
     &::backdrop {
-        background: rgba(0, 0, 0, 0);
+        background: rgba($black, 0);
         transition: background 0.3s ease;
     }
 
@@ -31,7 +31,7 @@
         animation: slideUp 0.3s ease forwards;
 
         &::backdrop {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba($black, 0.7);
         }
     }
 
@@ -40,15 +40,15 @@
         animation: slideDown 0.2s ease forwards;
 
         &::backdrop {
-            background: rgba(0, 0, 0, 0);
+            background: rgba($black, 0);
             transition: background 0.2s ease;
         }
     }
 
     &__content {
         padding: 1.5rem;
-        background: #1a1a1a;
-        border: 1px solid #333;
+        background: $bg-modal;
+        border: 1px solid $gray-800;
         border-radius: 16px;
     }
 
@@ -58,13 +58,13 @@
         align-items: center;
         margin-bottom: 1.5rem;
         padding-bottom: 1rem;
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid $gray-800;
     }
 
     &__title {
         margin: 0;
         font-size: 1.7rem;
-        color: #fff;
+        color: $white;
     }
 
     &__close-btn {
@@ -77,7 +77,7 @@
         padding: 0;
 
         &:hover {
-            color: #fff;
+            color: $white;
         }
 
         &:focus-visible {
@@ -123,13 +123,13 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba($white, 0.05);
     padding: 0.75rem;
     border-radius: 8px;
 
     &__week {
         font-size: 1.3rem;
-        background: #333;
+        background: $gray-800;
         color: $text-secondary;
         padding: 2px 6px;
         border-radius: 4px;

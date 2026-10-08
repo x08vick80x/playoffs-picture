@@ -7,8 +7,8 @@
     gap: $spacing-sm;
     padding: $spacing-xs;
     margin-bottom: $spacing-sm;
-    border-bottom: 2px solid transparent;
-    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 2px solid $transparent;
+    background: rgba($white, 0.05);
     border-radius: $radius-md;
 
     &__text {

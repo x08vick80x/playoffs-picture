@@ -12,12 +12,12 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba($white, 0.1);
     padding-bottom: 0.5rem;
 
     &__title {
         font-size: 1.6rem;
-        color: #aaa;
+        color: $gray-400;
         text-transform: uppercase;
         font-weight: 800;
         margin: 0;
@@ -26,11 +26,11 @@
     &__action {
         background: none;
         border: none;
-        color: #aaa;
+        color: $gray-400;
         cursor: pointer;
 
         &:hover {
-            color: white;
+            color: $white;
         }
     }
 }
@@ -48,16 +48,16 @@
 .empty-start-btn {
     width: 100%;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px dashed rgba(255, 255, 255, 0.2);
-    color: #aaa;
+    background: rgba($white, 0.05);
+    border: 2px dashed rgba($white, 0.2);
+    color: $gray-400;
     font-size: 1.2rem;
     border-radius: 8px;
     cursor: pointer;
 
     &:hover {
         border-color: $nfl-blue;
-        color: white;
+        color: $white;
     }
 }
 
@@ -67,7 +67,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba($white, 0.03);
     border-radius: 6px;
     transition: transform 0.2s, background 0.2s;
     cursor: pointer;
@@ -76,7 +76,7 @@
     box-shadow: $box-shadow;
 
     &:hover {
-        background: rgba(255, 255, 255, 0.08);
+        background: rgba($white, 0.08);
     }
 
     &__info {
@@ -95,7 +95,7 @@
     &__abbr {
         font-size: 1.8rem;
         font-weight: 900;
-        color: white;
+        color: $white;
         line-height: 1;
     }
 
@@ -111,7 +111,7 @@
     }
 
     &__power-val {
-        color: white;
+        color: $white;
         font-weight: bold;
     }
 
@@ -144,7 +144,7 @@
 
     &__seed-badge {
         background: $nfl-light-blue;
-        color: white;
+        color: $white;
         font-size: 0.7rem;
         padding: 1px 4px;
         border-radius: 3px;
@@ -159,12 +159,12 @@
     }
 
     &__prob-label {
-        color: #666;
+        color: $gray-500;
         font-size: 1.2rem;
     }
 
     &__prob-value {
-        color: white;
+        color: $white;
 
         &--green {
             color: $nfl-green;
@@ -175,7 +175,7 @@
         }
 
         &--gray {
-            color: #666;
+            color: $gray-500;
         }
     }
 
@@ -208,7 +208,7 @@
     width: 100vw;
     height: 100vh;
     height: 100dvh;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba($black, 0.8);
     z-index: 1000;
     display: none;
     /* Default hidden */
@@ -232,7 +232,7 @@
         border-radius: 20px 20px 0 0; // Rounded top
         display: flex;
         flex-direction: column;
-        border: 1px solid #333;
+        border: 1px solid $gray-800;
 
         @media (min-width: 600px) {
             height: 80vh;
@@ -243,7 +243,7 @@
 
     &__header {
         padding: 1.5rem;
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid $gray-800;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -251,7 +251,7 @@
 
     &__title {
         margin: 0;
-        color: white;
+        color: $white;
         font-size: 1.6rem;
     }
 
@@ -259,7 +259,7 @@
         background: none;
         border: none;
         font-size: 2rem;
-        color: #aaa;
+        color: $gray-400;
         cursor: pointer;
     }
 
@@ -279,14 +279,14 @@
 
     &__footer {
         padding: 1.5rem;
-        border-top: 1px solid #333;
+        border-top: 1px solid $gray-800;
         background: $bg-card; // Sticky-ish
     }
 
     &__save-btn {
         width: 100%;
         background: $nfl-red;
-        color: white;
+        color: $white;
         border: none;
         padding: 1rem;
         border-radius: 50px; // Pill shape
@@ -298,14 +298,14 @@
         transition: background 0.3s;
 
         &:hover {
-            background: #cc0000;
+            background: $button-red-hover;
         }
     }
 }
 
 .select-card {
-    background: #1a1a1a;
-    border: 2px solid transparent;
+    background: $bg-modal;
+    border: 2px solid $transparent;
     border-radius: 12px;
     padding: 1rem 0.5rem;
     display: flex;
@@ -316,7 +316,7 @@
     transition: all 0.2s;
 
     &:hover {
-        background: #222;
+        background: $gray-900;
     }
 
     &__content {
@@ -339,10 +339,10 @@
 
     &--selected {
         border-color: $nfl-green;
-        background: transparent; // No background
+        background: $transparent; // No background
 
         .select-card__abbr {
-            color: white;
+            color: $white;
         }
     }
 
@@ -353,7 +353,7 @@
         width: 20px;
         height: 20px;
         background: $nfl-green;
-        color: black;
+        color: $black;
         border-radius: 50%;
         font-size: 12px;
         display: flex;
@@ -365,6 +365,6 @@
 
 .empty-msg {
     text-align: center;
-    color: #666;
+    color: $gray-500;
     font-style: italic;
 }

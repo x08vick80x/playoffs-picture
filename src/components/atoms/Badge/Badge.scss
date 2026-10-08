@@ -10,12 +10,12 @@
     border-radius: $radius-sm;
 
     &--default {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba($white, 0.1);
         color: $text-primary;
     }
 
     &--seed {
-        background: transparent;
+        background: $transparent;
         color: $text-secondary;
         font-style: italic;
         font-size: 1.92rem;

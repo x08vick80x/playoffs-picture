@@ -1,6 +1,29 @@
+// Base palette: keep literal colors in this file only.
+$white: #fff;
+$black: #000;
+$transparent: transparent;
+
+$gray-900: #222;
+$gray-850: #2a2a2a;
+$gray-800: #333;
+$gray-700: #444;
+$gray-600: #555;
+$gray-500: #666;
+$gray-400: #aaa;
+$gray-300: #ccc;
+$gray-200: #ddd;
+
+$bg-footer: #0b0b0b;
+$bg-modal: #1a1a1a;
+$button-blue-hover: #004da1;
+$button-red-hover: #cc0000;
+$playoff-spot: #4ade80;
+$top-seed: #ffd700;
+
+// Brand and shared semantic colors.
 $nfl-blue: #013369;
 $nfl-red: #D50A0A;
-$nfl-white: #FFFFFF;
+$nfl-white: $white;
 $nfl-green: #2ff89d;
 $nfl-light-blue: #00b4ff;
 
@@ -8,14 +31,14 @@ $bg-dark: #121212;
 $bg-dark-light: #252525;
 $bg-card: #1E1E1E;
 
-$box-shadow: .5rem .7rem .6rem .2rem rgba(0, 0, 0, 0.6);
+$box-shadow: .5rem .7rem .6rem .2rem rgba($black, 0.6);
 
-$text-primary: #FFFFFF;
+$text-primary: $white;
 $text-secondary: #bdbdbd;
 $text-gray-light: #e2e2e2;
 $text-gray-lighter: #efefef;
 
-$accent: #D50A0A;
+$accent: $nfl-red;
 
 // Typography
 $font-main: Arial, sans-serif;

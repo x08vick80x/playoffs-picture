@@ -14,24 +14,24 @@
 
     &__empty {
         text-align: center;
-        color: #666;
+        color: $gray-500;
         padding: 2rem;
     }
 }
 
 .ranking-item {
     background: $bg-card;
-    border: 1px solid #333;
+    border: 1px solid $gray-800;
     border-radius: 8px;
     overflow: hidden;
     transition: all 0.2s;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: $transparent;
     box-shadow: $box-shadow;
 
     &:hover {
-        border-color: #666;
-        background: rgba(255, 255, 255, 0.05);
+        border-color: $gray-500;
+        background: rgba($white, 0.05);
     }
 
     &--expanded {
@@ -122,17 +122,17 @@
         display: grid;
         grid-template-rows: 0fr;
         transition: grid-template-rows 0.3s $ease-out;
-        border-top: 1px solid transparent; // Hidden initially
+        border-top: 1px solid $transparent; // Hidden initially
 
         .ranking-item--expanded & {
             grid-template-rows: 1fr;
-            border-top: 1px solid #333; // Show border when expanded
+            border-top: 1px solid $gray-800; // Show border when expanded
         }
     }
 
     &__content {
         overflow: hidden;
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba($black, 0.2);
 
         // Inner padding wrapper
         p,
@@ -143,13 +143,13 @@
             margin: 0;
             font-size: 1.6rem;
             line-height: 1.6;
-            color: #ddd;
+            color: $gray-200;
             font-family: $font-body;
             font-weight: 400;
         }
 
         .no-content {
-            color: #666;
+            color: $gray-500;
             font-style: italic;
         }
     }

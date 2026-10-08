@@ -1,3 +1,5 @@
+@use "@/styles/variables" as *;
+
 /* Google Fonts import removed as Outfit is replaced by Arial, and Montserrat is local */
 
 @use "@/components/atoms/Button/Button";
@@ -11,16 +13,16 @@
 }
 
 :root {
-    --nfl-blue: #013369;
-    --nfl-red: #D50A0A;
-    --nfl-white: #FFFFFF;
-    --bg-dark: #121212;
-    --bg-card: #1E1E1E;
-    --text-primary: #FFFFFF;
-    --text-secondary: #bdbdbd;
-    --text-gray-light: #e2e2e2;
-    --text-gray-lighter: #efefef;
-    --accent: #D50A0A;
+    --nfl-blue: #{$nfl-blue};
+    --nfl-red: #{$nfl-red};
+    --nfl-white: #{$nfl-white};
+    --bg-dark: #{$bg-dark};
+    --bg-card: #{$bg-card};
+    --text-primary: #{$text-primary};
+    --text-secondary: #{$text-secondary};
+    --text-gray-light: #{$text-gray-light};
+    --text-gray-lighter: #{$text-gray-lighter};
+    --accent: #{$accent};
 
     --font-main: Arial, sans-serif;
     --font-body: 'Montserrat', Arial, sans-serif;
@@ -41,7 +43,7 @@ body {
 
 a,
 button {
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: $transparent;
 }
 
 a {

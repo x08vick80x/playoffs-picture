@@ -2,7 +2,7 @@
 @use '@/styles/mixins' as *;
 
 .footer {
-    background-color: #0b0b0b;
+    background-color: $bg-footer;
     color: $text-secondary;
     padding: 2rem 1rem;
     text-align: center;

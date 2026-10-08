@@ -6,7 +6,7 @@
     table-layout: fixed;
     border-spacing: 0;
     background: $bg-card;
-    border: 1px solid #333;
+    border: 1px solid $gray-800;
     border-radius: $radius-lg;
     overflow: hidden;
     box-shadow: $box-shadow;
@@ -21,7 +21,7 @@
 
     th, td {
         padding: 1.2rem 0.6rem;
-        border-bottom: 1px solid #2a2a2a;
+        border-bottom: 1px solid $gray-850;
     }
 
     thead {
@@ -57,13 +57,13 @@
     }
 
     .playoff-spot {
-        background: rgba(255, 255, 255, 0.05);
-        td:first-child { box-shadow: inset 3px 0 #4ade80; }
+        background: rgba($white, 0.05);
+        td:first-child { box-shadow: inset 3px 0 $playoff-spot; }
     }
 
     .top-seed {
-        background: rgba(255, 215, 0, 0.1);
-        td:first-child { box-shadow: inset 3px 0 gold; }
+        background: rgba($top-seed, 0.1);
+        td:first-child { box-shadow: inset 3px 0 $top-seed; }
     }
 
     @include wide-mobile {
