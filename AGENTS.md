@@ -96,8 +96,9 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
   `inspect-*.js` probes, screenshots). These were previously committed by mistake; the matching
   patterns are now in `.gitignore` (`*_debug.html`, `temp_*.html`, `inspect-*.js`, etc.) — don't
   commit new ones.
-- `MyTeams.astro` reads/writes favorite teams via client-side `localStorage`/DOM logic embedded in
-  a large inline `<script define:vars>` block — logic lives in the component, not in `src/utils/`.
+- `MyTeams.astro` reads/writes favorite teams via client-side `localStorage`/DOM logic in its bundled
+  `<script>`; server data is passed through an escaped JSON script block. Remaining games
+  are filtered using `getScheduleWeekNumber()` at runtime, matching SeasonSchedule.
 
 ## Conventions observed
 

@@ -32,6 +32,7 @@ const teamsData = {
 ---
 
 <div id="my-teams-root" class="my-teams-container" hidden>
+    <script type="application/json" id="my-teams-data" set:html={JSON.stringify(teamsData).replace(/</g, '\\u003c')} />
     <div id="mt-intro" class="intro">
         <h2 class="intro__title">My Teams</h2>
         <button
@@ -92,7 +93,11 @@ const teamsData = {
     </div>
 </div>
 
-<script define:vars={{ teamsData }}>
+<script>
+    import { getScheduleWeekNumber } from "@scraper/config.js";
+
+    const teamsData = JSON.parse(document.getElementById("my-teams-data")!.textContent || "{}");
+    let displayedWeek = getScheduleWeekNumber();
     // --- Data Helpers ---
     const resolveTeamKey = (inputName) => {
         if (teamsData.masterMap[inputName]) return inputName;
@@ -174,7 +179,10 @@ const teamsData = {
 
         // Next game + remaining schedule: always available (independent of the week-8 gate
         // that keeps seeds/bubble/eliminated empty early in the season).
-        const sched = scheduleByCityKey[cityKey] || [];
+        const currentWeek = getScheduleWeekNumber();
+        const sched = (scheduleByCityKey[cityKey] || [])
+            .filter(game => Number(game.week.replace(/^REG/, "")) >= currentWeek)
+            .sort((a, b) => Number(a.week.replace(/^REG/, "")) - Number(b.week.replace(/^REG/, "")));
         stats.schedule = sched;
         stats.nextOpp =
             sched.length > 0
@@ -395,6 +403,20 @@ const teamsData = {
     });
 
     renderDashboard();
+
+    // Refresh when returning to the PWA or leaving it open across Wednesday midnight.
+    function refreshScheduleWeek() {
+        const currentWeek = getScheduleWeekNumber();
+        if (currentWeek === displayedWeek) return;
+        displayedWeek = currentWeek;
+        renderDashboard();
+    }
+    window.addEventListener("pageshow", refreshScheduleWeek);
+    window.addEventListener("focus", refreshScheduleWeek);
+    document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) refreshScheduleWeek();
+    });
+    window.setInterval(refreshScheduleWeek, 60_000);
 
     window.addEventListener("appinstalled", () => {
         root.hidden = false;
