@@ -365,7 +365,6 @@ const teamsData = {
             const modal = document.getElementById("mt-selector-modal");
             if (modal) {
                 modal.classList.add("is-open");
-                document.body.style.overflow = "hidden";
             }
         } catch (e) {
             console.error("Error opening modal:", e);
@@ -376,7 +375,6 @@ const teamsData = {
         const modal = document.getElementById("mt-selector-modal");
         if (modal) {
             modal.classList.remove("is-open");
-            document.body.style.overflow = "";
         }
     }
 

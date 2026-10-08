@@ -48,3 +48,14 @@ button {
     font-family: inherit;
     background: none;
 }
+
+// Lock the document while any modal is open, including its closing animation.
+// CSS follows the actual state, so Escape and overlapping modals stay in sync.
+html:has(dialog[open], .selector-modal.is-open) {
+    overflow: hidden;
+    overscroll-behavior: none;
+
+    body {
+        overflow: hidden;
+    }
+}

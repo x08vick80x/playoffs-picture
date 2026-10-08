@@ -20,6 +20,7 @@
     max-height: 90dvh;
     /* Prevent overflow if schedule is long */
     overflow-y: auto;
+    overscroll-behavior: contain;
 
     &::backdrop {
         background: rgba(0, 0, 0, 0);
