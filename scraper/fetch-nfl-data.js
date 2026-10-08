@@ -499,11 +499,29 @@ async function scrape() {
         });
 
         // 4. Scrape Power Rankings
-        const weekNum = currentWeekNumber;
-        console.log(`Determined Power Rankings Week: ${weekNum}`);
-        const PR_URL = `https://www.nfl.com/news/nfl-power-rankings-week-${weekNum}-${SEASON_YEAR}-nfl-season`;
-        console.log(`Navigating to Power Rankings: ${PR_URL}...`);
-        await page.goto(PR_URL, { waitUntil: 'networkidle2', timeout: 60000 });
+        // Rankings are published before the calendar advances to the next week.
+        // Discover the newest published edition for this season instead of guessing its URL.
+        const indexResponse = await page.goto('https://www.nfl.com/news/series/power-rankings-news', {
+            waitUntil: 'domcontentloaded', timeout: 60000
+        });
+        if (!indexResponse?.ok()) throw new Error('Unable to load the power rankings index.');
+        await page.waitForSelector('a[href*="/news/nfl-power-rankings-week-"]');
+        const latestRanking = await page.evaluate((season) => {
+            return Array.from(document.querySelectorAll('a[href*="/news/nfl-power-rankings-week-"]'))
+                .map(a => {
+                    const url = new URL(a.href);
+                    const match = url.pathname.match(/^\/news\/nfl-power-rankings-week-(\d+)-(\d+)-nfl-season\/?$/);
+                    if (url.origin !== 'https://www.nfl.com' || !match || Number(match[2]) !== season) return null;
+                    return { url: url.href, week: Number(match[1]), season };
+                })
+                .filter(Boolean)
+                .sort((a, b) => b.week - a.week)[0] || null;
+        }, SEASON_YEAR);
+        if (!latestRanking) throw new Error(`No published power rankings found for ${SEASON_YEAR}.`);
+
+        console.log(`Latest published Power Rankings: Week ${latestRanking.week} — ${latestRanking.url}`);
+        const rankingResponse = await page.goto(latestRanking.url, { waitUntil: 'networkidle2', timeout: 60000 });
+        if (!rankingResponse?.ok()) throw new Error(`Unable to load ${latestRanking.url}`);
         await new Promise(r => setTimeout(r, 2000)); // Wait for content
 
         // nfl.com doesn't expose stable CSS classes for ranked items (they're renamed/restructured
@@ -546,7 +564,13 @@ async function scrape() {
 
         console.log(`Found ${uniqueRankings.length} unique power rankings.`);
 
+        if (uniqueRankings.length !== 32 ||
+            uniqueRankings.some((ranking, index) => ranking.rank !== index + 1) ||
+            new Set(uniqueRankings.map(ranking => ranking.team)).size !== 32) {
+            throw new Error(`Incomplete power rankings from ${latestRanking.url}: expected 32 teams.`);
+        }
         finalResult.powerRankings = uniqueRankings;
+        finalResult.powerRankingsSource = latestRanking;
 
         // Clean up team names
         finalResult.powerRankings.forEach(r => {
@@ -592,6 +616,7 @@ async function scrape() {
 
     } catch (e) {
         console.error('Error scraping:', e);
+        process.exitCode = 1;
     } finally {
         await browser.close();
     }

@@ -15,194 +15,199 @@
     {
       "rank": 1,
       "team": "49ers",
-      "trend": "+6",
-      "blurb": "It’s fair to wonder if a softer schedule over the last two weeks has aided the 49ers, and if their litany of injuries will be too much to overcome against better opponents. As of now, though, San Francisco boasts an offense that has cruise control set five miles per hour over the speed limit and is rolling along down the fast lane. Collectively, this team is strong enough to take care of business on a weekly basis. Oh, and those Brock Purdy MVP murmurs are legitimate, too."
+      "trend": "0",
+      "blurb": "The 49ers found choppy waters against the Broncos. That didn't deter them from reaching their destination. The usual suspects -- Brock Purdy, Deebo Samuel, Christian McCaffrey and George Kittle -- banded together to revive San Francisco's offense in the second half, and with the defense delivering its best showing since Week 1, the Niners achieved an impressive win over a legitimate contender."
     },
     {
       "rank": 2,
       "team": "Chiefs",
-      "trend": "+2",
-      "blurb": "The Chiefs are very aware of who they are just three weeks into the season. They didn't need to fully exert themselves on Sunday, earning a professional win against a scrappy but undermanned Dolphins team. They decreased Kenneth Walker III’s touches, too, which was a requirement for me in such a matchup, especially with most of the season still ahead."
+      "trend": "0",
+      "blurb": "The average fan might view Sunday's four-quarter battle with the Raiders as a red mark on Kansas City's résumé. Not me. Las Vegas is scrappy and worthy of respect. Lesser teams would have crumbled in the desert. The Chiefs did the opposite, delivering timely, game-altering plays in the fourth quarter and holding on for a win made possible by the strength of their balanced, dynamic offense."
     },
     {
       "rank": 3,
-      "team": "Bills",
-      "trend": "-1",
-      "blurb": "After looking like a juggernaut through two weeks, the Bills did everything in their power to hand the Chargers a victory on Sunday. And yet, Josh Allen and Co. ultimately still won. Buffalo has plenty to clean up and can’t afford such a showing against the league’s best, but it’s telling when a team can look like a complete mess and still figure it out in time to prevail."
+      "team": "Seahawks",
+      "trend": "+1",
+      "blurb": "One week after falling to the Commanders in one of the biggest upsets of the young season, Seattle rebounded, handling a Chargers team that is gifting opponents opportunities on a weekly basis. The Seahawks jumped out to a 27-6 lead over the wayward Bolts before taking their foot off the gas a little too early, allowing Los Angeles to make things interesting before the clock struck zero."
     },
     {
       "rank": 4,
-      "team": "Seahawks",
-      "trend": "-3",
-      "blurb": "Sam Darnold’s first game back began with the most predictable outcome in the NFC West: a Jaxon Smith-Njigba touchdown reception. The rest was far from foreseeable. Two Darnold interceptions -- including a fourth-quarter pick-six -- doomed the Seahawks, who gave the Commanders a collection of extra chances and paid the price. No, that’s not a pun intended to demean rookie running back Jadarian Price (who fumbled early in the game and was benched for a while), although he didn’t help matters, either."
+      "team": "Ravens",
+      "trend": "+1",
+      "blurb": "The Ravens proved early on that they were the superior team on Sunday, stuffing the Titans in a second quarter goal-to-go situation and taking a 24-7 lead into halftime. Tennessee found life late to make it a one-score game, but that happened only after Lamar Jackson exited due to an ankle injury, a development that leaves me somewhat concerned about Baltimore's short-term potential."
     },
     {
       "rank": 5,
-      "team": "Ravens",
-      "trend": "0",
-      "blurb": "The Ravens returned closer to their explosive Week 1 form on Sunday, pulling off a thrilling win in Rio by executing slightly better than their opponent. They also have serious offensive issues in the red zone, but it was nice to see their passing attack open up again, thanks to the return of Zay Flowers.\n\nScott Hanson's 3 biggest wins from Sunday | 'The NFL Report'\n\nNFL RedZone host Scott Hanson shares his three biggest wins from Sunday of Week 3."
+      "team": "Broncos",
+      "trend": "+1",
+      "blurb": "Denver traveled to Santa Clara with an opportunity to prove itself as an elite contender in Week 4 and battled commendably for most of the afternoon. Familiar pitfalls resurfaced, though. The Broncos couldn't generate offense consistently and gifted the 49ers an opportunity to score in a 3-3 game. They woke up offensively far too late. They also lost both of their starting cornerbacks to injury, taking some of the teeth out of their stellar defense and leaving me with the same disappointed feeling. Denver's slight tick up in this week's Power Rankings comes courtesy of Buffalo's fall."
     },
     {
       "rank": 6,
-      "team": "Broncos",
-      "trend": "0",
-      "blurb": "Eventually, the Broncos will play a complete game. For now, we’ll have to accept that their defense is going to hold long enough for their offense to wake up in most weeks (and is liable to make a few game-changing plays in every contest, especially in the second half) and acknowledge that their big-time offensive playmakers still make this a better unit than it was a year ago."
+      "team": "Jaguars",
+      "trend": "+1",
+      "blurb": "The Jaguars have established a clear identity through four weeks: The offense seeks to establish a credible running threat and then works off the efforts of Trevor Lawrence, allowing the defense -- a unit that is better than its reputation suggests -- to do its job by earning an extra possession or two for Lawrence and Co. In Week 4, that strategy saw Jacksonville build a 10-point lead by halftime and secure a big road win over a talented Bengals team. The Jags' 13 penalties prevented them from enjoying an easier second half, though. That's something they’ll need to clean up.\n\nBills drop four spots to land at No. 7 | 'Power Rankings'\n\nThe Buffalo Bills drop four spots to land at No. 7 of the Week 5 Power Rankings."
     },
     {
       "rank": 7,
-      "team": "Jaguars",
-      "trend": "+2",
-      "blurb": "What a nice get-right week for the Jaguars, who handled the Patriots with ease and even tousled their hair for good measure. Congratulations are in order for Travis Hunter, who recorded his first career interception amid a runaway win for Jacksonville."
+      "team": "Bills",
+      "trend": "-4",
+      "blurb": "After snatching victory from the powder blue and gold jaws of defeat in Week 3, Buffalo followed up that uneven showing with another perplexing performance. The Bills inexplicably went away from reigning NFL rushing king James Cook, gave up too many big plays to a Patriots offense that entered Week 4 searching for answers, and then saw their most trusted member, Josh Allen, toss away possession in the biggest moment. They're 3-1, but the Bills have messes they need to clean up before Halloween."
     },
     {
       "rank": 8,
-      "team": "Bengals",
-      "trend": "-5",
-      "blurb": "Cincinnati's hyped defense took a big reputation hit Sunday when it allowed Aaron Rodgers to turn back the clock and lead Pittsburgh -- the NFL’s second-worst scoring offense entering Week 3 -- to a 30-point performance and a one-score win over a division rival. It’s tough to pin down exactly where the Bengals stand after a loss like this, but I think we’ll learn plenty in this week’s cats-vs.-cats showdown with the Jaguars."
+      "team": "Cowboys",
+      "trend": "+3",
+      "blurb": "The \"D\" in Dallas stands for dichotomy. The 2026 Cowboys boast an incredibly explosive offense capable of carrying them to wins, but also must overcome their leaky defense. On Sunday, they managed to do so in thrilling fashion, scoring a final-minute touchdown to take down the Texans and win the battle of the Lone Star State. The 'Boys are moving up this week because of how they impressed me with their mettle amid adversity -- although I'm still highly concerned about their defensive liabilities."
     },
     {
       "rank": 9,
-      "team": "Vikings",
-      "trend": "+6",
-      "blurb": "I know the Vikings' offense is completely unreliable. I also know Minnesota’s defense is special and the reason these Vikes are 3-0. That’s enough for me to move them into the top 10 for the first time this season, even if I still can’t trust Kyler Murray."
+      "team": "Bengals",
+      "trend": "-1",
+      "blurb": "Sunday's loss to the Jaguars showed the value of Ja'Marr Chase to Joe Burrow and the rest of the Bengals' offense. Chase's first-half exit forced Burrow to look elsewhere, with the quarterback leaning heavily on Tee Higgins and Dohnte Meyers amid a frantic comeback attempt necessitated by the mistakes Cincinnati made earlier in the contest. Burrow threw two interceptions in a sloppy outing, a home game the Bengals will regret losing."
     },
     {
       "rank": 10,
-      "team": "Raiders",
-      "trend": "+12",
-      "blurb": "Sure, I might be overreacting to the Raiders’ hot start, but how can I pass on the rare opportunity to push the Silver and Black into the top 10? Klint Kubiak has inspired this previously downtrodden franchise, and Las Vegas is playing a wildly entertaining brand of football built on contributions from both established (Kirk Cousins, Brock Bowers) and unknown players (fifth-round rookie Hezekiah Masses has three interceptions this season!)."
+      "team": "Bears",
+      "trend": "+2",
+      "blurb": "One of the most lopsided victories in recent memory finished in favor of Chicago, a team led by a coach who might be quarterback-proof. In the last two weeks, Ben Johnson has directed offenses led by second- and third-string quarterbacks, and the Bears haven't missed a beat. Chicago's win over the Jets was especially stunning when considering the time of possession (42:45 to 17:15) and total-plays differential (89 to 32), wide margins you simply don't see in the modern NFL. It's a testament to Johnson's ability as a coach."
     },
     {
       "rank": 11,
-      "team": "Cowboys",
-      "trend": "+1",
-      "blurb": "Dallas could have scored a major victory in an international setting if coach Brian Schottenheimer hadn’t micromanaged the end-game situation with an underlying fear of defeat powering his decisions. There were plenty of positives in this game, though: The Cowboys' maligned defense finally earned a signature stop with a goal-line stand that opened the door for a fourth-quarter comeback, Dak Prescott continued to play at an elite level with both CeeDee Lamb and George Pickens, and rookie linebacker Jaishawn Barham logged the first significant stop of his pro career. The same problems surfaced in the end, though, when the defense allowed the Ravens to complete a deep pass to set up a walk-off field goal that never should have been on the table in the game’s final second. I suppose it’s a good lesson to learn in the first month of the season."
+      "team": "Vikings",
+      "trend": "-2",
+      "blurb": "I’ll admit that I’m not buying in. I think the Vikings are one of the most fraudulent 4-0 teams you'll ever see. Their offense is downright putrid and makes for a difficult viewing experience each week. Their defense, meanwhile, is special and once again carried them to a win, this time over the lowly (but scrappy) Dolphins. I'm left wondering how long they can get away with that style of play. Through four weeks, nobody has rankled them."
     },
     {
       "rank": 12,
-      "team": "Bears",
-      "trend": "+4",
-      "blurb": "Who needs Caleb Williams when you have ... Case Keenum?! Monday night served as a testament to the value of experience and lasting athletic talent, because they blended perfectly to produce a memorable performance for Keenum, the 38-year-old who diced up the Eagles and propelled Chicago’s offense to a 20-point victory. As impressive as Keenum was, so too was Chicago’s defense, which stifled Philadelphia’s offense, forced three turnovers and ensured the Eagles weren’t going to come close to mounting a comeback. It’s only one win, but it represents a whole lot more for the Bears, who had every reason to lose themselves in self-pity. They instead decided to rise above and drop a hammer on Philadelphia."
+      "team": "Raiders",
+      "trend": "-2",
+      "blurb": "There are no moral victories here, but the Raiders sure have plenty to be proud of after their narrow Week 4 loss to Kansas City. The upstart Las Vegas squad battled with big brother for four quarters and nearly handed the Chiefs their first loss of 2026. Kirk Cousins is playing fantastically, and the defensive additions have helped transform the team from an also-ran into a squad that deserves a ton of respect. I'm not sure how the story will end, but I'm glad we're along for the ride."
     },
     {
       "rank": 13,
       "team": "Rams",
-      "trend": "-5",
-      "blurb": "We’ve seen the Rams look flat (20-point loss to the 49ers in Australia), play like an elite team (22-point win over the Giants in Los Angeles) and collapse in a road game they led 16-0 at halftime (Sunday night's defeat to the Broncos). It’s better to get these mistakes out of the way now, but we can all agree this isn’t how we expected L.A. to start its season."
+      "trend": "0",
+      "blurb": "For three quarters, serious, nearly existential questions began to build for these Rams. They’d fallen behind in Philadelphia and couldn’t get out of their own way offensively, raising the specter of a 1-3 start to a season that began with immense hype. But Sean McVay’s squad proved something amid the chaos of a fourth-quarter comeback: L.A. is not going to lay down, no matter the odds. Matthew Stafford needs to be better, though."
     },
     {
       "rank": 14,
-      "team": "Lions",
-      "trend": "-1",
-      "blurb": "We know the Lions can put up points in bunches by leaning heavily on Jahmyr Gibbs, and this offense is capable of keeping them in every game they play. Their defensive struggles in the fourth quarter remain concerning, even if a takeaway saved them from another trip to overtime.\n\nJahmyr Gibbs' best plays from 3-TD game | Week 3\n\nWatch Detroit Lions running back Jahmyr Gibbs' best plays from 3-TD game during Week 3 of the 2026 NFL season."
+      "team": "Panthers",
+      "trend": "+8",
+      "blurb": "After a rough Week 3 showing, Bryce Young returned to top form, carving up Detroit’s defense for 329 passing yards and two touchdowns. Chuba Hubbard did his part, too, finishing with 122 rushing yards and two TDs, while Tetairoa McMillan produced a career night, catching 14 passes for 192 yards and two scores. That’s an explosive offense, folks. The Panthers notched their most impressive win of the season despite missing several key players, including WR2 Jalen Coker, which makes their latest triumph even more notable.\n\nFalcons up 8 spots in Week 5 | 'Power Rankings'\n\nAtlanta Falcons move up 8 spots in Week 5 of Power Rankings."
     },
     {
       "rank": 15,
-      "team": "Eagles",
-      "trend": "-5",
-      "blurb": "The Eagles failed their first real test of 2026 in a fashion that suggested they didn’t even take time to study. Jalen Hurts struggled for most of the night, Philadelphia wasted a promising, Saquon Barkley-heavy drive by throwing an interception in the end zone, and the defense surrendered 375 yards to a Case Keenum-led offense. The Eagles’ offensive evolution under Sean Mannion hasn’t yet taken hold (Hurts didn’t help with that much on Monday night), and right now, I’m not exactly sure how to feel about this team. Philly should be good, but through three weeks, it has logged two narrow wins over teams it's expected to beat, and lost a lopsided game on the road. Not great, Nick (Sirianni)!"
+      "team": "Falcons",
+      "trend": "+8",
+      "blurb": "Prime-time Bijan Robinson struck again, and this time, he brought his surname pal, Brian Robinson Jr., to the party. The two combined for five touchdowns on the ground, opening up plenty of passing opportunities for Michael Penix Jr. and allowing Atlanta to steamroll New Orleans in emphatic fashion. We should be cautiously optimistic as of now because it is only two stellar showings, but the early-season panic that preceded Penix’s return feels as if it happened months ago. We’ll find out if these Falcons are for real over the next three weeks in home games against Baltimore, Chicago and San Francisco."
     },
     {
       "rank": 16,
-      "team": "Saints",
+      "team": "Lions",
       "trend": "-2",
-      "blurb": "Instead of putting it all together in the fourth quarter as they had in their first two games, the Saints inverted on Sunday, falling apart in spectacular fashion in a loss to the Raiders. Tyler Shough’s fourth-quarter clutch gene disappeared in a wild game that should serve as a bit of humble pie for an upstart team that could benefit from such a lesson in late September."
+      "blurb": "We saw on Sunday night that the key to beating the Lions is doing everything possible to bottle up Jahmyr Gibbs. A less effective Gibbs meant Jared Goff was forced to look elsewhere, leading to a couple of fruitless drives in the fourth quarter of a winnable game that ended in a loss. Detroit’s defense couldn’t limit Bryce Young, and its offense encountered a collection of potholes in crunch time."
     },
     {
       "rank": 17,
       "team": "Browns",
-      "trend": "+6",
-      "blurb": "The Browns’ defense is back and playing a cohesive brand that rivals the best units in the NFL over the last two weeks. Mason Graham is off to a fantastic start, Jared Verse has started to make an impact and Carson Schwesinger picked up right where he left off in last season's Defensive Rookie of the Year campaign. Deshaun Watson also seems to have rediscovered a fourth-quarter clutch mode we haven’t seen from him since he was in Houston. Cleveland's offense needs to be better, but the Browns have definitely looked competent and earned the last two wins."
+      "trend": "0",
+      "blurb": "Hey, look at that: a three-game winning streak for the Browns, a team I thought might not eclipse four wins this season. They’re tied for first in the AFC North and have regained their defensive identity, harassing Aaron Rodgers all Thursday night. Even better: Deshaun Watson and the offense found a rhythm before the fourth quarter. Cautious optimism reigns here, because I’m not certain Cleveland has beaten a good team yet."
     },
     {
       "rank": 18,
-      "team": "Jets",
-      "trend": "+7",
-      "blurb": "I don’t believe in moral victories, but I do think teams can find positives in close losses. After the Week 2 nightmare at MetLife Stadium, the Jets had plenty to be proud of in Sunday's road defeat. Sure, they gave up 31 to Detroit (just like the last two defenses that faced the Lions), but they battled back from a two-touchdown deficit in the fourth quarter to give themselves a legitimate chance to win in the Motor City. That’s much, much more than we could have said about the Jets in recent years."
+      "team": "Patriots",
+      "trend": "+13",
+      "blurb": "What a bounce-back effort from the Patriots, a team that Mike Vrabel was rightfully concerned about after its disaster in Jacksonville one week prior. Drake Maye started to get back on track Sunday, delivering a few clutch plays after struggling mightily to start the season. A road win over Buffalo is big in the AFC East race and represents a return to competence for the Patriots. Now they need to prove it wasn’t a fluke."
     },
     {
       "rank": 19,
-      "team": "Steelers",
-      "trend": "+7",
-      "blurb": "Pittsburgh's offense woke up! It was refreshing to watch the Steelers finally produce with the approach (aggressively pushing the ball downfield) they’ve been trying to force this season. It wasn’t at all surprising that their defense was the one to finish the job, either. I won’t be taken for an easy sale, though; they’ll need to do it more than once offensively for me to emotionally invest."
+      "team": "Giants",
+      "trend": "+6",
+      "blurb": "I remain flummoxed by the Giants. Their defense played the part I expected early in Sunday’s game, serving as a turnstile against the Cardinals’ offense and allowing the opponent to take a 14-3 lead rather quickly. But John Harbaugh’s team is mentally tough and gritty, which it demonstrated with a comeback effort, its defensive improvement and the final goal-line stand (for a second straight week). Jameis Winston will always provide us with a roller coaster of an experience, but he deserves credit for making a few quality plays in this one. Going forward, I’m still not sure what the Giants' winning formula is."
     },
     {
       "rank": 20,
-      "team": "Colts",
-      "trend": "-1",
-      "blurb": "In what was the toughest watch of the week, the Colts managed to outlast the Texans despite three Daniel Jones giveaways. They can thank their defense -- one of the worst in the NFL entering Week 3 -- for finding some solid footing and shutting down Houston's woeful offense (for most of the game). Kicker Spencer Shrader deserves some flowers, too, because the guy has been nails this season: 8-for-8 on field-goal attempts, including 3-for-3 from 50-plus."
+      "team": "Saints",
+      "trend": "-4",
+      "blurb": "One week after losing a wild, back-and-forth battle to the Raiders, the Saints became a sieve. Atlanta ran all over New Orleans on Monday night, piling up 205 rushing yards and detonating a Saints team that simply couldn’t resist whatever it was the Falcons wanted to do offensively. Tyler Shough did his best to try to keep the Saints in the game and ripped a handful of excellent throws, but the offensive onslaught and the relentless pressure generated by Atlanta’s pass rush was simply too much to overcome, exposing New Orleans’ mortality and dampening its outlook after four weeks."
     },
     {
       "rank": 21,
-      "team": "Commanders",
-      "trend": "+7",
-      "blurb": "Marcus Mariota hive, stand up! The veteran backup played hero Sunday, powering Washington past Seattle for the biggest upset of the week. The contest ended in fitting fashion with Mariota scrambling for the game-sealing first down. Equal praise is due for Washington's defense, which has played above expectation all season and notched a peak showing in the takeaways department, logging two to keep the Commanders in the game and a third to give them enough of a lead to emerge victorious.\n\nSeahawks vs. Commanders Week 3 Recap | NFL Daily\n\nGregg Rosenthal, Jourdan Rodrigue and Nick Shook recap the Week 3 matchup between Seahawks and Commanders."
+      "team": "Eagles",
+      "trend": "-6",
+      "blurb": "Sunday's loss to the Rams represented a new low for Philadelphia’s offense, which was missing a collection of key contributors. Its performance could be excused by the absences, including an early exit from Saquon Barkley, but the fashion in which the Eagles let the game slip away is more concerning. Philly’s defense hasn’t been as good as expected, either. This team must figure things out quickly with Jacksonville, Carolina and Dallas up next.\n\nWhat do you make of Eagles not converting a third down? | 'GMFB'\n\n\"GMFB\" debates what do you make of the Philadelphia Eagles not converting a third down in Week 4."
     },
     {
       "rank": 22,
-      "team": "Panthers",
-      "trend": "-5",
-      "blurb": "Last week’s drubbing of Atlanta appeared to be an anomaly by the time Sunday’s game concluded. Carolina’s offense struggled to find success for most of the afternoon in Cleveland, a reality exacerbated by the injury to Jalen Coker. Devin Lloyd’s absence hurt the Panthers’ defense, which wilted in the fourth quarter against a motivated Browns offense. Carolina also struggled to protect Bryce Young, who was banged up and saw his performance suffer because of it. Fortunately, the bye week is near, but not before a Sunday night date with the Lions that could teach us plenty about the current state of the Panthers."
+      "team": "Colts",
+      "trend": "-2",
+      "blurb": "Sometimes an unfortunate injury produces a favorable outcome for the opposition. That’s part of what helped the Colts on Sunday, as they capitalized on Marcus Mariota’s exit, overcame two Daniel Jones turnovers (which are becoming a concerning problem) and recorded some quality victories for their maligned defense against a third-string rookie quarterback. You’ll take any and every win in this league, although this one doesn’t inspire a ton of confidence in these rankings."
     },
     {
       "rank": 23,
-      "team": "Falcons",
-      "trend": "+8",
-      "blurb": "With their backs against the wall, the Falcons traveled to Green Bay with renewed energy and benefitted from the contributions of one of the NFL’s best players in Bijan Robinson, an elite playmaker who shines brightest under the prime-time lights. HC Kevin Stefanski and OC Tommy Rees didn’t get too cute in their first game with Michael Penix Jr. in the lineup, leaning heavily on Robinson and allowing their star running back to open up the rest of the offense in a lopsided victory that repaired the Falcons' reputation and may have saved their season."
+      "team": "Texans",
+      "trend": "+1",
+      "blurb": "I think it’s safe to remove the “elite” tag from the Texans’ defense. For a second straight week, C.J. Stroud gave Houston a late lead, and the defense failed to protect it. Kamari Lassiter had an especially terrible day, giving up eight receptions for 136 yards on 11 targets as the closest defender, per Next Gen Stats. Houston’s defense didn’t generate organic pressure, resorting to blitzes against a quarterback (Dak Prescott) you certainly should not blitz often. The Texans paid the price and have wasted a rather strong stretch from Stroud, who is no longer the problem in Houston."
     },
     {
       "rank": 24,
-      "team": "Texans",
-      "trend": "-13",
-      "blurb": "The Texans have serious problems offensively that are painfully familiar. They can’t run the ball, lack difference-makers at receiver and still can’t consistently sustain drives. After a six-point output in the Week 2 loss to Cincinnati, the Texans were nearly as dreadful Sunday in Indianapolis, save for one urgent drive to briefly take a late lead. It’s unrealistic to expect the defense to carry Houston on a weekly basis, and until offensive coordinator Nick Caley finds some solutions, the Texans will remain mired in these struggles."
+      "team": "Jets",
+      "trend": "-6",
+      "blurb": "The Jets I’ve believed in punched me in the gut in a remarkably lopsided loss to Chicago. The numbers are staggering: New York ran just 32 plays to Chicago’s 89 and was outgained in yardage 492-157. This is a staggering setback that requires an entire team to look long and hard in the mirror, which is a disappointing stage to reach when I’ve seen this squad's (unfulfilled) potential, I swear! That said, I don’t know how much longer I can stay on this bandwagon."
     },
     {
       "rank": 25,
-      "team": "Giants",
-      "trend": "-4",
-      "blurb": "We shouldn’t be surprised the Giants traded for J.J. McCarthy on Monday, not after that rough showing from their offense vs. Tennessee amid a downpour at MetLife Stadium on Sunday. We also shouldn't be surprised the Giants won an ugly game. It’s precisely the type of contest John Harbaugh’s team is built to win. How New York proceeds from here -- including how quickly McCarthy sees the field -- is hard to say, making this 2-1 team one of the biggest wild cards in the NFL."
+      "team": "Steelers",
+      "trend": "-6",
+      "blurb": "The Steelers’ offense fell back into a rut for most of Thursday night, and the relationship between Aaron Rodgers and Mike McCarthy seemed to sour further -- that is, until a desperate fourth quarter saw Rodgers and DK Metcalf suddenly torch Cleveland’s secondary for a game-tying score. The late outburst doesn’t paper over the earlier issues, though, and Pittsburgh’s defense failed to get after Deshaun Watson despite facing an offensive line that was missing two of its starters (and replaced one with a rookie). The jury is still out on the Steelers, who seem like a middling-at-best team right now."
     },
     {
       "rank": 26,
       "team": "Cardinals",
-      "trend": "+4",
-      "blurb": "I’ll give credit to the Cardinals for refusing to quit Sunday in a game in which lesser teams would have laid down and accepted defeat. There is still plenty to clean up, especially for a defense that gave up a ton of big plays to the 49ers."
+      "trend": "0",
+      "blurb": "I thought I could count on Arizona’s offense to produce at a competitive rate on a weekly basis. The unit did so in two of its first three games and continued to do so on the first two drives against the Giants. Unfortunately, the rut the Cardinals entered (and their failure to find the end zone late) has shaken my confidence in this team. For once, the defense did its part to give Arizona a chance -- at least early -- and the offense failed to capitalize. Perhaps this is what I should have expected from the Cardinals all along."
     },
     {
       "rank": 27,
-      "team": "Chargers",
-      "trend": "+2",
-      "blurb": "The Chargers fixed many errors in the first half against the Bills on Sunday, playing a clean two quarters that included three takeaways. Signs of an impending loss were still evident, though, as Los Angeles only scored 10 points off those turnovers before reverting to its sloppy ways in the second half, crumbling and giving away a very winnable game on the road. I understand your frustration, Chargers fans."
+      "team": "Packers",
+      "trend": "+1",
+      "blurb": "The Packers won on Sunday in Tampa, which is nice. It was an ugly one and included the loss of linebacker Edgerrin Cooper (for the season), but at least Green Bay held off the angry mob for a week. The rushing attack was a little bit better (finally), taking some pressure off Jordan Love, but this is still far from the product we expected from the Pack."
     },
     {
       "rank": 28,
-      "team": "Packers",
-      "trend": "-8",
-      "blurb": "Matt LaFleur accurately summarized Thursday's 21-point loss to Atlanta in the postgame interview, calling it a “humbling night.” Green Bay’s offense lacks a running game and is putting too much on the shoulders of Jordan Love, and the defense’s inability to tackle effectively doomed the Packers in their second defeat. It’s fair to say they could easily be 0-3 right now, and I’m not sure where they go from here. If these issues persist against the Buccaneers in Week 4, we’ll be entering crisis territory."
+      "team": "Commanders",
+      "trend": "-7",
+      "blurb": "Things went from bad to worse for Washington when Marcus Mariota exited Sunday’s game overseas, leaving the Commanders with rookie third-stringer Athan Kaliakmanis as their last hope. The ensuing results didn’t surprise anyone, but I’d like to give Washington’s defense credit for continuing to exceed expectations, even after giving up 30 points. This D is better than that number suggests. Hopefully Washington's starting quarterback can return soon."
     },
     {
       "rank": 29,
-      "team": "Buccaneers",
-      "trend": "-5",
-      "blurb": "Tampa Bay’s offense remains stuck in the mud. It can’t protect Baker Mayfield, who also can’t find much comfort in Zac Robinson’s offense, which lacks a clear direction. This roster is good enough to be better than 0-3, yet that’s what these Bucs are after three weeks. And now they're facing a disaster scenario, with Mayfield expected to miss at least three weeks due to the thumb injury he suffered at the end of Sunday’s disheartening loss."
+      "team": "Dolphins",
+      "trend": "+1",
+      "blurb": "Haters who haven’t watched the Dolphins will call them the worst team in the league. I am not a hater. Miami is on a slow-but-steady track of improvement, showing signs of progress with each week. It's still a low-ceiling offense and the team remains winless, but I see the vision Jeff Hafley has for the Fins.\n\nRELATED CONTENT\nARTICLE\nNFL Week 4 Sunday aftermath: Bears' defense continues to shine; Jaguars are for real\nOct 05, 2026\nARTICLE\n2026 NFL fantasy football waiver wire, Week 5: RB Zach Charbonnet, WR Keon Coleman among targets\nOct 05, 2026\nARTICLE\n2026 NFL season, Week 4: What We Learned from Sunday's games\nOct 04, 2026"
     },
     {
       "rank": 30,
-      "team": "Dolphins",
-      "trend": "+2",
-      "blurb": "The Dolphins perform admirably between the 20-yard lines on a weekly basis but can’t find ways to finish drives with trips to the end zone. They’re the most undermanned team in the NFL but don’t lack effort. In this league, however, talent tends to win when effort is comparable. For now, Miami is still figuring out how to walk before attempting to run."
+      "team": "Buccaneers",
+      "trend": "-1",
+      "blurb": "It's gone from bad to worse in Tampa, where rookie Jalon Daniels did some decent things while also throwing two interceptions in a three-point loss. There isn’t much good to write about this team in any department (although I was happy to see Sean Tucker get a few touches), and it sure feels like this franchise is headed toward a crossroads."
     },
     {
       "rank": 31,
-      "team": "Patriots",
-      "trend": "-13",
-      "blurb": "Save for the defensively driven victory in Week 2, the Patriots have been a mess and have a major problem at quarterback. Drake Maye looks completely lost, and judging by the tone of his postgame press conference on Sunday, he might not find his way back onto New England's intended route for some time. Mike Vrabel was right when describing his concern level as “very high” afterward. There are problems everywhere for the defending AFC champions and a simple solution isn’t in sight."
+      "team": "Chargers",
+      "trend": "-4",
+      "blurb": "The Chargers’ offense is broken, Justin Herbert’s attempt to play hero is actively hurting their chances, and Jim Harbaugh is being forced to answer questions regarding OC Mike McDaniel’s job security. It’s clear Herbert isn’t yet comfortable in McDaniel’s offense, and a rash of offensive line injuries worsened matters against the defending champs on Sunday. Credit is due to the Chargers for fighting back, but as of now, it’s difficult to find any confidence in them."
     },
     {
       "rank": 32,
       "team": "Titans",
-      "trend": "-5",
-      "blurb": "A second straight rainy Sunday at MetLife Stadium claimed the Titans’ offense as its victim. Tennessee finally found some life late in its Week 3 loss to the Giants, but Cam Ward -- who has experienced a rough start to his sophomore season -- made a horrendous decision, throwing an end zone interception to a lurking Jevon Holland to seal another defeat. Tennessee is currently on a one step forward, two steps back pacing that doesn’t lead me to believe it'll suddenly improve any time soon.\n\nRELATED CONTENT\nNEWS\n\nPower Rankings: Bengals enter top three; Bears, Bucs, Chargers plummet\n\nNEWS\n\nPower Rankings: Change at No. 1! 49ers, Bears and Chiefs enter top 10\n\nNEWS\n\nPower Rankings: Who's rising/falling entering Week 1? Defending champs at No. 3\n\nNEWS\n\nPower Rankings: Defending champion Seahawks at No. 3; Patriots outside of top 10\n\nAFC\n\nNFC\n\nGeneral & Legal\n\nSupport\nPrivacy Policy\nTerms & Conditions\nSubscription Terms & Conditions\nAccessibility\nAd Choices\nYour Privacy Choices\nCookie Settings\nPreference Center: US, CA, MX\nPreference Center: International\nSitemap\n\nNFL Culture\n\nCareers\nInclusion\nIn the Community\nInspire Change\nNFL HBCU\nPor La Cultura\nPlay Football\nPlay 60\nNFL Origins\n\nNFL Ecosystems\n\nNFL Football Operations\nNFL Shop\nNFL Films\nOn Location\nPro Football Hall of Fame\nUSA Football\nNFL Extra Points Credit Card\nNFL Ticket Exchange\nNFL Auction\nFlag Football\nActivate - CTV\n\nMedia\n\nNFL Communications\nMedia Guides\nRecord & Fact Book\nRule Book\nLicensing\n\nPlayers\n\nNFL Health & Safety\nPlayer Engagement\nNFL Legends Community\nNFL Alumni Association\nNFL Player Care\n\nDownload the App\n\n© 2026 NFL Enterprises LLC. NFL and the NFL shield design are registered trademarks of the National Football League. The team names, logos and uniform designs are registered trademarks of the teams indicated. All other NFL-related trademarks are trademarks of the National Football League. NFL footage © NFL Productions LLC.\n\nBy clicking any of the buttons in this banner, or by clicking \"X\" to close the banner, and continuing on the site, you agree to our Terms and Conditions, including the arbitration and class action waiver provisions, and acknowledge our Privacy Policy, including the operation and use of tracking technologies. We and our partners use cookies and similar technologies (e.g., pixels) on this website to enhance site navigation, analyze your use of the site, and assist in marketing efforts, including targeted advertising, as explained in our Privacy Policy. You may “Reject Optional Tracking,” though some site services may not be available or work as intended. Note that some of these technologies are necessary to the function of the site and cannot be turned off, and that in some instances cookies may persist, but we send consent signals to third parties to restrict the processing of your information consistent with your privacy preferences. For more information or to further customize your tracking preferences, use these Cookie Settings.\nReject Optional Tracking Acknowledge Tracking"
+      "trend": "0",
+      "blurb": "Tennessee is another team operating with a low-ceiling offense, but not necessarily because the roster lacks talent. It seems like a unit that needs more time on task in Brian Daboll’s system. Cam Ward is struggling to find himself in the scheme, which isn’t exactly utilizing his greatest strengths, either. The margin for error for this Titans team is incredibly slim because of its own difficulties, which is why the Ravens were able to coast through a second half without Lamar Jackson and hang on to win.\n\nRELATED CONTENT\nNEWS\n\nPower Rankings: Brand new team at No. 1! Raiders, Vikings enter top 10\n\nNEWS\n\nPower Rankings: Bengals enter top three; Bears, Bucs, Chargers plummet\n\nNEWS\n\nPower Rankings: Change at No. 1! 49ers, Bears and Chiefs enter top 10\n\nNEWS\n\nPower Rankings: Who's rising/falling entering Week 1? Defending champs at No. 3\n\nAFC\n\nNFC\n\nGeneral & Legal\n\nSupport\nPrivacy Policy\nTerms & Conditions\nSubscription Terms & Conditions\nAccessibility\nAd Choices\nYour Privacy Choices\nCookie Settings\nPreference Center: US, CA, MX\nPreference Center: International\nSitemap\n\nNFL Culture\n\nCareers\nInclusion\nIn the Community\nInspire Change\nNFL HBCU\nPor La Cultura\nPlay Football\nPlay 60\nNFL Origins\n\nNFL Ecosystems\n\nNFL Football Operations\nNFL Shop\nNFL Films\nOn Location\nPro Football Hall of Fame\nUSA Football\nNFL Extra Points Credit Card\nNFL Ticket Exchange\nNFL Auction\nFlag Football\nActivate - CTV\n\nMedia\n\nNFL Communications\nMedia Guides\nRecord & Fact Book\nRule Book\nLicensing\n\nPlayers\n\nNFL Health & Safety\nPlayer Engagement\nNFL Legends Community\nNFL Alumni Association\nNFL Player Care\n\nDownload the App\n\n© 2026 NFL Enterprises LLC. NFL and the NFL shield design are registered trademarks of the National Football League. The team names, logos and uniform designs are registered trademarks of the teams indicated. All other NFL-related trademarks are trademarks of the National Football League. NFL footage © NFL Productions LLC.\n\nNous nous soucions de votre vie privée\n\nNous et nos 1020 partenaires stockons et accédons à des données personnelles, telles que des données de navigation ou des identifiants uniques, sur votre appareil. Si vous sélectionnez J’accepte, les technologies de suivi prendront en charge les finalités affichées dans la section « Nous et nos partenaires traitons des données pour fournir ». Si vous choisissez Rejeter tout ou que vous retirez votre consentement, elles seront désactivées. Si les technologies de suivi sont désactivées, il est possible que certains contenus et annonces qui vous sont présentés ne soient pas pertinents pour vous. Vous pouvez faire réapparaître ce menu pour modifier vos choix ou pour retirer votre consentement à tout moment en cliquant sur le lien Gérer les préférences en bas de page. Les choix que vous avez fait aurons un effet sur notre ou nos Site Web. Pour plus d’informations, reportez-vous à notre politique de confidentialité.\n\nNous et nos partenaires traitons les données pour fournir :\n\nUtiliser des données de géolocalisation précises. Analyser activement les caractéristiques de l’appareil pour l’identification. Stocker et/ou accéder à des informations sur un appareil. Publicités et contenu personnalisés, mesure de performance des publicités et du contenu, études d’audience et développement de services.\nListe des partenaires (fournisseurs)\n\nJ’accepte\nRejeter tout\nAfficher les objectifs"
     }
-  ]
+  ],
+  "powerRankingsSource": {
+    "url": "https://www.nfl.com/news/nfl-power-rankings-week-5-2026-nfl-season",
+    "week": 5,
+    "season": 2026
+  }
 }
