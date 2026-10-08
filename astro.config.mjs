@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import AstroPWA from '@vite-pwa/astro';
 import Critters from 'critters';
 import { readFile, writeFile } from 'node:fs/promises';
@@ -7,7 +8,9 @@ import { join } from 'node:path';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://playoffs-picture.vercel.app',
   integrations: [
+    sitemap(),
     {
       name: 'critical-css',
       hooks: {
