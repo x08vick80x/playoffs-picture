@@ -2,6 +2,7 @@
 import SectionTitle from "@/components/atoms/SectionTitle/SectionTitle.astro";
 import TeamRow from "@/components/molecules/TeamRow/TeamRow.astro";
 import { getScheduleWeekNumber } from "@scraper/config.js";
+import { getTeamId } from "@/utils/team-mapping.js";
 
 interface Match {
     home: string;
@@ -59,7 +60,11 @@ const compactDate = (date: string | null) => date?.replace(
                     <div class="empty-state">- No matchups available -</div>
                 )}
                 {w.matches.map((m) => (
-                    <div class="schedule-row">
+                    <div
+                        class="schedule-row"
+                        data-home-team={getTeamId(m.home).replace('buccaners', 'buccaneers')}
+                        data-away-team={getTeamId(m.away).replace('buccaners', 'buccaneers')}
+                    >
                         <span class="schedule-row__date">
                             {compactDate(m.date)}
                         </span>
@@ -93,6 +98,33 @@ const compactDate = (date: string | null) => date?.replace(
 
 <script>
     import { getScheduleWeekNumber } from "@scraper/config.js";
+
+    import { getTeamId } from "@/utils/team-mapping.js";
+
+    const FAVORITES_KEY = "nfl-favorites";
+    const scheduleRows = document.querySelectorAll<HTMLElement>(".schedule-row[data-home-team]");
+
+    function highlightFavorites() {
+        let teams: string[] = [];
+        try {
+            const stored: unknown = JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]");
+            if (Array.isArray(stored)) teams = stored.filter((team): team is string => typeof team === "string");
+        } catch {
+            // The schedule remains usable when storage is unavailable or invalid.
+        }
+        const favorites = new Set(teams.map(team => getTeamId(team).replace('buccaners', 'buccaneers')));
+        scheduleRows.forEach(row => {
+            const isFavorite = favorites.has(row.dataset.homeTeam!) || favorites.has(row.dataset.awayTeam!);
+            row.classList.toggle("schedule-row--favorite", isFavorite);
+        });
+    }
+
+    highlightFavorites();
+    window.addEventListener("my-teams-updated", highlightFavorites);
+    window.addEventListener("pageshow", highlightFavorites);
+    window.addEventListener("storage", event => {
+        if (event.key === FAVORITES_KEY || event.key === null) highlightFavorites();
+    });
 
     const tabsContainer = document.getElementById("week-tabs");
 

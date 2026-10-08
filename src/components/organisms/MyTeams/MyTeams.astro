@@ -386,6 +386,7 @@ const teamsData = {
     btnSave.addEventListener("click", () => {
         myTeams = Array.from(editSet);
         localStorage.setItem(STORAGE_KEY, JSON.stringify(myTeams));
+        window.dispatchEvent(new Event("my-teams-updated"));
         renderDashboard();
         closeModal();
     });

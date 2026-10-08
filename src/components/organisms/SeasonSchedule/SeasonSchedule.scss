@@ -60,6 +60,12 @@
     min-width: 0;
     box-shadow: $box-shadow;
 
+    &--favorite {
+        background: rgba($nfl-red, 0.08);
+        outline: 2px solid $nfl-red;
+        outline-offset: -2px;
+    }
+
     &__date {
         color: $text-secondary;
         font-size: 1.1rem;
