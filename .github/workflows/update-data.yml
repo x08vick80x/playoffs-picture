@@ -9,8 +9,11 @@ on:
     - cron: '0 6 * * 1'
     # Tuesday morning (for Monday Night Football)
     - cron: '0 6 * * 2'
-    # Tuesday afternoon (5:30 PM for power rankings)
-    - cron: '0 16 * * 2'
+    # Power rankings: Tuesday at 18:17 Paris time in summer (17:17 in winter).
+    # Avoid the start of the hour, when GitHub's scheduler is busiest.
+    - cron: '17 16 * * 2'
+    # Second attempt at 20:17 in summer (19:17 in winter), including late publication.
+    - cron: '17 18 * * 2'
     # Sunday evening (22:30 CET / 21:30 UTC)
     - cron: '30 21 * * 0'
     # Monday morning middle of night (01:30 CET / 00:30 UTC)
