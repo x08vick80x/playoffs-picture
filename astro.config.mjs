@@ -69,8 +69,19 @@ export default defineConfig({
           ]
         },
         workbox: {
-          globPatterns: ['**/*.{js,css,html,ico,png,svg,json,woff,woff2}'],
-          navigateFallback: '/index.html',
+          // HTML contains the data: do not let precaching intercept navigation.
+          globPatterns: ['**/*.{js,css,ico,png,svg,json,woff,woff2}'],
+          navigateFallback: null,
+          runtimeCaching: [{
+            urlPattern: ({ request }) => request.mode === 'navigate',
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'pages-v1',
+              networkTimeoutSeconds: 5,
+              fetchOptions: { cache: 'no-cache' },
+              cacheableResponse: { statuses: [200] },
+            },
+          }],
           clientsClaim: true,
           skipWaiting: true,
           cleanupOutdatedCaches: true
