@@ -71,6 +71,7 @@ export default defineConfig({
         workbox: {
           // HTML contains the data: do not let precaching intercept navigation.
           globPatterns: ['**/*.{js,css,ico,png,svg,json,woff,woff2}'],
+          globIgnores: ['**/data-version.json'],
           navigateFallback: null,
           runtimeCaching: [{
             urlPattern: ({ request }) => request.mode === 'navigate',
