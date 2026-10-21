@@ -1,7 +1,7 @@
 ---
 import { pwaInfo } from "virtual:pwa-info";
 import Analytics from "@vercel/analytics/astro";
-import { dataVersion } from '@/utils/data-version';
+import { dataVersion } from "@/utils/data-version";
 
 interface Props {
     title: string;
@@ -19,7 +19,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
-        <meta name="theme-color" content="#013369" />
+        <meta name="theme-color" content="#252525" />
         <meta name="generator" content={Astro.generator} />
 
         <!-- Primary Meta Tags -->
