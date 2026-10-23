@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-20T21:43:22.243Z",
+  "lastUpdated": "2026-10-23T10:35:06.396Z",
   "AFC": [
     {
       "seed": "1",
@@ -27,32 +27,32 @@
     },
     {
       "seed": "5",
-      "team": "New England",
-      "record": "4-2-0",
-      "status": ""
-    },
-    {
-      "seed": "6",
       "team": "Denver",
       "record": "4-2-0",
       "status": ""
     },
     {
-      "seed": "7",
+      "seed": "6",
       "team": "Pittsburgh",
       "record": "4-2-0",
       "status": ""
     },
     {
-      "seed": "8",
+      "seed": "7",
       "team": "Baltimore",
       "record": "4-2-0",
       "status": ""
     },
     {
-      "seed": "9",
+      "seed": "8",
       "team": "Cincinnati",
       "record": "3-2-0",
+      "status": ""
+    },
+    {
+      "seed": "9",
+      "team": "New England",
+      "record": "4-3-0",
       "status": ""
     },
     {
@@ -125,13 +125,13 @@
     },
     {
       "seed": "5",
-      "team": "Green Bay",
-      "record": "4-2-0",
+      "team": "Chicago",
+      "record": "5-2-0",
       "status": ""
     },
     {
       "seed": "6",
-      "team": "Chicago",
+      "team": "Green Bay",
       "record": "4-2-0",
       "status": ""
     },
