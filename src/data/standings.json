@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T10:35:06.396Z",
+  "lastUpdated": "2026-10-25T23:24:06.496Z",
   "AFC": [
     {
       "seed": "1",
@@ -15,43 +15,43 @@
     },
     {
       "seed": "3",
+      "team": "Cleveland",
+      "record": "5-2-0",
+      "status": ""
+    },
+    {
+      "seed": "4",
       "team": "Jacksonville",
       "record": "4-2-0",
       "status": ""
     },
     {
-      "seed": "4",
-      "team": "Cleveland",
-      "record": "4-2-0",
+      "seed": "5",
+      "team": "Pittsburgh",
+      "record": "5-2-0",
       "status": ""
     },
     {
-      "seed": "5",
+      "seed": "6",
       "team": "Denver",
       "record": "4-2-0",
       "status": ""
     },
     {
-      "seed": "6",
-      "team": "Pittsburgh",
-      "record": "4-2-0",
-      "status": ""
-    },
-    {
       "seed": "7",
-      "team": "Baltimore",
+      "team": "Cincinnati",
       "record": "4-2-0",
       "status": ""
     },
     {
       "seed": "8",
-      "team": "Cincinnati",
-      "record": "3-2-0",
+      "team": "New England",
+      "record": "4-3-0",
       "status": ""
     },
     {
       "seed": "9",
-      "team": "New England",
+      "team": "Baltimore",
       "record": "4-3-0",
       "status": ""
     },
@@ -64,31 +64,31 @@
     {
       "seed": "11",
       "team": "N.Y. Jets",
-      "record": "2-4-0",
+      "record": "2-5-0",
       "status": ""
     },
     {
       "seed": "12",
       "team": "Indianapolis",
-      "record": "2-4-0",
+      "record": "2-5-0",
       "status": ""
     },
     {
       "seed": "13",
       "team": "Houston",
-      "record": "2-4-0",
+      "record": "2-5-0",
       "status": ""
     },
     {
       "seed": "14",
-      "team": "Tennessee",
+      "team": "Miami",
       "record": "1-5-0",
       "status": ""
     },
     {
       "seed": "15",
-      "team": "Miami",
-      "record": "0-5-0",
+      "team": "Tennessee",
+      "record": "1-6-0",
       "status": ""
     },
     {
@@ -101,26 +101,26 @@
   "NFC": [
     {
       "seed": "1",
-      "team": "San Francisco",
+      "team": "Minnesota",
       "record": "6-0-0",
       "status": ""
     },
     {
       "seed": "2",
-      "team": "Minnesota",
-      "record": "5-0-0",
+      "team": "San Francisco",
+      "record": "6-1-0",
       "status": ""
     },
     {
       "seed": "3",
-      "team": "Carolina",
-      "record": "3-2-0",
+      "team": "N.Y. Giants",
+      "record": "4-2-1",
       "status": ""
     },
     {
       "seed": "4",
-      "team": "N.Y. Giants",
-      "record": "3-2-1",
+      "team": "Carolina",
+      "record": "3-3-0",
       "status": ""
     },
     {
@@ -150,49 +150,49 @@
     {
       "seed": "9",
       "team": "Atlanta",
-      "record": "2-4-0",
+      "record": "3-4-0",
       "status": ""
     },
     {
       "seed": "10",
-      "team": "New Orleans",
-      "record": "2-4-0",
-      "status": ""
-    },
-    {
-      "seed": "11",
       "team": "Philadelphia",
       "record": "2-4-0",
       "status": ""
     },
     {
-      "seed": "12",
+      "seed": "11",
       "team": "Dallas",
       "record": "2-4-0",
       "status": ""
     },
     {
-      "seed": "13",
+      "seed": "12",
       "team": "Arizona",
       "record": "2-4-0",
       "status": ""
     },
     {
-      "seed": "14",
+      "seed": "13",
       "team": "L.A. Rams",
       "record": "2-4-0",
       "status": ""
     },
     {
+      "seed": "14",
+      "team": "Tampa Bay",
+      "record": "2-5-0",
+      "status": ""
+    },
+    {
       "seed": "15",
-      "team": "Washington",
-      "record": "1-4-1",
+      "team": "New Orleans",
+      "record": "2-5-0",
       "status": ""
     },
     {
       "seed": "16",
-      "team": "Tampa Bay",
-      "record": "1-5-0",
+      "team": "Washington",
+      "record": "1-4-1",
       "status": ""
     }
   ]
