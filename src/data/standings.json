@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-26T11:56:47.493Z",
+  "lastUpdated": "2026-10-27T11:28:31.135Z",
   "AFC": [
     {
       "seed": "1",
@@ -161,31 +161,31 @@
     },
     {
       "seed": "11",
-      "team": "Philadelphia",
-      "record": "2-4-0",
+      "team": "Dallas",
+      "record": "3-4-0",
       "status": ""
     },
     {
       "seed": "12",
-      "team": "Dallas",
-      "record": "2-4-0",
-      "status": ""
-    },
-    {
-      "seed": "13",
       "team": "Tampa Bay",
       "record": "2-5-0",
       "status": ""
     },
     {
-      "seed": "14",
+      "seed": "13",
       "team": "New Orleans",
       "record": "2-5-0",
       "status": ""
     },
     {
-      "seed": "15",
+      "seed": "14",
       "team": "Arizona",
+      "record": "2-5-0",
+      "status": ""
+    },
+    {
+      "seed": "15",
+      "team": "Philadelphia",
       "record": "2-5-0",
       "status": ""
     },
