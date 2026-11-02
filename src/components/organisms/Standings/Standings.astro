@@ -13,9 +13,10 @@ interface Team {
 interface Props {
     afc: Team[];
     nfc: Team[];
+    clinch?: Record<string, string>;
 }
 
-const { afc, nfc } = Astro.props;
+const { afc, nfc, clinch = {} } = Astro.props;
 const conferences = { AFC: afc, NFC: nfc };
 const filters = [
     { id: 'divisions', label: 'Divisions' },
@@ -42,24 +43,29 @@ const filters = [
         ))}
     </nav>
 
+    {Object.values(clinch).some(status => status !== 'alive') && (
+        <p class="standings-note">y clinched division · x clinched playoff berth · e eliminated</p>
+    )}
+
     <div id="standings-divisions" class="standings-divisions" data-standings-panel="divisions">
         {DIVISIONS.map(division => (
             <StandingsTable
                 title={division.name}
+                clinch={clinch}
                 teams={getDivisionTeams(conferences[division.conference as keyof typeof conferences], division)}
             />
         ))}
     </div>
 
     <div id="standings-afc" data-standings-panel="afc" hidden>
-        <StandingsTable title="AFC" teams={afc} ranking="conference" />
+        <StandingsTable title="AFC" teams={afc} ranking="conference" clinch={clinch} />
     </div>
     <div id="standings-nfc" data-standings-panel="nfc" hidden>
-        <StandingsTable title="NFC" teams={nfc} ranking="conference" />
+        <StandingsTable title="NFC" teams={nfc} ranking="conference" clinch={clinch} />
     </div>
     <div id="standings-league" data-standings-panel="league" hidden>
         <p class="standings-note">Sorted by win percentage. Tied teams share the same rank.</p>
-        <StandingsTable title="NFL" teams={rankLeague([...afc, ...nfc])} ranking="league" />
+        <StandingsTable title="NFL" teams={rankLeague([...afc, ...nfc])} ranking="league" clinch={clinch} />
     </div>
     <div id="standings-mine" data-standings-panel="mine" hidden>
         <p class="standings-note">Your favorite teams, with their NFL rank.</p>

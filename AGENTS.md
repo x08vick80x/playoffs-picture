@@ -31,6 +31,7 @@ src/
   layouts/Layout.astro
   pages/index.astro         # Single page app; reads data/*.json directly via node:fs at build time
   styles/                   # _variables.scss, _mixins.scss, _themes.scss, _base.scss, main.scss
+  utils/clinch.js           # Clinch/elimination computed from standings records (no scraping)
   utils/team-mapping.js     # City/full-name -> logo id / abbreviation lookup tables
 
 start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg into public/sprites.svg

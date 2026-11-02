@@ -5,9 +5,15 @@ interface Props {
     title: string;
     teams: { team: string; record: string; seed: string; rank?: number }[];
     ranking?: 'division' | 'conference' | 'league';
+    clinch?: Record<string, string>;
 }
 
-const { title, teams, ranking = 'division' } = Astro.props;
+const { title, teams, ranking = 'division', clinch = {} } = Astro.props;
+const clinchLabels: Record<string, [string, string]> = {
+    division: ['y', 'Clinched division'],
+    playoff: ['x', 'Clinched playoff berth'],
+    eliminated: ['e', 'Eliminated'],
+};
 ---
 
 <table class="standings-table">
@@ -26,6 +32,9 @@ const { title, teams, ranking = 'division' } = Astro.props;
                     <span class="standings-table__team">
                         <Logo team={team.team} size="sm" />
                         <span>{team.team}</span>
+                        {clinchLabels[clinch[team.team]] && (
+                            <abbr class={`standings-table__clinch standings-table__clinch--${clinch[team.team]}`} title={clinchLabels[clinch[team.team]][1]}>{clinchLabels[clinch[team.team]][0]}</abbr>
+                        )}
                         <span class="standings-table__fav" role="img" aria-label="Favorite team">★</span>
                     </span>
                 </th>

@@ -116,6 +116,19 @@
         display: none;
     }
 
+    &__clinch {
+        margin-left: -0.4rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 1;
+        text-decoration: none;
+        cursor: help;
+
+        &--division,
+        &--playoff { color: $green-text; }
+        &--eliminated { color: $accent-soft; }
+    }
+
     .playoff-spot {
         background: linear-gradient(90deg, rgba($playoff-spot, 0.1), $transparent 55%);
         td:first-child { box-shadow: inset 3px 0 $playoff-spot; }

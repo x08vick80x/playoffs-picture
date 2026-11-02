@@ -13,6 +13,7 @@ import LastUpdated from "@/components/atoms/LastUpdated/LastUpdated.astro";
 import Button from "@/components/atoms/Button/Button.astro";
 import BackToTop from "@/components/atoms/BackToTop/BackToTop.astro";
 import SeasonSchedule from "@/components/organisms/SeasonSchedule/SeasonSchedule.astro";
+import { getClinchStatuses, mergeEliminated } from "@/utils/clinch.js";
 import fs from "node:fs";
 
 import path from "node:path";
@@ -26,6 +27,10 @@ const playoffPicture = JSON.parse(fs.readFileSync(playoffPicturePath, "utf-8"));
 
 const schedulePath = path.resolve("./src/data/schedule.json");
 const schedule = JSON.parse(fs.readFileSync(schedulePath, "utf-8"));
+
+// Computed from standings; the scraped eliminated list only fills in extra detail.
+const clinch = getClinchStatuses(standings);
+const eliminated = mergeEliminated(playoffPicture.eliminated, standings, clinch, schedule.teamSchedules);
 
 // Data time from the scraper; the build time says nothing about freshness.
 const lastUpdatedIso: string = standings.lastUpdated;
@@ -151,7 +156,7 @@ const lastUpdated = new Date(lastUpdatedIso).toLocaleString("en-US", {
 
 			<BubbleEliminated
 				bubble={playoffPicture.bubble}
-				eliminated={playoffPicture.eliminated}
+				eliminated={eliminated}
 				currentWeek={schedule.currentWeek}
 			/>
 
@@ -160,7 +165,7 @@ const lastUpdated = new Date(lastUpdatedIso).toLocaleString("en-US", {
 			</section>
 
 			<section id="standings">
-				<Standings afc={standings.AFC} nfc={standings.NFC} />
+				<Standings afc={standings.AFC} nfc={standings.NFC} clinch={clinch} />
 			</section>
 		</div>
 	</main>
