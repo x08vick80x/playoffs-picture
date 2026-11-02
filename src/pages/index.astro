@@ -11,6 +11,7 @@ import PowerRankings from "@/components/organisms/PowerRankings/PowerRankings.as
 import PageTitle from "@/components/atoms/PageTitle/PageTitle.astro";
 import LastUpdated from "@/components/atoms/LastUpdated/LastUpdated.astro";
 import Button from "@/components/atoms/Button/Button.astro";
+import BackToTop from "@/components/atoms/BackToTop/BackToTop.astro";
 import SeasonSchedule from "@/components/organisms/SeasonSchedule/SeasonSchedule.astro";
 import fs from "node:fs";
 
@@ -163,6 +164,7 @@ const lastUpdated = new Date().toLocaleString("en-US", {
 		</div>
 	</main>
 	<ScheduleModal />
+	<BackToTop />
 	<Footer />
 </Layout>
 

@@ -60,6 +60,22 @@ button {
     background: none;
 }
 
+:focus-visible {
+    outline: 2px solid $text-primary;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 // Lock the document while any modal is open, including its closing animation.
 // CSS follows the actual state, so Escape and overlapping modals stay in sync.
 html:has(dialog[open], .selector-modal.is-open) {

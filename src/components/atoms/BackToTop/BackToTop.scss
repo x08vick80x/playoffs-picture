@@ -1,0 +1,41 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.back-to-top {
+    @include flex-center;
+    position: fixed;
+    right: $spacing-sm;
+    bottom: $spacing-sm;
+    z-index: $z-header;
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 50%;
+    background: $bg-header;
+    border: 1px solid $border-subtle;
+    box-shadow: $box-shadow;
+    backdrop-filter: $glass-blur;
+    -webkit-backdrop-filter: $glass-blur;
+    color: $text-primary;
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity $duration-fast $ease-out, transform $duration-fast $ease-out, background $duration-fast;
+
+    &[hidden] {
+        display: none;
+    }
+
+    &--visible {
+        opacity: 1;
+        transform: none;
+    }
+
+    &:hover {
+        background: $gradient-accent;
+        color: $white;
+    }
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+    }
+}
