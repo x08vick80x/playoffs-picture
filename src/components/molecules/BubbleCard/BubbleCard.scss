@@ -14,8 +14,10 @@
     }
     background: $gradient-card;
     border: 1px solid $border-subtle;
-    border-radius: $radius-md;
+    border-radius: $radius-lg;
     box-shadow: $box-shadow;
+    backdrop-filter: $glass-blur;
+    -webkit-backdrop-filter: $glass-blur;
     transition: transform $duration-fast, border-color $duration-fast;
     cursor: pointer;
 

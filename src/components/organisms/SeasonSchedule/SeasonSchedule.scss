@@ -9,10 +9,17 @@
 
 .week-tabs {
     display: flex;
-    gap: $spacing-xs;
+    gap: 0.2rem;
+    width: fit-content;
+    max-width: 100%;
     overflow-x: auto;
-    padding-bottom: $spacing-xs;
-    margin-bottom: $spacing-sm;
+    margin: 0 auto $spacing-md;
+    padding: 0.4rem;
+    background: rgba($white, 0.06);
+    border: 1px solid $border-subtle;
+    border-radius: 999px;
+    backdrop-filter: $glass-blur;
+    -webkit-backdrop-filter: $glass-blur;
     scrollbar-width: none;
 
     &::-webkit-scrollbar {
@@ -21,25 +28,24 @@
 
     .week-tab {
         flex: 0 0 auto;
-        background: rgba($white, 0.06);
+        background: $transparent;
         color: $text-secondary;
-        border: 1px solid $border-subtle;
+        border: none;
         border-radius: 999px;
         padding: 0.8rem 1.8rem;
-        font-weight: bold;
+        font-weight: 500;
         font-size: 1.4rem;
         white-space: nowrap;
-        transition: background 0.2s, color 0.2s, border-color 0.2s;
+        transition: background 0.2s, color 0.2s;
 
         &:hover {
-            background: rgba($white, 0.12);
             color: $white;
         }
 
         &.active {
             background: $gradient-accent;
             color: $white;
-            border-color: transparent;
+            font-weight: 600;
             box-shadow: 0 .4rem 1.2rem rgba($nfl-red, 0.45);
         }
     }
@@ -66,9 +72,9 @@
     @include card-hover;
 
     &--favorite {
-        background: rgba($nfl-red, 0.12);
-        outline: 2px solid $nfl-red;
-        outline-offset: -2px;
+        background: linear-gradient(145deg, rgba($nfl-red, 0.22), rgba($nfl-red, 0.06));
+        outline: 1px solid rgba($accent-soft, 0.7);
+        outline-offset: -1px;
     }
 
     &__date {

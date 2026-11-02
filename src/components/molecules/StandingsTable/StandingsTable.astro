@@ -21,14 +21,14 @@ const { title, teams, ranking = 'division' } = Astro.props;
                 'playoff-spot': ranking === 'conference' && Number(team.seed) <= 7,
                 'top-seed': ranking === 'conference' && Number(team.seed) === 1,
             }}>
-                <td class="standings-table__rank">{ranking === 'conference' ? team.seed : ranking === 'league' ? team.rank : index + 1}</td>
+                <td class="standings-table__rank"><span class="standings-table__pos">{ranking === 'conference' ? team.seed : ranking === 'league' ? team.rank : index + 1}</span></td>
                 <th scope="row">
                     <span class="standings-table__team">
                         <Logo team={team.team} size="sm" />
                         <span>{team.team}</span>
                     </span>
                 </th>
-                <td class="standings-table__record">{team.record}</td>
+                <td class="standings-table__record">{team.record.split('-').map((part, i) => (<>{i > 0 && <span class="standings-table__sep">–</span>}<span class:list={['standings-table__num', { 'standings-table__num--wins': i === 0 }]}>{part}</span></>))}</td>
             </tr>
         ))}
     </tbody>

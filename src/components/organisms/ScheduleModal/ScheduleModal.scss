@@ -48,11 +48,12 @@
         max-height: 90vh;
         max-height: 90dvh;
         overflow: hidden;
-        background: $gradient-card;
+        background: $gradient-card, $bg-modal-glass;
+        backdrop-filter: $glass-blur;
+        -webkit-backdrop-filter: $glass-blur;
         border: 1px solid $border-subtle;
-        border-top: 4px solid $nfl-red;
         border-radius: $radius-lg + 8px;
-        box-shadow: 0 2.5rem 5rem -1.2rem rgba($black, 0.7);
+        box-shadow: 0 2.5rem 5rem -1.2rem rgba($black, 0.7), inset 0 1px 0 rgba($white, 0.14);
     }
 
     &__header {
@@ -84,16 +85,15 @@
         font-weight: 800;
         letter-spacing: 0.2rem;
         text-transform: uppercase;
-        color: $nfl-red;
+        color: $accent-soft;
     }
 
     &__title {
         margin: 0;
-        font-size: 2.4rem;
-        font-weight: 900;
-        font-style: italic;
+        font-size: 2.6rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
         line-height: 1.1;
-        text-transform: uppercase;
         color: $white;
         overflow-wrap: anywhere;
     }
@@ -118,7 +118,7 @@
         transition: background $duration-fast, color $duration-fast;
 
         &:hover {
-            background: $nfl-red;
+            background: rgba($white, 0.2);
             color: $white;
         }
 

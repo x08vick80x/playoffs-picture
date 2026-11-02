@@ -23,8 +23,9 @@ html {
 
 body {
     background:
-        radial-gradient(90rem 50rem at 0% -10%, $bg-glow-blue, $transparent 60%),
-        radial-gradient(70rem 45rem at 100% 0%, $bg-glow-red, $transparent 60%),
+        radial-gradient(60rem 42rem at 8% -6%, $bg-glow-blue, $transparent 62%),
+        radial-gradient(52rem 38rem at 96% 2%, $bg-glow-red, $transparent 62%),
+        radial-gradient(70rem 50rem at 55% 108%, $bg-glow-violet, $transparent 62%),
         $bg-dark;
     background-attachment: fixed;
     color: $text-primary;

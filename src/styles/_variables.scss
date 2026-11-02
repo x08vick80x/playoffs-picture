@@ -27,33 +27,39 @@ $nfl-white: $white;
 $nfl-green: #2ff89d;
 $nfl-light-blue: #00b4ff;
 
-$bg-dark: #121212;
+$bg-dark: #070a12;
 $bg-dark-light: #252525;
 $bg-card: #1E1E1E;
 
-$box-shadow: 0 .6rem 1.8rem rgba($black, 0.45);
-$box-shadow-hover: 0 .8rem 2.4rem rgba($black, 0.55), 0 0 0 1px rgba($nfl-red, 0.45);
+// Glass surfaces
+$glass-blur: blur(2rem) saturate(150%);
+$box-shadow: 0 2.4rem 4rem -2rem rgba($black, 0.7), inset 0 1px 0 rgba($white, 0.12);
+$box-shadow-hover: 0 3rem 5rem -2rem rgba($black, 0.8), inset 0 1px 0 rgba($white, 0.22), 0 0 0 1px rgba($white, 0.16);
 
-$border-subtle: rgba($white, 0.08);
-$bg-card-top: #232a3a;
-$bg-card-top-hover: #2b3345;
-$bg-card-bottom: #181c27;
-$bg-glow-blue: rgba($nfl-light-blue, 0.14);
-$bg-glow-red: rgba($nfl-red, 0.22);
-$bg-header: rgba(#141824, 0.78);
-$gradient-card: linear-gradient(160deg, $bg-card-top 0%, $bg-card-bottom 100%);
+$border-subtle: rgba($white, 0.1);
+$bg-card-top: rgba($white, 0.05);
+$bg-card-top-hover: rgba($white, 0.14);
+$bg-card-bottom: rgba($white, 0.03);
+$bg-glow-blue: rgba(#4f6eff, 0.38);
+$bg-glow-violet: rgba(#8250ff, 0.26);
+$bg-glow-red: rgba($nfl-red, 0.3);
+$bg-header: rgba(#0d1220, 0.55);
+$bg-modal-glass: rgba(#0d1220, 0.82);
+$gradient-card: linear-gradient(145deg, rgba($white, 0.09) 0%, rgba($white, 0.03) 100%);
 $gradient-accent: linear-gradient(90deg, $nfl-red, #ff6a3d);
 
 $text-primary: $white;
-$text-secondary: #bdbdbd;
-$text-gray-light: #e2e2e2;
-$text-gray-lighter: #efefef;
+$text-secondary: #a9b1c6;
+$text-gray-light: #e2e6f0;
+$text-gray-lighter: #f1f3f9;
 
 $accent: $nfl-red;
+$accent-soft: #ff5a63;
 
 // Typography
 $font-main: Arial, sans-serif;
 $font-body: 'Montserrat', Arial, sans-serif;
+$font-numeric: 'Space Grotesk', 'Montserrat', Arial, sans-serif;
 
 // Spacing
 $spacing-xs: 0.8rem; // 8px
@@ -68,9 +74,9 @@ $tablet: 768px;
 $desktop: 1024px;
 
 // Radius
-$radius-sm: 6px;
-$radius-md: 8px;
-$radius-lg: 12px;
+$radius-sm: 10px;
+$radius-md: 14px;
+$radius-lg: 22px;
 
 // Z-Index
 $z-modal: 1000;
