@@ -2,6 +2,7 @@
 import { pwaInfo } from "virtual:pwa-info";
 import Analytics from "@vercel/analytics/astro";
 import { dataVersion } from "@/utils/data-version";
+import Toast from "@/components/atoms/Toast/Toast.astro";
 
 interface Props {
     title: string;
@@ -74,6 +75,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </head>
     <body>
         <slot />
+        <Toast />
         <Analytics />
         <script src="@/pwa.ts"></script>
         <script is:inline>

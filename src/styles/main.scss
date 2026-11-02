@@ -15,6 +15,7 @@
 @use '@/components/atoms/Button/Button';
 @use '@/components/atoms/UnavailableNotice/UnavailableNotice';
 @use '@/components/atoms/BackToTop/BackToTop';
+@use '@/components/atoms/Toast/Toast';
 
 // Molecules
 @use "@/components/molecules/StandingsTable/StandingsTable";

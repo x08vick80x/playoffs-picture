@@ -1,0 +1,62 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: $spacing-sm;
+    z-index: $z-header + 1;
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    max-width: calc(100vw - 2 * #{$spacing-sm});
+    padding: 0.8rem 0.8rem 0.8rem 1.6rem;
+    border-radius: 999px;
+    background: $bg-header;
+    border: 1px solid $border-subtle;
+    box-shadow: $box-shadow;
+    backdrop-filter: $glass-blur;
+    -webkit-backdrop-filter: $glass-blur;
+    color: $text-primary;
+    font-size: 1.4rem;
+    transform: translateX(-50%);
+    animation: toast-in 0.25s $ease-out;
+
+    &[hidden] {
+        display: none;
+    }
+
+    &__action {
+        flex: 0 0 auto;
+        padding: 0.6rem 1.4rem;
+        border-radius: 999px;
+        background: $gradient-accent;
+        color: $white;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    &__close {
+        @include flex-center;
+        flex: 0 0 auto;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        color: $text-secondary;
+        font-size: 2rem;
+        line-height: 1;
+        transition: background $duration-fast, color $duration-fast;
+
+        &:hover {
+            background: ink(0.1);
+            color: $text-primary;
+        }
+    }
+}
+
+@keyframes toast-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 1rem);
+    }
+}

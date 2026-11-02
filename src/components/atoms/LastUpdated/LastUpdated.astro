@@ -1,9 +1,43 @@
 ---
 interface Props {
     date: string;
+    iso: string;
 }
 
-const { date } = Astro.props;
+const { date, iso } = Astro.props;
 ---
 
-<p class="last-updated">Last update : {date}</p>
+<p class="last-updated" data-last-updated={iso}>
+    Last update : <time datetime={iso}>{date}</time><span class="last-updated__ago"></span>
+</p>
+
+<script>
+    const STALE_AFTER_MS = 4 * 24 * 60 * 60 * 1000;
+
+    function relative(ms: number) {
+        const minutes = Math.floor(ms / 60000);
+        if (minutes < 1) return "just now";
+        if (minutes < 60) return `${minutes} min ago`;
+        const hours = Math.floor(minutes / 60);
+        if (hours < 24) return `${hours} h ago`;
+        const days = Math.floor(hours / 24);
+        return `${days} ${days === 1 ? "day" : "days"} ago`;
+    }
+
+    document.querySelectorAll<HTMLElement>("[data-last-updated]").forEach((el) => {
+        const updatedAt = Date.parse(el.dataset.lastUpdated || "");
+        const ago = el.querySelector<HTMLElement>(".last-updated__ago");
+        if (Number.isNaN(updatedAt) || !ago) return;
+
+        function render() {
+            const age = Math.max(0, Date.now() - updatedAt);
+            ago!.textContent = ` (${relative(age)})`;
+            const stale = age > STALE_AFTER_MS;
+            el.classList.toggle("last-updated--stale", stale);
+            el.title = stale ? "These numbers may be outdated" : "";
+        }
+
+        render();
+        window.setInterval(render, 60000);
+    });
+</script>
