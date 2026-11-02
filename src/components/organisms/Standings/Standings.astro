@@ -22,6 +22,7 @@ const filters = [
     { id: 'afc', label: 'AFC' },
     { id: 'nfc', label: 'NFC' },
     { id: 'league', label: 'NFL' },
+    { id: 'mine', label: 'My Teams' },
 ];
 ---
 
@@ -36,6 +37,7 @@ const filters = [
                 data-standings-filter={id}
                 aria-controls={`standings-${id}`}
                 aria-current={id === 'divisions' ? 'true' : undefined}
+                hidden={id === 'mine' ? true : undefined}
             >{label}</a>
         ))}
     </nav>
@@ -59,19 +61,60 @@ const filters = [
         <p class="standings-note">Sorted by win percentage. Tied teams share the same rank.</p>
         <StandingsTable title="NFL" teams={rankLeague([...afc, ...nfc])} ranking="league" />
     </div>
+    <div id="standings-mine" data-standings-panel="mine" hidden>
+        <p class="standings-note">Your favorite teams, with their NFL rank.</p>
+        <div data-standings-mine></div>
+    </div>
 </div>
 
 <script>
+    const FAVORITES_KEY = 'nfl-favorites';
+
+    function readFavorites(): Set<string> {
+        try {
+            const parsed = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
+            return new Set(Array.isArray(parsed) ? parsed : []);
+        } catch {
+            return new Set();
+        }
+    }
+
     document.querySelectorAll<HTMLElement>('[data-standings]').forEach(container => {
         const links = container.querySelectorAll<HTMLAnchorElement>('[data-standings-filter]');
         const panels = container.querySelectorAll<HTMLElement>('[data-standings-panel]');
+        const mineLink = container.querySelector<HTMLAnchorElement>('[data-standings-filter="mine"]');
+        const mineHost = container.querySelector<HTMLElement>('[data-standings-mine]');
+        const leagueTable = container.querySelector<HTMLTableElement>('[data-standings-panel="league"] table');
+        let current = 'divisions';
 
         function activate(filter: string) {
+            if (filter === 'mine' && mineLink?.hidden) filter = 'divisions';
+            current = filter;
             panels.forEach(panel => { panel.hidden = panel.dataset.standingsPanel !== filter; });
             links.forEach(link => {
                 if (link.dataset.standingsFilter === filter) link.setAttribute('aria-current', 'true');
                 else link.removeAttribute('aria-current');
             });
+        }
+
+        function syncFavorites() {
+            const favorites = readFavorites();
+            container.querySelectorAll<HTMLElement>('tr[data-team]').forEach(row => {
+                row.classList.toggle('is-favorite', favorites.has(row.dataset.team!));
+            });
+
+            if (mineHost && leagueTable) {
+                const table = leagueTable.cloneNode(true) as HTMLTableElement;
+                table.querySelector('caption')!.textContent = 'My Teams';
+                table.querySelectorAll<HTMLElement>('tbody tr').forEach(row => {
+                    if (!favorites.has(row.dataset.team!)) row.remove();
+                });
+                const hasFavorites = table.querySelector('tbody tr') !== null;
+                mineHost.replaceChildren(...(hasFavorites ? [table] : []));
+                if (mineLink) mineLink.hidden = !hasFavorites;
+            }
+
+            if (current === 'mine' && mineLink?.hidden) activate('divisions');
         }
 
         function syncHash() {
@@ -84,6 +127,9 @@ const filters = [
             activate(link.dataset.standingsFilter!);
         }));
         window.addEventListener('hashchange', syncHash);
+        window.addEventListener('my-teams-updated', syncFavorites);
+        window.addEventListener('storage', event => { if (event.key === FAVORITES_KEY) syncFavorites(); });
+        syncFavorites();
         syncHash();
     });
 </script>

@@ -17,7 +17,7 @@ const { title, teams, ranking = 'division' } = Astro.props;
     </thead>
     <tbody>
         {teams.map((team, index) => (
-            <tr class:list={{
+            <tr data-team={team.team} class:list={{
                 'playoff-spot': ranking === 'conference' && Number(team.seed) <= 7,
                 'top-seed': ranking === 'conference' && Number(team.seed) === 1,
             }}>
@@ -26,6 +26,7 @@ const { title, teams, ranking = 'division' } = Astro.props;
                     <span class="standings-table__team">
                         <Logo team={team.team} size="sm" />
                         <span>{team.team}</span>
+                        <span class="standings-table__fav" role="img" aria-label="Favorite team">★</span>
                     </span>
                 </th>
                 <td class="standings-table__record">{team.record.split('-').map((part, i) => (<>{i > 0 && <span class="standings-table__sep">–</span>}<span class:list={['standings-table__num', { 'standings-table__num--wins': i === 0 }]}>{part}</span></>))}</td>

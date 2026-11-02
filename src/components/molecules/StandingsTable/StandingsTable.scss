@@ -100,6 +100,22 @@
         opacity: 0.4;
     }
 
+    &__fav {
+        display: none;
+        margin-left: -0.4rem;
+        color: $accent-soft;
+        font-size: 1.4rem;
+        line-height: 1;
+    }
+
+    .is-favorite .standings-table__fav {
+        display: inline;
+    }
+
+    [data-standings-mine] & .standings-table__fav {
+        display: none;
+    }
+
     .playoff-spot {
         background: linear-gradient(90deg, rgba($playoff-spot, 0.1), $transparent 55%);
         td:first-child { box-shadow: inset 3px 0 $playoff-spot; }
