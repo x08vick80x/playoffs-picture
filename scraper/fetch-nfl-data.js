@@ -542,7 +542,10 @@ async function scrape() {
                 if (direction === 'increased') trend = `+${delta}`;
                 else if (direction === 'decreased') trend = `-${delta}`;
 
-                results.push({ rank, team: team.trim(), trend, blurb: blurb.trim() });
+                // The last items run into the article's "RELATED CONTENT" widget and the page footer.
+                const cleanBlurb = blurb.split(/\n\s*RELATED CONTENT\b/i)[0].trim();
+
+                results.push({ rank, team: team.trim(), trend, blurb: cleanBlurb });
             }
 
             return results;
