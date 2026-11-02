@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { SEASON_YEAR, WEEK_SCHEDULE, getCurrentWeekNumber, PLAYOFF_PICTURE_MIN_WEEK } from './config.js';
+import { assertValid, validateSchedule, validatePlayoffPicture } from './validate.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -586,12 +587,6 @@ async function scrape() {
              r.team = last;
         });
 
-        // Write playoff picture data
-        const outputPath = path.resolve(__dirname, '../src/data/playoff-picture.json');
-
-        fs.writeFileSync(outputPath, JSON.stringify(finalResult, null, 2));
-        console.log(`Successfully wrote to ${outputPath}`);
-
         // Write the full season schedule (independent of playoff-picture gating, always available)
         const scheduleByWeek = WEEK_SCHEDULE.map(w => ({
             week: w.id,
@@ -607,6 +602,16 @@ async function scrape() {
                     homeScore: m.homeScore
                 }))
         }));
+
+        // Validate everything before touching any file, so a broken scrape never overwrites good data.
+        assertValid('Schedule', validateSchedule(scheduleByWeek, currentWeekNumber));
+        if (currentWeekNumber >= PLAYOFF_PICTURE_MIN_WEEK) {
+            assertValid('Playoff picture', validatePlayoffPicture(finalResult));
+        }
+
+        const outputPath = path.resolve(__dirname, '../src/data/playoff-picture.json');
+        fs.writeFileSync(outputPath, JSON.stringify(finalResult, null, 2));
+        console.log(`Successfully wrote to ${outputPath}`);
 
         const schedulePath = path.resolve(__dirname, '../src/data/schedule.json');
         fs.writeFileSync(schedulePath, JSON.stringify({

@@ -20,6 +20,7 @@ runtime API, backend, or database.
 
 ```
 scraper/                   # Standalone Node scripts (not part of the Astro build)
+  validate.js              # Sanity checks run before any JSON is written; a failure exits non-zero so the cron commits nothing
   config.js                # Season config: SEASON_YEAR, week boundaries, current-week helper
   fetch-standings.js       # Scrapes cbssports.com -> src/data/standings.json
   fetch-nfl-data.js        # Scrapes nfl.com (playoff picture, full schedule, power rankings)
@@ -42,7 +43,7 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
 
 - `npm run dev` / `npm run build` — runs `start-sprite.js` first (pre/post hooks), then Astro
 - `npm run update-data` — runs both scrapers in sequence, overwrites `src/data/*.json`
-- No `npm test` / `npm run lint` scripts exist
+- `npm test` — Node built-in test runner (`tests/*.test.js`, no dependency; `tests/register.js` maps the `@/` alias). No lint script exists
 
 ## Data flow (important to understand before editing)
 
@@ -88,7 +89,7 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
 - **The NFL.com scraping is heuristic-based** (matches team names in arbitrary DOM nodes, infers
   sections by vertical pixel position via `getBoundingClientRect().top`, infers trend
   direction/probability from nearby text via regex). It is expected to break silently if
-  nfl.com changes its markup/layout — there's no schema validation on the scraped output.
+  nfl.com changes its markup/layout. `scraper/validate.js` only checks structure (team counts, 7 seeds, complete played weeks), so a subtly wrong value still gets through.
 - `src/utils/team-mapping.js` has a **known typo baked into the data contract**:
   `'Tampa Bay Buccaneers'` maps to sprite id `'buccaners'` (misspelled) because that's the actual
   filename in `src/images/logos/`. Don't "fix" the typo in the map without also renaming the logo

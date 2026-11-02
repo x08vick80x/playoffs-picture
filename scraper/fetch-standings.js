@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { assertValid, validateStandings } from './validate.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -82,6 +83,7 @@ async function fetchStandings() {
         });
 
         console.log(`Found ${standings.AFC.length} AFC teams and ${standings.NFC.length} NFC teams.`);
+        assertValid('Standings', validateStandings(standings));
         console.log('Writing data to ' + OUTPUT_FILE);
         fs.writeFileSync(OUTPUT_FILE, JSON.stringify(standings, null, 2));
         console.log('Done!');

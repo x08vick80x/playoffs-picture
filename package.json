@@ -9,6 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "test": "node --import ./tests/register.js --test tests/*.test.js",
     "update-data": "node scraper/fetch-standings.js && node scraper/fetch-nfl-data.js"
   },
   "dependencies": {
