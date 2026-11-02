@@ -14,13 +14,15 @@
     }
     background: $gradient-card;
     border: 1px solid $border-subtle;
-    border-radius: $radius-md;
+    border-radius: $radius-lg;
     box-shadow: $box-shadow;
+    backdrop-filter: $glass-blur;
+    -webkit-backdrop-filter: $glass-blur;
     transition: transform $duration-fast, border-color $duration-fast;
     cursor: pointer;
 
     &:hover {
-        border-color: rgba($white, 0.2);
+        border-color: ink(0.2);
         transform: translateX(5px);
     }
 
@@ -89,9 +91,9 @@
     }
 
     &__btn {
-        background: $gray-800;
-        border: 1px solid $gray-600;
-        color: $gray-300;
+        background: ink(0.08);
+        border: 1px solid ink(0.2);
+        color: $text-secondary;
         border-radius: 4px;
         width: 16px;
         height: 16px;
@@ -103,8 +105,8 @@
         padding: 0;
 
         &:hover {
-            background: $gray-600;
-            color: $white;
+            background: ink(0.2);
+            color: $text-primary;
         }
     }
 }

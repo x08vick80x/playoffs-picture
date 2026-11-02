@@ -10,12 +10,15 @@
     border-radius: $radius-lg;
     overflow: hidden;
     box-shadow: $box-shadow;
+    backdrop-filter: $glass-blur;
+    -webkit-backdrop-filter: $glass-blur;
     text-align: left;
 
     caption {
-        padding: $spacing-sm $spacing-xs;
+        padding: $spacing-sm 1.6rem $spacing-xs;
         font-size: 1.8rem;
-        font-weight: bold;
+        font-weight: 700;
+        letter-spacing: -0.01em;
         text-align: left;
     }
 
@@ -25,49 +28,96 @@
     }
 
     thead {
-        background: rgba($white, 0.04);
+        background: $transparent;
         color: $text-secondary;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        letter-spacing: 0.12rem;
         text-transform: uppercase;
 
-        th:first-child { width: 3.2rem; }
-        th:last-child { width: 6.8rem; }
+        th { font-weight: 600; }
+        th:first-child { width: 6rem; padding-left: 1.6rem; text-align: center; }
+        th:last-child { width: 9rem; padding-right: 1.6rem; text-align: right; }
+    }
+
+    tbody tr {
+        transition: background 0.2s;
+
+        &:hover { background: ink(0.04); }
     }
 
     tbody tr:last-child {
         th, td { border-bottom: none; }
     }
 
-    &__rank { color: $text-secondary; }
+    td#{&}__rank {
+        padding-left: 1.6rem;
+        text-align: center;
+    }
+
+    &__pos {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2.8rem;
+        height: 2.8rem;
+        border-radius: 999px;
+        background: ink(0.06);
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: $text-secondary;
+        font-variant-numeric: tabular-nums;
+    }
 
     &__team {
         display: flex;
         align-items: center;
-        gap: 0.6rem;
+        gap: 1rem;
         font-size: 1.4rem;
+        font-weight: 600;
         overflow-wrap: anywhere;
 
         .team-logo { width: 3rem; height: 3rem; }
     }
 
-    &__record {
-        font-family: monospace;
-        font-size: 1.4rem;
+    td#{&}__record {
+        padding-right: 1.6rem;
+        text-align: right;
+        font-family: $font-numeric;
+        font-size: 1.6rem;
+        font-weight: 500;
+        font-variant-numeric: tabular-nums;
         white-space: nowrap;
+        color: $text-secondary;
+    }
+
+    &__num--wins {
+        font-weight: 700;
+        color: $text-primary;
+    }
+
+    &__sep {
+        margin-inline: 0.2em;
+        opacity: 0.4;
     }
 
     .playoff-spot {
-        background: rgba($white, 0.05);
+        background: linear-gradient(90deg, rgba($playoff-spot, 0.1), $transparent 55%);
         td:first-child { box-shadow: inset 3px 0 $playoff-spot; }
+        .standings-table__pos { background: rgba($playoff-spot, 0.18); color: $playoff-text; }
     }
 
     .top-seed {
-        background: rgba($top-seed, 0.1);
+        background: linear-gradient(90deg, rgba($top-seed, 0.16), $transparent 60%);
         td:first-child { box-shadow: inset 3px 0 $top-seed; }
+        .standings-table__pos { background: $top-seed; color: $black; }
     }
 
     @include wide-mobile {
-        th, td { padding: $spacing-sm $spacing-xs; }
+        th, td { padding-block: $spacing-sm; padding-inline: $spacing-xs; }
+        td#{&}__rank { padding-left: 1.6rem; }
+        td#{&}__record { padding-right: 1.6rem; }
+        thead th:first-child { padding-left: 1.6rem; }
+        thead th:last-child { padding-right: 1.6rem; }
         &__team { font-size: 1.6rem; }
     }
 }

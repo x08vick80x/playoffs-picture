@@ -10,7 +10,7 @@
     border-radius: $radius-sm;
 
     &--default {
-        background: rgba($white, 0.1);
+        background: ink(0.1);
         color: $text-primary;
     }
 

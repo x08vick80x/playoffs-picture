@@ -28,7 +28,7 @@
     -webkit-tap-highlight-color: $transparent;
 
     &:hover {
-        border-color: rgba($white, 0.2);
+        border-color: ink(0.2);
         background: linear-gradient(160deg, $bg-card-top-hover, $bg-card-bottom);
     }
 
@@ -39,9 +39,11 @@
     &__header {
         display: grid;
         grid-template-columns: 40px minmax(0, 1fr) 24px;
+        column-gap: 1.2rem;
 
         @include tablet {
             grid-template-columns: 80px minmax(0, 1fr) 40px;
+            column-gap: 1.6rem;
         }
         align-items: center;
         padding: 1rem;
@@ -67,7 +69,7 @@
         font-weight: bold;
 
         &--positive {
-            color: $nfl-green;
+            color: $green-text;
 
             &::before {
                 content: "▲ ";
@@ -91,6 +93,34 @@
         display: flex;
         align-items: center;
         gap: 1rem;
+        min-width: 0;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        min-width: 0;
+    }
+
+    // Always two lines tall so cards keep the same height with or without a blurb
+    &__preview {
+        margin: 0;
+        min-height: 2.6em;
+        font-size: 1.2rem;
+        line-height: 1.3;
+        color: $text-secondary;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
+
+        @include tablet { font-size: 1.4rem; }
+
+        .ranking-item--expanded & {
+            display: none;
+        }
     }
 
     &__name {
@@ -125,13 +155,13 @@
 
         .ranking-item--expanded & {
             grid-template-rows: 1fr;
-            border-top: 1px solid $gray-800; // Show border when expanded
+            border-top: 1px solid $border-subtle; // Show border when expanded
         }
     }
 
     &__content {
         overflow: hidden;
-        background: rgba($black, 0.2);
+        background: ink(0.05);
 
         // Inner padding wrapper
         p,
@@ -142,7 +172,7 @@
             margin: 0;
             font-size: 1.6rem;
             line-height: 1.6;
-            color: $gray-200;
+            color: $text-gray-light;
             font-family: $font-body;
             font-weight: 400;
         }

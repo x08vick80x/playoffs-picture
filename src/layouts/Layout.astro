@@ -20,6 +20,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
         <meta name="theme-color" content="#252525" />
+        <script is:inline>
+            (function () {
+                var theme;
+                try { theme = localStorage.getItem("nfl-theme"); } catch (e) {}
+                if (theme !== "light" && theme !== "dark") {
+                    theme = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+                }
+                document.documentElement.dataset.theme = theme;
+            })();
+        </script>
         <meta name="generator" content={Astro.generator} />
 
         <!-- Primary Meta Tags -->

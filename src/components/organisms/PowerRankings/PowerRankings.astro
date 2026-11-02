@@ -57,9 +57,14 @@ const getTrendModifier = (trend: string | undefined) => {
                                             href={`/sprites.svg#${getTeamId(item.team)}`}
                                         />
                                     </svg>
-                                    <span class="ranking-item__name">
-                                        {item.team}
-                                    </span>
+                                    <div class="ranking-item__text">
+                                        <span class="ranking-item__name">
+                                            {item.team}
+                                        </span>
+                                        <p class="ranking-item__preview">
+                                            {item.blurb}
+                                        </p>
+                                    </div>
                                 </div>
                                 <div class="ranking-item__toggle">
                                     <svg

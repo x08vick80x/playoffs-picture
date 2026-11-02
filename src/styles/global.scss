@@ -12,6 +12,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('@/fonts/space-grotesk-latin-wght-normal.woff2') format('woff2');
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --nfl-blue: #{$nfl-blue};
     --nfl-red: #{$nfl-red};
