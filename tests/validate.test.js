@@ -48,25 +48,24 @@ const scheduleFixture = () => Array.from({ length: 18 }, (_, i) => ({
     })),
 }));
 
-test('a schedule complete up to the current week passes, even with unpublished later weeks', () => {
-    assert.deepEqual(validateSchedule(scheduleFixture(), 8), []);
+test('a complete schedule passes', () => {
+    assert.deepEqual(validateSchedule(scheduleFixture()), []);
 });
 
-test('a played week with missing games is rejected', () => {
+test('a team with missing games is rejected', () => {
     const weeks = scheduleFixture();
     weeks[2].matches = weeks[2].matches.slice(0, 5);
-    assert.match(validateSchedule(weeks, 8)[0], /REG3: expected at least 13 games, got 5/);
-    assert.deepEqual(validateSchedule(weeks, 2), []);
+    assert.match(validateSchedule(weeks)[0], /expected 17 games, got 16/);
 });
 
 test('a final game without a score is rejected', () => {
     const weeks = scheduleFixture();
     weeks[0].matches[0].homeScore = null;
-    assert.match(validateSchedule(weeks, 8)[0], /has no score/);
+    assert.match(validateSchedule(weeks)[0], /has no score/);
 });
 
 test('a schedule that is not 18 weeks long is rejected', () => {
-    assert.equal(validateSchedule([], 8).length, 1);
+    assert.equal(validateSchedule([]).length, 1);
 });
 
 test('playoff picture needs 7 distinct seeds per conference', () => {
@@ -80,5 +79,5 @@ test('the committed data files satisfy their own validators', () => {
     const read = name => JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, '../src/data', name), 'utf8'));
     const schedule = read('schedule.json');
     assert.deepEqual(validateStandings(read('standings.json')), []);
-    assert.deepEqual(validateSchedule(schedule.weeks, schedule.currentWeek), []);
+    assert.deepEqual(validateSchedule(schedule.weeks), []);
 });

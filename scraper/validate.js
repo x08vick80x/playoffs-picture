@@ -6,7 +6,7 @@ import { getTeamId } from '../src/utils/team-mapping.js';
 const LOGOS_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../src/images/logos');
 const TEAMS_PER_CONFERENCE = 16;
 const PLAYOFF_SEEDS = 7;
-const MIN_GAMES_PER_WEEK = 13; // 16 games minus up to 3 bye-week pairs
+const SEASON_GAMES = 17;
 const WEEKS = 18;
 
 const RECORD = /^(\d+)-(\d+)(?:-(\d+))?$/;
@@ -43,18 +43,15 @@ export function validateStandings(standings) {
     return problems;
 }
 
-// Later weeks may legitimately be unpublished or partial, so only weeks up to currentWeek must be complete.
-export function validateSchedule(weeks, currentWeek) {
+// nfl.com publishes the whole season up front, so every team must have its 17 games, undated ones included.
+export function validateSchedule(weeks) {
     const problems = [];
     if (!Array.isArray(weeks) || weeks.length !== WEEKS) {
         return [`expected ${WEEKS} weeks, got ${weeks?.length ?? 'none'}`];
     }
 
     const games = new Map();
-    weeks.forEach(({ week, matches }, index) => {
-        if (index < currentWeek && matches.length < MIN_GAMES_PER_WEEK) {
-            problems.push(`${week}: expected at least ${MIN_GAMES_PER_WEEK} games, got ${matches.length}`);
-        }
+    weeks.forEach(({ week, matches }) => {
         for (const { home, away, final, homeScore, awayScore } of matches) {
             if (!home || !away || home === away) problems.push(`${week}: invalid match ${away} @ ${home}`);
             if (final && (!Number.isInteger(homeScore) || !Number.isInteger(awayScore))) {
@@ -65,6 +62,9 @@ export function validateSchedule(weeks, currentWeek) {
     });
 
     if (games.size !== TEAMS_PER_CONFERENCE * 2) problems.push(`expected 32 teams in the schedule, got ${games.size}`);
+    for (const [team, count] of games) {
+        if (count !== SEASON_GAMES) problems.push(`${team}: expected ${SEASON_GAMES} games, got ${count}`);
+    }
     return problems;
 }
 

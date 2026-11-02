@@ -367,7 +367,7 @@ async function scrape() {
 
             const weekMatches = await page.evaluate((currentWeek, currentSlug) => {
                 const matches = [];
-                const seenConfig = new Set(); // Track unique games e.g. "teamA-teamB"
+                const seenConfig = new Map(); // "teamA-at-teamB" -> index in matches
 
                 const links = Array.from(document.querySelectorAll('a[href*="/games/"]'));
                 links.forEach(a => {
@@ -384,14 +384,14 @@ async function scrape() {
                         if (weekPart !== currentSlug) return;
 
                         const key = `${away}-at-${home}`;
-                        if (seenConfig.has(key)) return;
 
                         // Link text looks like "Away at Home, Thursday, October 8th, 8:15 PM, GamePass"
                         // (future game) or "Away 31, Home 41, FINAL, Thursday, September 17th" (played game).
-                        // The "Watch Replay" duplicate link for the same game carries no date, skip it.
+                        // Games whose date is not announced yet read "Away at Home, GamePass": keep them
+                        // with a null date. The "Watch Replay" duplicate link carries no date, skip it.
                         const text = a.innerText || '';
+                        if (/replay/i.test(text)) return;
                         const dateMatch = text.match(/([A-Za-z]+), ([A-Za-z]+ \d{1,2})(?:st|nd|rd|th)/);
-                        if (!dateMatch) return;
 
                         const timeMatch = text.match(/(\d{1,2}:\d{2}\s?[AP]M)/);
                         const final = /\bFINAL\b/i.test(text);
@@ -401,17 +401,24 @@ async function scrape() {
                             ? text.match(/^\s*[^,]+?\s+(\d+)\s*,\s*[^,]+?\s+(\d+)\s*,\s*FINAL\b/i)
                             : null;
 
-                        seenConfig.add(key);
-                        matches.push({
+                        // A dated link wins over an undated duplicate of the same game.
+                        if (seenConfig.has(key) && (!dateMatch || matches[seenConfig.get(key)].date)) return;
+
+                        const game = {
                             away,
                             home,
                             week: currentWeek,
-                            date: `${dateMatch[1]}, ${dateMatch[2]}`,
+                            date: dateMatch ? `${dateMatch[1]}, ${dateMatch[2]}` : null,
                             time: !final && timeMatch ? timeMatch[1] : null,
                             final,
                             awayScore: scores ? Number(scores[1]) : null,
                             homeScore: scores ? Number(scores[2]) : null,
-                        });
+                        };
+                        if (seenConfig.has(key)) {
+                            matches[seenConfig.get(key)] = game;
+                        } else {
+                            seenConfig.set(key, matches.push(game) - 1);
+                        }
                     }
                 });
                 return matches;
@@ -604,7 +611,7 @@ async function scrape() {
         }));
 
         // Validate everything before touching any file, so a broken scrape never overwrites good data.
-        assertValid('Schedule', validateSchedule(scheduleByWeek, currentWeekNumber));
+        assertValid('Schedule', validateSchedule(scheduleByWeek));
         if (currentWeekNumber >= PLAYOFF_PICTURE_MIN_WEEK) {
             assertValid('Playoff picture', validatePlayoffPicture(finalResult));
         }
