@@ -30,7 +30,7 @@ src/
   data/                     # Generated JSON (standings.json, playoff-picture.json, schedule.json) — data, not code
   layouts/Layout.astro
   pages/index.astro         # Single page app; reads data/*.json directly via node:fs at build time
-  styles/                   # _variables.scss, _mixins.scss, _base.scss, global.scss, main.scss
+  styles/                   # _variables.scss, _mixins.scss, _themes.scss, _base.scss, main.scss
   utils/team-mapping.js     # City/full-name -> logo id / abbreviation lookup tables
 
 start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg into public/sprites.svg
@@ -117,6 +117,37 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
 - Client-side interactivity lives in inline `<script>` (or `<script define:vars>`) tags per
   component rather than shared TS modules.
 - SCSS variables/mixins are centralized in `src/styles/_variables.scss` and `_mixins.scss`.
+  Literal colors live only there; components never hardcode them.
+
+## Theming (dark / light)
+
+- Theme tokens are the `$theme-dark` / `$theme-light` maps in `_variables.scss`. `_themes.scss`
+  emits them as CSS custom properties on `:root` and `:root[data-theme='light']` (dark is the
+  default, light is the override). To add a themed token: add the key to **both** maps, then an
+  SCSS alias `$name: var(--name)`.
+- Theme-dependent SCSS variables (`$text-primary`, `$bg-card`, `$accent-soft`, `$green-text`…)
+  are aliases of `var(--token)`, so they are not compile-time colors: don't pass them to
+  `rgba()`, `darken()`, `mix()`, etc.
+- Use `ink($a)` for overlay tints (white-ish on dark, navy on light) and `shade($a)` for shadows
+  and scrims, instead of `rgba($white|$black, $a)`.
+- Text green/red on a themed surface: `$green-text`, `$accent-soft`, `$playoff-text` (darker
+  variants in the light theme for legibility), not the raw brand colors.
+- Surfaces painted with a team color (bye card) keep literal white/black text in both themes.
+- Initial theme: `localStorage['nfl-theme']`, else `prefers-color-scheme`. An inline script in
+  `Layout.astro` `<head>` sets `data-theme` before paint (no flash); the Header toggle updates
+  `data-theme`, `localStorage`, its `aria-label` and the `theme-color` meta. Keep the meta
+  colors in sync with `bg-page`.
+- Check both themes (and mobile 390px) after any visual change.
+
+## Gotchas
+
+- `@font-face` rules live in `_base.scss`; Space Grotesk (`$font-numeric`, records and numbers)
+  is declared there. Montserrat has no `@font-face` and falls back to Arial.
+- Dart Sass deprecation warnings (`global-builtin`) in the dev log are pre-existing noise;
+  use module functions (`string.unquote`, `math.div`) in new code.
+- Pre-existing: `virtual:pwa-info` and an implicit `any` in `ScheduleModal.astro` show up in
+  editor diagnostics; long team names in matchup cards can break mid-word
+  (`overflow-wrap: anywhere` in `TeamRow.scss`).
 
 ## For AI Assistants
 
