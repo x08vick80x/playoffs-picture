@@ -1,3 +1,4 @@
+@use 'sass:string';
 // Base palette: keep literal colors in this file only.
 $white: #fff;
 $black: #000;
@@ -13,7 +14,6 @@ $gray-400: #aaa;
 $gray-300: #ccc;
 $gray-200: #ddd;
 
-$bg-footer: #0b0b0b;
 $bg-modal: #1a1a1a;
 $button-blue-hover: #004da1;
 $button-red-hover: #cc0000;
@@ -27,34 +27,105 @@ $nfl-white: $white;
 $nfl-green: #2ff89d;
 $nfl-light-blue: #00b4ff;
 
-$bg-dark: #070a12;
 $bg-dark-light: #252525;
-$bg-card: #1E1E1E;
 
-// Glass surfaces
 $glass-blur: blur(2rem) saturate(150%);
-$box-shadow: 0 2.4rem 4rem -2rem rgba($black, 0.7), inset 0 1px 0 rgba($white, 0.12);
-$box-shadow-hover: 0 3rem 5rem -2rem rgba($black, 0.8), inset 0 1px 0 rgba($white, 0.22), 0 0 0 1px rgba($white, 0.16);
-
-$border-subtle: rgba($white, 0.1);
-$bg-card-top: rgba($white, 0.05);
-$bg-card-top-hover: rgba($white, 0.14);
-$bg-card-bottom: rgba($white, 0.03);
-$bg-glow-blue: rgba(#4f6eff, 0.38);
-$bg-glow-violet: rgba(#8250ff, 0.26);
-$bg-glow-red: rgba($nfl-red, 0.3);
-$bg-header: rgba(#0d1220, 0.55);
-$bg-modal-glass: rgba(#0d1220, 0.82);
-$gradient-card: linear-gradient(145deg, rgba($white, 0.09) 0%, rgba($white, 0.03) 100%);
 $gradient-accent: linear-gradient(90deg, $nfl-red, #ff6a3d);
-
-$text-primary: $white;
-$text-secondary: #a9b1c6;
-$text-gray-light: #e2e6f0;
-$text-gray-lighter: #f1f3f9;
-
 $accent: $nfl-red;
-$accent-soft: #ff5a63;
+
+// Theme tokens. Each key becomes a CSS custom property (see _themes.scss).
+$theme-dark: (
+    'bg-page': #070a12,
+    'bg-card': #1e1e1e,
+    'bg-footer': #0b0b0b,
+    'text-primary': $white,
+    'text-secondary': #a9b1c6,
+    'text-gray-light': #e2e6f0,
+    'text-gray-lighter': #f1f3f9,
+    'accent-soft': #ff5a63,
+    'green-text': $nfl-green,
+    'playoff-text': $playoff-spot,
+    'ink': '255 255 255',
+    'shade': '0 0 0',
+    'shade-k': 1,
+    'border-subtle': rgba($white, 0.1),
+    'bg-card-top': rgba($white, 0.05),
+    'bg-card-top-hover': rgba($white, 0.14),
+    'bg-card-bottom': rgba($white, 0.03),
+    'bg-glow-blue': rgba(#4f6eff, 0.38),
+    'bg-glow-violet': rgba(#8250ff, 0.26),
+    'bg-glow-red': rgba($nfl-red, 0.3),
+    'bg-header': rgba(#0d1220, 0.55),
+    'bg-modal-glass': rgba(#0d1220, 0.82),
+    'gradient-card': linear-gradient(145deg, rgba($white, 0.09) 0%, rgba($white, 0.03) 100%),
+    'box-shadow': (0 2.4rem 4rem -2rem rgba($black, 0.7), inset 0 1px 0 rgba($white, 0.12)),
+    'box-shadow-hover': (0 3rem 5rem -2rem rgba($black, 0.8), inset 0 1px 0 rgba($white, 0.22), 0 0 0 1px rgba($white, 0.16)),
+    'box-shadow-modal': (0 2.5rem 5rem -1.2rem rgba($black, 0.7), inset 0 1px 0 rgba($white, 0.14)),
+);
+
+$theme-light: (
+    'bg-page': #eef1f8,
+    'bg-card': $white,
+    'bg-footer': #dfe4ef,
+    'text-primary': #0f172a,
+    'text-secondary': #4a5568,
+    'text-gray-light': #1e293b,
+    'text-gray-lighter': #0f172a,
+    'accent-soft': #d11f2f,
+    'green-text': #0b8f55,
+    'playoff-text': #15803d,
+    'ink': '15 23 42',
+    'shade': '15 23 42',
+    'shade-k': 0.5,
+    'border-subtle': rgba(#0f172a, 0.1),
+    'bg-card-top': rgba($white, 0.6),
+    'bg-card-top-hover': rgba($white, 0.95),
+    'bg-card-bottom': rgba($white, 0.45),
+    'bg-glow-blue': rgba(#4f6eff, 0.22),
+    'bg-glow-violet': rgba(#8250ff, 0.16),
+    'bg-glow-red': rgba($nfl-red, 0.14),
+    'bg-header': rgba($white, 0.72),
+    'bg-modal-glass': rgba($white, 0.9),
+    'gradient-card': linear-gradient(145deg, rgba($white, 0.9) 0%, rgba($white, 0.6) 100%),
+    'box-shadow': (0 2.4rem 4rem -2.4rem rgba(#0f172a, 0.3), 0 0.2rem 0.6rem rgba(#0f172a, 0.05), inset 0 1px 0 $white),
+    'box-shadow-hover': (0 3rem 5rem -2rem rgba(#0f172a, 0.35), inset 0 1px 0 $white, 0 0 0 1px rgba(#0f172a, 0.12)),
+    'box-shadow-modal': (0 2.5rem 5rem -1.2rem rgba(#0f172a, 0.4), inset 0 1px 0 $white),
+);
+
+// Theme-dependent values resolve at runtime through the custom properties above.
+$bg-dark: var(--bg-page);
+$bg-card: var(--bg-card);
+$bg-footer: var(--bg-footer);
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+$text-gray-light: var(--text-gray-light);
+$text-gray-lighter: var(--text-gray-lighter);
+$accent-soft: var(--accent-soft);
+$green-text: var(--green-text);
+$playoff-text: var(--playoff-text);
+$border-subtle: var(--border-subtle);
+$bg-card-top: var(--bg-card-top);
+$bg-card-top-hover: var(--bg-card-top-hover);
+$bg-card-bottom: var(--bg-card-bottom);
+$bg-glow-blue: var(--bg-glow-blue);
+$bg-glow-violet: var(--bg-glow-violet);
+$bg-glow-red: var(--bg-glow-red);
+$bg-header: var(--bg-header);
+$bg-modal-glass: var(--bg-modal-glass);
+$gradient-card: var(--gradient-card);
+$box-shadow: var(--box-shadow);
+$box-shadow-hover: var(--box-shadow-hover);
+$box-shadow-modal: var(--box-shadow-modal);
+
+// Overlay tints: light on dark theme, dark on light theme.
+@function ink($alpha) {
+    @return string.unquote('rgb(var(--ink) / #{$alpha})');
+}
+
+// Shadows and scrims, softened on the light theme.
+@function shade($alpha) {
+    @return string.unquote('rgb(var(--shade) / calc(#{$alpha} * var(--shade-k)))');
+}
 
 // Typography
 $font-main: Arial, sans-serif;

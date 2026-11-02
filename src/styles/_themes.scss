@@ -1,0 +1,17 @@
+@use '@/styles/variables' as *;
+
+@mixin emit-theme($tokens) {
+    @each $name, $value in $tokens {
+        --#{$name}: #{$value};
+    }
+}
+
+:root {
+    color-scheme: dark;
+    @include emit-theme($theme-dark);
+}
+
+:root[data-theme='light'] {
+    color-scheme: light;
+    @include emit-theme($theme-light);
+}

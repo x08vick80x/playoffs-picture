@@ -1,13 +1,19 @@
 /* Global Reset and Base Styles */
 @use '@/styles/variables' as *;
+@use '@/styles/themes';
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('@/fonts/space-grotesk-latin-wght-normal.woff2') format('woff2');
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
     --nfl-blue: #{$nfl-blue};
     --nfl-red: #{$nfl-red};
     --nfl-green: #{$nfl-green};
-    --text-primary: #{$text-primary};
-    --text-secondary: #{$text-secondary};
-    --bg-card: #{$bg-card};
     --font-body: #{$font-body};
 }
 

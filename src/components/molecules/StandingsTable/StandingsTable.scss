@@ -42,7 +42,7 @@
     tbody tr {
         transition: background 0.2s;
 
-        &:hover { background: rgba($white, 0.04); }
+        &:hover { background: ink(0.04); }
     }
 
     tbody tr:last-child {
@@ -61,7 +61,7 @@
         min-width: 2.8rem;
         height: 2.8rem;
         border-radius: 999px;
-        background: rgba($white, 0.06);
+        background: ink(0.06);
         font-size: 1.3rem;
         font-weight: 700;
         color: $text-secondary;
@@ -103,7 +103,7 @@
     .playoff-spot {
         background: linear-gradient(90deg, rgba($playoff-spot, 0.1), $transparent 55%);
         td:first-child { box-shadow: inset 3px 0 $playoff-spot; }
-        .standings-table__pos { background: rgba($playoff-spot, 0.18); color: $playoff-spot; }
+        .standings-table__pos { background: rgba($playoff-spot, 0.18); color: $playoff-text; }
     }
 
     .top-seed {

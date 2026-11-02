@@ -15,7 +15,7 @@
     overflow-x: auto;
     margin: 0 auto $spacing-md;
     padding: 0.4rem;
-    background: rgba($white, 0.06);
+    background: ink(0.06);
     border: 1px solid $border-subtle;
     border-radius: 999px;
     backdrop-filter: $glass-blur;
@@ -39,7 +39,7 @@
         transition: background 0.2s, color 0.2s;
 
         &:hover {
-            color: $white;
+            color: $text-primary;
         }
 
         &.active {
@@ -73,7 +73,7 @@
 
     &--favorite {
         background: linear-gradient(145deg, rgba($nfl-red, 0.22), rgba($nfl-red, 0.06));
-        outline: 1px solid rgba($accent-soft, 0.7);
+        outline: 1px solid rgba($nfl-red, 0.7);
         outline-offset: -1px;
     }
 
