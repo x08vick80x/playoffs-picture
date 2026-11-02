@@ -16,20 +16,38 @@
     padding-bottom: 0.5rem;
 
     &__title {
-        font-size: 1.6rem;
-        color: $gray-400;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.8rem;
+        color: $white;
         text-transform: uppercase;
-        font-weight: 800;
+        font-weight: 900;
+        font-style: italic;
+        letter-spacing: 0.1rem;
         margin: 0;
+
+        &::before {
+            content: '';
+            width: 0.5rem;
+            height: 2rem;
+            border-radius: 999px;
+            background: $gradient-accent;
+        }
     }
 
     &__action {
-        background: none;
-        border: none;
-        color: $gray-400;
+        display: flex;
+        padding: 0.8rem;
+        background: rgba($white, 0.06);
+        border: 1px solid $border-subtle;
+        border-radius: 50%;
+        color: $gray-300;
         cursor: pointer;
+        transition: background 0.2s, color 0.2s;
 
         &:hover {
+            background: $nfl-red;
             color: $white;
         }
     }
@@ -38,7 +56,7 @@
 .dashboard-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.8rem;
+    gap: 1.2rem;
 
     @include desktop {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -47,16 +65,19 @@
 
 .empty-start-btn {
     width: 100%;
-    padding: 2rem;
-    background: rgba($white, 0.05);
-    border: 2px dashed rgba($white, 0.2);
-    color: $gray-400;
-    font-size: 1.2rem;
-    border-radius: 8px;
+    padding: 2.4rem;
+    background: rgba($white, 0.04);
+    border: 2px dashed rgba($white, 0.25);
+    color: $gray-300;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: $radius-lg;
     cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
 
     &:hover {
-        border-color: $nfl-blue;
+        border-color: $nfl-red;
+        background: rgba($nfl-red, 0.1);
         color: $white;
     }
 }
@@ -66,18 +87,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem;
-    background: rgba($white, 0.03);
-    border-radius: 6px;
-    transition: transform 0.2s, background 0.2s;
+    padding: 1.2rem 1.4rem;
+    @include card;
+    border-left: 4px solid $nfl-red;
+    border-radius: $radius-lg;
     cursor: pointer;
     gap: $spacing-xs;
     flex-wrap: wrap;
-    box-shadow: $box-shadow;
-
-    &:hover {
-        background: rgba($white, 0.08);
-    }
+    @include card-hover;
 
     &__info {
         display: flex;
@@ -143,11 +160,12 @@
     }
 
     &__seed-badge {
-        background: $nfl-light-blue;
+        background: $gradient-accent;
         color: $white;
-        font-size: 0.7rem;
-        padding: 1px 4px;
-        border-radius: 3px;
+        font-size: 1rem;
+        font-weight: 900;
+        padding: 2px 8px;
+        border-radius: 999px;
     }
 
     &__prob {
@@ -224,7 +242,7 @@
     }
 
     &__content {
-        background: $bg-card;
+        background: $gradient-card;
         width: 100%;
         max-width: 600px;
         height: 85vh;
@@ -232,7 +250,8 @@
         border-radius: 20px 20px 0 0; // Rounded top
         display: flex;
         flex-direction: column;
-        border: 1px solid $gray-800;
+        border: 1px solid $border-subtle;
+        box-shadow: $box-shadow;
 
         @media (min-width: 600px) {
             height: 80vh;
@@ -279,8 +298,8 @@
 
     &__footer {
         padding: 1.5rem;
-        border-top: 1px solid $gray-800;
-        background: $bg-card; // Sticky-ish
+        border-top: 1px solid $border-subtle;
+        background: $transparent;
     }
 
     &__save-btn {
@@ -339,7 +358,7 @@
 
     &--selected {
         border-color: $nfl-green;
-        background: $transparent; // No background
+        background: rgba($nfl-green, 0.08);
 
         .select-card__abbr {
             color: $white;

@@ -1,12 +1,18 @@
 ---
-import { getTeamId } from "@/utils/team-mapping.js";
 ---
 
 <dialog id="schedule-modal" class="modal">
     <div class="modal__content">
         <header class="modal__header">
-            <h2 id="modal-team-name" class="modal__title">Team Name</h2>
-            <button id="close-modal" class="modal__close-btn">&times;</button>
+            <svg id="modal-team-logo" class="modal__logo" width="56" height="56">
+                <use href="/sprites.svg#nfl"></use>
+            </svg>
+            <div class="modal__heading">
+                <span class="modal__eyebrow">Remaining schedule</span>
+                <h2 id="modal-team-name" class="modal__title">Team Name</h2>
+                <span id="modal-games-left" class="modal__count"></span>
+            </div>
+            <button id="close-modal" class="modal__close-btn" aria-label="Close">&times;</button>
         </header>
 
         <div class="modal__list" id="schedule-list">
@@ -15,33 +21,62 @@ import { getTeamId } from "@/utils/team-mapping.js";
     </div>
 </dialog>
 
-<script is:inline>
-    const modal = document.getElementById("schedule-modal");
+<script>
+    import { getTeamId } from "@/utils/team-mapping.js";
+
+    const modal = document.getElementById("schedule-modal") as HTMLDialogElement | null;
     const closeBtn = document.getElementById("close-modal");
     const title = document.getElementById("modal-team-name");
+    const logo = document.querySelector<SVGUseElement>("#modal-team-logo use");
+    const count = document.getElementById("modal-games-left");
     const list = document.getElementById("schedule-list");
 
-    window.addEventListener("open-schedule-modal", (e) => {
-        const { teamName, schedule } = e.detail;
+    const escapeHtml = (value: unknown) =>
+        String(value ?? "").replace(
+            /[&<>"']/g,
+            (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!,
+        );
 
-        if (title) title.innerText = `Remaining Schedule: ${teamName}`;
+    // "Sunday, November 8" -> { day: "Sun", date: "Nov 8" }
+    const splitDate = (value?: string) => {
+        const [weekday, rest] = (value || "").split(", ");
+        if (!rest) return null;
+        const [month, dayNumber] = rest.split(" ");
+        return { day: weekday.slice(0, 3), date: `${month.slice(0, 3)} ${dayNumber}` };
+    };
+
+    window.addEventListener("open-schedule-modal", (e) => {
+        const { teamName, schedule } = (e as CustomEvent).detail;
+
+        if (title) title.textContent = teamName;
+        if (logo) logo.setAttribute("href", `/sprites.svg#${getTeamId(teamName)}`);
+        if (count) {
+            count.textContent = `${schedule.length} ${schedule.length === 1 ? "game" : "games"} left`;
+        }
 
         if (list) {
             list.innerHTML = schedule
-                .map(
-                    (game) => `
-                <div class="game-item">
-                    <div class="game-item__week">${game.date || game.week}</div>
+                .map((game, index) => {
+                    const parts = splitDate(game.date);
+                    const when = parts
+                        ? `<span class="game-item__day">${escapeHtml(parts.day)}</span><span class="game-item__date">${escapeHtml(parts.date)}</span>`
+                        : `<span class="game-item__day">Week</span><span class="game-item__date">${escapeHtml(String(game.week).replace(/^REG/, ""))}</span>`;
+                    const isHome = game.location === "vs";
+
+                    return `
+                <div class="game-item${index === 0 ? " game-item--next" : ""}">
+                    <div class="game-item__when">${when}</div>
+                    <svg class="game-item__logo" width="40" height="40">
+                        <use href="/sprites.svg#${escapeHtml(getTeamId(game.opponent))}"></use>
+                    </svg>
                     <div class="game-item__info">
-                        <span class="game-item__location">${game.location === "vs" ? "vs" : "@"}</span>
-                        <div class="game-item__opponent clearfix">
-                            <span class="game-item__opp-name">${game.opponent}</span>
-                            <span class="game-item__opp-record">(${game.opponentRecord || "??"})</span>
-                        </div>
+                        <span class="game-item__opp-name">${escapeHtml(game.opponent)}</span>
+                        <span class="game-item__meta">${isHome ? "Home" : "Away"}${game.time ? ` \u2022 ${escapeHtml(game.time)}` : ""}</span>
                     </div>
+                    <span class="game-item__opp-record">${escapeHtml(game.opponentRecord || "??")}</span>
                 </div>
-            `,
-                )
+            `;
+                })
                 .join("");
         }
 

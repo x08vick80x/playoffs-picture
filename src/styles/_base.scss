@@ -22,7 +22,11 @@ html {
 }
 
 body {
-    background-color: $bg-dark;
+    background:
+        radial-gradient(90rem 50rem at 0% -10%, $bg-glow-blue, $transparent 60%),
+        radial-gradient(70rem 45rem at 100% 0%, $bg-glow-red, $transparent 60%),
+        $bg-dark;
+    background-attachment: fixed;
     color: $text-primary;
     font-family: $font-body;
     font-size: 1.6rem; // 16px default

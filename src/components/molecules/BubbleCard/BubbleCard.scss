@@ -12,13 +12,15 @@
     @include tablet {
         padding: $spacing-sm;
     }
-    background: rgba($white, 0.03);
-    border-radius: $radius-sm;
-    transition: transform $duration-fast, background $duration-fast;
+    background: $gradient-card;
+    border: 1px solid $border-subtle;
+    border-radius: $radius-md;
+    box-shadow: $box-shadow;
+    transition: transform $duration-fast, border-color $duration-fast;
     cursor: pointer;
 
     &:hover {
-        background: rgba($white, 0.08);
+        border-color: rgba($white, 0.2);
         transform: translateX(5px);
     }
 

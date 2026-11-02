@@ -31,7 +31,18 @@ $bg-dark: #121212;
 $bg-dark-light: #252525;
 $bg-card: #1E1E1E;
 
-$box-shadow: .5rem .7rem .6rem .2rem rgba($black, 0.6);
+$box-shadow: 0 .6rem 1.8rem rgba($black, 0.45);
+$box-shadow-hover: 0 .8rem 2.4rem rgba($black, 0.55), 0 0 0 1px rgba($nfl-red, 0.45);
+
+$border-subtle: rgba($white, 0.08);
+$bg-card-top: #232a3a;
+$bg-card-top-hover: #2b3345;
+$bg-card-bottom: #181c27;
+$bg-glow-blue: rgba($nfl-light-blue, 0.14);
+$bg-glow-red: rgba($nfl-red, 0.22);
+$bg-header: rgba(#141824, 0.78);
+$gradient-card: linear-gradient(160deg, $bg-card-top 0%, $bg-card-bottom 100%);
+$gradient-accent: linear-gradient(90deg, $nfl-red, #ff6a3d);
 
 $text-primary: $white;
 $text-secondary: #bdbdbd;

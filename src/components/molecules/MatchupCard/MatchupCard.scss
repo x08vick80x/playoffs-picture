@@ -2,20 +2,37 @@
 @use '@/styles/mixins' as *;
 
 .matchup-card {
-    background: $bg-card;
-    border: 1px solid $gray-800;
+    @include card;
+    position: relative;
     border-radius: $radius-lg;
-    padding: 2rem .5rem; // Default to old compact padding
+    padding: 3.2rem .5rem 1.6rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: $spacing-xs; // Default to old compact gap
+    gap: $spacing-xs;
     margin-bottom: $spacing-sm;
 
     @include desktop {
-        padding: $spacing-sm; // Slightly larger on desktop but still compact-ish
+        padding: 3.6rem $spacing-sm $spacing-sm;
         gap: $spacing-sm;
+    }
+
+    &::before {
+        content: 'Wild Card';
+        position: absolute;
+        top: 0.8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.2rem 1.2rem;
+        border-radius: 999px;
+        background: rgba($white, 0.06);
+        color: $text-secondary;
+        font-size: 1rem;
+        font-weight: 800;
+        letter-spacing: 0.15rem;
+        text-transform: uppercase;
+        white-space: nowrap;
     }
 
     &__team {
@@ -23,61 +40,78 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 2px; // Default compact
-        gap: 2px; // Default compact
+        padding: 0.6rem 2px;
+        gap: 0.6rem;
         cursor: pointer;
-        border-radius: $radius-sm;
+        border-radius: $radius-md;
         transition: background $duration-fast;
 
         &:hover {
-            background: rgba($white, 0.05);
+            background: rgba($white, 0.07);
         }
     }
 
     &__vs {
-        font-size: 1.6rem; // Default compact
+        @include flex-center;
+        flex: 0 0 auto;
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+        background: rgba($white, 0.06);
+        border: 1px solid $border-subtle;
+        font-size: 1.4rem;
+        font-weight: 800;
         color: $text-secondary;
-        opacity: 0.5;
     }
 
     &__stats {
         display: flex;
-        flex-direction: row; // Changed to row
+        flex-direction: row;
         align-items: center;
         gap: 6px;
-        transform: scale(0.9); // Default compact
+        transform: scale(0.9);
     }
 
     &__prob {
-        font-size: 1.28rem; // Default compact
+        padding: 0.1rem 0.8rem;
+        border-radius: 999px;
+        background: rgba($nfl-green, 0.14);
+        border: 1px solid rgba($nfl-green, 0.35);
+        font-size: 1.28rem;
         color: $nfl-green;
-        font-weight: bold;
+        font-weight: 800;
     }
 
     &__sep {
-        color: $text-gray-light;
-        font-size: 1.1rem;
+        display: none;
     }
 
     &__next {
-        font-size: 1.12rem; // Default compact
+        font-size: 1.12rem;
         color: $text-secondary;
         white-space: nowrap;
         font-style: italic;
     }
 
     &__btn {
-        background: rgba($black, 0.3);
+        background: rgba($white, 0.08);
         border: 1px solid rgba($white, 0.3);
         color: $white;
-        border-radius: 4px;
-        width: 16px;
-        height: 16px;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
         font-size: 12px;
         line-height: 1;
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: background $duration-fast, border-color $duration-fast;
+    }
+
+    &__team:hover &__btn,
+    &__content:hover &__btn {
+        background: $nfl-red;
+        border-color: $nfl-red;
     }
 
     // Bye Variant
@@ -86,14 +120,40 @@
         flex-direction: column;
         gap: 0;
         border: none;
+        overflow: hidden;
+        box-shadow: $box-shadow, inset 0 1px 0 rgba($white, 0.25);
+
+        &::before {
+            content: none;
+        }
+
+        // Soft light from the top-right corner and a darker base for depth
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 100% 0%, rgba($white, 0.3) 0%, $transparent 55%),
+                linear-gradient(180deg, $transparent 45%, rgba($black, 0.35) 100%);
+        }
+
+        .matchup-card__label,
+        .matchup-card__content {
+            position: relative;
+            z-index: 1;
+        }
 
         // Inherited/Adapted from ByeCard
         .matchup-card__label {
-            font-size: 1.28rem;
+            padding: 0.3rem 1.4rem;
+            border-radius: 999px;
+            background: rgba($black, 0.28);
+            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.2rem;
             color: $text-gray-lighter;
-            font-weight: 500;
+            font-weight: 800;
         }
 
         .matchup-card__content {
@@ -103,7 +163,7 @@
             gap: 0.5rem;
             cursor: pointer;
             padding: $spacing-xs;
-            border-radius: $radius-sm;
+            border-radius: $radius-md;
             width: 100%;
             transition: background $duration-fast;
 
@@ -120,23 +180,23 @@
         }
 
         .matchup-card__seed {
-            font-size: 2.24rem;
-            color: $text-gray-light;
+            font-size: 4.2rem;
+            font-weight: 900;
+            line-height: 1;
+            color: $white;
+            text-shadow: 0 .3rem 1rem rgba($black, 0.4);
         }
 
         .matchup-card__stats {
-            transform: none; // Reset compact scale
+            transform: none;
             gap: 8px;
         }
 
         .matchup-card__prob {
             font-size: 1.6rem;
-            color: $text-primary; // White for Bye
-        }
-
-        .matchup-card__sep {
-            display: none; // Hide separator in Bye view if layout differs, or keep?
-            color: rgba($white, 0.3);
+            color: $text-primary;
+            background: rgba($black, 0.28);
+            border-color: rgba($white, 0.25);
         }
 
         .matchup-card__next {

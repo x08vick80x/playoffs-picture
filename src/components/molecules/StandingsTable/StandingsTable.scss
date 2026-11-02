@@ -5,8 +5,8 @@
     width: 100%;
     table-layout: fixed;
     border-spacing: 0;
-    background: $bg-card;
-    border: 1px solid $gray-800;
+    background: $gradient-card;
+    border: 1px solid $border-subtle;
     border-radius: $radius-lg;
     overflow: hidden;
     box-shadow: $box-shadow;
@@ -21,11 +21,11 @@
 
     th, td {
         padding: 1.2rem 0.6rem;
-        border-bottom: 1px solid $gray-850;
+        border-bottom: 1px solid $border-subtle;
     }
 
     thead {
-        background: $bg-dark-light;
+        background: rgba($white, 0.04);
         color: $text-secondary;
         font-size: 1.2rem;
         text-transform: uppercase;

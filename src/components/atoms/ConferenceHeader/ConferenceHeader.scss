@@ -1,31 +1,62 @@
 @use '@/styles/variables' as *;
 
 .conf-header {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: $spacing-sm;
-    padding: $spacing-xs;
+    padding: $spacing-xs $spacing-sm;
     margin-bottom: $spacing-sm;
-    border-bottom: 2px solid $transparent;
-    background: rgba($white, 0.05);
-    border-radius: $radius-md;
+    border: 1px solid $border-subtle;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $box-shadow, inset 0 1px 0 rgba($white, 0.12);
 
-    &__text {
-        font-size: 2.88rem;
-        font-weight: bold;
-        color: $text-primary;
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 0.6rem;
+        background: var(--conf-color);
     }
 
     &__logo {
-        fill: currentColor;
+        flex: 0 0 auto;
+        box-sizing: content-box;
+        width: 3.4rem;
+        height: 3.4rem;
+        padding: 0.7rem;
+        border-radius: 50%;
+        background: $white;
+        box-shadow: 0 .3rem 1rem rgba($black, 0.4);
+    }
+
+    &__text {
+        font-size: 3.2rem;
+        font-weight: 900;
+        font-style: italic;
+        letter-spacing: 0.3rem;
+        line-height: 1;
+        color: $text-primary;
+    }
+
+    &::after {
+        content: 'Conference';
+        margin-left: auto;
+        font-size: 1.1rem;
+        font-weight: 800;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        color: $text-secondary;
     }
 
     &--afc {
-        border-bottom-color: $nfl-red;
+        --conf-color: #{$nfl-red};
+        background: linear-gradient(110deg, rgba($nfl-red, 0.4) 0%, $bg-card-top 65%);
     }
 
     &--nfc {
-        border-bottom-color: $nfl-blue;
+        --conf-color: #{$nfl-light-blue};
+        background: linear-gradient(110deg, rgba($nfl-light-blue, 0.32) 0%, $bg-card-top 65%);
     }
 }

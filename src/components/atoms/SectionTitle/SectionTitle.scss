@@ -9,4 +9,14 @@
     letter-spacing: 1px;
     line-height: 1.2;
     color: $text-primary;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 6rem;
+        height: 0.4rem;
+        margin: 1.2rem auto 0;
+        border-radius: 999px;
+        background: $gradient-accent;
+    }
 }
