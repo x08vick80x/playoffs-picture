@@ -134,6 +134,14 @@
                 color: $text-primary;
             }
         }
+
+        &[aria-current='true'],
+        &[aria-current='true']:not([aria-disabled="true"]):hover {
+            background: $gradient-accent;
+            color: $white;
+            font-weight: 600;
+            box-shadow: 0 .4rem 1.2rem rgba($nfl-red, 0.45);
+        }
     }
 }
 

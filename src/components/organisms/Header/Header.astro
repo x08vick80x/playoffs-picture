@@ -87,4 +87,40 @@ const playoffLinks = [
     });
 
     syncToggle();
+
+    const nav = document.querySelector<HTMLElement>(".main-nav");
+    const navLinks = Array.from(
+        document.querySelectorAll<HTMLAnchorElement>('.main-nav__link[href^="#"]'),
+    );
+    // Just under the sticky header.
+    const SPY_OFFSET = 140;
+
+    function updateActiveLink() {
+        let current: HTMLAnchorElement | null = null;
+        for (const link of navLinks) {
+            const target = document.querySelector(link.getAttribute("href") ?? "");
+            const rect = target?.getBoundingClientRect();
+            if (rect && rect.height > 0 && rect.top <= SPY_OFFSET) current = link;
+        }
+        const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+        if (atBottom) current = navLinks[navLinks.length - 1] ?? current;
+        for (const link of navLinks) {
+            if (link === current) link.setAttribute("aria-current", "true");
+            else link.removeAttribute("aria-current");
+        }
+        if (current && nav && nav.scrollWidth > nav.clientWidth) {
+            nav.scrollLeft = current.offsetLeft - (nav.clientWidth - current.offsetWidth) / 2;
+        }
+    }
+
+    let spyFrame = 0;
+    window.addEventListener(
+        "scroll",
+        () => {
+            cancelAnimationFrame(spyFrame);
+            spyFrame = requestAnimationFrame(updateActiveLink);
+        },
+        { passive: true },
+    );
+    updateActiveLink();
 </script>
