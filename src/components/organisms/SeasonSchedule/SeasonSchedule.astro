@@ -89,7 +89,7 @@ const initialWeek = weeks.find((week) => week.week === defaultWeekId) || weeks[0
         } catch {
             // The schedule remains usable when storage is unavailable or invalid.
         }
-        const favorites = new Set(teams.map(team => getTeamId(team).replace('buccaners', 'buccaneers')));
+        const favorites = new Set(teams.map(team => getTeamId(team)));
         host.querySelectorAll<HTMLElement>(".schedule-row[data-home-team]").forEach(row => {
             const isFavorite = favorites.has(row.dataset.homeTeam!) || favorites.has(row.dataset.awayTeam!);
             row.classList.toggle("schedule-row--favorite", isFavorite);

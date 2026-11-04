@@ -25,8 +25,8 @@ const compactDate = (date: string | null) => date?.replace(
 
 <div
     class="schedule-row"
-    data-home-team={getTeamId(match.home).replace('buccaners', 'buccaneers')}
-    data-away-team={getTeamId(match.away).replace('buccaners', 'buccaneers')}
+    data-home-team={getTeamId(match.home)}
+    data-away-team={getTeamId(match.away)}
 >
     <span class="schedule-row__date">
         {compactDate(match.date)}

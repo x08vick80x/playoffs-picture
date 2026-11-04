@@ -5,10 +5,9 @@ interface Props {
     team: string; // Team name (e.g., "Bills") or ID
     size?: "sm" | "md" | "lg" | "xl"; // sm=24, md=40, lg=55, xl=80
     className?: string;
-    grayscale?: boolean;
 }
 
-const { team, size = "md", className = "", grayscale = false } = Astro.props;
+const { team, size = "md", className = "" } = Astro.props;
 
 const sizeMap = {
     sm: 24,
@@ -25,7 +24,6 @@ const teamId = getTeamId(team);
     class:list={[
         "team-logo",
         `team-logo--${size}`,
-        { "team-logo--grayscale": grayscale },
         className,
     ]}
     width={pixelSize}

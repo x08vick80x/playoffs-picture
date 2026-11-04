@@ -1,5 +1,4 @@
 @use '@/styles/variables' as *;
-@use '@/styles/mixins' as *;
 
 .btn {
     display: flex;
@@ -32,18 +31,4 @@
         stroke: currentColor;
     }
 
-    &--secondary {
-        background-color: $gray-800;
-        color: $white;
-
-        &:hover {
-            background-color: $gray-700;
-        }
-    }
-
-    &--icon-only {
-        padding: 0.6rem;
-        aspect-ratio: 1;
-        border-radius: 50%;
-    }
 }

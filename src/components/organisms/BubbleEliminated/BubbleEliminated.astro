@@ -39,24 +39,6 @@ const { bubble, eliminated, currentWeek } = Astro.props;
 const isAvailable = currentWeek === undefined || currentWeek >= MIN_WEEK;
 ---
 
-<script>
-    document.addEventListener("click", (e) => {
-        const target = e.target as HTMLElement;
-        const btn = target.closest(".team-card-trigger");
-        if (btn) {
-            const team = btn.getAttribute("data-team");
-            const schedule = JSON.parse(
-                btn.getAttribute("data-schedule") || "[]",
-            );
-
-            const event = new CustomEvent("open-schedule-modal", {
-                detail: { teamName: team, schedule },
-            });
-            window.dispatchEvent(event);
-        }
-    });
-</script>
-
 <div class="bubble-eliminated-container">
     {!isAvailable && <UnavailableNotice until={MIN_WEEK} />}
 

@@ -12,7 +12,7 @@ export const DIVISIONS = [
 ];
 
 export function getDivisionTeams(teams, division) {
-    return teams.filter(team => division.teams.includes(getTeamId(team.team).replace('buccaners', 'buccaneers')));
+    return teams.filter(team => division.teams.includes(getTeamId(team.team)));
 }
 
 export function winPercentage(record) {

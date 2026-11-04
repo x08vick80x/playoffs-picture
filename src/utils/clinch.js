@@ -4,7 +4,7 @@ import { getTeamId } from '@/utils/team-mapping.js';
 const PLAYOFF_SPOTS = 7;
 const SEASON_GAMES = 17;
 
-const teamKey = team => getTeamId(team).replace('buccaners', 'buccaneers');
+const teamKey = team => getTeamId(team);
 
 function parseRecord(record) {
     const [wins = 0, losses = 0, ties = 0] = record.split('-').map(Number);

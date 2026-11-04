@@ -67,7 +67,7 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-f9f1ccbf'], (function (workbox) { 'use strict';
+define(['./workbox-42eaa964'], (function (workbox) { 'use strict';
 
   self.skipWaiting();
   workbox.clientsClaim();
@@ -84,6 +84,21 @@ define(['./workbox-f9f1ccbf'], (function (workbox) { 'use strict';
     "directoryIndex": "index.html"
   });
   workbox.cleanupOutdatedCaches();
+  workbox.registerRoute(/\/my-teams\.json$/, new workbox.NetworkFirst({
+    "cacheName": "my-teams-data-v1",
+    "networkTimeoutSeconds": 3,
+    plugins: [new workbox.CacheableResponsePlugin({
+      statuses: [200]
+    })]
+  }), 'GET');
+  workbox.registerRoute(/\/_astro\/my-teams\.[\w-]+\.js$/, new workbox.CacheFirst({
+    "cacheName": "my-teams-code-v1",
+    plugins: [new workbox.CacheableResponsePlugin({
+      statuses: [200]
+    }), new workbox.ExpirationPlugin({
+      maxEntries: 4
+    })]
+  }), 'GET');
   workbox.registerRoute(({
     request
   }) => request.mode === 'navigate', new workbox.NetworkFirst({

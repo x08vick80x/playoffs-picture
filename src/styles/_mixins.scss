@@ -43,9 +43,3 @@
         }
     }
 }
-
-@mixin text-gradient($start, $end) {
-    background: linear-gradient(90deg, $start, $end);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: $transparent;
-}

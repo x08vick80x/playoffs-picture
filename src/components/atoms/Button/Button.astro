@@ -2,7 +2,6 @@
 interface Props {
     id?: string;
     type?: "button" | "submit" | "reset";
-    variant?: "primary" | "secondary";
     className?: string;
     href?: string;
     onClick?: string;
@@ -12,7 +11,6 @@ interface Props {
 const {
     id,
     type = "button",
-    variant = "primary",
     className = "",
     href,
     onClick,
@@ -24,7 +22,7 @@ const Element = href ? "a" : "button";
 
 <Element
     id={id}
-    class:list={["btn", `btn--${variant}`, className]}
+    class:list={["btn", className]}
     {...href ? { href } : { type }}
     {...onClick ? { onclick: onClick } : {}}
     {...ariaLabel ? { "aria-label": ariaLabel } : {}}

@@ -10,7 +10,7 @@ runtime API, backend, or database.
 ## Tech stack
 
 - **Astro 5** (SSG, no server runtime) with SCSS (`lang="scss"` in component `<style>` blocks)
-- **Puppeteer + Cheerio** in standalone Node scripts (`scraper/`) to scrape data from third-party
+- **Puppeteer** in standalone Node scripts (`scraper/`) to scrape data from third-party
   sites (`nfl.com`, `cbssports.com`)
 - **@vite-pwa/astro** for PWA/offline support, **Critters** for critical CSS inlining
 - **@vercel/analytics**, deployed on Vercel
@@ -44,6 +44,8 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
 - `npm run dev` / `npm run build` — runs `start-sprite.js` first (pre/post hooks), then Astro
 - `npm run update-data` — runs both scrapers in sequence, overwrites `src/data/*.json`
 - `npm test` — Node built-in test runner (`tests/*.test.js`, no dependency; `tests/register.js` maps the `@/` alias). No lint script exists
+- `npm run test:modal` — Chrome regression checks for a single schedule-modal event/open per card click;
+  requires a production build and preview on port 4322 (or `SCHEDULE_TEST_URL`).
 - `npm run test:my-teams` — Chrome checks for conditional loading, CLS, carousel, selection and offline use;
   requires a production build and `npm run preview -- --port 4322` (or `MY_TEAMS_TEST_URL`).
 

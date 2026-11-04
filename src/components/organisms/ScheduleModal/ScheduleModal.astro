@@ -31,6 +31,20 @@
     const count = document.getElementById("modal-games-left");
     const list = document.getElementById("schedule-list");
 
+    // One delegated listener serves matchups and bubble/eliminated cards,
+    // including clicks on their nested buttons and SVG logos.
+    document.addEventListener("click", (event) => {
+        if (!(event.target instanceof Element)) return;
+        const trigger = event.target.closest<HTMLElement>(".team-card-trigger");
+        if (!trigger) return;
+        window.dispatchEvent(new CustomEvent("open-schedule-modal", {
+            detail: {
+                teamName: trigger.dataset.team,
+                schedule: JSON.parse(trigger.dataset.schedule || "[]"),
+            },
+        }));
+    });
+
     const escapeHtml = (value: unknown) =>
         String(value ?? "").replace(
             /[&<>"']/g,
