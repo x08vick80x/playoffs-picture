@@ -23,10 +23,10 @@ const clinchLabels: Record<string, [string, string]> = {
     </thead>
     <tbody>
         {teams.map((team, index) => (
-            <tr data-team={team.team} class:list={{
-                'playoff-spot': ranking === 'conference' && Number(team.seed) <= 7,
-                'top-seed': ranking === 'conference' && Number(team.seed) === 1,
-            }}>
+            <tr data-team={team.team} class:list={['standings-table__row', {
+                'standings-table__row--playoff-spot': ranking === 'conference' && Number(team.seed) <= 7,
+                'standings-table__row--top-seed': ranking === 'conference' && Number(team.seed) === 1,
+            }]}>
                 <td class="standings-table__rank"><span class="standings-table__pos">{ranking === 'conference' ? team.seed : ranking === 'league' ? team.rank : index + 1}</span></td>
                 <th scope="row">
                     <span class="standings-table__team">

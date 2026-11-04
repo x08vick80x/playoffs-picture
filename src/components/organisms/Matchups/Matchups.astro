@@ -79,15 +79,15 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
 }
 ---
 
-<div class="matchups-container">
+<div class="matchups">
     <SectionTitle title="Projected Matchups" />
 
     {!isAvailable && <UnavailableNotice until={MIN_WEEK} />}
 
     {isAvailable && (
-    <div class="conference-matchups">
+    <div class="matchups__conferences">
         <!-- AFC Column -->
-        <div class="conf-col">
+        <div class="matchups__conference">
             <ConferenceHeader conf="AFC" />
 
             <!-- AFC Bye -->
@@ -128,7 +128,7 @@ function getScrapedTeam(teamName: string | undefined, conf: "AFC" | "NFC") {
         </div>
 
         <!-- NFC Column -->
-        <div class="conf-col">
+        <div class="matchups__conference">
             <ConferenceHeader conf="NFC" />
 
             <!-- NFC Bye -->

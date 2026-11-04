@@ -1,13 +1,13 @@
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
-.season-schedule-container {
+.season-schedule {
     padding: $spacing-sm;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.week-tabs {
+.season-schedule__tabs {
     display: flex;
     gap: 0.2rem;
     width: fit-content;
@@ -26,7 +26,7 @@
         display: none;
     }
 
-    .week-tab {
+    .season-schedule__tab {
         flex: 0 0 auto;
         background: $transparent;
         color: $text-secondary;
@@ -42,7 +42,7 @@
             color: $text-primary;
         }
 
-        &.active {
+        &.season-schedule__tab--active {
             background: $gradient-accent;
             color: $white;
             font-weight: 600;
@@ -51,7 +51,7 @@
     }
 }
 
-.week-panel {
+.season-schedule__panel {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: $spacing-sm $spacing-xs;
@@ -61,11 +61,13 @@
     }
 }
 
-.season-schedule-container .empty-state {
+.season-schedule .season-schedule__empty {
     grid-column: 1 / -1;
     text-align: center;
     color: $text-secondary;
     padding: $spacing-md 0;
+    font-style: italic;
+    font-size: 1.44rem;
 }
 
 .season-schedule__status {

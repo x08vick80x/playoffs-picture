@@ -165,7 +165,7 @@
 
         // Inner padding wrapper
         p,
-        .no-content {
+        .ranking-item__empty {
             padding: 1rem;
 
             @include tablet { padding: 1.5rem 2rem; }
@@ -177,7 +177,7 @@
             font-weight: 400;
         }
 
-        .no-content {
+        .ranking-item__empty {
             color: $gray-500;
             font-style: italic;
         }

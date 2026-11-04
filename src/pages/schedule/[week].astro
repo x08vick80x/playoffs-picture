@@ -11,7 +11,7 @@ export function getStaticPaths() {
 const { week } = Astro.props;
 ---
 
-<div class="week-panel" data-week-panel={week.week} aria-label={`Week ${week.week.replace("REG", "")}`}>
-    {week.matches.length === 0 && <div class="empty-state">- No matchups available -</div>}
+<div class="season-schedule__panel" data-week-panel={week.week} aria-label={`Week ${week.week.replace("REG", "")}`}>
+    {week.matches.length === 0 && <div class="season-schedule__empty">- No matchups available -</div>}
     {week.matches.map((match) => <ScheduleRow match={match} />)}
 </div>

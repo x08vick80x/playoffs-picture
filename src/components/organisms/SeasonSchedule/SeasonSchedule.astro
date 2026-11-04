@@ -29,14 +29,14 @@ const defaultWeekId = `REG${getScheduleWeekNumber()}`;
 const initialWeek = weeks.find((week) => week.week === defaultWeekId) || weeks[0];
 ---
 
-<div class="season-schedule-container">
+<div class="season-schedule">
     <SectionTitle title="Season Schedule" />
 
-    <div class="week-tabs" id="week-tabs" aria-label="Schedule weeks">
+    <div class="season-schedule__tabs" id="week-tabs" aria-label="Schedule weeks">
         {weeks.map((week) => (
             <button
                 type="button"
-                class:list={["week-tab", { active: week.week === initialWeek?.week }]}
+                class:list={["season-schedule__tab", { "season-schedule__tab--active": week.week === initialWeek?.week }]}
                 data-week={week.week}
                 data-url={`/schedule/${week.week}`}
                 aria-controls="schedule-week"
@@ -53,9 +53,9 @@ const initialWeek = weeks.find((week) => week.week === defaultWeekId) || weeks[0
     </div>
     <div id="schedule-week" aria-busy="false">
         {initialWeek && (
-            <div class="week-panel" data-week-panel={initialWeek.week} aria-label={weekLabel(initialWeek.week)}>
+            <div class="season-schedule__panel" data-week-panel={initialWeek.week} aria-label={weekLabel(initialWeek.week)}>
                 {initialWeek.matches.length === 0 && (
-                    <div class="empty-state">- No matchups available -</div>
+                    <div class="season-schedule__empty">- No matchups available -</div>
                 )}
                 {initialWeek.matches.map((match) => <ScheduleRow match={match} />)}
             </div>
@@ -73,7 +73,7 @@ const initialWeek = weeks.find((week) => week.week === defaultWeekId) || weeks[0
     const statusContainer = document.querySelector<HTMLElement>(".season-schedule__status")!;
     const statusText = statusContainer.querySelector<HTMLElement>("[data-schedule-status]")!;
     const retryButton = statusContainer.querySelector<HTMLButtonElement>(".season-schedule__retry")!;
-    const tabs = Array.from(tabsContainer.querySelectorAll<HTMLButtonElement>(".week-tab"));
+    const tabs = Array.from(tabsContainer.querySelectorAll<HTMLButtonElement>(".season-schedule__tab"));
     const initialPanel = host.querySelector<HTMLElement>("[data-week-panel]");
     // Cache markup, not mounted panels: browsing all weeks must not grow the DOM.
     const panels = new Map<string, string>();
@@ -106,7 +106,7 @@ const initialWeek = weeks.find((week) => week.week === defaultWeekId) || weeks[0
     function syncTabs(week: string) {
         tabs.forEach(tab => {
             const selected = tab.dataset.week === week;
-            tab.classList.toggle("active", selected);
+            tab.classList.toggle("season-schedule__tab--active", selected);
             tab.setAttribute("aria-pressed", String(selected));
         });
     }
@@ -122,7 +122,7 @@ const initialWeek = weeks.find((week) => week.week === defaultWeekId) || weeks[0
                 const html = await response.text();
                 const template = document.createElement("template");
                 template.innerHTML = html;
-                const panel = template.content.querySelector<HTMLElement>(".week-panel");
+                const panel = template.content.querySelector<HTMLElement>(".season-schedule__panel");
                 if (!panel || panel.dataset.weekPanel !== week) throw new Error("Invalid schedule response");
                 panels.set(week, panel.outerHTML);
                 return panel.outerHTML;
@@ -181,7 +181,7 @@ const initialWeek = weeks.find((week) => week.week === defaultWeekId) || weeks[0
 
     // The cached page/build can precede the current week.
     void selectWeek(`REG${getScheduleWeekNumber()}`).then(() => {
-        const activeTab = tabsContainer.querySelector<HTMLElement>(".week-tab.active");
+        const activeTab = tabsContainer.querySelector<HTMLElement>(".season-schedule__tab--active");
         if (!activeTab) return;
         const containerBounds = tabsContainer.getBoundingClientRect();
         const tabBounds = activeTab.getBoundingClientRect();
@@ -192,7 +192,7 @@ const initialWeek = weeks.find((week) => week.week === defaultWeekId) || weeks[0
     });
 
     tabsContainer.addEventListener("click", (event) => {
-        const button = (event.target as HTMLElement).closest<HTMLButtonElement>(".week-tab");
+        const button = (event.target as HTMLElement).closest<HTMLButtonElement>(".season-schedule__tab");
         if (!button?.dataset.week) return;
         void selectWeek(button.dataset.week);
         button.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });

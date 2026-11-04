@@ -1,7 +1,7 @@
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
-.standings-container {
+.standings {
     padding: $spacing-sm;
     max-width: 1000px;
     margin: 0 auto;
@@ -34,7 +34,7 @@
     }
 }
 
-.standings-divisions {
+.standings__divisions {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: $spacing-sm;
@@ -46,7 +46,7 @@
     }
 }
 
-.standings-note {
+.standings__note {
     color: $text-secondary;
     font-size: 1.3rem;
 }

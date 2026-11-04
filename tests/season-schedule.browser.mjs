@@ -29,7 +29,7 @@ try {
     });
     await page.goto(baseURL, { waitUntil: 'networkidle0' });
     await waitForWeek(page, current);
-    assert.equal(await page.$$eval('.week-panel', panels => panels.length), 1);
+    assert.equal(await page.$$eval('.season-schedule__panel', panels => panels.length), 1);
     assert.equal(requests.length, 0, 'no week fragment requested by the page before selection');
 
     console.log('Passed: initial week without fragment fetch.');
@@ -83,13 +83,13 @@ try {
     releaseSlow();
     await slowResponse;
     await page.waitForNetworkIdle();
-    assert.equal(await page.$eval('.week-panel', el => el.dataset.weekPanel), others[2]);
+    assert.equal(await page.$eval('.season-schedule__panel', el => el.dataset.weekPanel), others[2]);
 
     await clickWeek(page, others[3]);
     await page.waitForSelector('.season-schedule__retry:not([hidden])');
     assert.equal(await page.$$eval('.schedule-row--loading', rows => rows.length), 0, 'failed loads restore the previous cards');
-    assert.equal(await page.$eval('.week-panel', el => el.dataset.weekPanel), others[2]);
-    assert.equal(await page.$eval('.week-tab.active', el => el.dataset.week), others[2]);
+    assert.equal(await page.$eval('.season-schedule__panel', el => el.dataset.weekPanel), others[2]);
+    assert.equal(await page.$eval('.season-schedule__tab--active', el => el.dataset.week), others[2]);
     fail = false;
     await page.click('.season-schedule__retry');
     await waitForWeek(page, others[3]);
@@ -97,7 +97,7 @@ try {
     for (const week of schedule.weeks) {
         await clickWeek(page, week.week);
         await waitForWeek(page, week.week);
-        assert.equal(await page.$$eval('.week-panel', panels => panels.length), 1);
+        assert.equal(await page.$$eval('.season-schedule__panel', panels => panels.length), 1);
         assert.equal(await page.$$eval('.schedule-row', rows => rows.length), week.matches.length);
         const scores = await page.$$eval('.schedule-row__score', nodes => nodes.map(n => n.textContent.trim()));
         const expected = week.matches.flatMap(m => m.final ? [m.awayScore, m.homeScore].filter(n => n != null).map(String) : []);
@@ -117,7 +117,7 @@ try {
     const noJS = await browser.newPage();
     await noJS.setJavaScriptEnabled(false);
     await noJS.goto(baseURL);
-    assert.equal(await noJS.$$eval('.week-panel', panels => panels.length), 1);
+    assert.equal(await noJS.$$eval('.season-schedule__panel', panels => panels.length), 1);
     assert.ok(await noJS.$$eval('.schedule-row', rows => rows.length) > 0);
     await noJS.close();
 

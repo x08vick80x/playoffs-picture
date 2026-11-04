@@ -39,27 +39,27 @@ const { bubble, eliminated, currentWeek } = Astro.props;
 const isAvailable = currentWeek === undefined || currentWeek >= MIN_WEEK;
 ---
 
-<div class="bubble-eliminated-container">
+<div class="bubble-eliminated">
     {!isAvailable && <UnavailableNotice until={MIN_WEEK} />}
 
     {isAvailable && (
     <>
     <!-- Bubble Section -->
-    <section id="bubble" class="section-group">
+    <section id="bubble" class="bubble-eliminated__section">
         <SectionTitle title="On The Bubble" />
 
-        <div class="grid-container">
+        <div class="bubble-eliminated__conferences">
             {
                 (["AFC", "NFC"] as const).map((conf) => (
-                    <div class="conference-col">
+                    <div class="bubble-eliminated__conference">
                         <ConferenceHeader conf={conf} />
 
-                        <div class="team-list">
+                        <div class="bubble-eliminated__teams">
                             {bubble[conf].map((team) => (
                                 <BubbleCard team={team} />
                             ))}
                             {bubble[conf].length === 0 && (
-                                <div class="empty-state">
+                                <div class="bubble-eliminated__empty">
                                     - No teams on the bubble -
                                 </div>
                             )}
@@ -71,21 +71,21 @@ const isAvailable = currentWeek === undefined || currentWeek >= MIN_WEEK;
     </section>
 
     <!-- Eliminated Section -->
-    <section id="eliminated" class="section-group">
+    <section id="eliminated" class="bubble-eliminated__section">
         <SectionTitle title="Eliminated" />
 
-        <div class="grid-container">
+        <div class="bubble-eliminated__conferences">
             {
                 (["AFC", "NFC"] as const).map((conf) => (
-                    <div class="conference-col">
+                    <div class="bubble-eliminated__conference">
                         <ConferenceHeader conf={conf} />
 
-                        <div class="team-list">
+                        <div class="bubble-eliminated__teams">
                             {eliminated[conf].map((team) => (
                                 <BubbleCard team={team} isEliminated={true} />
                             ))}
                             {eliminated[conf].length === 0 && (
-                                <div class="empty-state">
+                                <div class="bubble-eliminated__empty">
                                     - No teams eliminated -
                                 </div>
                             )}

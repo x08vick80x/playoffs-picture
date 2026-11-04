@@ -1,17 +1,17 @@
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
-.bubble-eliminated-container {
+.bubble-eliminated {
     max-width: 1000px;
     margin: $spacing-md auto;
     padding: 0 $spacing-sm;
 }
 
-.section-group {
+.bubble-eliminated__section {
     margin-bottom: $spacing-lg;
 }
 
-.grid-container {
+.bubble-eliminated__conferences {
     display: grid;
     grid-template-columns: 1fr;
     gap: $spacing-md;
@@ -21,13 +21,13 @@
     }
 }
 
-.team-list {
+.bubble-eliminated__teams {
     display: flex;
     flex-direction: column;
     gap: $spacing-xs;
 }
 
-.empty-state {
+.bubble-eliminated__empty {
     text-align: center;
     padding: $spacing-sm;
     color: $gray-500;

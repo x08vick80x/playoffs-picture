@@ -1,7 +1,7 @@
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
-.matchups-container {
+.matchups {
     margin-top: $spacing-sm;
     padding: $spacing-sm;
 
@@ -10,7 +10,7 @@
     }
 }
 
-.conference-matchups {
+.matchups__conferences {
     display: grid;
     grid-template-columns: 1fr;
     gap: $spacing-md;

@@ -108,7 +108,7 @@
         line-height: 1;
     }
 
-    .is-favorite .standings-table__fav {
+    .standings-table__row--favorite .standings-table__fav {
         display: inline;
     }
 
@@ -129,13 +129,13 @@
         &--eliminated { color: $accent-soft; }
     }
 
-    .playoff-spot {
+    .standings-table__row--playoff-spot {
         background: linear-gradient(90deg, rgba($playoff-spot, 0.1), $transparent 55%);
         td:first-child { box-shadow: inset 3px 0 $playoff-spot; }
         .standings-table__pos { background: rgba($playoff-spot, 0.18); color: $playoff-text; }
     }
 
-    .top-seed {
+    .standings-table__row--top-seed {
         background: linear-gradient(90deg, rgba($top-seed, 0.16), $transparent 60%);
         td:first-child { box-shadow: inset 3px 0 $top-seed; }
         .standings-table__pos { background: $top-seed; color: $black; }

@@ -27,7 +27,7 @@ const filters = [
 ];
 ---
 
-<div class="standings-container" data-standings>
+<div class="standings" data-standings>
     <SectionTitle title="Standings" />
 
     <nav class="standings-filters" aria-label="Standings filters">
@@ -44,10 +44,10 @@ const filters = [
     </nav>
 
     {Object.values(clinch).some(status => status !== 'alive') && (
-        <p class="standings-note">y clinched division · x clinched playoff berth · e eliminated</p>
+        <p class="standings__note">y clinched division · x clinched playoff berth · e eliminated</p>
     )}
 
-    <div id="standings-divisions" class="standings-divisions" data-standings-panel="divisions">
+    <div id="standings-divisions" class="standings__divisions" data-standings-panel="divisions">
         {DIVISIONS.map(division => (
             <StandingsTable
                 title={division.name}
@@ -64,11 +64,11 @@ const filters = [
         <StandingsTable title="NFC" teams={nfc} ranking="conference" clinch={clinch} />
     </div>
     <div id="standings-league" data-standings-panel="league" hidden>
-        <p class="standings-note">Sorted by win percentage. Tied teams share the same rank.</p>
+        <p class="standings__note">Sorted by win percentage. Tied teams share the same rank.</p>
         <StandingsTable title="NFL" teams={rankLeague([...afc, ...nfc])} ranking="league" clinch={clinch} />
     </div>
     <div id="standings-mine" data-standings-panel="mine" hidden>
-        <p class="standings-note">Your favorite teams, with their NFL rank.</p>
+        <p class="standings__note">Your favorite teams, with their NFL rank.</p>
         <div data-standings-mine></div>
     </div>
 </div>
@@ -106,7 +106,7 @@ const filters = [
         function syncFavorites() {
             const favorites = readFavorites();
             container.querySelectorAll<HTMLElement>('tr[data-team]').forEach(row => {
-                row.classList.toggle('is-favorite', favorites.has(row.dataset.team!));
+                row.classList.toggle('standings-table__row--favorite', favorites.has(row.dataset.team!));
             });
 
             if (mineHost && leagueTable) {
