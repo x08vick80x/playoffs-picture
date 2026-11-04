@@ -19,7 +19,7 @@ export default defineConfig({
     },
   },
   integrations: [
-    sitemap(),
+    sitemap({ filter: (page) => !new URL(page).pathname.startsWith('/schedule/') }),
     {
       name: 'critical-css',
       hooks: {
@@ -69,8 +69,8 @@ export default defineConfig({
           ]
         },
         workbox: {
-          // HTML contains the data: do not let precaching intercept navigation.
-          globPatterns: ['**/*.{js,css,ico,png,svg,json,woff,woff2}'],
+          // Keep page navigations fresh; cache static week fragments for offline selection.
+          globPatterns: ['**/*.{js,css,ico,png,svg,json,woff,woff2}', 'schedule/**/*.html'],
           globIgnores: ['**/data-version.json'],
           navigateFallback: null,
           runtimeCaching: [{

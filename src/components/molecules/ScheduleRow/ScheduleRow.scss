@@ -1,0 +1,153 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.schedule-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    @include card;
+    border-radius: $radius-lg;
+    padding: $spacing-xs;
+    min-width: 0;
+    @include card-hover;
+
+    &--favorite {
+        background: linear-gradient(145deg, rgba($nfl-red, 0.22), rgba($nfl-red, 0.06));
+        outline: 1px solid rgba($nfl-red, 0.7);
+        outline-offset: -1px;
+    }
+
+    &--loading {
+        position: relative;
+        pointer-events: none;
+        background: $gradient-card;
+        outline: none;
+        transform: none;
+
+        // Visibility preserves the original layout, including wrapped team names.
+        > * { visibility: hidden; }
+
+        &::before {
+            --skeleton-logo-size: #{$logo-xs};
+            content: '';
+            position: absolute;
+            inset: $spacing-xs;
+            border-radius: $radius-sm;
+            background:
+                linear-gradient(ink(0.12), ink(0.12)) center top / 55% $spacing-xs,
+                radial-gradient(circle, ink(0.12) 65%, $transparent 70%) 15% 50% / var(--skeleton-logo-size) var(--skeleton-logo-size),
+                radial-gradient(circle, ink(0.12) 65%, $transparent 70%) 85% 50% / var(--skeleton-logo-size) var(--skeleton-logo-size),
+                linear-gradient(ink(0.12), ink(0.12)) 10% bottom / 30% $spacing-xs,
+                linear-gradient(ink(0.12), ink(0.12)) 90% bottom / 30% $spacing-xs;
+            background-repeat: no-repeat;
+            animation: schedule-row-pulse ($duration-fast * 6) ease-in-out infinite alternate;
+
+            @include wide-mobile { --skeleton-logo-size: #{$logo-s}; }
+
+            @media (prefers-reduced-motion: reduce) { animation: none; }
+        }
+    }
+
+    &__date {
+        color: $text-secondary;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    &__teams {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        align-items: center;
+        gap: 0.2rem;
+    }
+
+    &__team {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 0;
+
+        &:first-child {
+            align-items: flex-start;
+        }
+        &:last-child {
+            align-items: flex-end;
+        }
+    }
+
+    .team-row {
+        justify-content: center;
+        gap: $spacing-xs;
+    }
+
+    .team-logo {
+        width: 2.7rem;
+        height: 2.7rem;
+    }
+
+    .team-row__name {
+        font-size: 1.4rem;
+    }
+
+    &__at {
+        color: $text-secondary;
+        font-weight: bold;
+        font-size: 1.3rem;
+        line-height: 2rem;
+    }
+
+    &__status {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 1.3rem;
+    }
+
+    &__final,
+    &__time {
+        color: $text-secondary;
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        text-align: center;
+    }
+
+    &__time {
+        line-height: 1.5rem;
+    }
+
+    &__score {
+        align-self: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        font-style: italic;
+        font-variant-numeric: tabular-nums;
+        color: var(--text-secondary);
+    }
+
+    .team-row__name-full {
+        display: none;
+    }
+
+    .team-row__name-abbr {
+        display: block;
+    }
+
+    @include wide-mobile {
+        &__teams { gap: $spacing-xs; }
+        &__at { line-height: 2.4rem; }
+        .team-logo { width: 4rem; height: 4rem; }
+        .team-row__name { font-size: 1.6rem; }
+    }
+
+    @include tablet {
+        .team-row__name-full { display: block; }
+        .team-row__name-abbr { display: none; }
+    }
+
+}
+
+@keyframes schedule-row-pulse {
+    from { opacity: 0.45; }
+    to { opacity: 1; }
+}

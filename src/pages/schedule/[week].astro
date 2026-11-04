@@ -1,0 +1,17 @@
+---
+import ScheduleRow from "@/components/molecules/ScheduleRow/ScheduleRow.astro";
+import schedule from "@/data/schedule.json";
+
+// Static HTML fragments, rendered with the same components as the initial page.
+export const partial = true;
+export function getStaticPaths() {
+    return schedule.weeks.map((week) => ({ params: { week: week.week }, props: { week } }));
+}
+
+const { week } = Astro.props;
+---
+
+<div class="week-panel" data-week-panel={week.week} aria-label={`Week ${week.week.replace("REG", "")}`}>
+    {week.matches.length === 0 && <div class="empty-state">- No matchups available -</div>}
+    {week.matches.map((match) => <ScheduleRow match={match} />)}
+</div>

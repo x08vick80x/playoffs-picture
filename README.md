@@ -35,6 +35,19 @@ npm run update-data
 
 This command runs the scraper and updates the `src/data/playoff-picture.json` file.
 
+### Schedule loading
+
+The homepage renders only the current week. Selecting another week fetches a static
+HTML fragment from `/schedule/REGn`, rendered with the shared `ScheduleRow` component.
+Loaded fragments are kept in memory, while only one week stays mounted in the DOM.
+The service worker precaches the fragments in the background for offline use; they
+are excluded from the sitemap. The client recomputes the current week when opening
+an older build, preserves favorite highlighting, and offers a retry after a failed fetch.
+
+To verify this behavior in Chrome, run `npm run build`, start
+`npm run preview -- --port 4322`, then run `npm run test:schedule` in another terminal.
+Set `SCHEDULE_TEST_URL` to test a different local preview address.
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:

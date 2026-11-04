@@ -11,7 +11,7 @@
     line-height: 1;
 
     &__highlight {
-        padding: 0.3rem 1.8rem 0.3rem 1.4rem;
+        padding: 0.3rem 1.8rem;
         background: $gradient-accent;
         border-radius: $radius-sm;
         font-size: clamp(2rem, 6vw, 2.8rem);

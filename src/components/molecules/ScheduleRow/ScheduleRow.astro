@@ -1,0 +1,55 @@
+---
+import TeamRow from "@/components/molecules/TeamRow/TeamRow.astro";
+import { getTeamId } from "@/utils/team-mapping.js";
+
+interface Match {
+    home: string;
+    away: string;
+    date: string | null;
+    time: string | null;
+    final: boolean;
+    awayScore?: number | null;
+    homeScore?: number | null;
+}
+
+interface Props {
+    match: Match;
+}
+
+const { match } = Astro.props;
+const compactDate = (date: string | null) => date?.replace(
+    /\b(January|February|March|April|May|June|July|August|September|October|November|December)\b/g,
+    (month) => month.slice(0, 3),
+);
+---
+
+<div
+    class="schedule-row"
+    data-home-team={getTeamId(match.home).replace('buccaners', 'buccaneers')}
+    data-away-team={getTeamId(match.away).replace('buccaners', 'buccaneers')}
+>
+    <span class="schedule-row__date">
+        {compactDate(match.date)}
+    </span>
+    <div class="schedule-row__teams">
+        <div class="schedule-row__team">
+            <TeamRow team={match.away} size="sm" showRecord={false} />
+            {match.final && match.awayScore != null && (
+                <span class="schedule-row__score">{match.awayScore}</span>
+            )}
+        </div>
+        <div class="schedule-row__status">
+            <span class="schedule-row__at">@</span>
+            {match.final && <span class="schedule-row__final">Final</span>}
+        </div>
+        <div class="schedule-row__team">
+            <TeamRow team={match.home} size="sm" showRecord={false} />
+            {match.final && match.homeScore != null && (
+                <span class="schedule-row__score">{match.homeScore}</span>
+            )}
+        </div>
+    </div>
+    {!match.final && match.time && (
+        <span class="schedule-row__time">{match.time}</span>
+    )}
+</div>
