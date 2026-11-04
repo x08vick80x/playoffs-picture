@@ -1,0 +1,167 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.favorite-team-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: $spacing-sm;
+    @include card;
+    border-radius: $radius-lg;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    font: inherit;
+    min-width: 0;
+    justify-content: space-between;
+    &:focus-visible { outline: 2px solid $accent-soft; outline-offset: -2px; }
+    &:disabled { cursor: default; }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: $spacing-xs;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 1.4rem;
+        min-width: 0;
+    }
+
+    &__ident {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.6rem;
+    }
+
+    &__abbr {
+        font-size: 2.4rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: $text-primary;
+        line-height: 1;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.8rem 1.2rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid $border-subtle;
+    }
+
+    &__power-row {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.3rem 1rem;
+        border-radius: $radius-pill;
+        background: ink(0.07);
+        font-size: 1.2rem;
+        color: $text-secondary;
+        white-space: nowrap;
+    }
+
+    &__power-val {
+        color: $text-primary;
+        font-weight: bold;
+    }
+
+    &__power-trend {
+        font-weight: bold;
+
+        &--up {
+            color: $green-text;
+        }
+
+        &--down {
+            color: $accent-soft;
+        }
+    }
+
+    &__record {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: $text-secondary;
+        font-variant-numeric: tabular-nums;
+    }
+
+    &__seed-badge {
+        background: $gradient-accent;
+        color: $white;
+        font-size: 1rem;
+        font-weight: 900;
+        padding: 2px 8px;
+        border-radius: $radius-pill;
+    }
+
+    &__prob {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.2rem;
+        flex: 0 0 auto;
+
+        &--eliminated .favorite-team-card__prob-value {
+            padding: 0.3rem 1rem;
+            border-radius: $radius-pill;
+            background: rgba($nfl-red, 0.14);
+            font-size: 1.1rem;
+            letter-spacing: 0.1rem;
+        }
+    }
+
+    &__prob-label {
+        color: $gray-500;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.15rem;
+    }
+
+    &__prob-value {
+        font-size: 2.8rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        color: $text-primary;
+        font-variant-numeric: tabular-nums;
+
+        &--green {
+            color: $green-text;
+        }
+
+        &--red {
+            color: $accent-soft;
+        }
+    }
+
+    &__next-opp-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 2px;
+        margin-left: auto;
+    }
+
+    &__next-opp {
+        font-size: 1.3rem;
+        color: $text-gray-light;
+        text-align: right;
+    }
+
+    &__next-opp-date {
+        font-size: 1.1rem;
+        color: $text-secondary;
+    }
+}
+

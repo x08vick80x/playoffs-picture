@@ -30,6 +30,8 @@ export default defineConfig({
                 inlineFonts: true,
                 preload: 'media', // Uses media="print" + onload pattern
                 compress: true,
+                // Standalone is detected before paint; preserve its reserved carousel space.
+                allowRules: [/my-teams/],
             });
 
             try {
@@ -71,9 +73,26 @@ export default defineConfig({
         workbox: {
           // Keep page navigations fresh; cache static week fragments for offline selection.
           globPatterns: ['**/*.{js,css,ico,png,svg,json,woff,woff2}', 'schedule/**/*.html'],
-          globIgnores: ['**/data-version.json'],
+          // PWA-only dashboard resources must not be downloaded by a browser tab's precache.
+          globIgnores: ['**/data-version.json', '**/my-teams.json', '**/my-teams*.{js,css}'],
           navigateFallback: null,
           runtimeCaching: [{
+            urlPattern: /\/my-teams\.json$/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'my-teams-data-v1',
+              networkTimeoutSeconds: 3,
+              cacheableResponse: { statuses: [200] },
+            },
+          }, {
+            urlPattern: /\/_astro\/my-teams\.[\w-]+\.js$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'my-teams-code-v1',
+              cacheableResponse: { statuses: [200] },
+              expiration: { maxEntries: 4 },
+            },
+          }, {
             urlPattern: ({ request }) => request.mode === 'navigate',
             handler: 'NetworkFirst',
             options: {

@@ -44,6 +44,8 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
 - `npm run dev` / `npm run build` — runs `start-sprite.js` first (pre/post hooks), then Astro
 - `npm run update-data` — runs both scrapers in sequence, overwrites `src/data/*.json`
 - `npm test` — Node built-in test runner (`tests/*.test.js`, no dependency; `tests/register.js` maps the `@/` alias). No lint script exists
+- `npm run test:my-teams` — Chrome checks for conditional loading, CLS, carousel, selection and offline use;
+  requires a production build and `npm run preview -- --port 4322` (or `MY_TEAMS_TEST_URL`).
 
 ## Data flow (important to understand before editing)
 
@@ -97,9 +99,13 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
   `inspect-*.js` probes, screenshots). These were previously committed by mistake; the matching
   patterns are now in `.gitignore` (`*_debug.html`, `temp_*.html`, `inspect-*.js`, etc.) — don't
   commit new ones.
-- `MyTeams.astro` reads/writes favorite teams via client-side `localStorage`/DOM logic in its bundled
-  `<script>`; server data is passed through an escaped JSON script block. Remaining games
-  are filtered using `getScheduleWeekNumber()` at runtime, matching SeasonSchedule.
+- `MyTeams.astro` contains a small standalone-only loader and a fixed-height carousel shell.
+  `Layout.astro` detects standalone (including iOS) before paint; Critters keeps its visibility and
+  sizing rules through `allowRules`. The lazy `my-teams.js` module loads the projected static
+  `/my-teams.json` endpoint and reads/writes `nfl-favorites`. Its molecule styles are compiled with
+  `?inline` into the lazy module: normal CSS imports would be hoisted by Astro onto the homepage.
+  These resources are excluded from Workbox precaching and cached only after standalone use.
+  Remaining games are filtered using `getScheduleWeekNumber()` at runtime, matching SeasonSchedule.
 
 ## Conventions observed
 

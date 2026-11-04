@@ -1,0 +1,31 @@
+---
+import Button from "@/components/atoms/Button/Button.astro";
+---
+<dialog id="mt-selector-modal" class="selector-modal" aria-labelledby="mt-selector-title">
+    <div class="selector-modal__content">
+        <div class="selector-modal__header">
+            <div class="selector-modal__heading">
+                <span class="selector-modal__eyebrow">My Teams</span>
+                <h3 id="mt-selector-title" class="selector-modal__title">Select Favorites</h3>
+            </div>
+            <button id="btn-close-modal" aria-label="Close favorites" class="selector-modal__close-btn"
+                >&times;</button
+            >
+        </div>
+
+        <div class="selector-modal__body">
+            <div class="selector-modal__grid" id="team-checklist">
+                <!-- Cards injected here -->
+            </div>
+        </div>
+
+        <div class="selector-modal__footer">
+            <Button
+                id="btn-save-teams"
+                className="selector-modal__save-btn"
+            >
+                Save
+            </Button>
+        </div>
+    </div>
+</dialog>

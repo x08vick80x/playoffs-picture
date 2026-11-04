@@ -1,458 +1,155 @@
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
-.my-teams-container {
-    margin: 1rem auto;
-    padding: 0 1rem;
-    max-width: 1000px;
-}
-
-.intro {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid $border-subtle;
-    padding-bottom: 0.5rem;
-
-    &__title {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        font-size: 1.8rem;
-        color: $text-primary;
-        text-transform: uppercase;
-        font-weight: 900;
-        font-style: italic;
-        letter-spacing: 0.1rem;
-        margin: 0;
-
-        &::before {
-            content: '';
-            width: 0.5rem;
-            height: 2rem;
-            border-radius: 999px;
-            background: $gradient-accent;
-        }
-    }
-
-    &__action {
-        display: flex;
-        padding: 0.8rem;
-        background: ink(0.06);
-        border: 1px solid $border-subtle;
-        border-radius: 50%;
-        color: $text-gray-light;
-        cursor: pointer;
-        transition: background 0.2s, color 0.2s;
-
-        &:hover {
-            background: $nfl-red;
-            color: $white;
-        }
-    }
-}
-
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-
-    @include desktop {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-.empty-start-btn {
-    width: 100%;
-    padding: 2.4rem;
-    background: ink(0.04);
-    border: 2px dashed ink(0.25);
-    color: $text-gray-light;
-    font-size: 1.4rem;
-    font-weight: 700;
-    border-radius: $radius-lg;
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.2s, color 0.2s;
-
-    &:hover {
-        border-color: $nfl-red;
-        background: rgba($nfl-red, 0.1);
-        color: $text-primary;
-    }
-}
-
-/* --- Team Card Styles --- */
-.team-item {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    padding: 1.6rem;
-    @include card;
-    border-radius: $radius-lg;
-    cursor: pointer;
-    @include card-hover;
-
-    &__top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: $spacing-xs;
-    }
-
-    &__info {
-        display: flex;
-        align-items: center;
-        gap: 1.4rem;
-        min-width: 0;
-    }
-
-    &__ident {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 0.6rem;
-    }
-
-    &__abbr {
-        font-size: 2.4rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        color: $text-primary;
-        line-height: 1;
-    }
-
-    &__bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 0.8rem 1.2rem;
-        padding-top: 1.2rem;
-        border-top: 1px solid $border-subtle;
-    }
-
-    &__power-row {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        padding: 0.3rem 1rem;
-        border-radius: 999px;
-        background: ink(0.07);
-        font-size: 1.2rem;
-        color: $text-secondary;
-        white-space: nowrap;
-    }
-
-    &__power-val {
-        color: $text-primary;
-        font-weight: bold;
-    }
-
-    &__power-trend {
-        font-weight: bold;
-
-        &--up {
-            color: $green-text;
-        }
-
-        &--down {
-            color: $accent-soft;
-        }
-    }
-
-    &__record {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: $text-secondary;
-        font-variant-numeric: tabular-nums;
-    }
-
-    &__seed-badge {
-        background: $gradient-accent;
-        color: $white;
-        font-size: 1rem;
-        font-weight: 900;
-        padding: 2px 8px;
-        border-radius: 999px;
-    }
-
-    &__prob {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 0.2rem;
-        flex: 0 0 auto;
-
-        &--eliminated .team-item__prob-value {
-            padding: 0.3rem 1rem;
-            border-radius: 999px;
-            background: rgba($nfl-red, 0.14);
-            font-size: 1.1rem;
-            letter-spacing: 0.1rem;
-        }
-    }
-
-    &__prob-label {
-        color: $gray-500;
-        font-size: 1rem;
-        font-weight: 700;
-        letter-spacing: 0.15rem;
-    }
-
-    &__prob-value {
-        font-size: 2.8rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        line-height: 1;
-        color: $text-primary;
-        font-variant-numeric: tabular-nums;
-
-        &--green {
-            color: $green-text;
-        }
-
-        &--red {
-            color: $accent-soft;
-        }
-
-        &--gray {
-            color: $gray-500;
-        }
-    }
-
-    &__next-opp-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 2px;
-        margin-left: auto;
-    }
-
-    &__next-opp {
-        font-size: 1.3rem;
-        color: $text-gray-light;
-        text-align: right;
-    }
-
-    &__next-opp-date {
-        font-size: 1.1rem;
-        color: $text-secondary;
-    }
-}
-
-/* --- Modal Styles --- */
-.selector-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    height: 100dvh;
-    background: shade(0.7);
-    backdrop-filter: blur(0.6rem);
-    -webkit-backdrop-filter: blur(0.6rem);
-    z-index: 1000;
+.my-teams {
+    --my-teams-height: 20rem;
+    --my-teams-card-width: min(36rem, calc(100% - #{$spacing-md}));
     display: none;
-    /* Default hidden */
-    justify-content: center;
-    align-items: flex-end;
-
-    &.is-open {
-        display: flex;
-    }
-
-    @media (min-width: 600px) {
-        align-items: center;
-    }
-
-    &__content {
-        background: $gradient-card, $bg-modal-glass;
-        backdrop-filter: $glass-blur;
-        -webkit-backdrop-filter: $glass-blur;
-        width: 100%;
-        max-width: 600px;
-        height: 85vh;
-        height: 85dvh;
-        border-radius: 24px 24px 0 0; // Rounded top
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        border: 1px solid $border-subtle;
-        box-shadow: $box-shadow-modal;
-
-        @media (min-width: 600px) {
-            height: 80vh;
-            height: 80dvh;
-            border-radius: $radius-lg + 8px;
-        }
-    }
+    margin: $spacing-sm auto;
+    padding-inline: $spacing-sm;
+    max-width: 100rem;
 
     &__header {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        gap: 1.4rem;
-        padding: 1.8rem 1.6rem 1.4rem;
-        background: radial-gradient(circle at 0% 0%, $bg-glow-red, $transparent 70%);
+        align-items: center;
+        gap: $spacing-xs;
+        margin-bottom: $spacing-xs;
+        padding-bottom: $spacing-xs;
         border-bottom: 1px solid $border-subtle;
-    }
-
-    &__heading {
-        display: flex;
-        flex-direction: column;
-        gap: 0.3rem;
-    }
-
-    &__eyebrow {
-        font-size: 1.1rem;
-        font-weight: 800;
-        letter-spacing: 0.2rem;
-        text-transform: uppercase;
-        color: $accent-soft;
     }
 
     &__title {
         margin: 0;
+        font-size: 1.8rem;
+        line-height: 1.2;
+        font-weight: 900;
+        font-style: italic;
+        text-transform: uppercase;
         color: $text-primary;
-        font-size: 2.6rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        line-height: 1.1;
     }
 
-    &__close-btn {
-        flex: 0 0 auto;
-        display: flex;
+    &__actions { display: flex; gap: $spacing-xs; }
+
+    &__action, &__retry {
+        display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 3.2rem;
-        height: 3.2rem;
-        padding: 0;
-        background: ink(0.08);
-        border: none;
-        border-radius: 50%;
-        font-size: 2rem;
-        line-height: 1;
-        color: $text-secondary;
+        min-width: 4rem;
+        min-height: 4rem;
+        padding: $spacing-xs;
+        border: 1px solid $border-subtle;
+        border-radius: $radius-sm;
+        background: ink(0.06);
+        color: $text-primary;
+        font: inherit;
         cursor: pointer;
-        transition: background $duration-fast, color $duration-fast;
-
-        &:hover {
-            background: ink(0.2);
-            color: $text-primary;
-        }
+        &:disabled { opacity: 0.35; cursor: default; }
+        &:focus-visible { outline: 2px solid $accent-soft; outline-offset: 2px; }
     }
 
-    &__body {
-        flex: 1;
-        overflow-y: auto;
-        overscroll-behavior: contain;
-        min-height: 0;
-        padding: 1.4rem 1.6rem;
+    // All states occupy the same single row, independent of the number of favorites.
+    &__viewport { position: relative; height: var(--my-teams-height); }
+    &__carousel, &__loading {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: var(--my-teams-card-width);
+        gap: $spacing-xs;
+        height: 100%;
+        margin: 0;
+        padding: 0 0 $spacing-xs;
+        list-style: none;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scroll-snap-type: x mandatory;
         scrollbar-width: thin;
         scrollbar-color: ink(0.25) $transparent;
     }
-
-    &__grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.8rem;
-    }
-
-    &__footer {
-        padding: 1.4rem 1.6rem;
-        border-top: 1px solid $border-subtle;
-        background: $transparent;
-    }
-
-    &__save-btn {
+    &__carousel:focus-visible { outline: 2px solid $accent-soft; outline-offset: 2px; }
+    &__slide { min-width: 0; height: 100%; scroll-snap-align: start; }
+    &__empty { grid-column: 1 / -1; width: 100%; }
+    &__carousel:has(.my-teams__empty) { grid-auto-columns: 100%; }
+    &__empty-action {
         width: 100%;
-        background: $gradient-accent;
-        color: $white;
-        border: none;
-        padding: 1.2rem;
-        border-radius: 999px;
-        font-size: 1.5rem;
-        font-weight: 700;
+        height: 100%;
+        padding: $spacing-sm;
+        border: 2px dashed ink(0.25);
+        border-radius: $radius-lg;
+        background: ink(0.04);
+        color: $text-primary;
+        font: inherit;
+        font-size: 1.4rem;
         cursor: pointer;
-        box-shadow: 0 .8rem 2rem -.6rem rgba($nfl-red, 0.6);
-        transition: transform $duration-fast, box-shadow $duration-fast;
+    }
+    &__loading { overflow: hidden; }
+    &__skeleton {
+        @include card;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-width: 0;
+        padding: $spacing-sm;
+        border-radius: $radius-lg;
+    }
+    &__skeleton-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $spacing-xs;
 
-        &:hover {
-            transform: translateY(-2px);
-            background: $gradient-accent;
-            box-shadow: 0 1.2rem 2.4rem -.6rem rgba($nfl-red, 0.7);
+        &--footer {
+            padding-top: calc(#{$spacing-xs} * 1.5);
+            border-top: 1px solid $border-subtle;
         }
     }
-}
+    &__placeholder {
+        display: block;
+        background: ink(0.08);
+        border-radius: $radius-sm;
 
-.select-card {
-    background: ink(0.05);
-    border: 1px solid $border-subtle;
-    border-radius: $radius-md + 4px;
-    padding: 1.2rem 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-    transition: background 0.2s, border-color 0.2s;
-
-    &:hover {
-        background: ink(0.1);
+        &--identity {
+            width: 48%;
+            height: $logo-md;
+        }
+        &--probability {
+            width: $spacing-xl;
+            height: calc(#{$logo-s} + #{$spacing-xs} / 2);
+        }
+        &--power {
+            width: 34%;
+            max-width: 10rem;
+            height: $logo-xs;
+            border-radius: $radius-pill;
+        }
+        &--opponent {
+            width: 55%;
+            max-width: 17rem;
+            height: calc(#{$spacing-md} + #{$spacing-xs} / 2);
+        }
     }
-
-    &__content {
+    &__message {
+        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 8px;
-    }
-
-    &__logo {
-        width: 48px;
-        height: 48px;
-    }
-
-    &__abbr {
-        font-weight: 700;
-        font-size: 1.1rem;
-        letter-spacing: 0.05rem;
-        color: $text-secondary;
-    }
-
-    &--selected {
-        border-color: rgba($nfl-green, 0.7);
-        background: rgba($nfl-green, 0.1);
-
-        .select-card__abbr {
-            color: $text-primary;
-        }
-    }
-
-    &__check {
-        position: absolute;
-        top: 6px;
-        right: 6px;
-        width: 20px;
-        height: 20px;
-        background: $nfl-green;
-        color: $black;
-        border-radius: 50%;
-        font-size: 12px;
-        display: flex;
-        align-items: center;
         justify-content: center;
-        font-weight: bold;
+        gap: $spacing-xs;
+        color: $text-secondary;
+        border: 1px solid $border-subtle;
+        border-radius: $radius-lg;
+        p { margin: 0; }
     }
+    &__status {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+    [hidden] { display: none; }
 }
 
-.empty-msg {
-    text-align: center;
-    color: $gray-500;
-    font-style: italic;
-}
+:root[data-standalone='true'] .my-teams { display: block; }

@@ -1,0 +1,221 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+/* --- Modal Styles --- */
+.selector-modal {
+    position: fixed;
+    margin: 0;
+    max-width: none;
+    max-height: none;
+    padding: 0;
+    border: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background: shade(0.7);
+    backdrop-filter: blur(0.6rem);
+    -webkit-backdrop-filter: blur(0.6rem);
+    z-index: $z-modal;
+    display: none;
+    /* Default hidden */
+    justify-content: center;
+    align-items: flex-end;
+
+    &[open] {
+        display: flex;
+    }
+
+    @include tablet {
+        align-items: center;
+    }
+
+    &__content {
+        background: $gradient-card, $bg-modal-glass;
+        backdrop-filter: $glass-blur;
+        -webkit-backdrop-filter: $glass-blur;
+        width: 100%;
+        max-width: 600px;
+        height: 85vh;
+        height: 85dvh;
+        border-radius: $radius-lg $radius-lg 0 0; // Rounded top
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid $border-subtle;
+        box-shadow: $box-shadow-modal;
+
+        @include tablet {
+            height: 80vh;
+            height: 80dvh;
+            border-radius: $radius-lg;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1.4rem;
+        padding: 1.8rem $spacing-sm 1.4rem;
+        background: radial-gradient(circle at 0% 0%, $bg-glow-red, $transparent 70%);
+        border-bottom: 1px solid $border-subtle;
+    }
+
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    &__eyebrow {
+        font-size: 1.1rem;
+        font-weight: 800;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        color: $accent-soft;
+    }
+
+    &__title {
+        margin: 0;
+        color: $text-primary;
+        font-size: 2.6rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+    }
+
+    &__close-btn {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.2rem;
+        height: 3.2rem;
+        padding: 0;
+        background: ink(0.08);
+        border: none;
+        border-radius: $radius-round;
+        font-size: 2rem;
+        line-height: 1;
+        color: $text-secondary;
+        cursor: pointer;
+        transition: background $duration-fast, color $duration-fast;
+
+        &:hover {
+            background: ink(0.2);
+            color: $text-primary;
+        }
+    }
+
+    &__body {
+        flex: 1;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        min-height: 0;
+        padding: 1.4rem $spacing-sm;
+        scrollbar-width: thin;
+        scrollbar-color: ink(0.25) $transparent;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+    }
+
+    &__footer {
+        padding: 1.4rem $spacing-sm;
+        border-top: 1px solid $border-subtle;
+        background: $transparent;
+    }
+
+    &__save-btn {
+        width: 100%;
+        background: $gradient-accent;
+        color: $white;
+        border: none;
+        padding: 1.2rem;
+        border-radius: $radius-pill;
+        font-size: 1.5rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 .8rem 2rem -.6rem rgba($nfl-red, 0.6);
+        transition: transform $duration-fast, box-shadow $duration-fast;
+
+        &:hover {
+            transform: translateY(-2px);
+            background: $gradient-accent;
+            box-shadow: 0 1.2rem 2.4rem -.6rem rgba($nfl-red, 0.7);
+        }
+    }
+}
+
+.select-card {
+    color: $text-primary;
+    font: inherit;
+    background: ink(0.05);
+    border: 1px solid $border-subtle;
+    border-radius: $radius-md;
+    padding: 1.2rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: background $duration-fast, border-color $duration-fast;
+
+    &:hover {
+        background: ink(0.1);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    &__abbr {
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: 0.05rem;
+        color: $text-secondary;
+    }
+
+    &--selected {
+        border-color: rgba($nfl-green, 0.7);
+        background: rgba($nfl-green, 0.1);
+
+        .select-card__abbr {
+            color: $text-primary;
+        }
+    }
+
+    &:not(&--selected) &__check { display: none; }
+
+    &:focus-visible { outline: 2px solid $accent-soft; outline-offset: 2px; }
+
+    &__check {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 20px;
+        height: 20px;
+        background: $nfl-green;
+        color: $black;
+        border-radius: $radius-round;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+}
+

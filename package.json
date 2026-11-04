@@ -11,6 +11,7 @@
     "astro": "astro",
     "test": "node --import ./tests/register.js --test tests/*.test.js",
     "test:schedule": "node tests/season-schedule.browser.mjs",
+    "test:my-teams": "node tests/my-teams.browser.mjs",
     "update-data": "node scraper/fetch-standings.js && node scraper/fetch-nfl-data.js"
   },
   "dependencies": {

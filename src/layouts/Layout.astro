@@ -29,6 +29,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
                     theme = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
                 }
                 document.documentElement.dataset.theme = theme;
+                document.documentElement.dataset.standalone = String(
+                    matchMedia('(display-mode: standalone)').matches || navigator.standalone === true
+                );
             })();
         </script>
         <meta name="generator" content={Astro.generator} />

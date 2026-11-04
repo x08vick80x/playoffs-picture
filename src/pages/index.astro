@@ -75,30 +75,22 @@ const lastUpdated = new Date(lastUpdatedIso).toLocaleString("en-US", {
 				</p>
 			</div>
 
-			<MyTeams
-				standings={standings}
-				playoffPicture={playoffPicture}
-				teamSchedules={schedule.teamSchedules}
-			/>
+			<MyTeams />
 
 			<script>
 				const installContainer =
 					document.getElementById("install-container");
 				const installBtn = document.getElementById("install-pwa");
-				const myTeamsRoot = document.getElementById("my-teams-root");
 
 				// Check if app is already installed/running in standalone mode
 				const isStandalone = window.matchMedia(
 					"(display-mode: standalone)",
-				).matches;
+				).matches || (navigator as Navigator & { standalone?: boolean }).standalone === true;
 
 				if (isStandalone) {
-					// Standalone: Hide install, Show My Teams
+					// Standalone: hide the installation prompt.
 					if (installContainer) installContainer.hidden = true;
-					if (myTeamsRoot) myTeamsRoot.hidden = false;
 				} else {
-					// Browser Mode: Hide My Teams default (will show install if available logic runs)
-					if (myTeamsRoot) myTeamsRoot.hidden = true;
 
 					// Check if event already fired before this script ran
 					if (window.deferredPrompt) {
@@ -108,17 +100,13 @@ const lastUpdated = new Date(lastUpdatedIso).toLocaleString("en-US", {
 					// Listen for event
 					window.addEventListener("pwa-install-available", () => {
 						installContainer?.removeAttribute("hidden");
-						// Hide MyTeams if install available (reinforces logic)
-						if (myTeamsRoot) myTeamsRoot.hidden = true;
 					});
 				}
 
-				// Listen for successful install to switch views
+				// Installing from a browser tab hides the prompt; My Teams opens in standalone.
 				window.addEventListener("appinstalled", () => {
 					installContainer?.setAttribute("hidden", "");
 					window.deferredPrompt = null;
-					console.log("App Installed - Switching to My Teams view");
-					if (myTeamsRoot) myTeamsRoot.hidden = false;
 				});
 
 				installBtn?.addEventListener("click", async () => {
