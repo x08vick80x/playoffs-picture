@@ -90,10 +90,9 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
   sections by vertical pixel position via `getBoundingClientRect().top`, infers trend
   direction/probability from nearby text via regex). It is expected to break silently if
   nfl.com changes its markup/layout. `scraper/validate.js` only checks structure (team counts, 7 seeds, 17 games per team), so a subtly wrong value still gets through.
-- `src/utils/team-mapping.js` has a **known typo baked into the data contract**:
-  `'Tampa Bay Buccaneers'` maps to sprite id `'buccaners'` (misspelled) because that's the actual
-  filename in `src/images/logos/`. Don't "fix" the typo in the map without also renaming the logo
-  file (and vice versa).
+- `src/utils/team-mapping.js` maps both `'Tampa Bay'` and `'Tampa Bay Buccaneers'` to
+  `'buccaneers'`, matching `src/images/logos/buccaneers.svg`. Keep logo filenames and sprite
+  mappings in sync.
 - Scraper debugging tends to produce scratch artifacts (dumped HTML/JSON snapshots, one-off
   `inspect-*.js` probes, screenshots). These were previously committed by mistake; the matching
   patterns are now in `.gitignore` (`*_debug.html`, `temp_*.html`, `inspect-*.js`, etc.) — don't

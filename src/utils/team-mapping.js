@@ -30,7 +30,7 @@ export function getTeamId(teamName) {
         'Green Bay': 'packers',
         'Washington': 'commanders',
         'L.A. Rams': 'rams',
-        'Tampa Bay': 'buccaneers', // Corrected spelling if sprite allows, else keep 'buccaners'
+        'Tampa Bay': 'buccaneers',
         'San Francisco': '49ers',
         'Arizona': 'cardinals',
         'Dallas': 'cowboys',
@@ -67,7 +67,7 @@ export function getTeamId(teamName) {
         'Washington Commanders': 'commanders',
         'Los Angeles Rams': 'rams',
         'L.A. Rams': 'rams',
-        'Tampa Bay Buccaneers': 'buccaners', // Typo in sprite ID
+        'Tampa Bay Buccaneers': 'buccaneers',
         'San Francisco 49ers': '49ers',
         'Arizona Cardinals': 'cardinals',
         'Dallas Cowboys': 'cowboys',

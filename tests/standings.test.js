@@ -35,7 +35,7 @@ test('rankLeague does not mutate its input', () => {
     assert.equal(teams[0].team, 'B');
 });
 
-test('getDivisionTeams matches city names, including the Buccaneers sprite typo', () => {
+test('getDivisionTeams matches city names', () => {
     const south = DIVISIONS.find(d => d.name === 'NFC South');
     const teams = getDivisionTeams([
         { team: 'Tampa Bay' }, { team: 'Atlanta' }, { team: 'Dallas' },
@@ -58,8 +58,8 @@ test('getTeamId resolves cities, full names and nicknames to the same sprite id'
     assert.equal(getTeamId('N.Y. Giants'), 'giants');
 });
 
-test('getTeamId keeps the misspelled Buccaneers id used by the logo file', () => {
-    assert.equal(getTeamId('Tampa Bay Buccaneers'), 'buccaners');
+test('getTeamId resolves both Buccaneers names to the existing logo file', () => {
+    assert.equal(getTeamId('Tampa Bay Buccaneers'), 'buccaneers');
     assert.equal(getTeamId('Tampa Bay'), 'buccaneers');
 });
 
