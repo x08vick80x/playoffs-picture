@@ -22,6 +22,7 @@
 </dialog>
 
 <script>
+    import { renderGameItem } from '@/components/molecules/GameItem/GameItem.js';
     import { getTeamId } from "@/utils/team-mapping.js";
 
     const modal = document.getElementById("schedule-modal") as HTMLDialogElement | null;
@@ -45,20 +46,6 @@
         }));
     });
 
-    const escapeHtml = (value: unknown) =>
-        String(value ?? "").replace(
-            /[&<>"']/g,
-            (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!,
-        );
-
-    // "Sunday, November 8" -> { day: "Sun", date: "Nov 8" }
-    const splitDate = (value?: string) => {
-        const [weekday, rest] = (value || "").split(", ");
-        if (!rest) return null;
-        const [month, dayNumber] = rest.split(" ");
-        return { day: weekday.slice(0, 3), date: `${month.slice(0, 3)} ${dayNumber}` };
-    };
-
     window.addEventListener("open-schedule-modal", (e) => {
         const { teamName, schedule } = (e as CustomEvent).detail;
 
@@ -69,29 +56,7 @@
         }
 
         if (list) {
-            list.innerHTML = schedule
-                .map((game, index) => {
-                    const parts = splitDate(game.date);
-                    const when = parts
-                        ? `<span class="game-item__day">${escapeHtml(parts.day)}</span><span class="game-item__date">${escapeHtml(parts.date)}</span>`
-                        : `<span class="game-item__day">Week</span><span class="game-item__date">${escapeHtml(String(game.week).replace(/^REG/, ""))}</span>`;
-                    const isHome = game.location === "vs";
-
-                    return `
-                <div class="game-item${index === 0 ? " game-item--next" : ""}">
-                    <div class="game-item__when">${when}</div>
-                    <svg class="game-item__logo" width="40" height="40">
-                        <use href="/sprites.svg#${escapeHtml(getTeamId(game.opponent))}"></use>
-                    </svg>
-                    <div class="game-item__info">
-                        <span class="game-item__opp-name">${escapeHtml(game.opponent)}</span>
-                        <span class="game-item__meta">${isHome ? "Home" : "Away"}${game.time ? ` \u2022 ${escapeHtml(game.time)}` : ""}</span>
-                    </div>
-                    <span class="game-item__opp-record">${escapeHtml(game.opponentRecord || "??")}</span>
-                </div>
-            `;
-                })
-                .join("");
+            list.innerHTML = schedule.map((game, index) => renderGameItem(game, { next: index === 0 })).join('');
         }
 
         modal?.showModal();

@@ -28,7 +28,7 @@
         > * { visibility: hidden; }
 
         &::before {
-            --skeleton-logo-size: #{$logo-xs};
+            --skeleton-logo-size: #{$spacing-sm + $spacing-xs};
             content: '';
             position: absolute;
             inset: $spacing-xs;
@@ -42,7 +42,7 @@
             background-repeat: no-repeat;
             animation: schedule-row-pulse ($duration-fast * 6) ease-in-out infinite alternate;
 
-            @include wide-mobile { --skeleton-logo-size: #{$logo-s}; }
+            @include wide-mobile { --skeleton-logo-size: #{$logo-md}; }
 
             @media (prefers-reduced-motion: reduce) { animation: none; }
         }

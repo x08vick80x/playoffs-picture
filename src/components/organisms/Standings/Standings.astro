@@ -74,16 +74,7 @@ const filters = [
 </div>
 
 <script>
-    const FAVORITES_KEY = 'nfl-favorites';
-
-    function readFavorites(): Set<string> {
-        try {
-            const parsed = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
-            return new Set(Array.isArray(parsed) ? parsed : []);
-        } catch {
-            return new Set();
-        }
-    }
+    import { FAVORITES_KEY, readFavorites } from '@/utils/favorites.js';
 
     document.querySelectorAll<HTMLElement>('[data-standings]').forEach(container => {
         const links = container.querySelectorAll<HTMLAnchorElement>('[data-standings-filter]');
@@ -104,7 +95,7 @@ const filters = [
         }
 
         function syncFavorites() {
-            const favorites = readFavorites();
+            const favorites = new Set(readFavorites());
             container.querySelectorAll<HTMLElement>('tr[data-team]').forEach(row => {
                 row.classList.toggle('standings-table__row--favorite', favorites.has(row.dataset.team!));
             });

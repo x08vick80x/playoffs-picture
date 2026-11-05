@@ -8,7 +8,7 @@ interface Props {
     record?: string;
     seed?: string;
     rank?: number | string;
-    size?: "sm" | "md"; // Context size
+    size?: "md" | "lg"; // Matches Logo: md=40, lg=55
     showRecord?: boolean;
 }
 
@@ -17,7 +17,7 @@ const {
     record,
     seed,
     rank,
-    size = "md",
+    size = "lg",
     showRecord = true,
 } = Astro.props;
 ---
@@ -28,7 +28,7 @@ const {
 
     <Logo
         team={team}
-        size={size === "sm" ? "sm" : "md"}
+        size={size}
         className="team-row__logo"
     />
 

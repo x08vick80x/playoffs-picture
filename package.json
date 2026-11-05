@@ -13,6 +13,7 @@
     "test:schedule": "node tests/season-schedule.browser.mjs",
     "test:my-teams": "node tests/my-teams.browser.mjs",
     "test:modal": "node tests/schedule-modal.browser.mjs",
+    "test:components": "node --import ./tests/register.js tests/components.browser.mjs",
     "update-data": "node scraper/fetch-standings.js && node scraper/fetch-nfl-data.js"
   },
   "dependencies": {

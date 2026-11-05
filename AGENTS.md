@@ -46,6 +46,8 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
 - `npm test` — Node built-in test runner (`tests/*.test.js`, no dependency; `tests/register.js` maps the `@/` alias). No lint script exists
 - `npm run test:modal` — Chrome regression checks for a single schedule-modal event/open per card click;
   requires a production build and preview on port 4322 (or `SCHEDULE_TEST_URL`).
+- `npm run test:components` — Chrome checks for Logo sizes, ranking expansion and game rows;
+  requires a production build and preview on port 4322 (or `COMPONENTS_TEST_URL`).
 - `npm run test:my-teams` — Chrome checks for conditional loading, CLS, carousel, selection and offline use;
   requires a production build and `npm run preview -- --port 4322` (or `MY_TEAMS_TEST_URL`).
 
@@ -108,6 +110,10 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
   `?inline` into the lazy module: normal CSS imports would be hoisted by Astro onto the homepage.
   These resources are excluded from Workbox precaching and cached only after standalone use.
   Remaining games are filtered using `getScheduleWeekNumber()` at runtime, matching SeasonSchedule.
+  The organism coordinates `FavoriteTeamCard` and `FavoritesSelector`; the selector's lazy JS owns
+  its draft selection and accepts an `onSave` callback. `utils/favorites.js` is the shared storage
+  contract for MyTeams, Standings and SeasonSchedule. `utils/load-my-teams.js` fetches dashboard
+  data at runtime; `utils/my-teams-data.js` remains the build-time projection for the JSON endpoint.
 
 ## Conventions observed
 
@@ -119,6 +125,12 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
 - Components: `components/{atoms,molecules,organisms}/Component/Component.astro` with
   colocated `Component.scss`. Atoms are presentational elements, molecules compose atoms,
   organisms are page sections (`Header`, `Standings`, `MyTeams`, etc.).
+- Runtime-only molecules use a colocated JS renderer/controller (`FavoriteTeamCard`, `GameItem`,
+  `FavoritesSelector`). `RankingCard` owns its markup, styles and expansion; `PowerRankings` owns
+  the list. Keep modal orchestration separate from `GameItem` presentation.
+- `Logo.astro` and its client renderer `Logo.js` share sizes `md=40`, `lg=55`.
+  Matching SCSS tokens are `$logo-md/lg`; keep intrinsic dimensions and CSS in sync.
+  TeamRow uses the same `md`/`lg` sizes and passes them directly to Logo; its default is `lg`.
 - Use BEM classes with component-owned states (e.g. `season-schedule__tab--active`,
   `standings-table__row--favorite`), always alongside their base class. Keep native states
   such as `[open]`, `[hidden]` and `[aria-current]`. Rename template, SCSS, client selectors,

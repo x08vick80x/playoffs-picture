@@ -109,16 +109,16 @@
 
         &--identity {
             width: 48%;
-            height: $logo-md;
+            height: $logo-lg;
         }
         &--probability {
             width: $spacing-xl;
-            height: calc(#{$logo-s} + #{$spacing-xs} / 2);
+            height: calc(#{$logo-md} + #{$spacing-xs} / 2);
         }
         &--power {
             width: 34%;
             max-width: 10rem;
-            height: $logo-xs;
+            height: $spacing-sm + $spacing-xs;
             border-radius: $radius-pill;
         }
         &--opponent {

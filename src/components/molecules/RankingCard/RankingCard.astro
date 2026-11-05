@@ -1,0 +1,74 @@
+---
+import Logo from '@/components/atoms/Logo/Logo.astro';
+
+export interface Ranking {
+    rank: number;
+    team: string;
+    trend?: string;
+    blurb: string;
+}
+interface Props { item: Ranking; }
+const { item } = Astro.props;
+const trendModifier = item.trend?.startsWith('-') ? 'negative' : 'positive';
+---
+
+<article
+    class="ranking-item"
+    id={`rank-${item.rank}`}
+>
+    <div class="ranking-item__header">
+        <div class="ranking-item__badge">
+            <span class="ranking-item__number">
+                #{item.rank}
+            </span>
+            {item.trend && item.trend !== "0" && (
+                <span
+                    class={`ranking-item__trend ranking-item__trend--${trendModifier}`}
+                >
+                    {item.trend}
+                </span>
+            )}
+        </div>
+        <div class="ranking-item__info">
+            <Logo team={item.team} size="md" />
+            <div class="ranking-item__text">
+                <span class="ranking-item__name">
+                    {item.team}
+                </span>
+                <p class="ranking-item__preview">
+                    {item.blurb}
+                </p>
+            </div>
+        </div>
+        <div class="ranking-item__toggle">
+            <svg
+                class="ranking-item__chevron"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+                <polyline points="6 9 12 15 18 9" />
+            </svg>
+        </div>
+    </div>
+    <div class="ranking-item__body-wrapper">
+        <div class="ranking-item__content">
+            {item.blurb ? (
+                <p>{item.blurb}</p>
+            ) : (
+                <p class="ranking-item__empty">
+                    Analyst comment unavailable.
+                </p>
+            )}
+        </div>
+    </div>
+</article>
+
+<script>
+    document.querySelectorAll('.ranking-item').forEach(item => {
+        item.addEventListener('click', () => item.classList.toggle('ranking-item--expanded'));
+    });
+</script>

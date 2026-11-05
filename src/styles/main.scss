@@ -25,6 +25,9 @@
 @use '@/components/molecules/BubbleCard/BubbleCard';
 
 
+@use '@/components/molecules/RankingCard/RankingCard';
+@use '@/components/molecules/GameItem/GameItem';
+
 // Organisms
 @use '@/components/organisms/Matchups/Matchups';
 @use '@/components/organisms/BubbleEliminated/BubbleEliminated';

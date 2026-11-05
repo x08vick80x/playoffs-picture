@@ -3,11 +3,13 @@
 .team-logo {
     display: inline-block;
     flex-shrink: 0;
-    width: $logo-s;
-    height: $logo-s;
+    width: $logo-md;
+    height: $logo-md;
 
-    &--md {
-        width: $logo-md;
-        height: $logo-md;
+    @each $size, $dimension in (md: $logo-md, lg: $logo-lg) {
+        &--#{$size} {
+            width: $dimension;
+            height: $dimension;
+        }
     }
 }

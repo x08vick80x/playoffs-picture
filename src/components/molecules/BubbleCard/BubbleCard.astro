@@ -30,7 +30,7 @@ const getSched = (data: any) => JSON.stringify(data?.remainingSchedule || []);
     data-schedule={getSched(team)}
 >
     <div class="bubble-card__identity">
-        <TeamRow team={team.name} record={team.record} size="sm" />
+        <TeamRow team={team.name} record={team.record} size="md" />
     </div>
 
     {

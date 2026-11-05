@@ -1,4 +1,8 @@
 import { getScheduleWeekNumber } from '@scraper/config.js';
+import { FAVORITES_KEY, readFavorites, saveFavorites } from '@/utils/favorites.js';
+import { loadMyTeams } from '@/utils/load-my-teams.js';
+import { initCardCarousel } from '@/utils/card-carousel.js';
+import { initFavoritesSelector } from '@/components/molecules/FavoritesSelector/FavoritesSelector.js';
 import { createFavoriteTeamCard } from '@/components/molecules/FavoriteTeamCard/FavoriteTeamCard.js';
 import styles from './my-teams-content.scss?inline';
 
@@ -9,12 +13,7 @@ stylesheet.textContent = styles;
 document.head.append(stylesheet);
 
 export async function initMyTeams() {
-    const response = await fetch('/my-teams.json', { signal: AbortSignal.timeout(10_000) });
-    if (!response.ok) throw new Error(`My Teams: ${response.status}`);
-    const teams = await response.json();
-    if (!teams || typeof teams !== 'object' || Array.isArray(teams) || !Object.keys(teams).length) {
-        throw new Error('Invalid My Teams data');
-    }
+    const teams = await loadMyTeams();
 
     // The first visit can start before the service worker claims the page.
     // Cache only resources actually used in standalone, including that first visit.
@@ -31,42 +30,22 @@ export async function initMyTeams() {
 
     const dashboard = document.getElementById('mt-dashboard');
     const modal = document.getElementById('mt-selector-modal');
-    const checklist = document.getElementById('team-checklist');
     const edit = document.getElementById('btn-edit-teams');
     const status = document.getElementById('mt-status');
     const previous = document.getElementById('mt-previous');
     const next = document.getElementById('mt-next');
-    const storageKey = 'nfl-favorites';
     let displayedWeek = getScheduleWeekNumber();
-    const readFavorites = () => {
-        try {
-            const value = JSON.parse(localStorage.getItem(storageKey) || '[]');
-            return Array.isArray(value) ? [...new Set(value.filter(name => typeof name === 'string' && Object.hasOwn(teams, name)))] : [];
-        } catch { return []; }
-    };
-    let favorites = readFavorites();
-    let selection = new Set(favorites);
-
-    function updateArrows() {
-        previous.disabled = dashboard.scrollLeft <= 1;
-        next.disabled = dashboard.scrollLeft + dashboard.clientWidth >= dashboard.scrollWidth - 1;
-    }
-    function scrollCards(direction) {
-        const card = dashboard.firstElementChild;
-        if (!card) return;
-        const step = card.getBoundingClientRect().width + parseFloat(getComputedStyle(dashboard).columnGap);
-        dashboard.scrollBy({ left: direction * step, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
-    }
-    previous.addEventListener('click', () => scrollCards(-1));
-    next.addEventListener('click', () => scrollCards(1));
-    dashboard.addEventListener('scroll', updateArrows, { passive: true });
-    dashboard.addEventListener('keydown', event => {
-        if (event.target !== dashboard || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-        event.preventDefault();
-        if (event.key === 'Home' || event.key === 'End') dashboard.scrollTo({ left: event.key === 'Home' ? 0 : dashboard.scrollWidth });
-        else scrollCards(event.key === 'ArrowLeft' ? -1 : 1);
+    const readKnownFavorites = () => readFavorites().filter(name => Object.hasOwn(teams, name));
+    let favorites = readKnownFavorites();
+    const carousel = initCardCarousel(dashboard, previous, next);
+    const selector = initFavoritesSelector(modal, teams, selection => {
+        favorites = selection;
+        const saved = saveFavorites(favorites);
+        renderDashboard();
+        if (!saved) status.textContent = 'Your selection could not be saved on this device.';
+        window.dispatchEvent(new Event('my-teams-updated'));
     });
-    new ResizeObserver(updateArrows).observe(dashboard);
+    const openSelector = () => selector.open(favorites);
 
     function renderDashboard() {
         dashboard.replaceChildren();
@@ -89,49 +68,15 @@ export async function initMyTeams() {
         }
         dashboard.hidden = false;
         document.getElementById('mt-loading').hidden = true;
-        dashboard.scrollLeft = 0;
-        updateArrows();
+        carousel.reset();
         status.textContent = favorites.length ? `${favorites.length} favorite teams` : 'No favorite teams selected.';
     }
 
-    function openSelector() {
-        selection = new Set(favorites);
-        checklist.replaceChildren();
-        for (const name of Object.keys(teams).sort()) {
-            const team = teams[name];
-            const button = document.createElement('button');
-            button.type = 'button';
-            button.className = 'select-card';
-            button.classList.toggle('select-card--selected', selection.has(name));
-            button.setAttribute('aria-label', name);
-            button.setAttribute('aria-pressed', String(selection.has(name)));
-            button.innerHTML = `<span class="select-card__content"><svg class="select-card__logo" width="48" height="48" aria-hidden="true"><use href="/sprites.svg#${team.id}"></use></svg><span class="select-card__abbr">${team.abbr}</span></span><span class="select-card__check" aria-hidden="true">✓</span>`;
-            button.addEventListener('click', () => {
-                if (selection.has(name)) selection.delete(name);
-                else selection.add(name);
-                button.classList.toggle('select-card--selected', selection.has(name));
-                button.setAttribute('aria-pressed', String(selection.has(name)));
-            });
-            checklist.append(button);
-        }
-        modal.showModal();
-    }
     edit.disabled = false;
     edit.addEventListener('click', openSelector);
-    document.getElementById('btn-close-modal').addEventListener('click', () => modal.close());
-    modal.addEventListener('click', event => { if (event.target === modal) modal.close(); });
-    document.getElementById('btn-save-teams').addEventListener('click', () => {
-        favorites = [...selection];
-        let saved = true;
-        try { localStorage.setItem(storageKey, JSON.stringify(favorites)); } catch { saved = false; }
-        renderDashboard();
-        if (!saved) status.textContent = 'Your selection could not be saved on this device.';
-        window.dispatchEvent(new Event('my-teams-updated'));
-        modal.close();
-    });
     window.addEventListener('storage', event => {
-        if (event.key !== storageKey && event.key !== null) return;
-        favorites = readFavorites();
+        if (event.key !== FAVORITES_KEY && event.key !== null) return;
+        favorites = readKnownFavorites();
         renderDashboard();
         window.dispatchEvent(new Event('my-teams-updated'));
     });

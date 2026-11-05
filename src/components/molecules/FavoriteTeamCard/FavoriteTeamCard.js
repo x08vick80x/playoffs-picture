@@ -1,5 +1,5 @@
-const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g,
-    char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+import { escapeHtml } from '@/utils/escape-html.js';
+import { renderLogo } from '@/components/atoms/Logo/Logo.js';
 
 export function createFavoriteTeamCard(name, team, currentWeek) {
     const schedule = team.schedule.filter(game => Number(game.week.replace(/^REG/, '')) >= currentWeek)
@@ -73,11 +73,9 @@ export function createFavoriteTeamCard(name, team, currentWeek) {
     card.innerHTML = `
         <span class="favorite-team-card__top">
             <span class="favorite-team-card__info">
-                <svg class="team-logo team-logo--md" width="55" height="55" aria-hidden="true">
-                    <use href="/sprites.svg#${stats.id}" />
-                </svg>
+                ${renderLogo(stats.id, { size: 'lg' })}
                 <span class="favorite-team-card__ident">
-                    <span class="favorite-team-card__abbr">${stats.abbr}</span>
+                    <span class="favorite-team-card__abbr">${escapeHtml(stats.abbr)}</span>
                     <span class="favorite-team-card__record">${escapeHtml(stats.record)} ${seedHtml}</span>
                 </span>
             </span>

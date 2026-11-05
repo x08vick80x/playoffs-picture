@@ -1,22 +1,16 @@
 ---
+import { logoSizes } from './Logo.js';
 import { getTeamId } from "@/utils/team-mapping.js";
 
 interface Props {
     team: string; // Team name (e.g., "Bills") or ID
-    size?: "sm" | "md" | "lg" | "xl"; // sm=24, md=40, lg=55, xl=80
+    size?: keyof typeof logoSizes; // md=40, lg=55
     className?: string;
 }
 
 const { team, size = "md", className = "" } = Astro.props;
 
-const sizeMap = {
-    sm: 24,
-    md: 40,
-    lg: 55,
-    xl: 80,
-};
-
-const pixelSize = sizeMap[size];
+const pixelSize = logoSizes[size];
 const teamId = getTeamId(team);
 ---
 
@@ -28,7 +22,7 @@ const teamId = getTeamId(team);
     ]}
     width={pixelSize}
     height={pixelSize}
-    viewBox="0 0 24 24"
+    aria-hidden="true"
 >
     <use href={`/sprites.svg#${teamId}`}></use>
 </svg>

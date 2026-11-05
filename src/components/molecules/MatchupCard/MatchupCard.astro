@@ -61,7 +61,7 @@ const byeTeamColor = variant === "bye" && team ? getTeamColor(team.team) : undef
                 <TeamRow
                     team={team.team}
                     record={team.record}
-                    size="md"
+                    size="lg"
                     showRecord={true}
                 />
             </div>
@@ -85,74 +85,42 @@ const byeTeamColor = variant === "bye" && team ? getTeamColor(team.team) : undef
     </div>
 ) : (
     <div class="matchup-card">
-        <!-- Away Team -->
-        <div
-            class="matchup-card__team team-card-trigger"
-            data-team={away?.team}
-            data-schedule={getSched(awayStats)}
-        >
-            <div class="matchup-card__identity">
-                <TeamRow
-                    team={away?.team || ''}
-                    seed={away?.seed}
-                    record={away?.record}
-                    size="sm"
-                />
-            </div>
-
-            {awayStats && (
-                <div class="matchup-card__stats">
-                    <div class="matchup-card__prob">
-                        {awayStats.probability}
+        {[{ side: away, sideStats: awayStats }, { side: home, sideStats: homeStats }].map(({ side, sideStats }, index) => (
+            <>
+                {index === 1 && <div class="matchup-card__vs">@</div>}
+                <div
+                    class="matchup-card__team team-card-trigger"
+                    data-team={side?.team}
+                    data-schedule={getSched(sideStats)}
+                >
+                    <div class="matchup-card__identity">
+                        <TeamRow
+                            team={side?.team || ''}
+                            seed={side?.seed}
+                            record={side?.record}
+                            size="md"
+                        />
                     </div>
-                    {awayStats.nextOpponent && (
-                        <>
-                            <span class="matchup-card__sep">/</span>
-                            <div class="matchup-card__next">
-                                nxt {awayStats.nextOpponent.location}{" "}
-                                {awayStats.nextOpponent.opponent}
+
+                    {sideStats && (
+                        <div class="matchup-card__stats">
+                            <div class="matchup-card__prob">
+                                {sideStats.probability}
                             </div>
-                            <div class="matchup-card__btn">+</div>
-                        </>
+                            {sideStats.nextOpponent && (
+                                <>
+                                    <span class="matchup-card__sep">/</span>
+                                    <div class="matchup-card__next">
+                                        nxt {sideStats.nextOpponent.location}{" "}
+                                        {sideStats.nextOpponent.opponent}
+                                    </div>
+                                    <div class="matchup-card__btn">+</div>
+                                </>
+                            )}
+                        </div>
                     )}
                 </div>
-            )}
-        </div>
-
-        <div class="matchup-card__vs">@</div>
-
-        <!-- Home Team -->
-        <div
-            class="matchup-card__team team-card-trigger"
-            data-team={home?.team}
-            data-schedule={getSched(homeStats)}
-        >
-            <div class="matchup-card__identity">
-                <TeamRow
-                    team={home?.team || ''}
-                    seed={home?.seed}
-                    record={home?.record}
-                    size="sm"
-                />
-            </div>
-
-            {homeStats && (
-                <div class="matchup-card__stats">
-                    <div class="matchup-card__prob">
-                        {homeStats.probability}
-                    </div>
-                    {homeStats.nextOpponent && (
-                        <>
-                            <span class="matchup-card__sep">/</span>
-                            <div class="matchup-card__next">
-                                nxt {homeStats.nextOpponent.location}{" "}
-                                {homeStats.nextOpponent.opponent}
-                            </div>
-                            <div class="matchup-card__btn">+</div>
-                        </>
-                    )}
-                </div>
-            )}
-        </div>
+            </>
+        ))}
     </div>
 )}

@@ -30,7 +30,7 @@ const clinchLabels: Record<string, [string, string]> = {
                 <td class="standings-table__rank"><span class="standings-table__pos">{ranking === 'conference' ? team.seed : ranking === 'league' ? team.rank : index + 1}</span></td>
                 <th scope="row">
                     <span class="standings-table__team">
-                        <Logo team={team.team} size="sm" />
+                        <Logo team={team.team} size="md" />
                         <span>{team.team}</span>
                         {clinchLabels[clinch[team.team]] && (
                             <abbr class={`standings-table__clinch standings-table__clinch--${clinch[team.team]}`} title={clinchLabels[clinch[team.team]][1]}>{clinchLabels[clinch[team.team]][0]}</abbr>

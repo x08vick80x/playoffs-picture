@@ -67,7 +67,7 @@ const initialWeek = weeks.find((week) => week.week === defaultWeekId) || weeks[0
     import { getScheduleWeekNumber } from "@scraper/config.js";
     import { getTeamId } from "@/utils/team-mapping.js";
 
-    const FAVORITES_KEY = "nfl-favorites";
+    import { FAVORITES_KEY, readFavorites } from '@/utils/favorites.js';
     const tabsContainer = document.getElementById("week-tabs")!;
     const host = document.getElementById("schedule-week")!;
     const statusContainer = document.querySelector<HTMLElement>(".season-schedule__status")!;
@@ -82,14 +82,7 @@ const initialWeek = weeks.find((week) => week.week === defaultWeekId) || weeks[0
     let requestedWeek = initialPanel?.dataset.weekPanel || "";
 
     function highlightFavorites() {
-        let teams: string[] = [];
-        try {
-            const stored: unknown = JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]");
-            if (Array.isArray(stored)) teams = stored.filter((team): team is string => typeof team === "string");
-        } catch {
-            // The schedule remains usable when storage is unavailable or invalid.
-        }
-        const favorites = new Set(teams.map(team => getTeamId(team)));
+        const favorites = new Set(readFavorites().map(team => getTeamId(team)));
         host.querySelectorAll<HTMLElement>(".schedule-row[data-home-team]").forEach(row => {
             const isFavorite = favorites.has(row.dataset.homeTeam!) || favorites.has(row.dataset.awayTeam!);
             row.classList.toggle("schedule-row--favorite", isFavorite);

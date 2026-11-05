@@ -33,7 +33,7 @@ const compactDate = (date: string | null) => date?.replace(
     </span>
     <div class="schedule-row__teams">
         <div class="schedule-row__team">
-            <TeamRow team={match.away} size="sm" showRecord={false} />
+            <TeamRow team={match.away} size="md" showRecord={false} />
             {match.final && match.awayScore != null && (
                 <span class="schedule-row__score">{match.awayScore}</span>
             )}
@@ -43,7 +43,7 @@ const compactDate = (date: string | null) => date?.replace(
             {match.final && <span class="schedule-row__final">Final</span>}
         </div>
         <div class="schedule-row__team">
-            <TeamRow team={match.home} size="sm" showRecord={false} />
+            <TeamRow team={match.home} size="md" showRecord={false} />
             {match.final && match.homeScore != null && (
                 <span class="schedule-row__score">{match.homeScore}</span>
             )}
