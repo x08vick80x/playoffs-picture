@@ -11,6 +11,18 @@ try {
     await page.setBypassServiceWorker(true);
     await page.goto(process.env.COMPONENTS_TEST_URL || 'http://127.0.0.1:4322', { waitUntil: 'networkidle0' });
 
+    // One inline stylesheet delivery, with only the font actually supplied by the app.
+    const delivery = await page.evaluate(() => ({
+        externalCSS: performance.getEntriesByType('resource').filter(entry => new URL(entry.name).pathname.endsWith('.css')).length,
+        fontRequests: performance.getEntriesByType('resource').filter(entry => /\.woff2?$/.test(new URL(entry.name).pathname)).length,
+        fontFaces: [...document.fonts].map(face => ({ family: face.family.replaceAll('"', ''), status: face.status })),
+        bodyFont: getComputedStyle(document.body).fontFamily,
+    }));
+    assert.equal(delivery.externalCSS, 0, 'the full stylesheet must not be downloaded a second time');
+    assert.equal(delivery.fontRequests, 1, 'the supplied font must be downloaded only once');
+    assert.deepEqual(delivery.fontFaces, [{ family: 'Space Grotesk', status: 'loaded' }]);
+    assert.equal(delivery.bodyFont, 'Arial, sans-serif');
+
     // Check the public size contract against the real production stylesheet.
     const sizes = { md: 40, lg: 55 };
     await page.evaluate(html => {
@@ -59,5 +71,5 @@ try {
     assert.equal(await page.$('#schedule-list img'), null, 'scraped text must not become markup');
     assert.equal(await page.$eval('.game-item:last-child use', el => el.getAttribute('href')), '/sprites.svg#buccaneers');
     assert.deepEqual(errors, []);
-    console.log('Passed: both Logo sizes agree with CSS, SSR card dimensions, rankings expand/collapse in both themes/viewports, game dates, next opponent, records and escaped text.');
+    console.log('Passed: CSS delivered once, one supplied font, both Logo sizes agree with CSS, SSR card dimensions, rankings expand/collapse in both themes/viewports, game dates, next opponent, records and escaped text.');
 } finally { await browser.close(); }

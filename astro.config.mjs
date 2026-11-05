@@ -2,13 +2,14 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import AstroPWA from '@vite-pwa/astro';
-import Critters from 'critters';
-import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://playoffs-picture.vercel.app',
+  // This single page uses most of its CSS. Ship one complete inline copy instead
+  // of duplicating it between critical CSS and a deferred external stylesheet.
+  build: { inlineStylesheets: 'always' },
   // Explicit Vite aliases also resolve Sass modules and asset URLs.
   vite: {
     resolve: {
@@ -20,31 +21,6 @@ export default defineConfig({
   },
   integrations: [
     sitemap({ filter: (page) => !new URL(page).pathname.startsWith('/schedule/') }),
-    {
-      name: 'critical-css',
-      hooks: {
-        'astro:build:done': async ({ dir }) => {
-            const critters = new Critters({
-                path: './dist/',
-                publicPath: './dist/',
-                inlineFonts: true,
-                preload: 'media', // Uses media="print" + onload pattern
-                compress: true,
-                // Standalone is detected before paint; preserve its reserved carousel space.
-                allowRules: [/my-teams/],
-            });
-
-            try {
-                const html = await readFile('./dist/index.html', 'utf-8');
-                const inlined = await critters.process(html);
-                await writeFile('./dist/index.html', inlined);
-                console.log('✅ Critical CSS generated with Critters');
-            } catch (e) {
-                console.error('Failed to generate critical CSS:', e);
-            }
-        }
-      }
-    },
     AstroPWA({
         registerType: 'autoUpdate',
         manifest: {

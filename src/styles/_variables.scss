@@ -129,8 +129,8 @@ $box-shadow-modal: var(--box-shadow-modal);
 
 // Typography
 $font-main: Arial, sans-serif;
-$font-body: 'Montserrat', Arial, sans-serif;
-$font-numeric: 'Space Grotesk', 'Montserrat', Arial, sans-serif;
+$font-body: $font-main;
+$font-numeric: 'Space Grotesk', $font-main;
 
 // Spacing: suffix = pixels at the default 10px root; rem scales with text settings.
 // Fine steps retain existing compact layouts; prefer the larger steps for sections.
