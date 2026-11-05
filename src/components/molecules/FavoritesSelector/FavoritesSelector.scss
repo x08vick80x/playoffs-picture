@@ -39,7 +39,7 @@
         max-width: 600px;
         height: 85vh;
         height: 85dvh;
-        border-radius: $radius-lg $radius-lg 0 0; // Rounded top
+        border-radius: $radius-sheet $radius-sheet 0 0; // Rounded top
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -49,7 +49,7 @@
         @include tablet {
             height: 80vh;
             height: 80dvh;
-            border-radius: $radius-lg;
+            border-radius: $radius-sheet;
         }
     }
 
@@ -57,8 +57,8 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        gap: 1.4rem;
-        padding: 1.8rem $spacing-sm 1.4rem;
+        gap: $spacing-14;
+        padding: $modal-header-padding;
         background: radial-gradient(circle at 0% 0%, $bg-glow-red, $transparent 70%);
         border-bottom: 1px solid $border-subtle;
     }
@@ -66,7 +66,7 @@
     &__heading {
         display: flex;
         flex-direction: column;
-        gap: 0.3rem;
+        gap: $spacing-3;
     }
 
     &__eyebrow {
@@ -91,8 +91,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 3.2rem;
-        height: 3.2rem;
+        width: $control-size-sm;
+        height: $control-size-sm;
         padding: 0;
         background: ink(0.08);
         border: none;
@@ -114,7 +114,7 @@
         overflow-y: auto;
         overscroll-behavior: contain;
         min-height: 0;
-        padding: 1.4rem $spacing-sm;
+        padding: $modal-padding-block $modal-padding-inline;
         scrollbar-width: thin;
         scrollbar-color: ink(0.25) $transparent;
     }
@@ -122,11 +122,11 @@
     &__grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 0.8rem;
+        gap: $spacing-8;
     }
 
     &__footer {
-        padding: 1.4rem $spacing-sm;
+        padding: $modal-padding-block $modal-padding-inline;
         border-top: 1px solid $border-subtle;
         background: $transparent;
     }
@@ -136,7 +136,7 @@
         background: $gradient-accent;
         color: $white;
         border: none;
-        padding: 1.2rem;
+        padding: $spacing-12;
         border-radius: $radius-pill;
         font-size: 1.5rem;
         font-weight: 700;
@@ -158,7 +158,7 @@
     background: ink(0.05);
     border: 1px solid $border-subtle;
     border-radius: $radius-md;
-    padding: 1.2rem 0.5rem;
+    padding: $spacing-12 $spacing-5;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -174,7 +174,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 8px;
+        gap: $spacing-8;
     }
 
     &__logo {
@@ -204,8 +204,8 @@
 
     &__check {
         position: absolute;
-        top: 6px;
-        right: 6px;
+        top: $spacing-6;
+        right: $spacing-6;
         width: 20px;
         height: 20px;
         background: $nfl-green;

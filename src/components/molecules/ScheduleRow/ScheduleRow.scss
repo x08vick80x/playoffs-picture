@@ -4,10 +4,10 @@
 .schedule-row {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: $spacing-4;
     @include card;
     border-radius: $radius-lg;
-    padding: $spacing-xs;
+    padding: $spacing-8;
     min-width: 0;
     @include card-hover;
 
@@ -28,17 +28,17 @@
         > * { visibility: hidden; }
 
         &::before {
-            --skeleton-logo-size: #{$spacing-sm + $spacing-xs};
+            --skeleton-logo-size: #{$spacing-24};
             content: '';
             position: absolute;
-            inset: $spacing-xs;
+            inset: $spacing-8;
             border-radius: $radius-sm;
             background:
-                linear-gradient(ink(0.12), ink(0.12)) center top / 55% $spacing-xs,
+                linear-gradient(ink(0.12), ink(0.12)) center top / 55% $spacing-8,
                 radial-gradient(circle, ink(0.12) 65%, $transparent 70%) 15% 50% / var(--skeleton-logo-size) var(--skeleton-logo-size),
                 radial-gradient(circle, ink(0.12) 65%, $transparent 70%) 85% 50% / var(--skeleton-logo-size) var(--skeleton-logo-size),
-                linear-gradient(ink(0.12), ink(0.12)) 10% bottom / 30% $spacing-xs,
-                linear-gradient(ink(0.12), ink(0.12)) 90% bottom / 30% $spacing-xs;
+                linear-gradient(ink(0.12), ink(0.12)) 10% bottom / 30% $spacing-8,
+                linear-gradient(ink(0.12), ink(0.12)) 90% bottom / 30% $spacing-8;
             background-repeat: no-repeat;
             animation: schedule-row-pulse ($duration-fast * 6) ease-in-out infinite alternate;
 
@@ -58,7 +58,7 @@
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
         align-items: center;
-        gap: 0.2rem;
+        gap: $spacing-2;
     }
 
     &__team {
@@ -77,7 +77,7 @@
 
     .team-row {
         justify-content: center;
-        gap: $spacing-xs;
+        gap: $spacing-8;
     }
 
     .team-logo {
@@ -134,7 +134,7 @@
     }
 
     @include wide-mobile {
-        &__teams { gap: $spacing-xs; }
+        &__teams { gap: $spacing-8; }
         &__at { line-height: 2.4rem; }
         .team-logo { width: 4rem; height: 4rem; }
         .team-row__name { font-size: 1.6rem; }

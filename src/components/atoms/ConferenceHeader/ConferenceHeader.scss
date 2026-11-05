@@ -4,9 +4,9 @@
     position: relative;
     display: flex;
     align-items: center;
-    gap: $spacing-sm;
-    padding: $spacing-xs $spacing-sm;
-    margin-bottom: $spacing-sm;
+    gap: $spacing-16;
+    padding: $spacing-8 $spacing-16;
+    margin-bottom: $spacing-16;
     border: 1px solid $border-subtle;
     border-radius: $radius-lg;
     overflow: hidden;
@@ -23,9 +23,9 @@
     &__logo {
         flex: 0 0 auto;
         box-sizing: content-box;
-        width: 3.4rem;
-        height: 3.4rem;
-        padding: 0.7rem;
+        width: $logo-md;
+        height: $logo-md;
+        padding: $spacing-7;
         border-radius: 50%;
         background: $white;
         box-shadow: 0 .3rem 1rem shade(0.4);

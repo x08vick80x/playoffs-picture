@@ -3,18 +3,18 @@
 
 .power-rankings {
     max-width: 800px;
-    margin: 3rem auto;
-    padding: 0 1rem;
+    margin: $spacing-30 auto;
+    padding: 0 $spacing-10;
 
     &__list {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: $spacing-15;
     }
 
     &__empty {
         text-align: center;
         color: $gray-500;
-        padding: 2rem;
+        padding: $spacing-20;
     }
 }

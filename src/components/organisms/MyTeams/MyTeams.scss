@@ -3,19 +3,19 @@
 
 .my-teams {
     --my-teams-height: 20rem;
-    --my-teams-card-width: min(36rem, calc(100% - #{$spacing-md}));
+    --my-teams-card-width: min(36rem, calc(100% - #{$spacing-32}));
     display: none;
-    margin: $spacing-sm auto;
-    padding-inline: $spacing-sm;
+    margin: $spacing-16 auto;
+    padding-inline: $spacing-16;
     max-width: 100rem;
 
     &__header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: $spacing-xs;
-        margin-bottom: $spacing-xs;
-        padding-bottom: $spacing-xs;
+        gap: $spacing-8;
+        margin-bottom: $spacing-8;
+        padding-bottom: $spacing-8;
         border-bottom: 1px solid $border-subtle;
     }
 
@@ -29,17 +29,17 @@
         color: $text-primary;
     }
 
-    &__actions { display: flex; gap: $spacing-xs; }
+    &__actions { display: flex; gap: $spacing-8; }
 
     &__action, &__retry {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-width: 4rem;
-        min-height: 4rem;
-        padding: $spacing-xs;
+        min-width: $control-size-lg;
+        min-height: $control-size-lg;
+        padding: $spacing-8;
         border: 1px solid $border-subtle;
-        border-radius: $radius-sm;
+        border-radius: $radius-control;
         background: ink(0.06);
         color: $text-primary;
         font: inherit;
@@ -54,10 +54,10 @@
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: var(--my-teams-card-width);
-        gap: $spacing-xs;
+        gap: $spacing-8;
         height: 100%;
         margin: 0;
-        padding: 0 0 $spacing-xs;
+        padding: 0 0 $spacing-8;
         list-style: none;
         overflow-x: auto;
         overscroll-behavior-inline: contain;
@@ -72,7 +72,7 @@
     &__empty-action {
         width: 100%;
         height: 100%;
-        padding: $spacing-sm;
+        padding: $spacing-16;
         border: 2px dashed ink(0.25);
         border-radius: $radius-lg;
         background: ink(0.04);
@@ -88,17 +88,17 @@
         flex-direction: column;
         justify-content: space-between;
         min-width: 0;
-        padding: $spacing-sm;
+        padding: $spacing-16;
         border-radius: $radius-lg;
     }
     &__skeleton-row {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: $spacing-xs;
+        gap: $spacing-8;
 
         &--footer {
-            padding-top: calc(#{$spacing-xs} * 1.5);
+            padding-top: $spacing-12;
             border-top: 1px solid $border-subtle;
         }
     }
@@ -112,19 +112,19 @@
             height: $logo-lg;
         }
         &--probability {
-            width: $spacing-xl;
-            height: calc(#{$logo-md} + #{$spacing-xs} / 2);
+            width: $spacing-64;
+            height: calc(#{$logo-md} + #{$spacing-8} / 2);
         }
         &--power {
             width: 34%;
             max-width: 10rem;
-            height: $spacing-sm + $spacing-xs;
+            height: $spacing-24;
             border-radius: $radius-pill;
         }
         &--opponent {
             width: 55%;
             max-width: 17rem;
-            height: calc(#{$spacing-md} + #{$spacing-xs} / 2);
+            height: calc(#{$spacing-32} + #{$spacing-8} / 2);
         }
     }
     &__message {
@@ -133,7 +133,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: $spacing-xs;
+        gap: $spacing-8;
         color: $text-secondary;
         border: 1px solid $border-subtle;
         border-radius: $radius-lg;

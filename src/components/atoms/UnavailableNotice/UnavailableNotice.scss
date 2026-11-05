@@ -6,11 +6,11 @@
     background: $bg-card;
     border: 1px dashed ink(0.25);
     border-radius: $radius-md;
-    padding: $spacing-sm;
+    padding: $spacing-16;
     overflow-wrap: anywhere;
 
     @media (min-width: $tablet) {
-        padding: $spacing-md;
+        padding: $spacing-32;
     }
     font-size: 1.4rem;
     box-shadow: $box-shadow;

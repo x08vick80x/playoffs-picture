@@ -15,7 +15,7 @@
     text-align: left;
 
     caption {
-        padding: $spacing-sm 1.6rem $spacing-xs;
+        padding: $spacing-16 $spacing-16 $spacing-8;
         font-size: 1.8rem;
         font-weight: 700;
         letter-spacing: -0.01em;
@@ -23,7 +23,7 @@
     }
 
     th, td {
-        padding: 1.2rem 0.6rem;
+        padding: $spacing-12 $spacing-6;
         border-bottom: 1px solid $border-subtle;
     }
 
@@ -35,8 +35,8 @@
         text-transform: uppercase;
 
         th { font-weight: 600; }
-        th:first-child { width: 6rem; padding-left: 1.6rem; text-align: center; }
-        th:last-child { width: 9rem; padding-right: 1.6rem; text-align: right; }
+        th:first-child { width: 6rem; padding-left: $spacing-16; text-align: center; }
+        th:last-child { width: 9rem; padding-right: $spacing-16; text-align: right; }
     }
 
     tbody tr {
@@ -50,7 +50,7 @@
     }
 
     td#{&}__rank {
-        padding-left: 1.6rem;
+        padding-left: $spacing-16;
         text-align: center;
     }
 
@@ -60,7 +60,7 @@
         justify-content: center;
         min-width: 2.8rem;
         height: 2.8rem;
-        border-radius: 999px;
+        border-radius: $radius-pill;
         background: ink(0.06);
         font-size: 1.3rem;
         font-weight: 700;
@@ -71,14 +71,14 @@
     &__team {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: $spacing-10;
         font-size: 1.4rem;
         font-weight: 600;
         overflow-wrap: anywhere;
     }
 
     td#{&}__record {
-        padding-right: 1.6rem;
+        padding-right: $spacing-16;
         text-align: right;
         font-family: $font-numeric;
         font-size: 1.6rem;
@@ -100,7 +100,7 @@
 
     &__fav {
         display: none;
-        margin-left: -0.4rem;
+        margin-left: -$spacing-4;
         color: $accent-soft;
         font-size: 1.4rem;
         line-height: 1;
@@ -115,7 +115,7 @@
     }
 
     &__clinch {
-        margin-left: -0.4rem;
+        margin-left: -$spacing-4;
         font-size: 1.2rem;
         font-weight: 700;
         line-height: 1;
@@ -140,11 +140,11 @@
     }
 
     @include wide-mobile {
-        th, td { padding-block: $spacing-sm; padding-inline: $spacing-xs; }
-        td#{&}__rank { padding-left: 1.6rem; }
-        td#{&}__record { padding-right: 1.6rem; }
-        thead th:first-child { padding-left: 1.6rem; }
-        thead th:last-child { padding-right: 1.6rem; }
+        th, td { padding-block: $spacing-16; padding-inline: $spacing-8; }
+        td#{&}__rank { padding-left: $spacing-16; }
+        td#{&}__record { padding-right: $spacing-16; }
+        thead th:first-child { padding-left: $spacing-16; }
+        thead th:last-child { padding-right: $spacing-16; }
         &__team { font-size: 1.6rem; }
     }
 }

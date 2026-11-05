@@ -143,6 +143,14 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
   component rather than shared TS modules.
 - SCSS variables/mixins are centralized in `src/styles/_variables.scss` and `_mixins.scss`.
   Literal colors live only there; components never hardcode them.
+- Spacing uses the shared numeric `$spacing-*` scale: the suffix is its pixel equivalent at
+  the default 10px root (`$spacing-12: 1.2rem`). Prefer existing steps; fine steps preserve compact
+  layouts. Use negative tokens for optical offsets. Keep `0`, `auto`, geometric percentages,
+  font-relative spacing (`0.2em` between record digits) and screen-reader clipping (`-1px`) literal.
+- Use `$radius-pill` for pills; `$radius-control[-sm]`, `$radius-inset`, `$radius-modal` and
+  `$radius-sheet` for their respective surfaces. Circular `50%` radii are geometric and may stay
+  literal. Dialogs share `$modal-header-padding` and `$modal-padding-inline/block`; controls share
+  `$control-size-sm/md/lg/xl`. Do not replace typography, borders or layout proportions with spacing tokens.
 
 ## Theming (dark / light)
 

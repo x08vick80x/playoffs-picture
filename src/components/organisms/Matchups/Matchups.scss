@@ -2,18 +2,18 @@
 @use '@/styles/mixins' as *;
 
 .matchups {
-    margin-top: $spacing-sm;
-    padding: $spacing-sm;
+    margin-top: $spacing-16;
+    padding: $spacing-16;
 
     @include tablet {
-        margin-top: $spacing-lg;
+        margin-top: $spacing-48;
     }
 }
 
 .matchups__conferences {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $spacing-md;
+    gap: $spacing-32;
     max-width: 1000px;
     margin: 0 auto;
 

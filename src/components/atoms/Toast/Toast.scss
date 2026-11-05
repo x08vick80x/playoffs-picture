@@ -4,14 +4,14 @@
 .toast {
     position: fixed;
     left: 50%;
-    bottom: $spacing-sm;
+    bottom: $spacing-16;
     z-index: $z-header + 1;
     display: flex;
     align-items: center;
-    gap: $spacing-xs;
-    max-width: calc(100vw - 2 * #{$spacing-sm});
-    padding: 0.8rem 0.8rem 0.8rem 1.6rem;
-    border-radius: 999px;
+    gap: $spacing-8;
+    max-width: calc(100vw - 2 * #{$spacing-16});
+    padding: $spacing-8 $spacing-8 $spacing-8 $spacing-16;
+    border-radius: $radius-pill;
     background: $bg-header;
     border: 1px solid $border-subtle;
     box-shadow: $box-shadow;
@@ -28,8 +28,8 @@
 
     &__action {
         flex: 0 0 auto;
-        padding: 0.6rem 1.4rem;
-        border-radius: 999px;
+        padding: $spacing-6 $spacing-14;
+        border-radius: $radius-pill;
         background: $gradient-accent;
         color: $white;
         font-size: 1.3rem;

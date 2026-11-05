@@ -5,27 +5,27 @@
     @include card;
     position: relative;
     border-radius: $radius-lg;
-    padding: 3.2rem .5rem 1.6rem;
+    padding: $spacing-32 $spacing-5 $spacing-16;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: $spacing-xs;
-    margin-bottom: $spacing-sm;
+    gap: $spacing-8;
+    margin-bottom: $spacing-16;
 
     @include desktop {
-        padding: 3.6rem $spacing-sm $spacing-sm;
-        gap: $spacing-sm;
+        padding: $spacing-36 $spacing-16 $spacing-16;
+        gap: $spacing-16;
     }
 
     &::before {
         content: 'Wild Card';
         position: absolute;
-        top: 0.8rem;
+        top: $spacing-8;
         left: 50%;
         transform: translateX(-50%);
-        padding: 0.2rem 1.2rem;
-        border-radius: 999px;
+        padding: $spacing-2 $spacing-12;
+        border-radius: $radius-pill;
         background: ink(0.06);
         color: $text-secondary;
         font-size: 1rem;
@@ -40,8 +40,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 0.6rem 2px;
-        gap: 0.6rem;
+        padding: $spacing-6 $spacing-2;
+        gap: $spacing-6;
         cursor: pointer;
         border-radius: $radius-md;
         transition: background $duration-fast;
@@ -68,13 +68,13 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 6px;
+        gap: $spacing-6;
         transform: scale(0.9);
     }
 
     &__prob {
-        padding: 0.1rem 0.8rem;
-        border-radius: 999px;
+        padding: $spacing-1 $spacing-8;
+        border-radius: $radius-pill;
         background: rgba($nfl-green, 0.14);
         border: 1px solid rgba($nfl-green, 0.35);
         font-size: 1.28rem;
@@ -117,7 +117,7 @@
 
     // Bye Variant
     &--bye {
-        padding: $spacing-sm;
+        padding: $spacing-16;
         flex-direction: column;
         gap: 0;
         border: none;
@@ -147,8 +147,8 @@
         }
 
         .matchup-card__label {
-            padding: 0.3rem 1.4rem;
-            border-radius: 999px;
+            padding: $spacing-3 $spacing-14;
+            border-radius: $radius-pill;
             background: rgba($black, 0.28);
             font-size: 1.1rem;
             text-transform: uppercase;
@@ -161,9 +161,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
+            gap: $spacing-5;
             cursor: pointer;
-            padding: $spacing-xs;
+            padding: $spacing-8;
             border-radius: $radius-md;
             width: 100%;
             transition: background $duration-fast;
@@ -177,7 +177,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: $spacing-sm;
+            gap: $spacing-16;
         }
 
         .matchup-card__seed {
@@ -190,7 +190,7 @@
 
         .matchup-card__stats {
             transform: none;
-            gap: 8px;
+            gap: $spacing-8;
         }
 
         // The card sits on a team color, so it stays light-on-dark in every theme.
@@ -216,7 +216,7 @@
             color: rgba($white, 0.92);
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: $spacing-5;
         }
     }
 }

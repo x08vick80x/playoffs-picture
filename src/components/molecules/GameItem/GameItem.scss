@@ -3,11 +3,11 @@
 .game-item {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
-    padding: 1rem 1.2rem;
+    gap: $spacing-12;
+    padding: $spacing-10 $spacing-12;
     background: ink(0.04);
     border: 1px solid $border-subtle;
-    border-radius: $radius-md + 4px;
+    border-radius: $radius-inset;
 
     &--next {
         background: rgba($nfl-red, 0.12);
@@ -50,7 +50,7 @@
     &__info {
         display: flex;
         flex-direction: column;
-        gap: 0.2rem;
+        gap: $spacing-2;
         min-width: 0;
         flex: 1;
     }
@@ -70,8 +70,8 @@
 
     &__opp-record {
         flex: 0 0 auto;
-        padding: 0.2rem 0.9rem;
-        border-radius: 999px;
+        padding: $spacing-2 $spacing-9;
+        border-radius: $radius-pill;
         background: ink(0.08);
         font-size: 1.2rem;
         font-weight: 700;

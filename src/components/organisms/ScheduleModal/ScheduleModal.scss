@@ -52,15 +52,15 @@
         backdrop-filter: $glass-blur;
         -webkit-backdrop-filter: $glass-blur;
         border: 1px solid $border-subtle;
-        border-radius: $radius-lg + 8px;
+        border-radius: $radius-modal;
         box-shadow: $box-shadow-modal;
     }
 
     &__header {
         display: flex;
         align-items: center;
-        gap: 1.4rem;
-        padding: 1.8rem 1.6rem 1.4rem;
+        gap: $spacing-14;
+        padding: $modal-header-padding;
         background: radial-gradient(circle at 0% 0%, $bg-glow-red, $transparent 70%);
         border-bottom: 1px solid $border-subtle;
     }
@@ -75,7 +75,7 @@
     &__heading {
         display: flex;
         flex-direction: column;
-        gap: 0.3rem;
+        gap: $spacing-3;
         flex: 1;
         min-width: 0;
     }
@@ -107,8 +107,8 @@
         flex: 0 0 auto;
         align-self: flex-start;
         @include flex-center;
-        width: 3.2rem;
-        height: 3.2rem;
+        width: $control-size-sm;
+        height: $control-size-sm;
         background: ink(0.08);
         border-radius: 50%;
         color: $text-secondary;
@@ -131,8 +131,8 @@
     &__list {
         display: flex;
         flex-direction: column;
-        gap: 0.8rem;
-        padding: 1.4rem 1.6rem 1.8rem;
+        gap: $spacing-8;
+        padding: $modal-padding-block $modal-padding-inline $spacing-18;
         overflow-y: auto;
         overscroll-behavior: contain;
         scrollbar-width: thin;

@@ -3,18 +3,18 @@
 
 .bubble-eliminated {
     max-width: 1000px;
-    margin: $spacing-md auto;
-    padding: 0 $spacing-sm;
+    margin: $spacing-32 auto;
+    padding: 0 $spacing-16;
 }
 
 .bubble-eliminated__section {
-    margin-bottom: $spacing-lg;
+    margin-bottom: $spacing-48;
 }
 
 .bubble-eliminated__conferences {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $spacing-md;
+    gap: $spacing-32;
 
     @include tablet {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -24,12 +24,12 @@
 .bubble-eliminated__teams {
     display: flex;
     flex-direction: column;
-    gap: $spacing-xs;
+    gap: $spacing-8;
 }
 
 .bubble-eliminated__empty {
     text-align: center;
-    padding: $spacing-sm;
+    padding: $spacing-16;
     color: $gray-500;
     font-style: italic;
     font-size: 1.44rem;

@@ -132,12 +132,30 @@ $font-main: Arial, sans-serif;
 $font-body: 'Montserrat', Arial, sans-serif;
 $font-numeric: 'Space Grotesk', 'Montserrat', Arial, sans-serif;
 
-// Spacing
-$spacing-xs: 0.8rem; // 8px
-$spacing-sm: 1.6rem; // 16px
-$spacing-md: 3.2rem; // 32px
-$spacing-lg: 4.8rem; // 48px
-$spacing-xl: 6.4rem; // 64px
+// Spacing: suffix = pixels at the default 10px root; rem scales with text settings.
+// Fine steps retain existing compact layouts; prefer the larger steps for sections.
+$spacing-1: 0.1rem;
+$spacing-2: 0.2rem;
+$spacing-3: 0.3rem;
+$spacing-4: 0.4rem;
+$spacing-5: 0.5rem;
+$spacing-6: 0.6rem;
+$spacing-7: 0.7rem;
+$spacing-8: 0.8rem;
+$spacing-9: 0.9rem;
+$spacing-10: 1rem;
+$spacing-12: 1.2rem;
+$spacing-14: 1.4rem;
+$spacing-15: 1.5rem;
+$spacing-16: 1.6rem;
+$spacing-18: 1.8rem;
+$spacing-20: 2rem;
+$spacing-24: 2.4rem;
+$spacing-30: 3rem;
+$spacing-32: 3.2rem;
+$spacing-36: 3.6rem;
+$spacing-48: 4.8rem;
+$spacing-64: 6.4rem;
 
 // Breakpoints
 $mobile: 480px;
@@ -145,11 +163,29 @@ $tablet: 768px;
 $desktop: 1024px;
 
 // Radius
+$radius-xs: 4px;
 $radius-sm: 10px;
 $radius-md: 14px;
 $radius-lg: 22px;
 $radius-pill: 50rem;
 $radius-round: 50%;
+$radius-control-sm: $radius-xs;
+$radius-control: $radius-sm;
+$radius-inset: 18px;
+$radius-modal: 30px;
+$radius-sheet: $radius-lg;
+
+// Shared control geometry (independent from text/icon sizes).
+$control-size-sm: 3.2rem;
+$control-size-md: 3.6rem;
+$control-size-lg: 4rem;
+$control-size-xl: 4.4rem;
+
+// Shared dialog rhythm; the bottom sheet and centered modal keep their own geometry.
+$modal-padding-inline: $spacing-16;
+$modal-padding-block: $spacing-14;
+$modal-header-padding: $spacing-18 $modal-padding-inline $modal-padding-block;
+$scroll-offset-header: 10rem;
 
 // Z-Index
 $z-modal: 1000;

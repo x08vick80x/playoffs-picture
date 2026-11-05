@@ -4,11 +4,11 @@
 .back-to-top {
     @include flex-center;
     position: fixed;
-    right: $spacing-sm;
-    bottom: $spacing-sm;
+    right: $spacing-16;
+    bottom: $spacing-16;
     z-index: $z-header;
-    width: 4.4rem;
-    height: 4.4rem;
+    width: $control-size-xl;
+    height: $control-size-xl;
     border-radius: 50%;
     background: $bg-header;
     border: 1px solid $border-subtle;

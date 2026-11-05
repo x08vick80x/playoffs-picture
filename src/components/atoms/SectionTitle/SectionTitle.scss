@@ -4,7 +4,7 @@
     text-align: center;
     font-size: clamp(2.6rem, 7vw, 3.8rem);
     overflow-wrap: anywhere;
-    margin-bottom: $spacing-md;
+    margin-bottom: $spacing-32;
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1.2;
@@ -15,8 +15,8 @@
         display: block;
         width: 6rem;
         height: 0.4rem;
-        margin: 1.2rem auto 0;
-        border-radius: 999px;
+        margin: $spacing-12 auto 0;
+        border-radius: $radius-pill;
         background: $gradient-accent;
     }
 }

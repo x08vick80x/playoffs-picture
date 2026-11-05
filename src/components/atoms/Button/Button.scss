@@ -3,13 +3,13 @@
 .btn {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: $spacing-8;
     margin: 0;
     background-color: $nfl-blue;
     color: $white;
     border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 25px;
+    padding: $spacing-6 $spacing-12;
+    border-radius: $radius-pill;
     font-weight: 600;
     cursor: pointer;
     transition: transform $duration-fast, background-color $duration-fast;

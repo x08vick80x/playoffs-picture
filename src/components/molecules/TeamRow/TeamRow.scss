@@ -4,15 +4,15 @@
 .team-row {
     display: flex;
     align-items: center;
-    gap: $spacing-xs;
+    gap: $spacing-8;
     min-width: 0;
 
     @media (min-width: $tablet) {
-        gap: $spacing-sm;
+        gap: $spacing-16;
     }
 
     &__seed {
-        margin-right: -4px;
+        margin-right: -$spacing-4;
     }
 
     &__info {

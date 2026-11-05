@@ -4,8 +4,8 @@
 .favorite-team-card {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    padding: $spacing-sm;
+    gap: $spacing-12;
+    padding: $spacing-16;
     @include card;
     border-radius: $radius-lg;
     cursor: pointer;
@@ -22,13 +22,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: $spacing-xs;
+        gap: $spacing-8;
     }
 
     &__info {
         display: flex;
         align-items: center;
-        gap: 1.4rem;
+        gap: $spacing-14;
         min-width: 0;
     }
 
@@ -36,7 +36,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 0.6rem;
+        gap: $spacing-6;
     }
 
     &__abbr {
@@ -52,16 +52,16 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        gap: 0.8rem 1.2rem;
-        padding-top: 1.2rem;
+        gap: $spacing-8 $spacing-12;
+        padding-top: $spacing-12;
         border-top: 1px solid $border-subtle;
     }
 
     &__power-row {
         display: inline-flex;
         align-items: center;
-        gap: 0.6rem;
-        padding: 0.3rem 1rem;
+        gap: $spacing-6;
+        padding: $spacing-3 $spacing-10;
         border-radius: $radius-pill;
         background: ink(0.07);
         font-size: 1.2rem;
@@ -89,7 +89,7 @@
     &__record {
         display: flex;
         align-items: center;
-        gap: 0.8rem;
+        gap: $spacing-8;
         font-size: 1.4rem;
         font-weight: 600;
         color: $text-secondary;
@@ -101,7 +101,7 @@
         color: $white;
         font-size: 1rem;
         font-weight: 900;
-        padding: 2px 8px;
+        padding: $spacing-2 $spacing-8;
         border-radius: $radius-pill;
     }
 
@@ -109,11 +109,11 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        gap: 0.2rem;
+        gap: $spacing-2;
         flex: 0 0 auto;
 
         &--eliminated .favorite-team-card__prob-value {
-            padding: 0.3rem 1rem;
+            padding: $spacing-3 $spacing-10;
             border-radius: $radius-pill;
             background: rgba($nfl-red, 0.14);
             font-size: 1.1rem;
@@ -149,7 +149,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        gap: 2px;
+        gap: $spacing-2;
         margin-left: auto;
     }
 

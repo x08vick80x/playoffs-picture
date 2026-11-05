@@ -2,22 +2,22 @@
 @use '@/styles/mixins' as *;
 
 .season-schedule {
-    padding: $spacing-sm;
+    padding: $spacing-16;
     max-width: 800px;
     margin: 0 auto;
 }
 
 .season-schedule__tabs {
     display: flex;
-    gap: 0.2rem;
+    gap: $spacing-2;
     width: fit-content;
     max-width: 100%;
     overflow-x: auto;
-    margin: 0 auto $spacing-md;
-    padding: 0.4rem;
+    margin: 0 auto $spacing-32;
+    padding: $spacing-4;
     background: ink(0.06);
     border: 1px solid $border-subtle;
-    border-radius: 999px;
+    border-radius: $radius-pill;
     backdrop-filter: $glass-blur;
     -webkit-backdrop-filter: $glass-blur;
     scrollbar-width: none;
@@ -31,8 +31,8 @@
         background: $transparent;
         color: $text-secondary;
         border: none;
-        border-radius: 999px;
-        padding: 0.8rem 1.8rem;
+        border-radius: $radius-pill;
+        padding: $spacing-8 $spacing-18;
         font-weight: 500;
         font-size: 1.4rem;
         white-space: nowrap;
@@ -54,7 +54,7 @@
 .season-schedule__panel {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: $spacing-sm $spacing-xs;
+    gap: $spacing-16 $spacing-8;
 
     &[hidden] {
         display: none;
@@ -65,7 +65,7 @@
     grid-column: 1 / -1;
     text-align: center;
     color: $text-secondary;
-    padding: $spacing-md 0;
+    padding: $spacing-32 0;
     font-style: italic;
     font-size: 1.44rem;
 }
@@ -73,7 +73,7 @@
 .season-schedule__status {
     text-align: center;
     color: $text-secondary;
-    margin-bottom: $spacing-xs;
+    margin-bottom: $spacing-8;
 
     // Announce loading without inserting a line above the calendar.
     &--loading {
