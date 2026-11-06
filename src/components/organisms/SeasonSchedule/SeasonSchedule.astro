@@ -1,22 +1,12 @@
 ---
+import type { ScheduleWeek } from "@/types/football.ts";
 import SectionTitle from "@/components/atoms/SectionTitle/SectionTitle.astro";
 import ScheduleRow from "@/components/molecules/ScheduleRow/ScheduleRow.astro";
-import { getScheduleWeekNumber } from "@scraper/config.js";
+import { getScheduleWeekNumber } from "@scraper/config.ts";
 
-interface Match {
-    home: string;
-    away: string;
-    date: string | null;
-    time: string | null;
-    final: boolean;
-    awayScore?: number | null;
-    homeScore?: number | null;
-}
 
-interface Week {
-    week: string; // "REG1"
-    matches: Match[];
-}
+
+type Week = ScheduleWeek;
 
 interface Props {
     weeks: Week[];
@@ -64,10 +54,10 @@ const initialWeek = weeks.find((week) => week.week === defaultWeekId) || weeks[0
 </div>
 
 <script>
-    import { getScheduleWeekNumber } from "@scraper/config.js";
-    import { getTeamId } from "@/utils/team-mapping.js";
+    import { getScheduleWeekNumber } from "@scraper/config.ts";
+    import { getTeamId } from "@/utils/team-mapping.ts";
 
-    import { FAVORITES_KEY, readFavorites } from '@/utils/favorites.js';
+    import { FAVORITES_KEY, readFavorites } from '@/utils/favorites.ts';
     const tabsContainer = document.getElementById("week-tabs")!;
     const host = document.getElementById("schedule-week")!;
     const statusContainer = document.querySelector<HTMLElement>(".season-schedule__status")!;

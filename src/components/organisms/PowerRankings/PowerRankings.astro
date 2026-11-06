@@ -1,6 +1,7 @@
 ---
 import SectionTitle from '@/components/atoms/SectionTitle/SectionTitle.astro';
-import RankingCard, { type Ranking } from '@/components/molecules/RankingCard/RankingCard.astro';
+import type { Ranking } from '@/types/football.ts';
+import RankingCard from '@/components/molecules/RankingCard/RankingCard.astro';
 
 interface Props { rankings: Ranking[]; }
 const { rankings } = Astro.props;

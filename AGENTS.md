@@ -20,10 +20,10 @@ runtime API, backend, or database.
 
 ```
 scraper/                   # Standalone Node scripts (not part of the Astro build)
-  validate.js              # Sanity checks run before any JSON is written; a failure exits non-zero so the cron commits nothing
-  config.js                # Season config: SEASON_YEAR, week boundaries, current-week helper
-  fetch-standings.js       # Scrapes cbssports.com -> src/data/standings.json
-  fetch-nfl-data.js        # Scrapes nfl.com (playoff picture, full schedule, power rankings)
+  validate.ts              # Sanity checks run before any JSON is written; a failure exits non-zero so the cron commits nothing
+  config.ts                # Season config: SEASON_YEAR, week boundaries, current-week helper
+  fetch-standings.ts       # Scrapes cbssports.com -> src/data/standings.json
+  fetch-nfl-data.ts        # Scrapes nfl.com (playoff picture, full schedule, power rankings)
                            # -> src/data/playoff-picture.json + src/data/schedule.json
 
 src/
@@ -32,18 +32,26 @@ src/
   layouts/Layout.astro
   pages/index.astro         # Single page app; reads data/*.json directly via node:fs at build time
   styles/                   # _variables.scss, _mixins.scss, _themes.scss, _base.scss, main.scss
-  utils/clinch.js           # Clinch/elimination computed from standings records (no scraping)
-  utils/team-mapping.js     # City/full-name -> logo id / abbreviation lookup tables
+  utils/clinch.ts           # Clinch/elimination computed from standings records (no scraping)
+  utils/team-mapping.ts     # City/full-name -> logo id / abbreviation lookup tables
 
-start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg into public/sprites.svg
+start-sprite.ts             # Pre-build step: bundles src/images/logos/*.svg into public/sprites.svg
 .github/workflows/update-data.yml  # Cron job: runs `npm run update-data` and auto-commits src/data/*.json
 ```
 
 ## Commands
 
-- `npm run dev` / `npm run build` — runs `start-sprite.js` first (pre/post hooks), then Astro
+- Node >=22.13 is required; `nvm use` selects the tested version in `.nvmrc`.
+  Scrapers and tests execute TypeScript with Node's native type stripping.
+- `npm run check` — Astro diagnostics plus strict `tsc --noEmit` across all source and tests.
+  Run this, `npm test` and `npm run build` before completing changes; run relevant Chrome suites
+  for browser behavior changes. The scraper workflow checks types before collecting new data.
+- `npm run test:schedule` — Chrome lazy-week, cache, race, retry, skeleton and offline checks;
+  requires a production build and preview on port 4322 (or `SCHEDULE_TEST_URL`).
+
+- `npm run dev` / `npm run build` — runs `start-sprite.ts` first (pre/post hooks), then Astro
 - `npm run update-data` — runs both scrapers in sequence, overwrites `src/data/*.json`
-- `npm test` — Node built-in test runner (`tests/*.test.js`, no dependency; `tests/register.js` maps the `@/` alias). No lint script exists
+- `npm test` — Node built-in test runner (`tests/*.test.ts`, no dependency; `tests/register.ts` maps the `@/` alias). No lint script exists
 - `npm run test:modal` — Chrome regression checks for a single schedule-modal event/open per card click;
   requires a production build and preview on port 4322 (or `SCHEDULE_TEST_URL`).
 - `npm run test:components` — Chrome checks for CSS/font delivery, Logo sizes, ranking expansion and game rows;
@@ -51,14 +59,20 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
 - `npm run test:my-teams` — Chrome checks for conditional loading, CLS, carousel, selection and offline use;
   requires a production build and `npm run preview -- --port 4322` (or `MY_TEAMS_TEST_URL`).
 
+## Page priority
+
+My Teams (standalone only) → Projected Matchups → Bubble → Eliminated → Schedule →
+Power Rankings → Standings. The navigation follows the same public section order.
+The week-8 gate remains in place for playoff projections.
+
 ## Data flow (important to understand before editing)
 
-1. `scraper/fetch-standings.js` scrapes CBS Sports standings table → `src/data/standings.json`
+1. `scraper/fetch-standings.ts` scrapes CBS Sports standings table → `src/data/standings.json`
    (seed, team, record per conference).
-2. `scraper/fetch-nfl-data.js` scrapes NFL.com:
+2. `scraper/fetch-nfl-data.ts` scrapes NFL.com:
    - **Playoff picture** (seeds/bubble/eliminated, with probabilities/trends) via **DOM
      text-matching heuristics** (no stable selectors/IDs available on the source page). **Gated
-     behind `PLAYOFF_PICTURE_MIN_WEEK` (week 8, in `scraper/config.js`)** — before that, standings
+     behind `PLAYOFF_PICTURE_MIN_WEEK` (week 8, in `scraper/config.ts`)** — before that, standings
      are too volatile for bubble/eliminated to mean anything, so this section is skipped entirely
      and `src/data/playoff-picture.json` keeps empty `bubble`/`eliminated`/`seeds` arrays (the UI
      already handles empty state).
@@ -68,15 +82,16 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
      `SeasonSchedule` homepage section (fills the gap during weeks 1–7).
    - **Power rankings** (`nfl.com/news/...`) via stable CSS classes (`.nfl-o-ranked-item`) — runs
      every week from week 1, not gated.
-3. `scraper/config.js` centralizes the season year, the 18 weekly boundaries (derived from a single
+3. `scraper/config.ts` centralizes the season year, the 18 weekly boundaries (derived from a single
    `REG18_END` date), and `getCurrentWeekNumber()`. **Update `SEASON_YEAR` and `REG18_END` once at
    the start of each new NFL season** — every other date is derived from them.
 4. A GitHub Actions cron (`update-data.yml`) runs the scrapers on a schedule and auto-commits the
    resulting JSON directly to `main` (`file_pattern: src/data/*.json` already covers `schedule.json`).
    **This routinely diverges from any local work touching the same files** (see gotcha below).
 5. `src/pages/index.astro` reads `src/data/*.json` synchronously via `node:fs` at build time and
-   passes it down as props — everything is static, no client-side fetching of team data.
-6. `src/utils/team-mapping.js` bridges the naming inconsistencies between the two data sources
+   passes it down as props. My Teams fetches its projected static endpoint only in standalone;
+   previous/next weeks load static HTML fragments on demand.
+6. `src/utils/team-mapping.ts` bridges the naming inconsistencies between the two data sources
    (e.g. "L.A. Chargers" vs "Los Angeles Chargers" vs "Chargers") to resolve a logo id used with
    `public/sprites.svg`.
 
@@ -89,46 +104,46 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
   constantly anyway, so losing a remote snapshot is harmless). **One-time setup per clone/machine**:
   run `git config merge.ours.driver true` (the driver itself isn't stored in the repo, only the
   attribute mapping is). Prefer `git pull` before pushing over reaching for `--force`.
-- **`scraper/fetch-nfl-data.js` is season-specific**: only `SEASON_YEAR` and `REG18_END` in
-  `scraper/config.js` need to change at the start of each new NFL season — every other week
+- **`scraper/fetch-nfl-data.ts` is season-specific**: only `SEASON_YEAR` and `REG18_END` in
+  `scraper/config.ts` need to change at the start of each new NFL season — every other week
   boundary and URL is derived from them.
 - **The NFL.com scraping is heuristic-based** (matches team names in arbitrary DOM nodes, infers
   sections by vertical pixel position via `getBoundingClientRect().top`, infers trend
   direction/probability from nearby text via regex). It is expected to break silently if
-  nfl.com changes its markup/layout. `scraper/validate.js` only checks structure (team counts, 7 seeds, 17 games per team), so a subtly wrong value still gets through.
-- `src/utils/team-mapping.js` maps both `'Tampa Bay'` and `'Tampa Bay Buccaneers'` to
+  nfl.com changes its markup/layout. `scraper/validate.ts` only checks structure (team counts, 7 seeds, 17 games per team), so a subtly wrong value still gets through.
+- `src/utils/team-mapping.ts` maps both `'Tampa Bay'` and `'Tampa Bay Buccaneers'` to
   `'buccaneers'`, matching `src/images/logos/buccaneers.svg`. Keep logo filenames and sprite
   mappings in sync.
 - Scraper debugging tends to produce scratch artifacts (dumped HTML/JSON snapshots, one-off
-  `inspect-*.js` probes, screenshots). These were previously committed by mistake; the matching
-  patterns are now in `.gitignore` (`*_debug.html`, `temp_*.html`, `inspect-*.js`, etc.) — don't
+  `inspect-*.ts` probes, screenshots). These were previously committed by mistake; the matching
+  patterns are now in `.gitignore` (`*_debug.html`, `temp_*.html`, `inspect-*.ts`, etc.) — don't
   commit new ones.
 - `MyTeams.astro` contains a small standalone-only loader and a fixed-height carousel shell.
   `Layout.astro` detects standalone (including iOS) before paint; its visibility and sizing rules
-  are part of the complete inline page stylesheet. The lazy `my-teams.js` module loads the projected static
+  are part of the complete inline page stylesheet. The lazy `my-teams.ts` module loads the projected static
   `/my-teams.json` endpoint and reads/writes `nfl-favorites`. Its molecule styles are compiled with
   `?inline` into the lazy module: normal CSS imports would be hoisted by Astro onto the homepage.
   These resources are excluded from Workbox precaching and cached only after standalone use.
   Remaining games are filtered using `getScheduleWeekNumber()` at runtime, matching SeasonSchedule.
-  The organism coordinates `FavoriteTeamCard` and `FavoritesSelector`; the selector's lazy JS owns
-  its draft selection and accepts an `onSave` callback. `utils/favorites.js` is the shared storage
-  contract for MyTeams, Standings and SeasonSchedule. `utils/load-my-teams.js` fetches dashboard
-  data at runtime; `utils/my-teams-data.js` remains the build-time projection for the JSON endpoint.
+  The organism coordinates `FavoriteTeamCard` and `FavoritesSelector`; the selector's lazy TypeScript module owns
+  its draft selection and accepts an `onSave` callback. `utils/favorites.ts` is the shared storage
+  contract for MyTeams, Standings and SeasonSchedule. `utils/load-my-teams.ts` fetches dashboard
+  data at runtime; `utils/my-teams-data.ts` remains the build-time projection for the JSON endpoint.
 
 ## Conventions observed
 
 - Use `@/` for imports from `src/` and `@scraper/` for shared scraper configuration
   imported by the app. Aliases are declared in `tsconfig.json` (editor/Astro) and
-  `astro.config.mjs` (Vite, SCSS and assets); keep both mappings in sync.
+  `astro.config.ts` (Vite, SCSS and assets); keep both mappings in sync.
   Standalone Node scraper scripts retain native Node imports.
 
 - Components: `components/{atoms,molecules,organisms}/Component/Component.astro` with
   colocated `Component.scss`. Atoms are presentational elements, molecules compose atoms,
   organisms are page sections (`Header`, `Standings`, `MyTeams`, etc.).
-- Runtime-only molecules use a colocated JS renderer/controller (`FavoriteTeamCard`, `GameItem`,
+- Runtime-only molecules use a colocated TypeScript renderer/controller (`FavoriteTeamCard`, `GameItem`,
   `FavoritesSelector`). `RankingCard` owns its markup, styles and expansion; `PowerRankings` owns
   the list. Keep modal orchestration separate from `GameItem` presentation.
-- `Logo.astro` and its client renderer `Logo.js` share sizes `md=40`, `lg=55`.
+- `Logo.astro` and its client renderer `Logo.ts` share sizes `md=40`, `lg=55`.
   Matching SCSS tokens are `$logo-md/lg`; keep intrinsic dimensions and CSS in sync.
   TeamRow uses the same `md`/`lg` sizes and passes them directly to Logo; its default is `lg`.
 - Use BEM classes with component-owned states (e.g. `season-schedule__tab--active`,
@@ -146,8 +161,12 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
   runtime game/favorite markup also consume them.
 - Responsive styles are mobile first: base rules for phones, then `wide-mobile` (481px),
   `tablet` (768px), and `desktop` (1024px) mixins using `min-width`.
-- Client-side interactivity lives in inline `<script>` (or `<script define:vars>`) tags per
-  component rather than shared TS modules.
+- All authored code is TypeScript: app modules, Astro scripts, configuration, scrapers and tests.
+  Use shared football types from `src/types/football.ts`; do not add `.js`/`.mjs` source files or
+  silence checks with `any`/`@ts-nocheck`. Astro's processed `<script>` blocks support TypeScript.
+  `scripts/bootstrap.ts` is compiled and serialized into the head by Layout for synchronous
+  theme/standalone detection; keep this function self-contained (no runtime imports/closures).
+  Browser output and Workbox asset patterns still use `.js`: TypeScript compiles to JavaScript.
 - SCSS variables/mixins are centralized in `src/styles/_variables.scss` and `_mixins.scss`.
   Literal colors live only there; components never hardcode them.
 - Spacing uses the shared numeric `$spacing-*` scale: the suffix is its pixel equivalent at
@@ -188,9 +207,7 @@ start-sprite.js             # Pre-build step: bundles src/images/logos/*.svg int
   introducing preload or another family.
 - Dart Sass deprecation warnings (`global-builtin`) in the dev log are pre-existing noise;
   use module functions (`string.unquote`, `math.div`) in new code.
-- Pre-existing: `virtual:pwa-info` and an implicit `any` in `ScheduleModal.astro` show up in
-  editor diagnostics; long team names in matchup cards can break mid-word
-  (`overflow-wrap: anywhere` in `TeamRow.scss`).
+- Long team names in matchup cards can break mid-word (`overflow-wrap: anywhere` in `TeamRow.scss`).
 
 ## For AI Assistants
 

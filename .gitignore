@@ -1,5 +1,6 @@
 # build output
 dist/
+dev-dist/
 # generated types
 .astro/
 
@@ -30,4 +31,5 @@ temp_*.html
 *_output.txt
 debug_lines.json
 inspect-*.js
+inspect-*.ts
 verify_*.webp

@@ -1,5 +1,5 @@
 ---
-import { PLAYOFF_PICTURE_MIN_WEEK } from "@scraper/config.js";
+import { PLAYOFF_PICTURE_MIN_WEEK } from "@scraper/config.ts";
 
 interface Props {
     currentWeek?: number;
@@ -25,9 +25,6 @@ const playoffLinks = [
 
         <nav class="main-nav">
             <ul class="main-nav__list">
-                <li class="main-nav__item">
-                    <a href="#schedule" class="main-nav__link">Schedule</a>
-                </li>
                 {playoffLinks.map(({ href, label }) => (
                     <li class="main-nav__item">
                         <a
@@ -41,6 +38,9 @@ const playoffLinks = [
                         </a>
                     </li>
                 ))}
+                <li class="main-nav__item">
+                    <a href="#schedule" class="main-nav__link">Schedule</a>
+                </li>
                 <li class="main-nav__item">
                     <a href="#power-rankings" class="main-nav__link"
                         >Power Rankings</a>

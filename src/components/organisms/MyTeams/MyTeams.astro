@@ -61,7 +61,7 @@ import FavoritesSelector from '@/components/molecules/FavoritesSelector/Favorite
         message.hidden = true;
         status.textContent = 'Loading favorite teams…';
         try {
-            const { initMyTeams } = await import('./my-teams.js');
+            const { initMyTeams } = await import('./my-teams.ts');
             await initMyTeams();
             initialized = true;
         } catch {

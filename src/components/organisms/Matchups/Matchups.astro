@@ -1,34 +1,15 @@
 ---
-import { PLAYOFF_PICTURE_MIN_WEEK as MIN_WEEK } from "@scraper/config.js";
+import type { StandingTeam, PlayoffTeam } from "@/types/football.ts";
+import { PLAYOFF_PICTURE_MIN_WEEK as MIN_WEEK } from "@scraper/config.ts";
 import SectionTitle from "@/components/atoms/SectionTitle/SectionTitle.astro";
 import ConferenceHeader from "@/components/atoms/ConferenceHeader/ConferenceHeader.astro";
 import UnavailableNotice from "@/components/atoms/UnavailableNotice/UnavailableNotice.astro";
 
 import MatchupCard from "@/components/molecules/MatchupCard/MatchupCard.astro";
 
-interface Team {
-    seed: string;
-    team: string;
-    record: string;
-}
+type Team = StandingTeam;
 
-interface ScrapedTeam {
-    name: string;
-    record: string;
-    probability: string;
-    trend: string;
-    trendDirection: string;
-    nextOpponent?: {
-        opponent: string;
-        location: string;
-    };
-    remainingSchedule?: Array<{
-        opponent: string;
-        location: string;
-        week: string;
-        opponentRecord: string;
-    }>;
-}
+type ScrapedTeam = PlayoffTeam;
 
 interface ScrapedData {
     AFC: ScrapedTeam[];
@@ -46,7 +27,7 @@ const { afc, nfc, seeds, currentWeek } = Astro.props;
 
 const isAvailable = currentWeek === undefined || currentWeek >= MIN_WEEK;
 
-import { getTeamId } from "@/utils/team-mapping.js";
+import { getTeamId } from "@/utils/team-mapping.ts";
 
 function getMatchups(teams: Team[]) {
     // Top 7 make playoffs

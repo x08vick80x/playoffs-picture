@@ -1,23 +1,16 @@
 ---
+import type { ScheduleMatch } from "@/types/football.ts";
 import TeamRow from "@/components/molecules/TeamRow/TeamRow.astro";
-import { getTeamId } from "@/utils/team-mapping.js";
+import { getTeamId } from "@/utils/team-mapping.ts";
 
-interface Match {
-    home: string;
-    away: string;
-    date: string | null;
-    time: string | null;
-    final: boolean;
-    awayScore?: number | null;
-    homeScore?: number | null;
-}
+type Match = ScheduleMatch;
 
 interface Props {
     match: Match;
 }
 
 const { match } = Astro.props;
-const compactDate = (date: string | null) => date?.replace(
+const compactDate = (date?: string | null) => date?.replace(
     /\b(January|February|March|April|May|June|July|August|September|October|November|December)\b/g,
     (month) => month.slice(0, 3),
 );

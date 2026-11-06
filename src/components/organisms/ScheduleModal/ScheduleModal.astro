@@ -22,8 +22,8 @@
 </dialog>
 
 <script>
-    import { renderGameItem } from '@/components/molecules/GameItem/GameItem.js';
-    import { getTeamId } from "@/utils/team-mapping.js";
+    import { renderGameItem } from '@/components/molecules/GameItem/GameItem.ts';
+    import { getTeamId } from "@/utils/team-mapping.ts";
 
     const modal = document.getElementById("schedule-modal") as HTMLDialogElement | null;
     const closeBtn = document.getElementById("close-modal");
@@ -47,7 +47,7 @@
     });
 
     window.addEventListener("open-schedule-modal", (e) => {
-        const { teamName, schedule } = (e as CustomEvent).detail;
+        const { teamName, schedule } = e.detail;
 
         if (title) title.textContent = teamName;
         if (logo) logo.setAttribute("href", `/sprites.svg#${getTeamId(teamName)}`);

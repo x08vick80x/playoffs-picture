@@ -1,14 +1,10 @@
 ---
+import type { StandingTeam } from "@/types/football.ts";
 import SectionTitle from '@/components/atoms/SectionTitle/SectionTitle.astro';
 import StandingsTable from '@/components/molecules/StandingsTable/StandingsTable.astro';
-import { DIVISIONS, getDivisionTeams, rankLeague } from '@/utils/standings.js';
+import { DIVISIONS, getDivisionTeams, rankLeague } from '@/utils/standings.ts';
 
-interface Team {
-    seed: string;
-    team: string;
-    record: string;
-    status: string;
-}
+type Team = StandingTeam;
 
 interface Props {
     afc: Team[];
@@ -74,7 +70,7 @@ const filters = [
 </div>
 
 <script>
-    import { FAVORITES_KEY, readFavorites } from '@/utils/favorites.js';
+    import { FAVORITES_KEY, readFavorites } from '@/utils/favorites.ts';
 
     document.querySelectorAll<HTMLElement>('[data-standings]').forEach(container => {
         const links = container.querySelectorAll<HTMLAnchorElement>('[data-standings-filter]');

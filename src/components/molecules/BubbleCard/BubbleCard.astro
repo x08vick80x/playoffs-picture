@@ -1,23 +1,15 @@
 ---
+import type { PlayoffTeam } from "@/types/football.ts";
 import TeamRow from "@/components/molecules/TeamRow/TeamRow.astro";
 
 interface Props {
-    team: {
-        name: string;
-        record: string;
-        probability?: string;
-        nextOpponent?: {
-            location: string;
-            opponent: string;
-        };
-        remainingSchedule?: any[];
-    };
+    team: PlayoffTeam;
     isEliminated?: boolean;
 }
 
 const { team, isEliminated = false } = Astro.props;
 
-const getSched = (data: any) => JSON.stringify(data?.remainingSchedule || []);
+const getSched = (data: PlayoffTeam) => JSON.stringify(data?.remainingSchedule || []);
 ---
 
 <div

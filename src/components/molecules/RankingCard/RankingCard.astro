@@ -1,12 +1,8 @@
 ---
 import Logo from '@/components/atoms/Logo/Logo.astro';
 
-export interface Ranking {
-    rank: number;
-    team: string;
-    trend?: string;
-    blurb: string;
-}
+import type { Ranking } from '@/types/football.ts';
+
 interface Props { item: Ranking; }
 const { item } = Astro.props;
 const trendModifier = item.trend?.startsWith('-') ? 'negative' : 'positive';

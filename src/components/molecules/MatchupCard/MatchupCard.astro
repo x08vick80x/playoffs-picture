@@ -1,7 +1,8 @@
 ---
+import type { PlayoffTeam } from "@/types/football.ts";
 import TeamRow from "@/components/molecules/TeamRow/TeamRow.astro";
 import Badge from "@/components/atoms/Badge/Badge.astro";
-import { getTeamColor } from "@/utils/team-mapping.js";
+import { getTeamColor } from "@/utils/team-mapping.ts";
 
 interface TeamData {
     team: string; // Name
@@ -9,14 +10,7 @@ interface TeamData {
     record?: string;
 }
 
-interface ScrapedData {
-    probability?: string;
-    nextOpponent?: {
-        opponent: string;
-        location: string;
-    };
-    remainingSchedule?: any[];
-}
+type ScrapedData = Pick<PlayoffTeam, 'probability' | 'nextOpponent' | 'remainingSchedule'>;
 
 interface Props {
     // Matchup Props

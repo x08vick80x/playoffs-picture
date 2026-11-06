@@ -1,4 +1,5 @@
 ---
+import type { Standings as StandingsData, PlayoffPicture, ScheduleData } from "@/types/football.ts";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/organisms/Header/Header.astro";
 import Standings from "@/components/organisms/Standings/Standings.astro";
@@ -13,27 +14,27 @@ import LastUpdated from "@/components/atoms/LastUpdated/LastUpdated.astro";
 import Button from "@/components/atoms/Button/Button.astro";
 import BackToTop from "@/components/atoms/BackToTop/BackToTop.astro";
 import SeasonSchedule from "@/components/organisms/SeasonSchedule/SeasonSchedule.astro";
-import { getClinchStatuses, mergeEliminated } from "@/utils/clinch.js";
+import { getClinchStatuses, mergeEliminated } from "@/utils/clinch.ts";
 import fs from "node:fs";
 
 import path from "node:path";
 
 // Load data using Node fs
 const standingsPath = path.resolve("./src/data/standings.json");
-const standings = JSON.parse(fs.readFileSync(standingsPath, "utf-8"));
+const standings: StandingsData = JSON.parse(fs.readFileSync(standingsPath, "utf-8"));
 
 const playoffPicturePath = path.resolve("./src/data/playoff-picture.json");
-const playoffPicture = JSON.parse(fs.readFileSync(playoffPicturePath, "utf-8"));
+const playoffPicture: PlayoffPicture = JSON.parse(fs.readFileSync(playoffPicturePath, "utf-8"));
 
 const schedulePath = path.resolve("./src/data/schedule.json");
-const schedule = JSON.parse(fs.readFileSync(schedulePath, "utf-8"));
+const schedule: ScheduleData = JSON.parse(fs.readFileSync(schedulePath, "utf-8"));
 
 // Computed from standings; the scraped eliminated list only fills in extra detail.
 const clinch = getClinchStatuses(standings);
 const eliminated = mergeEliminated(playoffPicture.eliminated, standings, clinch, schedule.teamSchedules);
 
 // Data time from the scraper; the build time says nothing about freshness.
-const lastUpdatedIso: string = standings.lastUpdated;
+const lastUpdatedIso: string = standings.lastUpdated!;
 const lastUpdated = new Date(lastUpdatedIso).toLocaleString("en-US", {
 	timeZone: "America/New_York",
 	day: "numeric",
@@ -85,7 +86,7 @@ const lastUpdated = new Date(lastUpdatedIso).toLocaleString("en-US", {
 				// Check if app is already installed/running in standalone mode
 				const isStandalone = window.matchMedia(
 					"(display-mode: standalone)",
-				).matches || (navigator as Navigator & { standalone?: boolean }).standalone === true;
+				).matches || navigator.standalone === true;
 
 				if (isStandalone) {
 					// Standalone: hide the installation prompt.
@@ -127,12 +128,6 @@ const lastUpdated = new Date(lastUpdatedIso).toLocaleString("en-US", {
 				});
 			</script>
 
-			<section id="schedule">
-				<SeasonSchedule
-					weeks={schedule.weeks}
-				/>
-			</section>
-
 			<section id="matchups">
 				<Matchups
 					afc={standings.AFC}
@@ -148,8 +143,14 @@ const lastUpdated = new Date(lastUpdatedIso).toLocaleString("en-US", {
 				currentWeek={schedule.currentWeek}
 			/>
 
+			<section id="schedule">
+				<SeasonSchedule
+					weeks={schedule.weeks}
+				/>
+			</section>
+
 			<section id="power-rankings">
-				<PowerRankings rankings={playoffPicture.powerRankings} />
+				<PowerRankings rankings={playoffPicture.powerRankings || []} />
 			</section>
 
 			<section id="standings">

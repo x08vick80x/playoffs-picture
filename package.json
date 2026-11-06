@@ -3,18 +3,19 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "predev": "node start-sprite.js",
+    "predev": "node --experimental-strip-types start-sprite.ts",
     "dev": "astro dev",
-    "prebuild": "node start-sprite.js",
+    "prebuild": "node --experimental-strip-types start-sprite.ts",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "node --import ./tests/register.js --test tests/*.test.js",
-    "test:schedule": "node tests/season-schedule.browser.mjs",
-    "test:my-teams": "node tests/my-teams.browser.mjs",
-    "test:modal": "node tests/schedule-modal.browser.mjs",
-    "test:components": "node --import ./tests/register.js tests/components.browser.mjs",
-    "update-data": "node scraper/fetch-standings.js && node scraper/fetch-nfl-data.js"
+    "test": "node --experimental-strip-types --import ./tests/register.ts --test tests/*.test.ts",
+    "test:schedule": "node --experimental-strip-types --import ./tests/register.ts tests/season-schedule.browser.ts",
+    "test:my-teams": "node --experimental-strip-types --import ./tests/register.ts tests/my-teams.browser.ts",
+    "test:modal": "node --experimental-strip-types --import ./tests/register.ts tests/schedule-modal.browser.ts",
+    "test:components": "node --experimental-strip-types --import ./tests/register.ts tests/components.browser.ts",
+    "update-data": "node --experimental-strip-types scraper/fetch-standings.ts && node --experimental-strip-types scraper/fetch-nfl-data.ts",
+    "check": "astro check && tsc --noEmit"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -24,5 +25,13 @@
     "puppeteer": "^24.32.1",
     "sass": "^1.95.0",
     "vite-plugin-pwa": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3"
   }
 }
