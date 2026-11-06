@@ -62,9 +62,3 @@ const trendModifier = item.trend?.startsWith('-') ? 'negative' : 'positive';
         </div>
     </div>
 </article>
-
-<script>
-    document.querySelectorAll('.ranking-item').forEach(item => {
-        item.addEventListener('click', () => item.classList.toggle('ranking-item--expanded'));
-    });
-</script>

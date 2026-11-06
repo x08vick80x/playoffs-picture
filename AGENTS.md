@@ -118,7 +118,8 @@ The week-8 gate remains in place for playoff projections.
   `inspect-*.ts` probes, screenshots). These were previously committed by mistake; the matching
   patterns are now in `.gitignore` (`*_debug.html`, `temp_*.html`, `inspect-*.ts`, etc.) — don't
   commit new ones.
-- `MyTeams.astro` contains a small standalone-only loader and a fixed-height carousel shell.
+- `MyTeams.astro` contains the fixed-height carousel shell; its colocated `MyTeams.loader.ts`
+  initializes the standalone-only loader from `src/app.ts`.
   `Layout.astro` detects standalone (including iOS) before paint; its visibility and sizing rules
   are part of the complete inline page stylesheet. The lazy `my-teams.ts` module loads the projected static
   `/my-teams.json` endpoint and reads/writes `nfl-favorites`. Its molecule styles are compiled with
@@ -161,6 +162,13 @@ The week-8 gate remains in place for playoff projections.
   runtime game/favorite markup also consume them.
 - Responsive styles are mobile first: base rules for phones, then `wide-mobile` (481px),
   `tablet` (768px), and `desktop` (1024px) mixins using `min-width`.
+- `src/app.ts` is the single browser entry loaded by Layout. It initializes the components
+  through colocated TypeScript modules (`initHeader`, `initSeasonSchedule`, etc.). When adding
+  an interaction, wire its initializer here instead of adding another component `<script>`.
+  Vite combines the eager code and shared utilities automatically; do not force all dynamic
+  imports into the main bundle. `MyTeams.loader.ts` imports `my-teams.ts` only in standalone.
+  My Teams and Workbox remain separate async chunks; Vercel analytics keeps its own loader.
+  The before-paint appearance bootstrap remains inline in the head.
 - All authored code is TypeScript: app modules, Astro scripts, configuration, scrapers and tests.
   Use shared football types from `src/types/football.ts`; do not add `.js`/`.mjs` source files or
   silence checks with `any`/`@ts-nocheck`. Astro's processed `<script>` blocks support TypeScript.

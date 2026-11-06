@@ -12,7 +12,7 @@
 
 .matchups__conferences {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: $spacing-32;
     max-width: 1000px;
     margin: 0 auto;

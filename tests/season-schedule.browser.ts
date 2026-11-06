@@ -36,8 +36,11 @@ try {
 
     console.log('Passed: initial week without fragment fetch.');
     // Fetch once, reuse cached markup, and keep a single mounted panel.
+    const initialScroll = await page.evaluate(() => ({ x: scrollX, y: scrollY }));
     await clickWeek(page, others[0]);
     await waitForWeek(page, others[0]);
+    await page.waitForNetworkIdle();
+    assert.deepEqual(await page.evaluate(() => ({ x: scrollX, y: scrollY })), initialScroll, 'centering a week must scroll only the tab strip');
     assert.equal(requests.length, 1);
     assert.equal(await page.$$eval('.schedule-row', rows => rows.length), schedule.weeks.find(w => w.week === others[0])!.matches.length);
     assert.equal(await page.$$eval('.schedule-row--favorite', rows => rows.length), 1);

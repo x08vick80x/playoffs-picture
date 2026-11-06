@@ -15,6 +15,36 @@ try {
     assert.deepEqual(await page.$$eval('main section[id]', sections => sections.map(section => section.id)), ['my-teams-root', ...expectedOrder]);
     assert.deepEqual(await page.$$eval('.main-nav a[href^="#"]', links => links.map(link => link.getAttribute('href')?.slice(1))), expectedOrder);
 
+    // One application bundle plus the separate Workbox registration library.
+    const scripts = await page.evaluate(() => performance.getEntriesByType('resource')
+        .map(entry => new URL(entry.name).pathname)
+        .filter(path => path.startsWith('/_astro/') && path.endsWith('.js')));
+    assert.equal(new Set(scripts).size, 2, 'startup must load only the app bundle and Workbox');
+    assert.ok(scripts.some(path => path.includes('workbox-window')));
+    assert.ok(!scripts.some(path => path.includes('my-teams.')), 'dashboard code stays lazy');
+
+    // Initializers moved to the common entry must still run once and handle page controls.
+    const initialTheme = await page.$eval('html', el => el.dataset.theme);
+    await page.click('.theme-toggle');
+    const changedTheme = initialTheme === 'dark' ? 'light' : 'dark';
+    assert.equal(await page.$eval('html', el => el.dataset.theme), changedTheme);
+    assert.equal(await page.evaluate(() => localStorage.getItem('nfl-theme')), changedTheme);
+    assert.ok(await page.$eval('.last-updated__ago', el => Boolean(el.textContent)));
+    await page.evaluate(() => {
+        const event = new Event('beforeinstallprompt', { cancelable: true });
+        Object.assign(event, { prompt: async () => {}, userChoice: Promise.resolve({ outcome: 'dismissed', platform: 'web' }) });
+        window.dispatchEvent(event);
+    });
+    assert.equal(await page.$eval('#install-container', el => (el as HTMLElement).hidden), false);
+    await page.click('#install-pwa');
+    assert.equal(await page.evaluate(() => window.deferredPrompt), null);
+    await page.evaluate(() => dispatchEvent(new Event('appinstalled')));
+    assert.equal(await page.$eval('#install-container', el => (el as HTMLElement).hidden), true);
+    await page.evaluate(() => window.scrollTo({ top: 900, behavior: 'instant' }));
+    await page.waitForSelector('.back-to-top--visible');
+    await page.click('.back-to-top');
+    await page.waitForFunction(() => window.scrollY === 0);
+
     // One inline stylesheet delivery, with only the font actually supplied by the app.
     const delivery = await page.evaluate(() => ({
         externalCSS: performance.getEntriesByType('resource').filter(entry => new URL(entry.name).pathname.endsWith('.css')).length,
@@ -75,5 +105,5 @@ try {
     assert.equal(await page.$('#schedule-list img'), null, 'scraped text must not become markup');
     assert.equal(await page.$eval('.game-item:last-child use', el => el.getAttribute('href')), '/sprites.svg#buccaneers');
     assert.deepEqual(errors, []);
-    console.log('Passed: CSS delivered once, one supplied font, both Logo sizes agree with CSS, SSR card dimensions, rankings expand/collapse in both themes/viewports, game dates, next opponent, records and escaped text.');
+    console.log('Passed: one app bundle plus Workbox, theme/install/back-to-top controls, CSS delivered once, one supplied font, both Logo sizes agree with CSS, SSR card dimensions, rankings expand/collapse in both themes/viewports, game dates, next opponent, records and escaped text.');
 } finally { await browser.close(); }
