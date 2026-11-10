@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-11-09T14:46:22.817Z",
+  "lastUpdated": "2026-11-10T14:10:25.762Z",
   "AFC": [
     {
       "seed": "1",
       "team": "Buffalo",
-      "record": "6-1-0",
+      "record": "7-1-0",
       "status": ""
     },
     {
@@ -107,8 +107,8 @@
     },
     {
       "seed": "2",
-      "team": "Minnesota",
-      "record": "6-1-0",
+      "team": "Chicago",
+      "record": "7-2-0",
       "status": ""
     },
     {
@@ -125,13 +125,13 @@
     },
     {
       "seed": "5",
-      "team": "Chicago",
-      "record": "7-2-0",
+      "team": "Detroit",
+      "record": "6-2-0",
       "status": ""
     },
     {
       "seed": "6",
-      "team": "Detroit",
+      "team": "Minnesota",
       "record": "6-2-0",
       "status": ""
     },
