@@ -1275,15 +1275,6 @@
       "week": "REG10",
       "matches": [
         {
-          "home": "Bengals",
-          "away": "Steelers",
-          "date": "Sunday, November 15",
-          "time": "8:20 PM",
-          "final": false,
-          "awayScore": null,
-          "homeScore": null
-        },
-        {
           "home": "Ravens",
           "away": "Chargers",
           "date": "Monday, November 16",
@@ -1399,6 +1390,15 @@
           "final": true,
           "awayScore": 46,
           "homeScore": 40
+        },
+        {
+          "home": "Bengals",
+          "away": "Steelers",
+          "date": "Sunday, November 15",
+          "time": null,
+          "final": true,
+          "awayScore": 18,
+          "homeScore": 38
         }
       ]
     },
@@ -2542,154 +2542,6 @@
     }
   ],
   "teamSchedules": {
-    "Steelers": [
-      {
-        "opponent": "Bengals",
-        "location": "@",
-        "week": "REG10",
-        "date": "Sunday, November 15",
-        "time": "8:20 PM",
-        "opponentRecord": "6-2-0"
-      },
-      {
-        "opponent": "Eagles",
-        "location": "@",
-        "week": "REG11",
-        "date": "Sunday, November 22",
-        "time": "1:00 PM",
-        "opponentRecord": "2-7-0"
-      },
-      {
-        "opponent": "Broncos",
-        "location": "vs",
-        "week": "REG12",
-        "date": "Friday, November 27",
-        "time": "3:00 PM",
-        "opponentRecord": "7-2-0"
-      },
-      {
-        "opponent": "Texans",
-        "location": "vs",
-        "week": "REG13",
-        "date": "Sunday, December 6",
-        "time": "8:20 PM",
-        "opponentRecord": "3-6-0"
-      },
-      {
-        "opponent": "Jaguars",
-        "location": "@",
-        "week": "REG14",
-        "date": "Monday, December 14",
-        "time": "8:15 PM",
-        "opponentRecord": "7-2-0"
-      },
-      {
-        "opponent": "Ravens",
-        "location": "vs",
-        "week": "REG15",
-        "date": "Sunday, December 20",
-        "time": "1:00 PM",
-        "opponentRecord": "4-5-0"
-      },
-      {
-        "opponent": "Panthers",
-        "location": "vs",
-        "week": "REG16",
-        "date": null,
-        "time": null,
-        "opponentRecord": "4-5-0"
-      },
-      {
-        "opponent": "Titans",
-        "location": "@",
-        "week": "REG17",
-        "date": "Sunday, January 3",
-        "time": "1:00 PM",
-        "opponentRecord": "1-8-0"
-      },
-      {
-        "opponent": "Ravens",
-        "location": "@",
-        "week": "REG18",
-        "date": null,
-        "time": null,
-        "opponentRecord": "4-5-0"
-      }
-    ],
-    "Bengals": [
-      {
-        "opponent": "Steelers",
-        "location": "vs",
-        "week": "REG10",
-        "date": "Sunday, November 15",
-        "time": "8:20 PM",
-        "opponentRecord": "6-2-0"
-      },
-      {
-        "opponent": "Commanders",
-        "location": "@",
-        "week": "REG11",
-        "date": "Monday, November 23",
-        "time": "8:15 PM",
-        "opponentRecord": "3-5-1"
-      },
-      {
-        "opponent": "Saints",
-        "location": "vs",
-        "week": "REG12",
-        "date": "Sunday, November 29",
-        "time": "1:00 PM",
-        "opponentRecord": "3-6-0"
-      },
-      {
-        "opponent": "Browns",
-        "location": "@",
-        "week": "REG13",
-        "date": "Sunday, December 6",
-        "time": "1:00 PM",
-        "opponentRecord": "6-4-0"
-      },
-      {
-        "opponent": "Chiefs",
-        "location": "vs",
-        "week": "REG14",
-        "date": "Sunday, December 13",
-        "time": "4:25 PM",
-        "opponentRecord": "7-2-0"
-      },
-      {
-        "opponent": "Panthers",
-        "location": "@",
-        "week": "REG15",
-        "date": "Sunday, December 20",
-        "time": "1:00 PM",
-        "opponentRecord": "4-5-0"
-      },
-      {
-        "opponent": "Colts",
-        "location": "@",
-        "week": "REG16",
-        "date": null,
-        "time": null,
-        "opponentRecord": "3-7-0"
-      },
-      {
-        "opponent": "Ravens",
-        "location": "vs",
-        "week": "REG17",
-        "date": "Thursday, December 31",
-        "time": "8:15 PM",
-        "opponentRecord": "4-5-0"
-      },
-      {
-        "opponent": "Browns",
-        "location": "vs",
-        "week": "REG18",
-        "date": null,
-        "time": null,
-        "opponentRecord": "6-4-0"
-      }
-    ],
     "Chargers": [
       {
         "opponent": "Ravens",
@@ -2803,7 +2655,7 @@
         "week": "REG15",
         "date": "Sunday, December 20",
         "time": "1:00 PM",
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "6-3-0"
       },
       {
         "opponent": "Browns",
@@ -2819,7 +2671,7 @@
         "week": "REG17",
         "date": "Thursday, December 31",
         "time": "8:15 PM",
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "7-2-0"
       },
       {
         "opponent": "Steelers",
@@ -2827,7 +2679,7 @@
         "week": "REG18",
         "date": null,
         "time": null,
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "6-3-0"
       }
     ],
     "Commanders": [
@@ -2845,7 +2697,7 @@
         "week": "REG11",
         "date": "Monday, November 23",
         "time": "8:15 PM",
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "7-2-0"
       },
       {
         "opponent": "Cardinals",
@@ -3157,7 +3009,7 @@
         "week": "REG14",
         "date": "Sunday, December 13",
         "time": "4:25 PM",
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "7-2-0"
       },
       {
         "opponent": "Patriots",
@@ -3289,7 +3141,7 @@
         "week": "REG13",
         "date": "Sunday, December 6",
         "time": "8:20 PM",
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "6-3-0"
       },
       {
         "opponent": "Commanders",
@@ -3355,7 +3207,7 @@
         "week": "REG13",
         "date": "Sunday, December 6",
         "time": "1:00 PM",
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "7-2-0"
       },
       {
         "opponent": "Falcons",
@@ -3395,7 +3247,7 @@
         "week": "REG18",
         "date": null,
         "time": null,
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "7-2-0"
       }
     ],
     "Vikings": [
@@ -3659,7 +3511,7 @@
         "week": "REG16",
         "date": null,
         "time": null,
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "7-2-0"
       },
       {
         "opponent": "Browns",
@@ -3725,7 +3577,7 @@
         "week": "REG15",
         "date": "Sunday, December 20",
         "time": "1:00 PM",
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "7-2-0"
       },
       {
         "opponent": "Steelers",
@@ -3733,7 +3585,7 @@
         "week": "REG16",
         "date": null,
         "time": null,
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "6-3-0"
       },
       {
         "opponent": "Seahawks",
@@ -3775,7 +3627,7 @@
         "week": "REG12",
         "date": "Sunday, November 29",
         "time": "1:00 PM",
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "7-2-0"
       },
       {
         "opponent": "Packers",
@@ -4005,7 +3857,7 @@
         "week": "REG14",
         "date": "Monday, December 14",
         "time": "8:15 PM",
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "6-3-0"
       },
       {
         "opponent": "Texans",
@@ -4103,7 +3955,7 @@
         "week": "REG17",
         "date": "Sunday, January 3",
         "time": "1:00 PM",
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "6-3-0"
       },
       {
         "opponent": "Texans",
@@ -4518,6 +4370,154 @@
         "opponentRecord": "3-5-1"
       }
     ],
+    "Steelers": [
+      {
+        "opponent": "Bengals",
+        "location": "@",
+        "week": "REG10",
+        "date": "Sunday, November 15",
+        "time": null,
+        "opponentRecord": "7-2-0"
+      },
+      {
+        "opponent": "Eagles",
+        "location": "@",
+        "week": "REG11",
+        "date": "Sunday, November 22",
+        "time": "1:00 PM",
+        "opponentRecord": "2-7-0"
+      },
+      {
+        "opponent": "Broncos",
+        "location": "vs",
+        "week": "REG12",
+        "date": "Friday, November 27",
+        "time": "3:00 PM",
+        "opponentRecord": "7-2-0"
+      },
+      {
+        "opponent": "Texans",
+        "location": "vs",
+        "week": "REG13",
+        "date": "Sunday, December 6",
+        "time": "8:20 PM",
+        "opponentRecord": "3-6-0"
+      },
+      {
+        "opponent": "Jaguars",
+        "location": "@",
+        "week": "REG14",
+        "date": "Monday, December 14",
+        "time": "8:15 PM",
+        "opponentRecord": "7-2-0"
+      },
+      {
+        "opponent": "Ravens",
+        "location": "vs",
+        "week": "REG15",
+        "date": "Sunday, December 20",
+        "time": "1:00 PM",
+        "opponentRecord": "4-5-0"
+      },
+      {
+        "opponent": "Panthers",
+        "location": "vs",
+        "week": "REG16",
+        "date": null,
+        "time": null,
+        "opponentRecord": "4-5-0"
+      },
+      {
+        "opponent": "Titans",
+        "location": "@",
+        "week": "REG17",
+        "date": "Sunday, January 3",
+        "time": "1:00 PM",
+        "opponentRecord": "1-8-0"
+      },
+      {
+        "opponent": "Ravens",
+        "location": "@",
+        "week": "REG18",
+        "date": null,
+        "time": null,
+        "opponentRecord": "4-5-0"
+      }
+    ],
+    "Bengals": [
+      {
+        "opponent": "Steelers",
+        "location": "vs",
+        "week": "REG10",
+        "date": "Sunday, November 15",
+        "time": null,
+        "opponentRecord": "6-3-0"
+      },
+      {
+        "opponent": "Commanders",
+        "location": "@",
+        "week": "REG11",
+        "date": "Monday, November 23",
+        "time": "8:15 PM",
+        "opponentRecord": "3-5-1"
+      },
+      {
+        "opponent": "Saints",
+        "location": "vs",
+        "week": "REG12",
+        "date": "Sunday, November 29",
+        "time": "1:00 PM",
+        "opponentRecord": "3-6-0"
+      },
+      {
+        "opponent": "Browns",
+        "location": "@",
+        "week": "REG13",
+        "date": "Sunday, December 6",
+        "time": "1:00 PM",
+        "opponentRecord": "6-4-0"
+      },
+      {
+        "opponent": "Chiefs",
+        "location": "vs",
+        "week": "REG14",
+        "date": "Sunday, December 13",
+        "time": "4:25 PM",
+        "opponentRecord": "7-2-0"
+      },
+      {
+        "opponent": "Panthers",
+        "location": "@",
+        "week": "REG15",
+        "date": "Sunday, December 20",
+        "time": "1:00 PM",
+        "opponentRecord": "4-5-0"
+      },
+      {
+        "opponent": "Colts",
+        "location": "@",
+        "week": "REG16",
+        "date": null,
+        "time": null,
+        "opponentRecord": "3-7-0"
+      },
+      {
+        "opponent": "Ravens",
+        "location": "vs",
+        "week": "REG17",
+        "date": "Thursday, December 31",
+        "time": "8:15 PM",
+        "opponentRecord": "4-5-0"
+      },
+      {
+        "opponent": "Browns",
+        "location": "vs",
+        "week": "REG18",
+        "date": null,
+        "time": null,
+        "opponentRecord": "6-4-0"
+      }
+    ],
     "Bears": [
       {
         "opponent": "Saints",
@@ -4657,7 +4657,7 @@
         "week": "REG11",
         "date": "Sunday, November 22",
         "time": "1:00 PM",
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "6-3-0"
       },
       {
         "opponent": "Cowboys",
@@ -4731,7 +4731,7 @@
         "week": "REG12",
         "date": "Friday, November 27",
         "time": "3:00 PM",
-        "opponentRecord": "6-2-0"
+        "opponentRecord": "6-3-0"
       },
       {
         "opponent": "Dolphins",

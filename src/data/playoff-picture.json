@@ -4,9 +4,9 @@
       {
         "name": "Patriots",
         "conf": "AFC",
-        "top": 2390.828125,
+        "top": 2392.828125,
         "record": "5-5",
-        "probability": "40%",
+        "probability": "41%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -85,9 +85,9 @@
       {
         "name": "Texans",
         "conf": "AFC",
-        "top": 2843.328125,
+        "top": 2845.328125,
         "record": "3-6",
-        "probability": "20%",
+        "probability": "21%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -121,7 +121,7 @@
             "week": "REG13",
             "date": "Sunday, December 6",
             "time": "8:20 PM",
-            "opponentRecord": "6-2-0"
+            "opponentRecord": "6-3-0"
           },
           {
             "opponent": "Commanders",
@@ -174,9 +174,9 @@
       {
         "name": "Ravens",
         "conf": "AFC",
-        "top": 2541.828125,
+        "top": 2543.828125,
         "record": "4-5",
-        "probability": "9%",
+        "probability": "10%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -218,7 +218,7 @@
             "week": "REG15",
             "date": "Sunday, December 20",
             "time": "1:00 PM",
-            "opponentRecord": "6-2-0"
+            "opponentRecord": "6-3-0"
           },
           {
             "opponent": "Browns",
@@ -234,7 +234,7 @@
             "week": "REG17",
             "date": "Thursday, December 31",
             "time": "8:15 PM",
-            "opponentRecord": "6-2-0"
+            "opponentRecord": "7-2-0"
           },
           {
             "opponent": "Steelers",
@@ -242,7 +242,7 @@
             "week": "REG18",
             "date": null,
             "time": null,
-            "opponentRecord": "6-2-0"
+            "opponentRecord": "6-3-0"
           }
         ],
         "nextOpponent": {
@@ -255,9 +255,9 @@
       {
         "name": "Raiders",
         "conf": "AFC",
-        "top": 2692.828125,
+        "top": 2694.828125,
         "record": "4-6",
-        "probability": "9%",
+        "probability": "10%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -336,7 +336,7 @@
       {
         "name": "Colts",
         "conf": "AFC",
-        "top": 2993.828125,
+        "top": 2995.828125,
         "record": "3-7",
         "probability": "2%",
         "trend": "0",
@@ -388,7 +388,7 @@
             "week": "REG16",
             "date": null,
             "time": null,
-            "opponentRecord": "6-2-0"
+            "opponentRecord": "7-2-0"
           },
           {
             "opponent": "Browns",
@@ -417,7 +417,7 @@
       {
         "name": "Jets",
         "conf": "AFC",
-        "top": 3144.828125,
+        "top": 3146.828125,
         "record": "2-8",
         "probability": "<1%",
         "trend": "0",
@@ -498,7 +498,7 @@
       {
         "name": "Dolphins",
         "conf": "AFC",
-        "top": 3295.328125,
+        "top": 3297.328125,
         "record": "1-8",
         "probability": "<1%",
         "trend": "0",
@@ -587,7 +587,7 @@
       {
         "name": "Titans",
         "conf": "AFC",
-        "top": 3445.328125,
+        "top": 3447.328125,
         "record": "1-8",
         "probability": "<1%",
         "trend": "0",
@@ -655,7 +655,7 @@
             "week": "REG17",
             "date": "Sunday, January 3",
             "time": "1:00 PM",
-            "opponentRecord": "6-2-0"
+            "opponentRecord": "6-3-0"
           },
           {
             "opponent": "Texans",
@@ -676,7 +676,7 @@
       {
         "name": "Chargers",
         "conf": "AFC",
-        "top": 3595.328125,
+        "top": 3597.328125,
         "record": "0-8",
         "probability": "<1%",
         "trend": "0",
@@ -767,7 +767,7 @@
       {
         "name": "Seahawks",
         "conf": "NFC",
-        "top": 2390.328125,
+        "top": 2392.328125,
         "record": "6-4",
         "probability": "55%",
         "trend": "0",
@@ -848,9 +848,9 @@
       {
         "name": "Rams",
         "conf": "NFC",
-        "top": 2540.328125,
+        "top": 2542.328125,
         "record": "6-4",
-        "probability": "51%",
+        "probability": "52%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -929,7 +929,7 @@
       {
         "name": "Buccaneers",
         "conf": "NFC",
-        "top": 2991.328125,
+        "top": 2993.328125,
         "record": "3-6",
         "probability": "33%",
         "trend": "0",
@@ -1010,7 +1010,7 @@
       {
         "name": "Cowboys",
         "conf": "NFC",
-        "top": 2690.328125,
+        "top": 2692.328125,
         "record": "4-6",
         "probability": "27%",
         "trend": "0",
@@ -1091,7 +1091,7 @@
       {
         "name": "Commanders",
         "conf": "NFC",
-        "top": 2840.828125,
+        "top": 2842.828125,
         "record": "3-5-1",
         "probability": "24%",
         "trend": "0",
@@ -1111,7 +1111,7 @@
             "week": "REG11",
             "date": "Monday, November 23",
             "time": "8:15 PM",
-            "opponentRecord": "6-2-0"
+            "opponentRecord": "7-2-0"
           },
           {
             "opponent": "Cardinals",
@@ -1178,100 +1178,11 @@
         }
       },
       {
-        "name": "Saints",
-        "conf": "NFC",
-        "top": 3141.828125,
-        "record": "3-6",
-        "probability": "10%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Panthers",
-            "location": "vs",
-            "week": "REG10",
-            "date": "Sunday, November 15",
-            "time": null,
-            "opponentRecord": "4-5-0"
-          },
-          {
-            "opponent": "Bears",
-            "location": "@",
-            "week": "REG11",
-            "date": "Sunday, November 22",
-            "time": "1:00 PM",
-            "opponentRecord": "7-2-0"
-          },
-          {
-            "opponent": "Bengals",
-            "location": "@",
-            "week": "REG12",
-            "date": "Sunday, November 29",
-            "time": "1:00 PM",
-            "opponentRecord": "6-2-0"
-          },
-          {
-            "opponent": "Packers",
-            "location": "vs",
-            "week": "REG13",
-            "date": "Sunday, December 6",
-            "time": "1:00 PM",
-            "opponentRecord": "6-4-0"
-          },
-          {
-            "opponent": "Panthers",
-            "location": "@",
-            "week": "REG14",
-            "date": "Sunday, December 13",
-            "time": "1:00 PM",
-            "opponentRecord": "4-5-0"
-          },
-          {
-            "opponent": "Buccaneers",
-            "location": "@",
-            "week": "REG15",
-            "date": "Sunday, December 20",
-            "time": "1:00 PM",
-            "opponentRecord": "3-6-0"
-          },
-          {
-            "opponent": "Cardinals",
-            "location": "vs",
-            "week": "REG16",
-            "date": "Sunday, December 27",
-            "time": "1:00 PM",
-            "opponentRecord": "3-7-0"
-          },
-          {
-            "opponent": "Falcons",
-            "location": "@",
-            "week": "REG17",
-            "date": "Sunday, January 3",
-            "time": "1:00 PM",
-            "opponentRecord": "3-7-0"
-          },
-          {
-            "opponent": "Buccaneers",
-            "location": "vs",
-            "week": "REG18",
-            "date": null,
-            "time": null,
-            "opponentRecord": "3-6-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Panthers",
-          "location": "vs",
-          "date": "Sunday, November 15",
-          "time": null
-        }
-      },
-      {
         "name": "Falcons",
         "conf": "NFC",
-        "top": 3292.828125,
+        "top": 3294.828125,
         "record": "3-7",
-        "probability": "10%",
+        "probability": "11%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -1348,11 +1259,100 @@
         }
       },
       {
+        "name": "Saints",
+        "conf": "NFC",
+        "top": 3143.828125,
+        "record": "3-6",
+        "probability": "9%",
+        "trend": "0",
+        "trendDirection": "same",
+        "remainingSchedule": [
+          {
+            "opponent": "Panthers",
+            "location": "vs",
+            "week": "REG10",
+            "date": "Sunday, November 15",
+            "time": null,
+            "opponentRecord": "4-5-0"
+          },
+          {
+            "opponent": "Bears",
+            "location": "@",
+            "week": "REG11",
+            "date": "Sunday, November 22",
+            "time": "1:00 PM",
+            "opponentRecord": "7-2-0"
+          },
+          {
+            "opponent": "Bengals",
+            "location": "@",
+            "week": "REG12",
+            "date": "Sunday, November 29",
+            "time": "1:00 PM",
+            "opponentRecord": "7-2-0"
+          },
+          {
+            "opponent": "Packers",
+            "location": "vs",
+            "week": "REG13",
+            "date": "Sunday, December 6",
+            "time": "1:00 PM",
+            "opponentRecord": "6-4-0"
+          },
+          {
+            "opponent": "Panthers",
+            "location": "@",
+            "week": "REG14",
+            "date": "Sunday, December 13",
+            "time": "1:00 PM",
+            "opponentRecord": "4-5-0"
+          },
+          {
+            "opponent": "Buccaneers",
+            "location": "@",
+            "week": "REG15",
+            "date": "Sunday, December 20",
+            "time": "1:00 PM",
+            "opponentRecord": "3-6-0"
+          },
+          {
+            "opponent": "Cardinals",
+            "location": "vs",
+            "week": "REG16",
+            "date": "Sunday, December 27",
+            "time": "1:00 PM",
+            "opponentRecord": "3-7-0"
+          },
+          {
+            "opponent": "Falcons",
+            "location": "@",
+            "week": "REG17",
+            "date": "Sunday, January 3",
+            "time": "1:00 PM",
+            "opponentRecord": "3-7-0"
+          },
+          {
+            "opponent": "Buccaneers",
+            "location": "vs",
+            "week": "REG18",
+            "date": null,
+            "time": null,
+            "opponentRecord": "3-6-0"
+          }
+        ],
+        "nextOpponent": {
+          "opponent": "Panthers",
+          "location": "vs",
+          "date": "Sunday, November 15",
+          "time": null
+        }
+      },
+      {
         "name": "Eagles",
         "conf": "NFC",
-        "top": 3594.328125,
+        "top": 3596.328125,
         "record": "2-7",
-        "probability": "2%",
+        "probability": "1%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -1362,7 +1362,7 @@
             "week": "REG11",
             "date": "Sunday, November 22",
             "time": "1:00 PM",
-            "opponentRecord": "6-2-0"
+            "opponentRecord": "6-3-0"
           },
           {
             "opponent": "Cowboys",
@@ -1431,7 +1431,7 @@
       {
         "name": "Cardinals",
         "conf": "NFC",
-        "top": 3443.828125,
+        "top": 3445.828125,
         "record": "3-7",
         "probability": "<1%",
         "trend": "0",
@@ -1607,7 +1607,7 @@
       {
         "name": "Chiefs",
         "record": "7-2",
-        "probability": "96%",
+        "probability": "97%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -1649,7 +1649,7 @@
             "week": "REG14",
             "date": "Sunday, December 13",
             "time": "4:25 PM",
-            "opponentRecord": "6-2-0"
+            "opponentRecord": "7-2-0"
           },
           {
             "opponent": "Patriots",
@@ -1736,7 +1736,7 @@
             "week": "REG14",
             "date": "Monday, December 14",
             "time": "8:15 PM",
-            "opponentRecord": "6-2-0"
+            "opponentRecord": "6-3-0"
           },
           {
             "opponent": "Texans",
@@ -1779,185 +1779,19 @@
         }
       },
       {
-        "name": "Steelers",
-        "record": "6-2",
-        "probability": "74%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
-            "opponent": "Bengals",
-            "location": "@",
-            "week": "REG10",
-            "date": "Sunday, November 15",
-            "time": "8:20 PM",
-            "opponentRecord": "6-2-0"
-          },
-          {
-            "opponent": "Eagles",
-            "location": "@",
-            "week": "REG11",
-            "date": "Sunday, November 22",
-            "time": "1:00 PM",
-            "opponentRecord": "2-7-0"
-          },
-          {
-            "opponent": "Broncos",
-            "location": "vs",
-            "week": "REG12",
-            "date": "Friday, November 27",
-            "time": "3:00 PM",
-            "opponentRecord": "7-2-0"
-          },
-          {
-            "opponent": "Texans",
-            "location": "vs",
-            "week": "REG13",
-            "date": "Sunday, December 6",
-            "time": "8:20 PM",
-            "opponentRecord": "3-6-0"
-          },
-          {
-            "opponent": "Jaguars",
-            "location": "@",
-            "week": "REG14",
-            "date": "Monday, December 14",
-            "time": "8:15 PM",
-            "opponentRecord": "7-2-0"
-          },
-          {
-            "opponent": "Ravens",
-            "location": "vs",
-            "week": "REG15",
-            "date": "Sunday, December 20",
-            "time": "1:00 PM",
-            "opponentRecord": "4-5-0"
-          },
-          {
-            "opponent": "Panthers",
-            "location": "vs",
-            "week": "REG16",
-            "date": null,
-            "time": null,
-            "opponentRecord": "4-5-0"
-          },
-          {
-            "opponent": "Titans",
-            "location": "@",
-            "week": "REG17",
-            "date": "Sunday, January 3",
-            "time": "1:00 PM",
-            "opponentRecord": "1-8-0"
-          },
-          {
-            "opponent": "Ravens",
-            "location": "@",
-            "week": "REG18",
-            "date": null,
-            "time": null,
-            "opponentRecord": "4-5-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Bengals",
-          "location": "@",
-          "date": "Sunday, November 15",
-          "time": "8:20 PM"
-        }
-      },
-      {
-        "name": "Broncos",
+        "name": "Bengals",
         "record": "7-2",
         "probability": "97%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
           {
-            "opponent": "Raiders",
-            "location": "vs",
-            "week": "REG11",
-            "date": "Sunday, November 22",
-            "time": "4:25 PM",
-            "opponentRecord": "4-6-0"
-          },
-          {
-            "opponent": "Steelers",
-            "location": "@",
-            "week": "REG12",
-            "date": "Friday, November 27",
-            "time": "3:00 PM",
-            "opponentRecord": "6-2-0"
-          },
-          {
-            "opponent": "Dolphins",
-            "location": "vs",
-            "week": "REG13",
-            "date": "Sunday, December 6",
-            "time": "4:05 PM",
-            "opponentRecord": "1-8-0"
-          },
-          {
-            "opponent": "Jets",
-            "location": "@",
-            "week": "REG14",
-            "date": "Sunday, December 13",
-            "time": "1:00 PM",
-            "opponentRecord": "2-8-0"
-          },
-          {
-            "opponent": "Raiders",
-            "location": "@",
-            "week": "REG15",
-            "date": "Sunday, December 20",
-            "time": "4:25 PM",
-            "opponentRecord": "4-6-0"
-          },
-          {
-            "opponent": "Bills",
-            "location": "vs",
-            "week": "REG16",
-            "date": "Friday, December 25",
-            "time": "4:30 PM",
-            "opponentRecord": "8-1-0"
-          },
-          {
-            "opponent": "Patriots",
-            "location": "@",
-            "week": "REG17",
-            "date": null,
-            "time": null,
-            "opponentRecord": "5-5-0"
-          },
-          {
-            "opponent": "Chargers",
-            "location": "vs",
-            "week": "REG18",
-            "date": null,
-            "time": null,
-            "opponentRecord": "0-8-0"
-          }
-        ],
-        "nextOpponent": {
-          "opponent": "Raiders",
-          "location": "vs",
-          "date": "Sunday, November 22",
-          "time": "4:25 PM"
-        }
-      },
-      {
-        "name": "Bengals",
-        "record": "6-2",
-        "probability": "89%",
-        "trend": "0",
-        "trendDirection": "same",
-        "remainingSchedule": [
-          {
             "opponent": "Steelers",
             "location": "vs",
             "week": "REG10",
             "date": "Sunday, November 15",
-            "time": "8:20 PM",
-            "opponentRecord": "6-2-0"
+            "time": null,
+            "opponentRecord": "6-3-0"
           },
           {
             "opponent": "Commanders",
@@ -2028,7 +1862,173 @@
           "opponent": "Steelers",
           "location": "vs",
           "date": "Sunday, November 15",
-          "time": "8:20 PM"
+          "time": null
+        }
+      },
+      {
+        "name": "Broncos",
+        "record": "7-2",
+        "probability": "97%",
+        "trend": "0",
+        "trendDirection": "same",
+        "remainingSchedule": [
+          {
+            "opponent": "Raiders",
+            "location": "vs",
+            "week": "REG11",
+            "date": "Sunday, November 22",
+            "time": "4:25 PM",
+            "opponentRecord": "4-6-0"
+          },
+          {
+            "opponent": "Steelers",
+            "location": "@",
+            "week": "REG12",
+            "date": "Friday, November 27",
+            "time": "3:00 PM",
+            "opponentRecord": "6-3-0"
+          },
+          {
+            "opponent": "Dolphins",
+            "location": "vs",
+            "week": "REG13",
+            "date": "Sunday, December 6",
+            "time": "4:05 PM",
+            "opponentRecord": "1-8-0"
+          },
+          {
+            "opponent": "Jets",
+            "location": "@",
+            "week": "REG14",
+            "date": "Sunday, December 13",
+            "time": "1:00 PM",
+            "opponentRecord": "2-8-0"
+          },
+          {
+            "opponent": "Raiders",
+            "location": "@",
+            "week": "REG15",
+            "date": "Sunday, December 20",
+            "time": "4:25 PM",
+            "opponentRecord": "4-6-0"
+          },
+          {
+            "opponent": "Bills",
+            "location": "vs",
+            "week": "REG16",
+            "date": "Friday, December 25",
+            "time": "4:30 PM",
+            "opponentRecord": "8-1-0"
+          },
+          {
+            "opponent": "Patriots",
+            "location": "@",
+            "week": "REG17",
+            "date": null,
+            "time": null,
+            "opponentRecord": "5-5-0"
+          },
+          {
+            "opponent": "Chargers",
+            "location": "vs",
+            "week": "REG18",
+            "date": null,
+            "time": null,
+            "opponentRecord": "0-8-0"
+          }
+        ],
+        "nextOpponent": {
+          "opponent": "Raiders",
+          "location": "vs",
+          "date": "Sunday, November 22",
+          "time": "4:25 PM"
+        }
+      },
+      {
+        "name": "Steelers",
+        "record": "6-3",
+        "probability": "73%",
+        "trend": "0",
+        "trendDirection": "same",
+        "remainingSchedule": [
+          {
+            "opponent": "Bengals",
+            "location": "@",
+            "week": "REG10",
+            "date": "Sunday, November 15",
+            "time": null,
+            "opponentRecord": "7-2-0"
+          },
+          {
+            "opponent": "Eagles",
+            "location": "@",
+            "week": "REG11",
+            "date": "Sunday, November 22",
+            "time": "1:00 PM",
+            "opponentRecord": "2-7-0"
+          },
+          {
+            "opponent": "Broncos",
+            "location": "vs",
+            "week": "REG12",
+            "date": "Friday, November 27",
+            "time": "3:00 PM",
+            "opponentRecord": "7-2-0"
+          },
+          {
+            "opponent": "Texans",
+            "location": "vs",
+            "week": "REG13",
+            "date": "Sunday, December 6",
+            "time": "8:20 PM",
+            "opponentRecord": "3-6-0"
+          },
+          {
+            "opponent": "Jaguars",
+            "location": "@",
+            "week": "REG14",
+            "date": "Monday, December 14",
+            "time": "8:15 PM",
+            "opponentRecord": "7-2-0"
+          },
+          {
+            "opponent": "Ravens",
+            "location": "vs",
+            "week": "REG15",
+            "date": "Sunday, December 20",
+            "time": "1:00 PM",
+            "opponentRecord": "4-5-0"
+          },
+          {
+            "opponent": "Panthers",
+            "location": "vs",
+            "week": "REG16",
+            "date": null,
+            "time": null,
+            "opponentRecord": "4-5-0"
+          },
+          {
+            "opponent": "Titans",
+            "location": "@",
+            "week": "REG17",
+            "date": "Sunday, January 3",
+            "time": "1:00 PM",
+            "opponentRecord": "1-8-0"
+          },
+          {
+            "opponent": "Ravens",
+            "location": "@",
+            "week": "REG18",
+            "date": null,
+            "time": null,
+            "opponentRecord": "4-5-0"
+          }
+        ],
+        "nextOpponent": {
+          "opponent": "Bengals",
+          "location": "@",
+          "date": "Sunday, November 15",
+          "time": null
         }
       },
       {
@@ -2060,7 +2060,7 @@
             "week": "REG13",
             "date": "Sunday, December 6",
             "time": "1:00 PM",
-            "opponentRecord": "6-2-0"
+            "opponentRecord": "7-2-0"
           },
           {
             "opponent": "Falcons",
@@ -2100,7 +2100,7 @@
             "week": "REG18",
             "date": null,
             "time": null,
-            "opponentRecord": "6-2-0"
+            "opponentRecord": "7-2-0"
           }
         ],
         "nextOpponent": {
@@ -2202,7 +2202,7 @@
       {
         "name": "Lions",
         "record": "7-2",
-        "probability": "90%",
+        "probability": "89%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -2376,7 +2376,7 @@
       {
         "name": "Panthers",
         "record": "4-5",
-        "probability": "48%",
+        "probability": "49%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -2426,7 +2426,7 @@
             "week": "REG15",
             "date": "Sunday, December 20",
             "time": "1:00 PM",
-            "opponentRecord": "6-2-0"
+            "opponentRecord": "7-2-0"
           },
           {
             "opponent": "Steelers",
@@ -2434,7 +2434,7 @@
             "week": "REG16",
             "date": null,
             "time": null,
-            "opponentRecord": "6-2-0"
+            "opponentRecord": "6-3-0"
           },
           {
             "opponent": "Seahawks",
@@ -2550,7 +2550,7 @@
       {
         "name": "Bears",
         "record": "7-2",
-        "probability": "81%",
+        "probability": "82%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
@@ -2629,7 +2629,7 @@
       {
         "name": "Packers",
         "record": "6-4",
-        "probability": "34%",
+        "probability": "33%",
         "trend": "0",
         "trendDirection": "same",
         "remainingSchedule": [
