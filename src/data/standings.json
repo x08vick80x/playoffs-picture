@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-16T14:22:21.932Z",
+  "lastUpdated": "2026-11-17T15:24:19.224Z",
   "AFC": [
     {
       "seed": "1",
@@ -51,13 +51,13 @@
     },
     {
       "seed": "9",
-      "team": "Baltimore",
-      "record": "4-5-0",
+      "team": "Las Vegas",
+      "record": "4-6-0",
       "status": ""
     },
     {
       "seed": "10",
-      "team": "Las Vegas",
+      "team": "Baltimore",
       "record": "4-6-0",
       "status": ""
     },
@@ -81,20 +81,20 @@
     },
     {
       "seed": "14",
-      "team": "Miami",
+      "team": "L.A. Chargers",
       "record": "1-8-0",
       "status": ""
     },
     {
       "seed": "15",
-      "team": "Tennessee",
+      "team": "Miami",
       "record": "1-8-0",
       "status": ""
     },
     {
       "seed": "16",
-      "team": "L.A. Chargers",
-      "record": "0-8-0",
+      "team": "Tennessee",
+      "record": "1-8-0",
       "status": ""
     }
   ],
