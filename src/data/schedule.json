@@ -1582,15 +1582,6 @@
           "homeScore": null
         },
         {
-          "home": "Browns",
-          "away": "Raiders",
-          "date": "Sunday, November 29",
-          "time": "1:00 PM",
-          "final": false,
-          "awayScore": null,
-          "homeScore": null
-        },
-        {
           "home": "Texans",
           "away": "Ravens",
           "date": "Sunday, November 29",
@@ -1630,6 +1621,15 @@
           "home": "Jaguars",
           "away": "Titans",
           "date": "Sunday, November 29",
+          "time": "1:00 PM",
+          "final": false,
+          "awayScore": null,
+          "homeScore": null
+        },
+        {
+          "home": "Chargers",
+          "away": "Patriots",
+          "date": "Sunday, November 29",
           "time": "4:05 PM",
           "final": false,
           "awayScore": null,
@@ -1654,8 +1654,8 @@
           "homeScore": null
         },
         {
-          "home": "Chargers",
-          "away": "Patriots",
+          "home": "Browns",
+          "away": "Raiders",
           "date": "Sunday, November 29",
           "time": "8:20 PM",
           "final": false,
@@ -2704,7 +2704,7 @@
         "location": "@",
         "week": "REG12",
         "date": "Sunday, November 29",
-        "time": "8:20 PM",
+        "time": "4:05 PM",
         "opponentRecord": "1-8-0"
       },
       {
@@ -3058,7 +3058,7 @@
         "location": "vs",
         "week": "REG12",
         "date": "Sunday, November 29",
-        "time": "1:00 PM",
+        "time": "8:20 PM",
         "opponentRecord": "4-6-0"
       },
       {
@@ -3700,7 +3700,7 @@
         "location": "vs",
         "week": "REG12",
         "date": "Sunday, November 29",
-        "time": "4:05 PM",
+        "time": "1:00 PM",
         "opponentRecord": "1-8-0"
       },
       {
@@ -3774,7 +3774,7 @@
         "location": "@",
         "week": "REG12",
         "date": "Sunday, November 29",
-        "time": "4:05 PM",
+        "time": "1:00 PM",
         "opponentRecord": "7-2-0"
       },
       {
@@ -4046,7 +4046,7 @@
         "location": "@",
         "week": "REG12",
         "date": "Sunday, November 29",
-        "time": "1:00 PM",
+        "time": "8:20 PM",
         "opponentRecord": "6-4-0"
       },
       {
@@ -4400,7 +4400,7 @@
         "location": "vs",
         "week": "REG12",
         "date": "Sunday, November 29",
-        "time": "8:20 PM",
+        "time": "4:05 PM",
         "opponentRecord": "5-5-0"
       },
       {
