@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-23T01:52:36.344Z",
+  "lastUpdated": "2026-11-23T16:56:00.770Z",
   "AFC": [
     {
       "seed": "1",
@@ -9,25 +9,25 @@
     },
     {
       "seed": "2",
-      "team": "Kansas City",
+      "team": "Denver",
       "record": "8-2-0",
       "status": ""
     },
     {
       "seed": "3",
-      "team": "Jacksonville",
-      "record": "7-3-0",
-      "status": ""
-    },
-    {
-      "seed": "4",
       "team": "Cincinnati",
       "record": "7-2-0",
       "status": ""
     },
     {
+      "seed": "4",
+      "team": "Jacksonville",
+      "record": "7-3-0",
+      "status": ""
+    },
+    {
       "seed": "5",
-      "team": "Denver",
+      "team": "Kansas City",
       "record": "8-2-0",
       "status": ""
     },
@@ -69,13 +69,13 @@
     },
     {
       "seed": "12",
-      "team": "Indianapolis",
+      "team": "N.Y. Jets",
       "record": "3-8-0",
       "status": ""
     },
     {
       "seed": "13",
-      "team": "N.Y. Jets",
+      "team": "Indianapolis",
       "record": "3-8-0",
       "status": ""
     },
@@ -87,13 +87,13 @@
     },
     {
       "seed": "15",
-      "team": "Tennessee",
+      "team": "Miami",
       "record": "1-9-0",
       "status": ""
     },
     {
       "seed": "16",
-      "team": "Miami",
+      "team": "Tennessee",
       "record": "1-9-0",
       "status": ""
     }
@@ -102,7 +102,7 @@
     {
       "seed": "1",
       "team": "San Francisco",
-      "record": "8-1-0",
+      "record": "9-1-0",
       "status": ""
     },
     {
@@ -132,7 +132,7 @@
     {
       "seed": "6",
       "team": "Minnesota",
-      "record": "7-2-0",
+      "record": "7-3-0",
       "status": ""
     },
     {
